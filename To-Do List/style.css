@@ -1,0 +1,178 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
+  background: url("Des Photos que j'ai utilise/timed.png") center/cover no-repeat fixed;
+  animation: zoom-in 5s ease-in-out forwards;
+  background-size: cover;
+  background-position: center;
+}
+
+@keyframes zoom-in {
+  from {
+    background-size: 100%;
+  }
+  to {
+    background-size: 125%; 
+  }
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-app .todo-list {
+  width: 100%;
+  max-width: 540px;
+  background-color: rgba(255, 255, 255, 0.9);
+  margin: 20px auto;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+.todo-app h2{
+  color:#131313;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.todo-app h2 img{
+  width: 30px;
+  margin-left: 10px;
+}
+
+#listImage {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  top: 0.5%;
+  right: 0.5%;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  color: #131313;
+}
+
+
+body, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 0; 
+  padding: 0; 
+}
+
+.hidden{
+ opacity:0 ;
+ filter: blur(5px);
+ transform: translateX(-5%);
+ transition: all 2.1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+ transform: translateX(0);
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px; 
+}
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+}
+button{
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #131313;
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 18px;
+}
+ul li{
+  list-style: none;
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  padding:12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  border-radius: 0px;
+  background-image: url("Des Photos que j'ai utilise/Unchecked.png") ;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  top: 10px;
+  left: 8px;
+}
+.row{
+  font-family: 'SF Pro Text',-apple-system,BlinkMacSystemFont,sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+ul li.checked{
+  color: #131313;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url("Des Photos que j'ai utilise/checked.png") ;
+
+}
+ul li span{
+position: absolute;
+right: 0;
+top:5px;
+width: 40px;
+height: 40px;
+font-size: 22px;
+color: #131313;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
+}
+ul li span:hover{
+  background: #ffffff;
+}
+@media only screen and (max-width: 600px) {
+  .todo-app .todo-list {
+    max-width: 100%;
+    padding: 20px;
+  }
+}
