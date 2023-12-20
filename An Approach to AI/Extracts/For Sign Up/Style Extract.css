@@ -9,7 +9,7 @@
       }
 
       .sidebar {
-          width: 820px;
+          width: 1020px;
           background-color: #1a1a1a;
           color: #fff;
           padding: 20px;
@@ -60,7 +60,7 @@
     
             overflow-y: auto;
             transition: margin-left 0.3s ease;
-            margin-left: 800px;
+            margin-left: 990px;
             font-weight: bold;
             
          
@@ -203,7 +203,7 @@
             font-weight: bold;
             position: absolute;
             top: 35%;
-            left: 5%;
+            left: -5%;
             transform: translate(-50%, -50%);
             opacity: 0;
             animation: slideIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 0.5s ease-out forwards;
@@ -303,43 +303,4 @@ input {
         margin-left: 0;
         
     }
-}
-@media (max-width: 600px) {
-    .sidebar {
-        width: 100%;
-        padding: 20px;
-        position: static;
-        box-shadow: none;
-        animation: none;
-    }
-
-    .login-container {
-        margin-left: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    body {
-    transition: transform 0.5s ease-in-out;
-}
-
-@media (max-width: 600px) {
-    body {
-        transform: scale(0.8); /* Adjust the scale factor as needed */
-    }
-
-    .sidebar {
-        width: 100%;
-        padding: 20px;
-        position: static;
-        box-shadow: none;
-        animation: none;
-    }
-
-    .login-container {
-        margin-left: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    /* Add more responsive styles as needed */
-}
 }
