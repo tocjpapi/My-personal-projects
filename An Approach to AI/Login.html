@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunde's Login screen</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="C:\Users\treas\Downloads\Capture_d_écran_2023-12-14_194629-removebg-preview.png"/>
+    <style>
+       body {
+          font-family: 'SF Pro Text', Arial, sans-serif;
+          background-color: #fff; /* Set background color to match the sidebar */
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+      }
+
+      .sidebar {
+          width: 820px;
+          background-color: #1a1a1a;
+          color: #fff;
+          padding: 20px;
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          z-index: 1;
+          transition: transform 0.3s ease, opacity 0.3s ease;
+          overflow-y: auto;
+          height: 100vh;
+          position: fixed;
+          left: 0;
+          top: 0;
+         
+      }
+
+      .sidebar h2 {
+          margin-bottom: 16px;
+          text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          color: #007bff; 
+          font-size: 1.9em;
+      }
+
+      .sidebar ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+      }
+
+      .sidebar li {
+          margin-bottom: 8px;
+          font-size: 1.3em;
+          font-weight: bold;
+          color: #fff;
+      }
+
+      .login-container {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          max-width: 600px;
+          margin: 0 auto;
+          
+          background-color: #fff;
+          border-radius: 10px;
+          flex-grow: 1;
+            padding: 20px;
+    
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+            margin-left: 800px;
+            font-weight: bold;
+            
+         
+      }
+
+      h1 {
+          text-align: center;
+          margin-bottom: 16px;
+          color: #007bff; 
+          text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+          font-size: 3.4em;
+      }
+
+      form {
+          display: flex;
+          flex-direction: column;
+      }
+
+      label {
+          margin-bottom: 4px;
+          font-size: 1.2em;
+          color: #333;
+          text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input {
+          flex-grow: 1;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 13px;
+          margin-bottom: 10px;
+          font-weight: bold;
+      }
+
+      button {
+          background-color: #1a1a1a;
+          color: #fff;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          font-family: 'SF Pro Text', Arial, sans-serif;
+          font-weight: bold;
+          font-size: medium;
+          transition: background-color 0.3s;
+      }
+
+      button:hover {
+          background-color: #0056b3;
+      }
+
+      @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+      }
+
+      .login-container {
+          animation: fadeIn 2s;
+      }
+      .new-chat-text {
+            display: inline-block;
+            margin-top: 10px;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            font-family: 'SF Pro Text', Arial, sans-serif;
+        }
+
+        .new-chat-text:hover {
+            background: #333;
+        }
+
+        .new-chat-button {
+            display: none;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(20%);
+            }
+            to {
+                transform: translateX(10%);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+    
+
+    .login-container {
+        animation: fadeIn 2s;
+    }
+
+    h1::after {
+        content: '|';
+        animation: blinkCursor 1s infinite;
+        display: inline-block;
+        vertical-align: bottom;
+    }
+
+    @keyframes blinkCursor {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+
+    /* Add fade-in animation for the sidebar */
+    @keyframes fadeInSidebar {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .sidebar {
+        animation: fadeInSidebar 0.5s;
+    }
+    #initialMessage {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            position: absolute;
+            top: 35%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: slideIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 0.5s ease-out forwards;
+            text-align: center;
+            text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(20%);
+            }
+            to {
+                transform: translateX(10%);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+        
+
+/* Improved Button Design */
+button {
+    padding: 12px 20px;
+}
+
+/* Placeholder text in input fields */
+input::placeholder {
+    color: #888;
+}
+
+/* Subtle hover effect on form inputs */
+input:hover {
+    border-color: #999;
+}
+
+/* Improved Spacing and Alignment */
+.sidebar {
+    padding: 30px;
+}
+
+.login-container {
+    padding: 40px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    background-color: #f4f4f4; /* Add a background color for better visual separation */
+}
+
+/* Error handling: change border color on error */
+
+
+/* Password visibility toggle */
+.password-toggle {
+    position: relative;
+}
+
+.password-toggle input[type="password"] {
+    padding-right: 30px;
+}
+
+.password-toggle .toggle-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        margin-left: 0;
+        
+    }
+}
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        position: static;
+        box-shadow: none;
+        animation: none;
+    }
+
+    .login-container {
+        margin-left: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    body {
+    transition: transform 0.5s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    body {
+        transform: scale(0.8); /* Adjust the scale factor as needed */
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        position: static;
+        box-shadow: none;
+        animation: none;
+    }
+
+    .login-container {
+        margin-left: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    /* Add more responsive styles as needed */
+}
+}
+
+
+ 
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        
+        
+        <h2>֎ Sidebar</h2>
+        <ul>
+            <li class="new-chat-text" onclick="goToSignUp()">Sign up •</li>
+        </ul>
+        <div id="initialMessage">
+            <h1 style="font-size: 3.5em; font-weight: bold;">
+                "Back for more ?" 
+                <span class="typing-text"></span>
+            </h1>
+        </div>
+    </div>
+    <div class="login-container">
+        <form id="login-form">
+            <label for="credentials">Email or Username</label>
+            <input type="text" id="credentials" name="credentials" required>
+        
+            <label for="password">Password</label>
+            <div class="password-toggle">
+                <input type="password" id="password" name="password" required>
+                <span class="toggle-icon"></span>
+            </div>
+        
+            <button type="submit" onclick="goToChat()">
+                <span>Ξ Go to Chat</span>
+            </button>
+        </form>
+    </div>
+    <script>
+        
+        function goToChat() {
+            // Navigate to the chat page
+            window.location.href = 'file:///C:/Users/treas/OneDrive/Documents/Personal/An%20Approach%20to%20AI/Tunde.html'; // Replace 'chat.html' with the actual filename
+        }
+
+        function goToSignUp() {
+            // Navigate to the sign-up page
+            window.location.href = 'file:///C:/Users/treas/OneDrive/Documents/Personal/An%20Approach%20to%20AI/signup.html'; // Replace 'signup.html' with the actual filename
+        }
+    </script>
+</body>
+</html>
