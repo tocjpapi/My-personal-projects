@@ -1,0 +1,697 @@
+@keyframes slideInSidebar {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    .sidebar {
+        width: 320px;
+        background-color: #1a1a1a;
+        color: #fff;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        overflow-y: auto;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        overflow-y: auto;
+        animation: slideInSidebar 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 0.5s ease-out forwards;
+        opacity: 1;
+        filter: blur(0);
+    }
+    @keyframes blurFadeIn {
+        from {
+            filter: blur(10px); /* Apply blur at the start of animation */
+            opacity: 0;
+        }
+        to {
+            filter: blur(0); /* Remove blur at the end of animation */
+            opacity: 1;
+        }
+    }
+    
+    
+    /* Add a new keyframe for sidebar hiding */
+    .sidebar.hide {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+</style>
+    
+    <style>
+animated-text {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: -50%;
+            animation: slideIn ;
+            font-size: medium;
+            text-align: center;
+            animation: fadeIn 0.5s ease forwards;
+            
+        }
+        .hello-text{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            
+            text-align: center;
+            left: 5%;
+            
+        }
+
+      
+        body {
+            margin: 0;
+            font-family: 'SF Pro Text', Arial, sans-serif;
+            background-color: #f5f5f5; 
+            color: #333;
+        }
+       
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow-y: auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    color: #333;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    opacity: 1;
+    /* Center the text inside the main-content */
+}
+/* Responsive styles */
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 180px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        opacity: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Additional responsive styles for smaller screens */
+@media only screen and (max-width: 768px) {
+    .sidebar {
+        width: 500%;
+        margin: auto;
+    }
+    .brand-text{
+        margin: auto;
+    }
+}
+
+/* Additional styles for smaller screens */
+@media only screen and (max-width: 600px) {
+    .brand-text {
+        font-size: 1em;
+        margin-left: auto;
+    }
+
+    
+}
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+            overflow-y: auto;
+            transition: margin-left 0.3s ease;
+            margin-left: 250px;
+            display: none; /* Initially hidden */
+        }
+        
+    .brand-text {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+    #initialMessage {
+        flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center;
+            font-size: 1em;
+            font-weight: bold;
+            position: absolute;
+            text-shadow: #1a1a1a;
+            overflow-y: auto;
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    opacity: 1;
+            transform: translateX(0);
+    text-align: center;
+    
+        }
+
+
+/* Responsive styles */
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .brand-text {
+        font-size: 1.2em;
+        margin-left: 10px;
+    }
+    #initialMessage {
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            position: absolute;
+            flex-direction: column;
+            margin-left: 100px;
+        }
+
+}
+
+@media only screen and (max-width: 992px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+    .brand-text{
+        margin-left: 10px;
+    }
+}
+         h2 {
+            color: #007bff;
+            text-shadow: #1a1a1a;
+            font-size: 1.5em;
+    font-weight: bold;
+        }
+        h1 {
+            color: #007bff;
+            text-shadow: #1a1a1a;
+            font-size: 2.1em;
+    font-weight: bold;}
+        #initialMessage {
+            text-align: center;
+            font-size: 1em;
+            font-weight: bold;
+            position: absolute;
+           
+        }
+
+        h3{
+            color: #007bff;
+            font-size: large; 
+        }
+
+        button {
+            background: linear-gradient(to right, #1a1a1a, #1a1a1a);
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease;
+            font-weight: bold;
+            font-family: 'SF Pro Text', Arial, sans-serif;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #0056b3, #007bff);
+        }
+
+        .chat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .chat-item {
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 8px;
+            color: #fff;
+            transition: background 0.3s ease;
+        }
+
+        .chat-item:hover {
+            background-color: #333;
+        }
+
+        .new-chat-text {
+            display: inline-block;
+            margin-top: 10px;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            font-family: 'SF Pro Text', Arial, sans-serif;
+        }
+
+        .new-chat-text:hover {
+            background: #333;
+        }
+
+        .new-chat-button {
+            display: none;
+        }
+
+        .user-input-container {
+            display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+        }
+
+        #userInput {
+            flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    margin-right: 10px;
+    font-weight: bold;
+    resize: none;
+      overflow: hidden;
+      min-height: 36px;
+        }
+
+        #sendMessageButton {
+            background-color: #1a1a1a;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+        }
+
+        #sendMessageButton:hover {
+            background-color: #0056b3;
+        }
+
+        .fade-in {
+        opacity: 1;
+        transition: opacity 6s ease-in-out; /* Adjust the duration here (e.g., 2s for a 2-second animation) */
+    }
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+        #initialMessage {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            position: absolute;
+            top: 40%;
+            left: 17%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: slideIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 0.5s ease-out forwards;
+            text-align: center;
+            text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(20%);
+            }
+            to {
+                transform: translateX(10%);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        h2 img {
+            width: 48px;
+            margin-top: 15px;
+            margin-left: 96%;
+            animation: slideIn 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 1.5s ease-out forwards;
+            transform: translate(-50%, -50%);
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 7px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            overflow-y: auto;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .sidebar.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .sidebar.hide {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+
+        .main-content {
+            background-color: #f5f5f5;
+            opacity: 1;
+        }
+
+    .brand-text {
+    position: fixed;
+    top: 5%; /* Use a percentage for top position */
+    right: 80%; /* Use a percentage for right position */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    z-index: 2;
+    animation: slideIn 1.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 1.5s ease-out forwards;
+    transform: translate(-50%, -50%);
+}
+
+/* Additional styles for smaller screens */
+@media only screen and (max-width: 768px) {
+    .brand-text {
+        top: 1%; /* Further adjust the top position for smaller screens */
+        right: 2%; /* Further adjust the right position for smaller screens */
+        font-size: 1.2em; /* Adjust font size for smaller screens */
+    }
+}
+
+.modern-hello.hide {
+    display: none;
+}
+
+
+        .typing-text::after {
+            content: '|';
+            display: inline-block;
+            animation: blinkCursor 1.0s infinite;
+        }
+
+        @keyframes blinkCursor {
+            from, to {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+        
+.message-text {
+    transform-origin: bottom;
+    animation: bounceIn 0.5s ease forwards;
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: scaleY(0.9);
+    }
+    40% {
+        transform: scaleY(1.1);
+    }
+    60% {
+        transform: scaleY(1);
+    }
+}
+.gpt-message.delayed-appear {
+    animation: fadeInDelayed 0.5s ease forwards;
+}
+
+@keyframes fadeInDelayed {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#userInput:hover,
+#sendMessageButton:hover {
+    transform: scale(0.99);
+    transition: transform 0.3s ease;
+}
+#userInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    margin-right: 10px;
+    font-weight: bold; /* Add this line to set the font weight to bold */
+    font-family: 'SF Pro Text', Arial, sans-serif;
+}
+.message-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .user-message,
+        .gpt-message {
+            max-width: 70%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #1a1a1a;
+            color: #fff;
+            align-self: flex-end;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .animated-text {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 52%;
+            animation: slideIn ;
+            font-size: medium;
+        }
+
+        .hello-text {
+            font-size: 1.5em; /* Adjust the font size as needed */
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 10px;
+            opacity: 0;
+            text-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gpt-message {
+            background-color: #fff;
+            color: #333;
+            align-self: flex-start;
+            animation: fadeInDelayed 0.5s ease forwards;
+        }
+
+        .receipt {
+            margin-top: 5px;
+            font-size: 0.8em;
+            color: #777;
+        }
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .user-message,
+        .gpt-message {
+            max-width: 70%;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #333;
+            color: #fff;
+            align-self: flex-end;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .gpt-message {
+            background-color: #fff;
+            color: #333;
+            align-self: flex-start;
+            animation: fadeInDelayed 0.5s ease forwards;
+        }
+        .chat-item.active {
+            background-color: #333;
+        }
+        .fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeInAnimation 1s ease; /* Define your animation here */
+}
+
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modern-hello {
+            position: fixed;
+            bottom: 10px; /* Adjust the distance from the bottom */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            font-size: 1.5em;
+            font-weight: bold;
+            left : 54%;
+            opacity: 0; /* Initially invisible */
+            color: #007bff;
+        }
+
+        /* Animation for "Hello" messages */
+        .modern-hello-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50%, 20% {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInMainContent {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-content.show {
+    animation: fadeInMainContent 0.5s ease forwards;
+}
+.chat-list {
+    list-style: none;
+    padding: 0;
+    margin: 1;
+    font-weight: bold;
+    left: 10;
+}
+
+.chat-item {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    margin: 1;
+}
+
+.chat-item:hover {
+    background-color: #333;
+    margin: 1;
+}
+#mainContent {
+    display: block; /* or any other appropriate value */
+}
+  
+.code-snippet {
+            background-color: #f5f5f5;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .initial-message {
+            position: fixed;
+            right: 50%;
+            bottom: 0;
+            transform: translateX(50%);
+            max-width: 400px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease-out;
+        }
+
+        .initial-message.hidden {
+            transform: translateX(100%);
+        }
