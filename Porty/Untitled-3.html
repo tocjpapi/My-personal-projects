@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5625">
+    <title> Treasure. A freelancer</title>
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/ead4092f880f75ff0883ced1856b2c37?family=SF+Pro+Rounded+Regular" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://www.google-analytics.com" >
+    <link rel="preconnect" href="https://www.googletagmanager.com" >
+    <link rel="preconnect" href="https://www.youtube.com" >
+    <link rel="preconnect" href="https://s.ytimg.com" >
+    <link rel="preconnect" href="https://tools.google.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="image (1).png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+        
+        html, body {
+          overflow-y: hidden;
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+  overscroll-behavior-inline: contain;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-smooth: always;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(169, 169, 169, 0.26) 0%, rgba(105, 105, 105, 0.5) 100%); /* Grey to Dark Grey Gradient */
+  z-index: 1;
+  pointer-events: none;
+  animation: crispText 1.5s infinite alternate; /* Animation for sophisticated and intense crisp text effect */
+}
+
+
+@keyframes crispText {
+  0% {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.2), 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle text shadow */
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6), 0 0 10px rgba(255, 255, 255, 0.8); /* Intense text shadow */
+  }
+}
+html.lenis {
+      height: auto;
+    }
+    
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+    
+body {
+  font-family: 'SF Pro Display', Arial, sans-serif;
+  box-sizing: border-box;
+  background: url("9058423.jpg") center/cover no-repeat fixed;
+  background-size: cover;
+  animation: zoom-in 2.5s ease-in-out forwards;
+  background-position: center;
+  margin: 0;
+  position: relative;
+  text-shadow: #1a1a1a;
+  backdrop-filter: blur(0);
+  transition: backdrop-filter 0.1s ease-in-out;
+  overflow: auto; 
+  overflow-x: hidden;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+
+
+
+        @keyframes zoom-in {
+            from {
+                background-size: 100%;
+            }
+
+            to {
+                background-size: 104%;
+            }
+          
+        }
+       
+        
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        nav {
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px;
+            display: flex;
+            position: fixed;
+            top: 0; 
+            width: 100%;
+            z-index: 1000;
+            opacity: 0;
+            animation: slideDownNav 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) forwards, blurFadeIn 0.6s ease-out forwards;
+            font-weight: bold;
+            text-shadow: #6b6b6b;
+            font-family: 'SF pro Display', Arial, sans-serif;
+            
+        }
+
+        @keyframes slideDownNav {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            25% {
+                opacity: 0.25;
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: translateY(0);
+            }
+
+            75% {
+                opacity: 0.75;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+            border-radius: 20px;
+            
+        }
+
+        nav a:hover {
+            color: #333;
+        }
+
+        nav a:hover::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            margin-top: 5px;
+            animation: underline 0.4s ease-in forwards ;
+            border-radius: 25px;
+            
+        }
+
+        @keyframes underline {
+            0% {
+                width: 0;                 
+            }
+
+            100% {
+                width: 100%;               
+            }
+        }
+
+        h1 {
+            color: #000000;
+            font-size: 50px;
+        }
+        h4 {
+            color: #ffffff;
+            font-size: 50px;
+        }
+        .container h6:hover::after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            margin-top: 5px;
+            animation: underlin 0.7s ease-in forwards;
+            border-radius: 25px;
+        }
+       
+        @keyframes underlin {
+  0% {
+    width: 0;
+    opacity: 0.2;
+  }
+
+  50% {
+    width: 40%; /* Slightly overshoot the final width */
+    opacity: 1;
+  }
+
+  100% {
+    width: 37%;
+    opacity: 0.8;
+  }
+}
+
+.underlined-text {
+  display: inline-block;
+  position: relative;
+  animation: underline 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards; /* Use a cubic-bezier easing for recoil */
+  border-bottom: 1px solid #333;
+}
+.long{
+  border-bottom: 1px solid #333;
+  max-width: 90px;
+}
+
+        h3 {
+            font-weight: normal;
+            color: #000000;
+        }
+
+        #team-title {
+            display: inline-block;
+            
+            border-right: 4px solid #000000;
+            padding-right: 12px;
+            border-radius: 2px;
+            animation: cursor-blink 1.5s infinite, blurFadeIn 1.5s ease-out forwards;
+            font-weight: bold;
+            margin-top: -8px;
+            text-shadow: #1a1a1a;
+            color: #000000;
+        }
+
+        @keyframes cursor-blink {
+            0%, 100% {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: #000000;
+            }
+        }
+        
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.5);
+       
+        }
+.topic{
+  color: #ffffff;
+}
+        .empty-space {
+            height: 8640px;
+            position: relative;
+            width: 100%;
+            background-color: #ffffff;
+            overflow: hidden;
+            
+        }
+        .contact {
+            height: 3300px;
+            position: relative;
+            width: 100%;
+            background-color: #000000;
+            overflow: hidden;
+          padding: 50%;
+          margin-top: 1900px;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+          
+        }
+        section {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: left;
+            /* lets Align text to the left */
+            padding: 20px;
+            /*and Add padding for spacing */
+            text-shadow: #1a1a1a;
+            font-family: 'SF Pro Display', Arial, sans-serif;
+        }
+
+        section.about-and-threejs {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            margin-top: 125px;
+        }
+
+        .about {
+            display: block;
+            /* Change this to 'block' to make the about section show */
+            width: 65%;
+            float: left;
+            margin-right: 5%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            
+        }
+
+
+        @keyframes fadeInAnimation {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideUpDownAnimation {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px); /* Adjust the distance the object moves up */
+        }
+    }
+
+    @keyframes blurFadeIn {
+        from {
+            filter: blur(10px);
+        }
+        to {
+            filter: blur(0);
+        }
+    }
+
+    .container-3D {
+        width: 40vw;
+        height: 54vh;
+        float: left; /* Adjust width and float */
+        box-sizing: border-box;
+        position: relative;
+        margin-left: 55%;
+        margin-top: 289px; /* Adjust border thickness here */
+        animation: fadeInAnimation 1.5s, slideUpDownAnimation 2.5s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
+ 
+    }
+
+    .gif-container {
+    width: 30vw;
+    height: 58vh;
+    float: left;
+    box-sizing: border-box;
+    position: relative;
+    margin-left: 65%;
+    margin-top: -500px;
+    animation: fadeInAnimation 1.5s ease-in-out infinite, blurFadeIn 1s ease-out forwards; /* Adjust margin for spacing */
+    border-radius: 35px;
+}
+
+.the-journey {
+    display: block;
+    width: 65%;
+    float: left;
+    margin-right: -200px; /* Add space between sections */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 200px;
+ position: relative;
+ left: 18px;
+}
+.contact .hmu {
+  display: block;
+  width: 45%;
+  text-align: left;
+  position: absolute;
+  top: 0;
+  
+}
+
+.contact .hmu h4 {
+  color: #ffffff;
+  font-size: 50px;
+
+} 
+.contact .hmu h5 {
+  color: #585858;
+  font-size: 15px;
+}  
+.hmu h6 {
+  color: #ffffff;
+  font-size: 43px;
+  margin-top: 33px;
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+/* Styling for animated state */
+.hmu h6.h6-animate {
+    opacity: 1;
+    /* Set initial opacity to 0 for animated state */
+    transition: opacity 0.7s ease-in-out;
+    /* Use a transition instead of animation */
+}
+
+/* Styling for active state (when in view) */
+.hmu h6.h6-animate.active {
+    opacity: 0;
+    /* When in view, set opacity to 1 */
+    transition: opacity 0.3s ease-in-out;
+    /* Use a shorter duration for a more abrupt transition */
+}
+
+.portfolio {
+      display: block;
+      width: 100%;
+    
+      height: 100vh;
+      white-space: nowrap; /* Prevent items from wrapping */
+      box-sizing: border-box;
+      margin-top: 1690px; /* Adjust as needed */
+      position: relative;
+      white-space: nowrap; /* Prevent line breaks within content */
+      margin-right: 5%;
+      scroll-behavior: smooth; /* Smoother scrolling animations */
+      scrollbar-width: thin; 
+      left: 18px;
+      
+    }
+  
+    .sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 200vh;
+  position: relative;
+  
+}
+
+
+
+    .scroll_section{
+position: sticky;
+top: 0;
+height: 100%;
+width: 200vw;
+will-change: transform;
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}  
+
+.scroll_section img{
+  width: 480px;
+  height: 45%;
+  object-fit: cover;
+  margin-top: -650px;
+  border-radius: 55px;
+  opacity: 0.91;
+  transform: translateY(0) scale(1);
+    transition: transform 0.5s ease, opacity 0.1s ease , border-radius 0.5s ease; /* Adjust the opacity transition duration */
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    margin-left: 20px;
+/* Initially set opacity to 0 */
+    }
+
+
+  .scroll_section img:hover {
+    transform: scale(1.08);
+    opacity: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 70px;
+  }
+
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0.9;
+      transform: translateY(20px) scale(1);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1.1);
+    }
+  }
+.testi{
+  display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            
+			margin-top: 2750px;
+            position: relative;
+            left: 18px;
+}
+.edu{
+  display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            
+			margin-top: 150px;
+            position: relative;
+            left: 18px;
+}
+.edu h5 {
+  color: #000000;
+  font-size: 33px;
+  margin-top: 33px;
+  font-weight: normal;
+}
+.exp{
+  display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            
+			margin-top: 150px;
+            position: relative;
+            left: 18px;
+}
+
+.res{
+  display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            
+			margin-top: 150px;
+            position: relative;
+            left: 18px;
+}
+    .end {
+            display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+            
+			margin-top: -150px;
+            position: relative;
+            left: 18px;
+            padding-bottom: 75px;
+        }
+      .faq{
+        display: block;
+            width: 100%;
+            float: left;
+            margin-right: 30%; /* Add space between sections */
+            padding: 20px;
+            box-sizing: border-box;
+			      margin-top:850px;
+            position: relative;
+            left: 18px;
+            max-width: 700px;   
+          }
+
+          .quote {
+  float: right;
+  margin-top: -620px;
+  margin-right: 145px;
+  animation: zoomInOut 6s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  2.5% {
+    transform: scale(1.005);
+  }
+  5% {
+    transform: scale(1.01);
+  }
+  7.5% {
+    transform: scale(1.015);
+  }
+  10% {
+    transform: scale(1.02);
+  }
+  12.5% {
+    transform: scale(1.025);
+  }
+  15% {
+    transform: scale(1.03);
+  }
+  17.5% {
+    transform: scale(1.025);
+  }
+  20% {
+    transform: scale(1.02);
+  }
+  22.5% {
+    transform: scale(1.015);
+  }
+  25% {
+    transform: scale(1.01);
+  }
+  27.5% {
+    transform: scale(1.005);
+  }
+  30% {
+    transform: scale(1);
+  }
+  32.5% {
+    transform: scale(1.005);
+  }
+  35% {
+    transform: scale(1.01);
+  }
+  37.5% {
+    transform: scale(1.015);
+  }
+  40% {
+    transform: scale(1.02);
+  }
+  42.5% {
+    transform: scale(1.025);
+  }
+  45% {
+    transform: scale(1.03);
+  }
+  47.5% {
+    transform: scale(1.025);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  52.5% {
+    transform: scale(1.015);
+  }
+  55% {
+    transform: scale(1.01);
+  }
+  57.5% {
+    transform: scale(1.005);
+  }
+  60% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.miss{
+  padding-bottom: 1rem;
+            border-bottom: 2px solid #333;
+            cursor: pointer;
+}
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease;
+}
+.miss.active .answer{
+max-height: 300px;
+animation: fade 1s ease-in-out;
+}
+.miss.active svg {
+transform: rotate(-180deg);
+}
+svg{
+transition: transform 0.5s ease-in;
+}
+@keyframes fade {
+from {
+opacity: 0;
+transform: translateY(-10px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0px);
+}
+}
+
+.question{
+  display: flex;
+justify-content: space-between;
+}
+.svg-container {
+    margin-top: 11%; /* You can adjust the value based on your preference */
+  }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .nav-logo {
+            float: right;
+            margin-left: auto;
+            /* Push the navigation links to the left */
+            margin-right: 20px;
+            /* Add some space between the image and the links */
+        }
+
+        .hello-text {
+            margin-top: 18.25%;
+            width: 100%;
+            font-family: 'SF Pro Rounded Regular', Arial, sans-serif;
+            text-align: center;
+            margin-left: 0%;
+            font-size: 1.25em;
+            animation: fadeInAnimation 1.5s, slideUpDownAnimation 1s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
+            text-shadow: #1a1a1a;
+            font-weight: bolder;
+        }
+
+        @keyframes slideUpDownAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes blurFadeIn {
+            from {
+                filter: blur(10px);
+                opacity: 0;
+            }
+
+            to {
+                filter: blur(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            /* At 0%, start from transparent */
+            50% {
+                opacity: 1;
+            }
+            /* At 50%, fully visible */
+            100% {
+                opacity: 0;
+            }
+        }
+        
+    .slide-up {
+    opacity: 0.7;
+    transform: translateY(60px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+    .slide-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+h3 span {
+  display: inline-block; /* Keeps elements on the same line */
+  overflow: hidden; /* Hide content */
+  animation: typewriter 0.5s steps(5, end) forwards;
+  white-space: nowrap;
+  
+}
+.Aim h5 {
+   text-align: right;
+    line-height: 0.9;
+    font-size: small;
+    font-weight: bold;
+    margin-right: -120px;
+    margin-top: -36px;
+    color: #333;
+  }
+  .socials {
+  text-align: right;
+  margin-top: -239px;
+  margin-right: -120px;
+  }
+  .socials h6 {
+    font-size: 43px;
+  margin-top: 33px;
+  font-weight: normal;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out; /* Adjust the font size as needed */
+  }
+.typewriter {
+  animation: typewriter 1s steps(40, end) forwards; /* Increased steps for smoother typing */
+  display: inline-block; /* Handles punctuation and whitespace better */
+  color: black; /* Specify initial color for clarity */
+}
+.question h5{
+            color: #000000;
+            font-size: 35px;
+            font-weight: 500;
+}
+
+@keyframes typewriter {
+  0% {
+    width: 0%;
+    opacity: 0;
+    filter: blur(1.3px);
+    letter-spacing: -0.05em; /* Subtle initial letter-spacing for realism */
+  }
+
+  25% {
+    width: 30%;
+    opacity: 0.7;
+    filter: blur(0.7px);
+    letter-spacing: 0.02em; /* Slight letter-spacing during typing */
+  }
+
+  75% {
+    width: 90%;
+    opacity: 0.9;
+    filter: blur(0.2px);
+    letter-spacing: 0.01em;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: 0; /* Reset letter-spacing for natural final look */
+  }
+}
+.gif-container img {
+  border-radius: 35px;
+
+}
+/* Additional cool touches: */
+
+.typewriter.blinking {
+  animation: blinking 1s step-end infinite alternate;
+}
+
+@keyframes blinking {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.typewriter.cursor {
+  animation: cursor 0.6s step-end infinite alternate;
+}
+
+@keyframes cursor {
+  from, to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black; /* Adjust color as needed */
+  }
+}
+
+.typewriter.error {
+  animation: shake 0.3s linear infinite alternate;
+}
+
+@keyframes shake {
+  from, to {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .scroller {
+max-width: 90%;
+margin-left: 5%;
+margin-top: 54px;
+    }
+
+
+
+.scroller_inner {
+display: flex;
+gap: 10rem;
+display: flex;
+flex-wrap: wrap;
+
+}
+
+.scroller[data-animated="true"] {
+  overflow: hidden;
+  -webkit-mask: linear-gradient(
+90deg,
+transparent,
+rgb(0, 0, 0) 10%,
+rgb(0, 0, 0) 90%,
+transparent);
+}
+
+.chat h6 {
+    display: inline-block;
+   margin-top: -1px;  /* Adjust the margin as needed to separate the items */
+  }
+.relax {
+  margin-top: -1px;
+}
+
+
+.scroller[data-animated="true"] .scroller_inner {
+  flex-wrap: nowrap;
+  animation: scroll 15s linear infinite;
+}
+@keyframes scroll {
+to{
+  transform: translate(-50%); 
+}
+ 
+}
+
+.name h5{
+            color: #000000;
+            font-size: 35px;
+            font-weight: 500;
+}
+.aside p{
+  font-size:20px;
+}
+.name p {
+  font-size:20px;
+}
+.site {
+  display: flex;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.yocontainer{
+  max-width: 1900px;
+  width: 100%;
+
+}
+
+.testi{
+  max-width: 100%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+
+.slick-slider .slide .thumbnail {
+  width: 230px;
+  height: 230px;
+  position: relative;
+  z-index: 0;
+  gap: 60px;
+}
+
+.slick-slider .slide .thumbnail img  {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: linear-gradient(rgba(169, 169, 169, 0.26) 0%, rgba(105, 105, 105, 0.5) 100%);
+  border-radius: 50%;
+  z-index: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}  
+.slick-slider .slide .thumbnail::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% + 30px);
+  height: calc(100% + 10px);
+  background-color: #333; /* Fix: Added two dashes before primary-color */
+  transition: border-radius 0.5s 0.3s ease-in-out; /* Fix: Added missing "s" after 0.5s */
+  z-index: -1;
+  opacity: 1;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 90%;
+}
+.sure{
+  border-bottom: 1px solid #333;
+}
+
+.slick-slider .slide:hover .thumbnail::before {
+  border-radius: 33% 67% 50% 58% / 50% 14% 86% 50%; /* Moved border-radius to hover state */
+}
+
+.name h5 {
+    margin-bottom: 20px; /* Adjust the value as needed */
+  }
+.aside p{
+  margin-bottom: -20px;
+  line-height: 30px;
+}
+
+  .slick-slider .slide .wrapper  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+  padding: 30px 0;
+  margin-left: 19%;
+  width: 62%;
+}
+.test-container{
+  margin-top: 300px;
+}
+.wrap{
+  padding: 30px 0;
+}
+.testi .wrapper {
+flex-direction: row;
+margin-left: 25%;
+  }
+@media only screen and (max-width: 767px),
+  only screen and (max-device-width: 480px) and (max-device-height: 960px) and (-webkit-device-pixel-ratio: 2),
+  only screen and (min-device-width: 481px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min-device-width: 481px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape),
+  only screen and (min-device-width: 481px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (min-device-width: 481px) and (max-device-width: 896px) and (-webkit-min-device-pixel-ratio: 3),
+  only screen and (max-width: 1024px),
+  (max-device-width: 1024px) {
+  body {
+    background: none; /* Remove background image for all tablets */
+  }
+  .slick-slider .slide .wrapper {
+flex-direction: row;
+  }
+  .testi .thumbnail{
+  opacity: 0;
+  }
+  .container-3D,
+  .gif-container,.quote {
+    display: none; /* Hide 3D container, gif container on smaller screens */
+  }
+
+  .the-journey {
+    margin-top: 900px;
+    width: 100%;
+  }
+
+  .about {
+    width: 100%;
+  }
+  .empty-space {
+            height: 9000px;
+          }
+
+    .faq{
+      background: #fff;
+    }
+    .end {
+  
+            
+  margin-top: 50px;
+
+}
+.hmu h6 {
+ 
+  font-size: 33px;
+
+}
+}
+@media only screen and (max-width: 1368px),
+  (max-device-width: 1368px) {
+  body {
+    background: none; /* Remove background image for all tablets */
+  }
+
+  .container-3D,
+  .gif-container,.quote {
+    display: none; /* Hide 3D container, gif container on smaller screens */
+  }
+
+  .the-journey {
+    margin-top: 900px; /* Adjust margin-top as needed */
+    width: 100%;
+  }
+
+  .about {
+    width: 100%;
+  }
+
+  .empty-space {
+    height: 17480px; /* Adjust height as needed */
+  }
+
+  .lenis {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: auto;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: auto;
+  }
+
+  .lenis.lenis-scrolling iframe {
+    pointer-events: auto;
+  }
+}
+/* For 1280x720 resolution */
+@media (max-width: 1280px) and (max-height: 720px) {
+    body {
+        background-image: none; /* Hide the background image */
+        zoom: 72%;/* Add any additional styling for 720p resolutions if needed */
+    }
+    .empty-space {
+            height: 17380px;
+          }
+
+}
+@media (max-width: 1368px) and (max-height: 768px) {
+    body {
+        background-image: none; /* Hide the background image */
+        zoom: 80%;/* Add any additional styling for 720p resolutions if needed */
+    }
+    .empty-space {
+            height: 17710px;
+          }
+
+
+}
+/* For 1280x1024 resolution */
+@media (max-width: 1280px) and (max-height: 1024px) {
+    body {
+        background-image: none; /* Hide the background image */
+        /* Add any additional styling for 1280x1024 resolutions if needed */
+    }
+    .empty-space {
+            height: 17710px;
+          }
+
+}
+</style>
+
+<style>
+  
+
+   
+    .cursor {
+      position: fixed;
+      width: 30px; /* Reduce size for more subtlety */
+      height: 30px; /* Reduce size for more subtlety */
+      background-color: transparent; /* Modern white color */
+      border-radius: 50%;
+      pointer-events: none;
+      opacity: 1;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      transition: transform 0.2s ease-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add smoother transitions */
+      opacity: 0.3;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 0 6px 4px rgba(0, 0, 0, 0.1); /* Subtle, modern shadow */
+    }
+
+    /* Animation styles */
+    .cursor:hover {
+      background-color: #3498db; /* Modern blue on hover */
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3), 0 0 8px 6px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+      transform: scale(1.2); /* Subtle expansion on hover */
+    }
+
+    .cursor-trail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-trail .trail {
+      position: absolute;
+      width: 20px; /* Adjust trail width as needed */
+      height: 20px; /* Adjust trail height as needed */
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent white trail */
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease-out;
+    }
+    .base{
+      margin-top: -38px;
+      margin-left: 25px;
+      color: #333;
+    }
+    .lol{
+      margin-top: -38px;
+      text-align: right;
+      color: #333;
+      margin-right: 16px;
+    }
+    .timeline-content {
+  border: 1.5px solid #000000;
+  padding: 40px;
+  max-width: 35%;
+  border-radius: 45px;
+  width: 55%;
+  height: 250px;
+  transform: translateY(0) scale(1);
+  transition: transform 0.5s ease, opacity 0.3s ease, border-radius 0.5s ease; /* Added border-radius transition */
+  cursor: pointer;
+}
+
+.timeline-content:hover {
+  transform: scale(1.03);
+  opacity: 1;
+  border-radius: 60px;
+}
+
+.timeline-content2 {
+  border: 1.5px solid #000000;
+  padding: 40px;
+  margin-top: 40px;
+  max-width: 35%;
+  border-radius: 45px;
+  width: 55%;
+  height: 250px;
+  transform: scale(1);
+  transition: transform 0.5s ease, opacity 0.3s ease, border-radius 0.5s ease; /* Added border-radius transition */
+  cursor: pointer;
+}
+
+.timeline-content2:hover {
+  transform: scale(1.03);
+  opacity: 1;
+  margin-right: 30px;
+  border-radius: 60px;
+}
+.timeline-content, .timeline-content2 {
+  opacity: 0; 
+}
+
+
+.slide-up {
+  animation: slideUp 1s ease-in-out forwards;
+  will-change: transform, opacity;
+}
+.slide-ups {
+  animation: slideUps 1s ease-in-out forwards;
+  will-change: transform, opacity;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0px) scale(1); /* Adjust translateY value based on your desired slide distance */
+    opacity: 1;
+  }
+}
+
+@keyframes slideUps {
+  0% {
+    transform: translateY(20px) scale(1);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px) scale(1); /* Adjust translateY value based on your desired slide distance */
+    opacity: 1;
+  }
+}
+
+  .exp h5 {
+  color: #000000;
+  font-size: 30px;
+  margin-top: 33px;
+  font-weight: 500;
+}
+.skills{
+  margin-top: 30px;
+}
+.new-svg{
+margin-left: 60%;
+margin-top: -50%;
+
+}
+.skill-bar{
+height: 14px;
+background: #f5f5f5;
+max-width: 45%;
+border-radius: 15px;
+overflow: hidden;
+}
+.skill-per{
+height: 14px;
+background:#444;
+border-radius: 15px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+width: 0; /* Initial width is set to 0 */
+      transition: width 1s ease-in-out; /* Use CSS transition for smoother effect */
+    }
+
+    .animate {
+      width: 100%;
+    }
+  
+    @keyframes widthTransition {
+      0% { width: 0; }
+      20% { width: 30%; }
+      40% { width: 50%; }
+      60% { width: 70%; }
+      80% { width: 85%; }
+      100% { width: 100%; }
+    }
+    .res{
+      height: 100vh;
+      width: 100%;
+    }
+
+    .row{
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+     grid-gap: 50px;
+
+    }
+    .row h5{
+            color: #000000;
+            font-size: 35px;
+            font-weight: 500;          
+}
+.row .service {
+  border: #444 solid 1px;
+  padding: 25px;
+  border-radius: 45px;
+  transition: transform .5s, border-radius .5s; /* Added border-radius transition */
+  cursor: pointer;
+}
+
+.row .service:hover {
+  transform: scale(1.05);
+  border-radius: 60px;
+}
+.row .service i {
+   font-size: 40px;
+}
+
+  </style>
+
+
+    <script>
+        function smoothScroll(target, duration = 500) {
+  const startPosition = window.pageYOffset;
+  const distance = target - startPosition;
+  let start = null;
+
+  function ease(t) {
+    return t < 0.5 ? 4 * t * t * t : (t - 1) * ((2 - t) * (2 - t) + 1) * 4;
+  }
+
+  requestAnimationFrame(function step(timestamp) {
+    if (!start) start = timestamp;
+
+    const progress = timestamp - start;
+    const normalizedTime = ease(progress / duration); // Customize easing function here
+    const delta = distance * normalizedTime;
+    window.scrollTo(0, startPosition + delta);
+
+    if (progress < duration) {
+      requestAnimationFrame(step);
+    }
+  });
+}
+    </script>
+
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+<script>
+
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+const navLinks = document.querySelectorAll('nav a');
+const skills = ["A Full Stack Developer","A Product Designer","A Freelancer","A Copywriter", "A Video Editor", "A UI/UX Designer", "A Web Developer", "A Web Designer","A Really Chill Guy", "A Photographer", "A Writer"];
+let currentSkillIndex = 0;
+
+// Smooth scrolling behavior with Lenis
+const smoothScrollTo = target => {
+    lenis.animate({
+        targets: document.scrollingElement || document.documentElement,
+        scrollTop: target,
+        duration: 2500, // Adjust the duration as needed
+        easing: 'easeInOutCubic', // Use Lenis easing functions
+    });
+};
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+        if (this.hash) {
+            event.preventDefault();
+            smoothScrollTo(document.getElementById(this.hash).offsetTop);
+        }
+    });
+});
+
+const typeWriter = () => {
+    const skillText = skills[currentSkillIndex];
+    const teamTitleElement = document.getElementById("team-title");
+
+    for (let j = 1; j <= skillText.length; j++) {
+        setTimeout(() => {
+            teamTitleElement.innerHTML = "A" + skillText.substring(1, j);
+        }, j * 100); // Adjust speed (slower)
+    }
+
+    setTimeout(() => {
+        // Trigger backspace effect
+        backspace(skillText.length);
+    }, skillText.length * 100 + 2000); // Adjust delay before backspacing
+};
+
+const backspace = length => {
+    const teamTitleElement = document.getElementById("team-title");
+
+    // Check if "A" is not at the beginning before backspacing
+    if (teamTitleElement.innerHTML.startsWith("A")) {
+        teamTitleElement.innerHTML = "A" + teamTitleElement.innerHTML.substring(1);
+    }
+
+    for (let k = length; k >= 1; k--) {
+        setTimeout(() => {
+            teamTitleElement.innerHTML = "A" + teamTitleElement.innerHTML.substring(1, k);
+        }, (length - k) * 50); // Adjust backspace speed (slower)
+    }
+
+    setTimeout(() => {
+        // Move to the next skill after backspacing
+        currentSkillIndex = (currentSkillIndex + 1) % skills.length;
+        typeWriter();
+    }, length * 50 + 1000); // Adjust delay before moving to the next skill
+};
+
+typeWriter();
+
+const headlines = document.querySelectorAll("h1:not(#team-title)");
+headlines.forEach((headline, index) => {
+    headline.style.animation = `fade-in ${index + 1}s ease-in-out forwards`;
+});
+});
+
+
+
+    </script>
+    <script>
+        document.addEventListener('scroll', function () {
+            const scrollPosition = window.pageYOffset;
+            const maxScroll = document.body.scrollHeight - window.innerHeight;
+            const blurAmount = (scrollPosition / maxScroll) * 40; //To adjust the factor as needed for more intense blur
+
+            document.body.style.backdropFilter = `blur(${blurAmount}px)`;
+        });
+
+    </script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/io.js@4.20.1/dist/io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@<version>/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@<version>/examples/jsm/"
+          }
+        }
+      </script>
+    
+
+
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-trail">
+    <div class="trail"></div>
+  </div>
+    <div class="img">
+ 
+        <h2>&nbsp; </h2>
+    </div>
+    
+    <nav>
+        <a href="#" data-scroll="home">Home</a>
+    <a href="#" data-scroll="about">About</a>
+    <a href="#" data-scroll="journey">The Journey</a>
+    <a href="#" data-scroll="portfolio">Portfolio</a>
+    
+        <div class="nav-logo">
+          <a href="mailto:treasure32109@gmail.com?subject=Subject%20Here&body=Hello%20Treasure," ><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30" height="30" viewBox="0 0 256 256" xml:space="preserve">
+
+<defs>
+</defs>
+<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+	<path d="M 89.999 45 C 89.999 20.188 69.813 0.001 45 0.001 S 0.001 20.188 0.001 45 S 20.188 89.999 45 89.999 c 2.485 0 4.5 -2.015 4.5 -4.5 s -2.015 -4.5 -4.5 -4.5 C 25.15 80.999 9.001 64.85 9.001 45 C 9.001 25.15 25.15 9.001 45 9.001 c 19.85 0 35.999 16.149 35.999 36.054 c 0.059 4.718 -1.178 10.789 -4.069 13.716 c -1.269 1.284 -2.757 1.882 -4.686 1.882 c -4.443 0 -5.797 -1.516 -6.242 -2.013 c -1.81 -2.026 -2.411 -6.23 -1.741 -12.159 c 0.002 -0.014 -0.001 -0.027 0 -0.041 c 0.001 -0.013 0.006 -0.025 0.007 -0.038 l 0.08 -0.84 c 0.051 -0.482 0.106 -0.962 0.137 -1.445 l 1.792 -18.845 c 0.235 -2.474 -1.579 -4.67 -4.054 -4.906 c -2.259 -0.215 -4.269 1.288 -4.783 3.434 c -2.734 -2.239 -6.14 -3.475 -10.025 -3.454 c -8.045 0 -14.87 4.117 -19.225 11.602 c -5.494 9.44 -5.976 22.925 -1.122 31.366 c 3.074 5.346 7.96 8.29 13.757 8.29 c 6.671 0 12.66 -3.144 17.031 -8.885 c 0.43 0.682 0.904 1.324 1.432 1.916 c 2.975 3.329 7.333 5.018 12.954 5.018 c 4.31 0 8.144 -1.576 11.088 -4.557 C 89.669 58.682 90.037 48.05 89.999 45 z M 40.827 62.604 c -2.546 0 -4.494 -1.235 -5.955 -3.776 c -3.264 -5.677 -2.772 -15.704 1.098 -22.354 c 1.895 -3.256 5.417 -7.127 11.472 -7.127 c 0.024 0 0.049 0 0.073 0 c 7.669 0 8.058 10.348 8.058 12.422 c 0 0.511 -0.018 1.037 -0.053 1.574 l -0.148 1.555 C 54.384 52.944 49.694 62.604 40.827 62.604 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(45,45,45); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+</g>
+</svg></a>
+        </div>
+    </nav>
+
+    <h1>&nbsp;</h1>
+    <h1>&nbsp;</h1>
+
+    <h1><strong>&nbsp; &nbsp; &nbsp;<span id="team-title"></span></strong></h1>
+   
+    <h1>&nbsp;</h1>
+    <div class="animated-text hide" id="helloText">
+        <h2 class="hello-text" id="helloTextContent"> _________________ </h2>
+    </div>
+ <h5 class=base>(Based in Lagos, Nigeria)</h5>
+ <h5 class="lol">(Download CV)</h5>
+    <div class="empty-space">
+<!-- About section -->
+<section class="about-and-threejs" id="about">
+    <div class="about">
+      <h1 class="Title">About</h1>
+      <div class="container">
+        <h3>Hey! I’m Treasure, a 16-year-old web designer. I believe in the</h3>
+        <h3>beauty of simplicity, where less is truly more. My passion lies in creating</h3>
+        <h3>elegant and designs that resonate with clarity and purpose.</h3>
+  
+        <h3>Whether it’s a clean user interface, a serene piece of writing, or a</h3>
+        <h3>thoughtfully composed photograph, I find joy in stripping away the</h3>
+        <h3>unnecessary to reveal the essence of what truly matters. Join me on this</h3>
+        <h3>journey of simplicity, where every pixel, word, and breath counts.</h3>
+        <h3>Explore my work by clicking on the images on the portfolio section.</h3>
+        <h3>Let’s create something remarkable together. </h3>
+    </div>
+</div>          
+  </section>
+  <div class="container-3D" id="container3D"></div>
+  
+
+
+
+  
+<!-- The Journey section -->
+<section class="the-journey" id="journey">
+    <h1 class="title">The Journey</h1>
+    <div class="container">
+    
+        <h3>In the bustling streets of Lagos, I emerged from humble </h3> 
+        <h3>beginnings with dreams that seemed to have stretched beyond the</h3>
+        <h3>horizon. Pan-Atlantic University in Lekki became my refuge, where </h3>
+        <h3>mentors fueled my passions and exams tested my resilience. </h3>
+        <h3>Through God helping me in studies and lots of good friendships, facilitating my</h3>
+        <h3>connections made, I clung to the belief that education was my compass.</h3>
+        <h3> Stripping away distractions, I found clarity, and in code and</h3>
+        <h3>canvas, I expressed the elegance of simplicity. Pan-Atlantic University,  </h3>
+        <h3>rooted in St. Josemaria Escrivá's teachings, became the canvas where my </h3>
+        <h3>dreams are starting to evolve into tangible realities.</h3>       
+      
+    
+</div>
+</section>
+<div class="gif-container">
+ <img src="lol.gif" alt="">
+</div>
+        
+        <div class="portfolio-container" id="portfolio">
+            <section class="portfolio">
+                <h1 class="title">Portfolio</h1>
+                <div class="sticky">
+    <div class="scroll_section"></div>
+                </div>
+            </section>
+        </div>
+        <div class="faq-container">
+          <section class="faq"><h1 class="title">Frequently Asked</h1>
+            <div class="miss">
+            <div class="question">
+              <h5>Treasure, are you Available ?</h5>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+                <defs>
+                  <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#231f20;}</style>
+                </defs>
+                <title>arrow-ios-downward</title>
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="arrow-ios-downward">
+                    <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                      <rect class="cls-1" width="15" height="10"/>
+                      <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            </div>
+              <div class="answer">
+                <h3>"Yeah, I'm always available. Wagwan? Let me know what you need</h3>
+                <h3>by sending me an email. It's at the bottom of the page"</h3>
+            </div>
+          </div>
+          <div class="miss">
+            <div class="question">
+              <h5>Treasure, do you enjoy your work ?</h5>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+                <defs>
+                  <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#231f20;}</style>
+                </defs>
+                <title>arrow-ios-downward</title>
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="arrow-ios-downward">
+                    <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                      <rect class="cls-1" width="15" height="10"/>
+                      <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            </div>
+              <div class="answer">
+                <h3>"Yeah, bruv, you know I'm out here in the coding game, stacking that tech paper.</h3>
+                <h3>The grind's real. but I love what I do. Building them sick apps and websites,</h3>
+                <h3>it's a mad ting. Always chasing success and excellence to be honest, you feel me?</h3>
+                <h3>Gotta stay on that hustle, but I enjoy every minute of it, no cap."</h3>
+            </div>
+          </div>
+          <div class="miss">
+            <div class="question">
+              <h5>Treasure, will you marry me ?</h5>
+              <div class="svg-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+                <defs>
+                  <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#231f20;}</style>
+                </defs>
+                <title>arrow-ios-downward</title>
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="arrow-ios-downward">
+                    <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                      <rect class="cls-1" width="15" height="10"/>
+                      <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            </div>
+              <div class="answer">
+                <h3>"Ah, currently, I'm already locked in with someone special. Can't be making moves</h3>
+                <h3> like that.  Gotta stay loyal, you feel me? Respect for being straight up, though.</h3>
+                <h3> Let's keep it professional and keep it moving on good terms."</h3>
+            </div>
+          </div>
+          <div class="miss">
+            <div class="question">
+              <h5>Treasure, do you make company websites ?</h5>
+              <div class="svg-container">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+                <defs>
+                  <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#231f20;}</style>
+                </defs>
+                <title>arrow-ios-downward</title>
+                <g id="Layer_2" data-name="Layer 2">
+                  <g id="arrow-ios-downward">
+                    <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                      <rect class="cls-1" width="15" height="10"/>
+                      <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                    </g>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            </div>
+              <div class="answer">
+                <h3>"Yeah, per usual, I create elegant websites for companies avoiding unnecessary</h3>
+                <h3> animations as seen here and keeping things simple. Gotta keep that code flowing</h3>
+                <h3> and deliver excellence to my clients."</h3>
+               
+            </div>
+          </div>
+          </section>
+          </div>
+          <div class="quote">
+            
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 width="500px" height="500px" viewBox="0 0 123.961 123.961"
+	 xml:space="preserve">
+<g>
+	<path d="M49.8,29.032c3.1-1.3,4.4-5,3-8l-4.9-10.3c-1.4-2.899-4.8-4.2-7.8-2.899c-8.5,3.6-15.8,8.3-21.6,14
+		C11.4,28.532,6.6,36.232,4,44.732c-2.6,8.601-4,20.3-4,35.2v30.7c0,3.3,2.7,6,6,6h39.3c3.3,0,6-2.7,6-6v-39.3c0-3.301-2.7-6-6-6
+		H26.5c0.2-10.101,2.6-18.2,7-24.301C37.1,36.133,42.5,32.133,49.8,29.032z"/>
+	<path d="M120.4,29.032c3.1-1.3,4.399-5,3-8l-4.9-10.199c-1.4-2.9-4.8-4.2-7.8-2.9c-8.4,3.6-15.601,8.3-21.5,13.9
+		c-7.101,6.8-12,14.5-14.601,23c-2.6,8.399-3.899,20.1-3.899,35.1v30.7c0,3.3,2.7,6,6,6H116c3.3,0,6-2.7,6-6v-39.3
+		c0-3.301-2.7-6-6-6H97.1c0.2-10.101,2.601-18.2,7-24.301C107.7,36.133,113.1,32.133,120.4,29.032z"/>
+</g>
+</svg>
+          </div>
+          <div class="test-container">
+            <div class="yocontainer">
+                <section class="testi">
+                    <h1 class="title">Testimonials</h1>
+                    <div class="slick-slider">
+                        <div class="slide">
+                            <div class="wrapper">
+                                <div class="thumbnail">
+                                    <img src="https://dr.savee-cdn.com/things/thumbnails/5/a/9107676b03003a7e52fa74.webp" alt="">
+                                </div>
+                                <div class="aside">
+                                    <p>"I love your unique approach to web design. How versatile you are. Your work is different, minimalist but yet professional and visually pleasing. It's not just eye candy. It's functional"</p>
+                                    <div class="name">
+                                        <h5 class="sure">Deshaun Morris</h5>
+                                        <p>Music Producer</p>
+                                        <p>Visit Site</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional Slide 1 -->
+                        <div class="slide">
+                            <div class="wrapper">
+                                <div class="thumbnail">
+                                 
+                                    <img src="https://i.pinimg.com/originals/42/b3/f6/42b3f6c2d9d45669a1d7b125850098dd.jpg" alt="">
+                                 
+                                  </div>
+                                <div class="aside">
+                                    <p>"Bro, your web dev skills are absolutely killer, like code poetry, man!"</p>
+                                    <div class="name">
+                                        <h5 class="sure">Jay Daniels</h5>
+                                        <p>Graphic Designer</p>
+                                        <p>Visit Site</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional Slide 2 -->
+                        <div class="slide">
+                            <div class="wrapper">
+                                <div class="thumbnail">
+                                    <img src="https://i.pinimg.com/originals/b1/13/97/b11397138f6f704dceaeaceb6ce155ef.png" alt="">
+                                </div>
+                                <div class="aside">
+                                    <p>"Really loving the way you bring functionality and style together."</p>
+                                    <div class="name">
+                                        <h5 class="sure">Jane Smith</h5>
+                                        <p>Web Developer</p>
+                                        <p>Visit Site</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script>
+          $(document).ready(function () {
+              $('.slick-slider').slick({
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 4000, // Adjust the speed as needed
+                  dots: true,
+                  arrows: false,
+                  infinite: true, // Ensure infinite loop
+                  speed: 1000, // Adjust the animation speed
+                  easing: 'ease-in-out', // Use easing for smoother animation
+                  pauseOnHover: false, // Prevent pausing on hover
+                  pauseOnFocus: false, // Prevent pausing on focus
+              });
+          });
+      </script>
+            <div class="edu-container">
+              <section class="edu"><h1 class="title">Education</h1>
+                <div class="contain">
+                  <div class="timeline">
+                    <ul class="time">
+                      <li>
+                        <div class="timeline-content">
+                          <h5>High-School Education</h5>
+                          <p>I attended CITA High School in Rivers state Nigeria and graduated with a 5 point GPA.</p>
+                          <p class="long">2017-2023</p>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="timeline-content2">
+                          <h5>University Education</h5>
+                          <p>I'm currently at Pan Atlantic University.</p>
+                          <p class="long">2023-2027</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+              
+              </section>
+              </div>
+              <div class="new-svg">
+
+
+              </div>
+            <div class="exp-container">
+              <section class="exp"><h1 class="title">Experience</h1>
+              <div class="skills">
+                <div class="skill">
+                  <div class="skill-name"><h5>HTML & CSS</h5></div>
+                  <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width: 95%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-name"><h5>JavaScript</h5></div>
+                  <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width: 85%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-name"><h5>Java</h5></div>
+                  <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width: 80%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-name"><h5>Rust</h5></div>
+                  <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width: 85%;"></div>
+                  </div>
+                </div>
+
+                <div class="skill">
+                  <div class="skill-name"><h5>Python</h5></div>
+                  <div class="skill-bar">
+                    <div class="skill-per" per="90%" style="max-width: 95%;"></div>
+                  </div>
+                </div>
+              </div>
+              </section>
+              </div>
+              <div class="res-container">
+                <section class="res"><h1 class="title">Hobbies & Services</h1>
+                  <div class="row">
+                    <div class="service">
+                      <i class="fa-solid fa-code"></i>
+                       <h5>Web Dev.</h5>
+                       <h3>I make cool websites.</h3>
+                    </div>
+                    <div class="service">
+                      <i class="fa-solid fa-paint-roller"></i>
+                       <h5>Web Design</h5>
+                       <h3>I make websites look good.</h3>
+                    </div>
+                    <div class="service">
+                      <i class="fa-solid fa-window-restore"></i>
+                       <h5>UI / UX</h5>
+                       <h3>I make intuitive interfaces.</h3>
+                    </div>
+                    <div class="service">
+                      <i class="fa-solid fa-feather"></i>
+                       <h5>Writing</h5>
+                       <h3>I love composing writings.</h3>
+                    </div>
+                    <div class="service">
+                      <i class="fa-solid fa-language"></i>
+                       <h5>Languages</h5>
+                       <h3>I love learning languages.</h3>
+                    </div>
+                  </div>
+                  
+                </section>
+                </div>
+        <section class="end">
+            <h1 class="title">Skills</h1>
+            <div class="scroller">
+              <ul class="tag-list scroller_inner">
+  <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M4.136 3.012h15.729l-1.431 16.15-6.451 1.826-6.414-1.826-1.433-16.15zm5.266 7.302-.173-2.035 7.533.002.173-1.963-9.87-.002.522 5.998h6.835l-.243 2.566-2.179.602-2.214-.605-.141-1.58H7.691l.247 3.123L12 17.506l4.028-1.08.558-6.111H9.402v-.001z"></path></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M4.192 3.143h15.615l-1.42 16.034-6.404 1.812-6.369-1.813L4.192 3.143zM16.9 6.424l-9.8-.002.158 1.949 7.529.002-.189 2.02H9.66l.179 1.913h4.597l-.272 2.62-2.164.598-2.197-.603-.141-1.569h-1.94l.216 2.867L12 17.484l3.995-1.137.905-9.923z"></path></svg></li>
+            
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M20.66 7a1.51 1.51 0 0 0-.55-.57l-7.34-4.24a1.67 1.67 0 0 0-1.54 0L3.89 6.43a1.68 1.68 0 0 0-.77 1.33v8.48a1.57 1.57 0 0 0 .22.76 1.51 1.51 0 0 0 .55.57l7.34 4.24a1.67 1.67 0 0 0 1.54 0l7.34-4.24a1.51 1.51 0 0 0 .55-.57 1.57 1.57 0 0 0 .22-.76V7.76a1.57 1.57 0 0 0-.22-.76zM12 17.92A5.92 5.92 0 1 1 17.13 9L16 9.71l-.36.2-1 .61A3 3 0 0 0 9 12a2.88 2.88 0 0 0 .4 1.48 3 3 0 0 0 5.13 0l2.6 1.52A5.94 5.94 0 0 1 12 17.92zm5.92-5.59h-.66V13h-.65v-.66H16v-.66h.66V11h.65v.66h.66zm2.47 0h-.66V13h-.66v-.66h-.65v-.66h.65V11h.66v.66h.66z"></path></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M9.585 11.692h4.328s2.432.039 2.432-2.35V5.391S16.714 3 11.936 3C7.362 3 7.647 4.983 7.647 4.983l.006 2.055h4.363v.617H5.92s-2.927-.332-2.927 4.282 2.555 4.45 2.555 4.45h1.524v-2.141s-.083-2.554 2.513-2.554zm-.056-5.74a.784.784 0 1 1 0-1.57.784.784 0 1 1 0 1.57z"></path><path d="M18.452 7.532h-1.524v2.141s.083 2.554-2.513 2.554h-4.328s-2.432-.04-2.432 2.35v3.951s-.369 2.391 4.409 2.391c4.573 0 4.288-1.983 4.288-1.983l-.006-2.054h-4.363v-.617h6.097s2.927.332 2.927-4.282-2.555-4.451-2.555-4.451zm-3.981 10.436a.784.784 0 1 1 0 1.57.784.784 0 1 1 0-1.57z"></path></svg></li>
+            
+            
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M19.24 3H4.76A1.76 1.76 0 0 0 3 4.76v14.48A1.76 1.76 0 0 0 4.76 21h14.48A1.76 1.76 0 0 0 21 19.24V4.76A1.76 1.76 0 0 0 19.24 3zm-5.8 10h-2.25v6.44H9.4V13H7.15v-1.46h6.29zm5.8 5.28a1.71 1.71 0 0 1-.67.74 3 3 0 0 1-1 .39 5.81 5.81 0 0 1-1.2.12 7 7 0 0 1-1.23-.11 4.52 4.52 0 0 1-1-.33v-1.71l-.06-.06h.06v.07a3.41 3.41 0 0 0 1 .54 3.06 3.06 0 0 0 1.13.2 2.58 2.58 0 0 0 .6-.06 1.47 1.47 0 0 0 .42-.17.75.75 0 0 0 .25-.25.69.69 0 0 0-.06-.74 1.24 1.24 0 0 0-.35-.33 3.12 3.12 0 0 0-.53-.3l-.67-.28a3.57 3.57 0 0 1-1.37-1 2 2 0 0 1-.46-1.33 2.16 2.16 0 0 1 .24-1.06 2.09 2.09 0 0 1 .66-.71 2.88 2.88 0 0 1 1-.42 5.11 5.11 0 0 1 1.19-.13 7 7 0 0 1 1.09.07 4.53 4.53 0 0 1 .88.23v1.65a2.42 2.42 0 0 0-.42-.24 3.58 3.58 0 0 0-.49-.17 3 3 0 0 0-.49-.1 2.45 2.45 0 0 0-.46 0 2.29 2.29 0 0 0-.56.06 1.54 1.54 0 0 0-.43.16.78.78 0 0 0-.26.25.63.63 0 0 0-.09.33.62.62 0 0 0 .1.35 1.19 1.19 0 0 0 .3.29 2.15 2.15 0 0 0 .46.28l.63.28a6.56 6.56 0 0 1 .84.42 2.65 2.65 0 0 1 .64.49 1.79 1.79 0 0 1 .42.63 2.48 2.48 0 0 1 .14.85 2.68 2.68 0 0 1-.25 1.08z"></path></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M3 3h18v18H3V3zm16.525 13.707c-.131-.821-.666-1.511-2.252-2.155-.552-.259-1.165-.438-1.349-.854-.068-.248-.078-.382-.034-.529.113-.484.687-.629 1.137-.495.293.09.563.315.732.676.775-.507.775-.507 1.316-.844-.203-.314-.304-.451-.439-.586-.473-.528-1.103-.798-2.126-.775l-.528.067c-.507.124-.991.395-1.283.754-.855.968-.608 2.655.427 3.354 1.023.765 2.521.933 2.712 1.653.18.878-.652 1.159-1.475 1.058-.607-.136-.945-.439-1.316-1.002l-1.372.788c.157.359.337.517.607.832 1.305 1.316 4.568 1.249 5.153-.754.021-.067.18-.528.056-1.237l.034.049zm-6.737-5.434h-1.686c0 1.453-.007 2.898-.007 4.354 0 .924.047 1.772-.104 2.033-.247.517-.886.451-1.175.359-.297-.146-.448-.349-.623-.641-.047-.078-.082-.146-.095-.146l-1.368.844c.229.473.563.879.994 1.137.641.383 1.502.507 2.404.305.588-.17 1.095-.519 1.358-1.059.384-.697.302-1.553.299-2.509.008-1.541 0-3.083 0-4.635l.003-.042z"></path></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M18.5 9.51a4.22 4.22 0 0 1-1.91-1.34A5.77 5.77 0 0 0 12 6a4.72 4.72 0 0 0-5 4 3.23 3.23 0 0 1 3.5-1.49 4.32 4.32 0 0 1 1.91 1.35A5.77 5.77 0 0 0 17 12a4.72 4.72 0 0 0 5-4 3.2 3.2 0 0 1-3.5 1.51zm-13 4.98a4.22 4.22 0 0 1 1.91 1.34A5.77 5.77 0 0 0 12 18a4.72 4.72 0 0 0 5-4 3.23 3.23 0 0 1-3.5 1.49 4.32 4.32 0 0 1-1.91-1.35A5.8 5.8 0 0 0 7 12a4.72 4.72 0 0 0-5 4 3.2 3.2 0 0 1 3.5-1.51z"></path></svg></li>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" style="fill: #000000;transform: msFilter"><path d="M9.37 17.51c-3.09.86 1.87 2.64 5.8 1a7.18 7.18 0 0 1-1.1-.54 11.59 11.59 0 0 1-4.16.18c-1.31-.15-.54-.64-.54-.64zm5.33-1.68a16.27 16.27 0 0 1-5.36.26c-1.31-.14-.45-.77-.45-.77-3.4 1.12 1.89 2.4 6.64 1a2.25 2.25 0 0 1-.83-.49zm1.82-9.73s-6.87 1.71-3.59 5.49a1.47 1.47 0 0 1-.25 2.12s2.46-1.27 1.33-2.86-1.86-2.22 2.51-4.75z"></path><path d="M18.13 19.14s.56.46-.63.82c-2.27.69-9.43.9-11.42 0-.72-.31.62-.74 1-.83a2.54 2.54 0 0 1 .69-.08c-.8-.56-5.15 1.1-2.21 1.58 8.05 1.37 14.64-.56 12.57-1.49zm-2.76-4.88a7 7 0 0 1 .92-.49s-1.51.27-3 .4a28.11 28.11 0 0 1-4.82.05C6.09 13.91 9.74 13 9.74 13a6.81 6.81 0 0 0-3.16.75c-2.06 1.03 5.09 1.48 8.79.51zm.91 2.44a.39.39 0 0 1-.08.09c5-1.32 3.18-4.65.78-3.81a.71.71 0 0 0-.33.25s.14-.05.43-.12c1.22-.25 2.92 1.63-.8 3.59zM12 13c-.74-1.67-3.26-3.14 0-5.71C16.09 4.08 14 2 14 2c.84 3.31-3 4.31-4.34 6.37-.93 1.41.47 2.92 2.34 4.63z"></path><path d="M16.41 21.32a29.75 29.75 0 0 1-9.14.14s.46.38 2.84.53c3.61.23 9.15-.12 9.29-1.83 0 0-.26.64-2.99 1.16z"></path></svg></li>  
+
+  
+          </ul>
+            </div>
+          </section>
+            <div class="container">
+                      
+            
+        </div>
+        </section>  
+        
+        <footer>
+    <div class="contact">
+      <section class="hmu">
+        <h4>Contact Me</h4>
+        <div class="container">
+          <h5>Send a Mail </h5>
+          <h6 id="emailLink" style="cursor: pointer; ">treasure32109@gmail.com</h6>
+          <h5>©️ All Rights Reserved</h5>
+          
+        </div>
+        <div class="socials">
+        
+          <div class="chat">
+           <h5 class="why">Socials</h5>
+            <h6>Instagram,</h6> <h6> LinkedIn,</h6> <h6>Github</h6>
+            <h5 class="relax">(I make websites for Everyone)</h5>
+          </div>
+          
+        </div>
+        <div class="Aim">
+          
+        
+        </div>
+      </section>
+
+    </div> 
+  </footer>    
+    <script>
+      document.getElementById('emailLink').addEventListener('click', function() {
+        var emailAddress = 'treasure32109@gmail.com';
+        window.location.href = 'mailto:' + emailAddress;
+      });
+    </script>
+            <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const endSection = document.querySelector('.end');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.001 });
+
+    observer.observe(endSection);
+  });
+</script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const slideUpItems = document.querySelectorAll('.slide-up');
+    
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                        }
+                    });
+                }, { threshold: 0.001 });
+    
+                slideUpItems.forEach(item => {
+                    observer.observe(item);
+                });
+            });
+        </script>
+     
+     <script>
+        // Select all h3 elements
+const elements = document.querySelectorAll('h3');
+
+// Define the options for the Intersection Observer
+const options = {
+  root: null, // Use the viewport as the root
+  rootMargin: '0px', // No margins
+  threshold: 0.001 // Call the callback when 10% of the element is visible
+};
+
+// Define the callback
+const callback = (entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Split the text into lines
+      const lines = entry.target.textContent.split('\n');
+      // Clear the text of the h3 element
+      entry.target.textContent = '';
+      // Create a new span element for each line
+      lines.forEach(line => {
+        const span = document.createElement('span');
+        span.textContent = line;
+        span.classList.add('typewriter');
+        entry.target.appendChild(span);
+      });
+    } else {
+      // Remove the typewriter class to reset the animation
+      entry.target.classList.remove('typewriter');
+    }
+  });
+};
+
+// Create the observer
+const observer = new IntersectionObserver(callback, options);
+
+// Start observing the h3 elements
+elements.forEach(element => observer.observe(element));
+
+    </script>
+    <script>
+// Check for existing animation data in localStorage
+const hasBeenAnimated = (element) => {
+  const animatedElements = localStorage.getItem('animatedElements');
+  return animatedElements && animatedElements.includes(element.id);
+};
+
+// Store animated element IDs in localStorage
+const markAsAnimated = (element) => {
+  const animatedElements = localStorage.getItem('animatedElements') || '';
+  localStorage.setItem('animatedElements', `${animatedElements}${element.id},`);
+  element.classList.add('animated');
+};
+
+const textElements = document.querySelectorAll('h3');
+
+let animationDelay = 0;
+const typingSpeed = 0.1; // Adjust typing speed in milliseconds
+const animationDuration = 0.002; // Adjust animation duration in seconds
+
+textElements.forEach((lineElement) => {
+  if (!hasBeenAnimated(lineElement)) {
+    const line = lineElement.textContent;
+    lineElement.textContent = ''; // Clear the current text
+
+    for (let i = 0; i < line.length; i++) {
+      const letterSpan = document.createElement('span');
+      letterSpan.textContent = line[i];
+
+      letterSpan.style.animationDelay = `${animationDelay}ms`;
+      letterSpan.style.animation = `typewriter ${animationDuration}s steps(40, end) forwards`;
+
+      lineElement.appendChild(letterSpan);
+      animationDelay += typingSpeed;
+    }
+
+    markAsAnimated(lineElement); // Store animation status and mark as animated
+  } else {
+    lineElement.classList.add('animated'); // If already animated, add the 'animated' class
+  }
+});
+
+// Reset animation on scroll
+window.addEventListener('scroll', () => {
+  // Reset animation status in localStorage
+  localStorage.removeItem('animatedElements');
+});
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('a[data-scroll]');
+
+    links.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('data-scroll');
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    // Remove the 'behavior: smooth' option to eliminate snapping
+                    behavior: 'smooth'  // Use 'auto' for default scrolling behavior
+                });
+            }
+        });
+    });
+});
+
+</script>
+
+
+
+<script type="module">
+import * as THREE from "https://cdn.skypack.dev/three@0.129.0/build/three.module.js";
+import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/GLTFLoader.js";
+import { OrbitControls } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/controls/OrbitControls.js";
+
+document.addEventListener("DOMContentLoaded", function () {
+  const container3D = document.getElementById("container3D");
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(75, container3D.clientWidth / container3D.clientHeight, 0.1, 1000);
+  const loader = new GLTFLoader();
+
+  let transparentObjects = []; // Keep track of transparent objects
+
+  loader.load(
+    "kiii.glb",
+    function (gltf) {
+      const object = gltf.scene;
+
+      object.traverse((child) => {
+        if (child.isMesh) {
+          child.material.transparent = true;
+          child.material.side = THREE.DoubleSide;
+          child.material.alphaTest = 0.5; // Adjust the alpha test value as needed
+          transparentObjects.push(child); // Add transparent objects to the array
+        }
+      });
+
+      object.rotation.set(0, -Math.PI / 2, 0); // Modern way to set rotation using Vector3
+
+      // Set camera position based on the object's bounding box
+      const boundingBox = new THREE.Box3().setFromObject(object);
+      const center = boundingBox.getCenter(new THREE.Vector3());
+      const size = boundingBox.getSize(new THREE.Vector3());
+
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const fov = camera.fov * (Math.PI / 180);
+      const cameraZ = Math.abs(maxDim / 2 / Math.tan(fov / 2));
+
+      camera.position.copy(center);
+      camera.position.z += cameraZ;
+      camera.position.y -= 1; // Adjust the value to lower the camera
+
+      // Move the object down a bit
+      object.position.y -= 1; // Adjust the value to move the object down
+      object.position.z -= 0.4;
+      scene.add(object);
+    },
+    function (xhr) {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    function (error) {
+      console.error(error);
+    }
+  );
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container3D.clientWidth, container3D.clientHeight);
+
+  // Set the maximum number of samples for antialiasing
+  renderer.maxSamples = 16;
+
+  container3D.appendChild(renderer.domElement);
+
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+  const controls = new OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; // an animation loop is required when either damping or auto-rotation are enabled
+  controls.dampingFactor = 0.25;
+  controls.screenSpacePanning = false;
+  controls.maxPolarAngle = Math.PI / 2;
+  controls.enableZoom = false;
+
+  const topLight = new THREE.DirectionalLight(0xffffff, 1);
+  topLight.position.set(10, 500, 500);
+  topLight.castShadow = true;
+  scene.add(topLight);
+
+  const ambientLight = new THREE.AmbientLight(0x333333, 1);
+  scene.add(ambientLight);
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Sort transparent objects based on distance from the camera
+    transparentObjects.sort((a, b) => {
+      const distanceA = camera.position.distanceTo(a.position);
+      const distanceB = camera.position.distanceTo(b.position);
+      return distanceB - distanceA;
+    });
+
+    controls.update(); // only required if controls.enableDamping = true, or if controls.autoRotate = true
+    renderer.render(scene, camera);
+  }
+
+  animate();
+
+  window.addEventListener("resize", function () {
+    camera.aspect = container3D.clientWidth / container3D.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container3D.clientWidth, container3D.clientHeight);
+  });
+});
+
+  </script>
+  <script>
+    const scrollers = document.querySelectorAll(".scroller");
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)") .matches) {
+addAnimation();
+    }
+    function addAnimation() {
+scrollers.forEach((scroller) => {
+scroller.setAttribute("data-animated", true); 
+const scrollerInner = scroller.querySelector(".scroller_inner");
+const scrollerContent = Array.from(scrollerInner.children);
+scrollerContent.forEach((item) => {
+const duplicatedItem = item.cloneNode(true);
+duplicatedItem.setAttribute("aria-hidden", true);
+scrollerInner.appendChild(duplicatedItem);
+});
+});
+    }
+  </script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js" defer></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Draggable.min.js" defer></script>
+ <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js" defer></script>
+ <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.9.7/dist/barba.umd.js" defer></script>
+ <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js" defer></script> 
+ <script src="https://cdn.jsdelivr.net/gh/theNkennaAmadi/sage-east@master/dist/assets/index-5d4fc420.js" defer></script>
+ <script>
+let cursor = document.querySelector('.cursor');
+let trail = document.querySelector('.cursor-trail .trail');
+
+let mouseX = 0, mouseY = 0; // Current mouse position
+let trailX = 0, trailY = 0; // Current trail position
+let speed = 0.1; // Speed of the trail
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX + window.scrollX;
+  mouseY = e.clientY + window.scrollY;
+});
+
+function animate() {
+  // Lerp position
+  trailX += (mouseX - trailX) * speed;
+  trailY += (mouseY - trailY) * speed;
+
+  // Apply position to elements
+  cursor.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+  trail.style.transform = `translate(${trailX}px, ${trailY}px)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener('mouseout', () => {
+  trail.style.opacity = 0; // Hide trail on mouseout
+});
+
+</script>
+<script>
+// Select all h6 elements
+const h6Elements = document.querySelectorAll('.contact .hmu h6');
+
+// Define the options for the Intersection Observer for h6 elements
+const h6Options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+};
+
+// Define the callback for h6 elements
+const h6Callback = (entries, h6Observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add your animation class or trigger logic here for h6 elements
+      entry.target.classList.add('h6-animate');
+      h6Observer.unobserve(entry.target);
+    }
+  });
+};
+
+// Create the Intersection Observer for h6 elements
+const h6Observer = new IntersectionObserver(h6Callback, h6Options);
+
+// Start observing the h6 elements
+h6Elements.forEach(h6Element => h6Observer.observe(h6Element));
+
+</script>
+<script>
+const stickySections = [...document.querySelectorAll('.sticky')];
+
+let images = [
+  'https://dr.savee-cdn.com/things/6/5/d0b99d60e01bf3c5ee4335.webp',
+  'https://dr.savee-cdn.com/things/6/3/fdfcd603a75cbb37dc874b.webp',
+  'https://dr.savee-cdn.com/things/6/1/8052a267b030d9aef04a66.webp',
+  'https://dr.savee-cdn.com/things/5/e/c552cfcc7c7953d7b5af2d.webp'
+];
+
+// Add the 'animate' class to the images when they come into view
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const images = entry.target.querySelectorAll('.animated-image');
+      images.forEach(image => {
+        if (!image.classList.contains('animate')) {
+          image.classList.add('animate');
+        }
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}
+
+const imageObserver = new IntersectionObserver(handleIntersection, { threshold: 1 });
+
+stickySections.forEach(section => {
+  images.forEach(img => {
+    let image = document.createElement('img');
+    image.src = img;
+    image.classList.add('animated-image');
+    section.querySelector('.scroll_section').appendChild(image);
+    imageObserver.observe(image); // Observe each image for intersection
+  });
+
+  // Add the following line to trigger the slide-up animation for each section
+  imageObserver.observe(section.querySelector('.scroll_section'));
+
+  section.addEventListener('mouseenter', () => {
+    window.addEventListener('scroll', handleScroll.bind(null, section), { passive: false });
+    window.addEventListener('wheel', preventDefault, { passive: false }); // Disable scrolling in Chrome
+    window.addEventListener('touchmove', preventDefault, { passive: false }); // Disable scrolling on mobile
+    handleScroll(section); // Initial frame for smoother start
+  });
+
+  section.addEventListener('mouseleave', () => {
+    window.removeEventListener('scroll', handleScroll.bind(null, section));
+    window.removeEventListener('wheel', preventDefault, { passive: false }); // Enable scrolling in Chrome
+    window.removeEventListener('touchmove', preventDefault, { passive: false }); // Enable scrolling on mobile
+  });
+});
+
+function handleScroll(section) {
+  const offsetTop = section.getBoundingClientRect().top + window.scrollY;
+  const scrollSection = section.querySelector('.scroll_section');
+  const windowHeight = window.innerHeight;
+  const sectionHeight = section.offsetHeight; // Height of the section
+
+  // Calculate the remaining scrollable height within the section without any limit
+  const remainingHeight = Math.max(0, window.scrollY - offsetTop);
+
+  // Calculate the percentage based on the remaining height (inverted)
+  const percentage = (remainingHeight / (sectionHeight - windowHeight)) * 100;
+
+  // Adjust the speed factor (e.g., divide by 2 to make it slower)
+  const speedFactor = 1; // Adjust this value to control the speed of the parallax effect
+  const adjustedPercentage = percentage * speedFactor;
+
+  // Adjusted marginTop and marginBottom values
+  const marginTop = -10; // Adjust this value for the desired margin
+  const marginBottom = -290; // Adjust this value for the desired margin
+
+  // Calculate translateY with more added value
+  let translateY = Math.max((window.scrollY - offsetTop) * 0.85 - marginTop, 0.5);
+  translateY += 30;
+  translateY -= 30;
+
+  // Add more translateY to the images
+  const additionalTranslateY = 10; // Adjust this value for more translateY
+  translateY += additionalTranslateY;
+
+  // Limit translateY to prevent scrolling past the images
+  const maxTranslateY = sectionHeight - windowHeight - marginTop - marginBottom;
+  translateY = Math.min(translateY, maxTranslateY);
+
+  // Apply the adjusted percentage, Y-axis translation, margin top, and margin bottom to the transform property directly for smoother transitions
+  scrollSection.style.transform = `translate3d(${-adjustedPercentage}%, ${translateY}px, 0)`;
+  scrollSection.style.marginBottom = `${marginBottom}px`;
+}
+
+
+// Helper function to prevent default scroll behavior
+function preventDefault(event) {
+  event.preventDefault();
+}
+
+
+</script>
+<script>
+  const faqs = document.querySelectorAll(".miss");
+  faqs.forEach((miss) => {
+miss.addEventListener("click", () =>{miss.classList.toggle("active");
+});
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const skillBars = document.querySelectorAll('.skill-bar');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const skillPer = entry.target.querySelector('.skill-per');
+          skillPer.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    skillBars.forEach(skillBar => {
+      observer.observe(skillBar);
+    });
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const timelineContents = document.querySelectorAll('.timeline-content, .timeline-content2');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-ups');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.01 });
+
+    timelineContents.forEach(timelineContent => {
+      observer.observe(timelineContent);
+    });
+  });
+</script>
+<div id="awwwards" style="position: fixed; z-index: 999; transform: translateY(-50%); top: 50%;  right: 0"><a href="" target="_blank"><svg width="53.08" height="171.358"><path class="js-color-bg" fill="black" d="M0 0h53.08v171.358H0z"></path><g class="js-color-text" fill="white"><path d="M20.047 153.665v-1.9h3.888v-4.093h-3.888v-1.9h10.231v1.9h-4.59v4.093h4.59v1.9zM29.898 142.236c-.331.565-.784.997-1.359 1.294s-1.222.446-1.944.446c-.721 0-1.369-.149-1.943-.446a3.316 3.316 0 0 1-1.36-1.294c-.331-.564-.497-1.232-.497-2.002s.166-1.438.497-2.002a3.316 3.316 0 0 1 1.36-1.294c.574-.297 1.223-.445 1.943-.445.723 0 1.369.148 1.944.445a3.307 3.307 0 0 1 1.359 1.294c.331.564.497 1.232.497 2.002s-.166 1.438-.497 2.002m-1.703-3.347c-.435-.33-.967-.496-1.601-.496-.633 0-1.166.166-1.601.496-.433.332-.649.78-.649 1.346 0 .564.217 1.013.649 1.345.435.331.968.497 1.601.497.634 0 1.166-.166 1.601-.497.435-.332.649-.78.649-1.345.001-.566-.214-1.014-.649-1.346M22.911 134.852v-1.813h1.186a3.335 3.335 0 0 1-.951-1.009 2.423 2.423 0 0 1-.352-1.271c0-.682.19-1.229.57-1.645.381-.413.932-.621 1.652-.621h5.262v1.812h-4.721c-.419 0-.727.096-.921.285-.195.19-.292.447-.292.769 0 .302.115.58.35.833.234.254.577.458 1.03.613.454.156.993.234 1.616.234h2.938v1.813h-7.367zM29.898 125.136a3.314 3.314 0 0 1-1.359 1.294c-.575.297-1.222.445-1.944.445-.721 0-1.369-.148-1.943-.445a3.322 3.322 0 0 1-1.36-1.294c-.331-.565-.497-1.232-.497-2.002 0-.771.166-1.438.497-2.003a3.313 3.313 0 0 1 1.36-1.293c.574-.297 1.223-.446 1.943-.446.723 0 1.369.149 1.944.446s1.028.728 1.359 1.293.497 1.232.497 2.003c.001.769-.166 1.436-.497 2.002m-1.703-3.347c-.435-.331-.967-.497-1.601-.497-.633 0-1.166.166-1.601.497-.433.331-.649.778-.649 1.345 0 .564.217 1.013.649 1.344.435.332.968.498 1.601.498.634 0 1.166-.166 1.601-.498.435-.331.649-.779.649-1.344.001-.567-.214-1.014-.649-1.345M22.911 117.75v-1.812h1.199c-.419-.265-.742-.586-.972-.966s-.345-.784-.345-1.213c0-.272.05-.569.146-.892l1.682.336a1.429 1.429 0 0 0-.205.76c0 .576.261 1.048.783 1.418.521.37 1.342.557 2.461.557h2.617v1.812h-7.366zM29.812 111.252c-.391.511-.857.851-1.403 1.016l-.776-1.446c.381-.138.68-.329.893-.577.215-.249.321-.544.321-.885a1.2 1.2 0 0 0-.168-.658c-.112-.175-.294-.263-.548-.263-.225 0-.406.105-.548.313-.142.21-.291.534-.446.973-.019.068-.058.17-.117.307-.224.565-.506 1.004-.848 1.315-.34.313-.779.467-1.314.467-.381 0-.727-.102-1.039-.306a2.185 2.185 0 0 1-.744-.84 2.554 2.554 0 0 1-.279-1.207c0-.497.105-.949.314-1.359.211-.408.506-.725.886-.949l.993 1.082c-.43.292-.644.686-.644 1.184a.84.84 0 0 0 .154.504.471.471 0 0 0 .401.212c.176 0 .338-.103.49-.307.15-.205.334-.604.547-1.199.205-.564.474-1.001.805-1.308.332-.308.756-.46 1.271-.46.721 0 1.299.229 1.732.687s.65 1.057.65 1.797c.001.759-.194 1.396-.583 1.907M35.481 17.006l-4.782 14.969h-3.266l-2.584-9.682-2.584 9.682h-3.268l-4.782-14.969h3.713l2.673 10.276 2.525-10.276h3.445l2.524 10.276 2.674-10.276zM37.978 27.163c1.426 0 2.496 1.068 2.496 2.495 0 1.425-1.07 2.495-2.496 2.495-1.425 0-2.494-1.07-2.494-2.495-.001-1.427 1.069-2.495 2.494-2.495"></path></g></svg></a></div>
+
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      cursor: none; /* Hide default cursor */
+    }
+
+    .cursor {
+      position: fixed;
+      width: 30px; /* Reduce size for more subtlety */
+      height: 30px; /* Reduce size for more subtlety */
+      background-color: #fff; /* Modern white color */
+      border-radius: 50%;
+      pointer-events: none;
+      /* Corrected centering to align pointer with center */
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      transition: transform 0.2s ease-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Add smoother transitions */
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 0 6px 4px rgba(0, 0, 0, 0.1); /* Subtle, modern shadow */
+    }
+
+    /* Animation styles */
+    .cursor:hover {
+      background-color: #3498db; /* Modern blue on hover */
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3), 0 0 8px 6px rgba(0, 0, 0, 0.2); /* Enhanced hover shadow */
+      transform: scale(1.2); /* Subtle expansion on hover */
+    }
+
+    .cursor-trail {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-trail .trail {
+      position: absolute;
+      width: 20px; /* Adjust trail width as needed */
+      height: 20px; /* Adjust trail height as needed */
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white trail */
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      transition: opacity 0.2s ease-out;
+    }
+  </style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-trail">
+  <div class="trail"></div>
+</div>
+
+<script>
+  let cursor = document.querySelector('.cursor');
+  let trail = document.querySelector('.cursor-trail .trail');
+
+  window.addEventListener('mousemove', (e) => {
+    cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    trail.style.opacity = 1; // Show trail on move
+    trail.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+  });
+
+  window.addEventListener('mouseout', () => {
+    trail.style.opacity = 0; // Hide trail on mouseout
+  });
+</script>
+
+</body>
+</html>
