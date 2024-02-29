@@ -42,7 +42,7 @@ html {
   padding: 0;
   overflow: auto; 
   overflow-x: hidden;
-
+  overflow-y: hidden;
   text-shadow: #fff;
 }
 html::-webkit-scrollbar {
@@ -148,6 +148,7 @@ nav a:hover {
       font-size: 2.2vh;
     }
 
+
     .navigation nav {
       display: flex;
       justify-content: space-between;
@@ -162,6 +163,49 @@ nav a:hover {
       padding-bottom: 6px;
 
     }
+    .navigation.scrolled a {
+  color: black; 
+}
+.cursor.large.scrolled {
+    height: 70px;
+    width: 70px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+
+
+.navigation.scrolled h2,
+.scrolled h2 {
+  color: black; 
+}
+.navigation.scrolled a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0); 
+      transition: width 0.3s ease; 
+    }
+    .navigation.scrolled a:hover {
+      color: #1a1a1a; 
+    }
+
+    .cursor.scrolled {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 1000ms, height 1000ms;
+}
+
 
     .navigation a::before {
       content: '';
@@ -183,7 +227,7 @@ nav a:hover {
       font-weight: 600;
       margin: 0;
       font-family: 'New York', sans-serif;
-
+      transition: color 0.5s ease;
 
    }
     .navigation a:hover::before {
@@ -259,7 +303,7 @@ nav a:hover {
     width: 100%;
     height: 100%; 
     border-radius: 50px;
-    
+
     
 }
 
@@ -274,6 +318,7 @@ nav a:hover {
    width: 100%;
     height: 100%; 
     border-radius: 60px;
+    
 }
 h4{
     font-size: 16px;
@@ -369,6 +414,7 @@ border-radius: 45px;
     height: 100%;
     object-fit: cover;
     border-radius: 39px;
+    filter: 'sepia(80%)';
 }
 
 #motive h2{
@@ -518,6 +564,7 @@ border-radius: 45px;
     height: 100%;
     object-fit: cover;
     border-radius: 39px;
+    filter: 'sepia(80%)';
 }
 
 #motive2 h2{
@@ -641,6 +688,7 @@ border-radius: 45px;
     height: 100%;
     object-fit: cover;
     border-radius: 39px;
+    filter: 'sepia(80%)';
 }
 
 #motive3 h2{
@@ -782,7 +830,7 @@ border-radius: 45px;
     height: 100%;
     object-fit: cover;
     border-radius: 39px;
-
+    filter: 'sepia(80%)';
 }
 
 #motive4 h2{
@@ -936,6 +984,7 @@ border-radius: 45px;
     object-fit: cover;
     border-radius: 39px;
     margin-top: -17%;
+    filter: 'sepia(80%)';
 }
 
 #motive5 h2{
@@ -994,7 +1043,7 @@ border-radius: 45px;
 }
 
 .extra-space{
-  height: 100vh;
+  height: 10vh;
 }
 
 .dynamic{
@@ -1027,18 +1076,190 @@ bottom: 0;
 left: 0;
 background: #733200ff;
 border-radius: 50%;
-
 }
 
+.overlap {
+  height: 50vh;
+  background: #733200ff;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlap p {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  max-width: 80%; 
+  font-size: 11vh;
+  margin-top: 29%;
+}
+.cover{
+  color: #59423a;
+}
+.overlap2 {
+  height:59vh;
+  background: #733200ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  float: right;
+}
+
+.overlap2 p {
+  color: #000000;
+  font-family: new york ;
+  letter-spacing: 15px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: anim 90s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.text span{
+position: absolute;
+left: 50%;
+font-size: 1.2en;
+transform-origin: 0 14.5vh;
+
+}
+.contain2{
+  justify-content: center;
+  align-items: center;
+}
+
+.textwrapper{
+margin-right: -26%;
+margin-top: -25%;
+line-height: 0;
+}
+
+.textwrapper p {
+  margin-bottom: -29%;
+  font-size: 8vh;
+}
+
+
+.anima{
+  background-color: #733200ff;
+}
+
+
+  .cover-content {
+    text-align: center;
+  }
+#cover {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  height: 10vh;
+
+  color: #fff;
+}
+
+.today {
+  height: 100vh; /* Adjust the height as needed */
+  transition: transform 0.5s ease; /* Add transition for a smooth effect */
+}
+
+.cover-content {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+
+  perspective: 200px;
+  z-index: 2;
+}
+
+.cover-content h3{
+  color: #733200ff;
+  text-align: center;
+  font-size: 4.5vw;
+  font-weight: 400;
+}
+
+.coolio{
+  height: 100vh;
+}
   </style>
 
-  
+
+
+
+<!--responsive-->
+  <style>
+    @media screen and (max-width: 932px) {
+      .overlap p {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  max-width: 80%; 
+  margin-top: 29%;
+}
+.textwrapper p {
+  margin-bottom: -29%;
+  font-size: 2.7vh;
+}
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: none;
+}
+
+h2{
+    font-size: 6vw;
+      text-align: left;
+      color:  #733200ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      transition: color 0.5s ease;
+
+   }
+
+.title{
+  margin-left: -10%;
+}
+
+.navigation a{
+  font-size: 13px;
+}
+}
+  </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
+
 </head>
 <body>
+
     <div class="cursor"></div>
   <div class="navigation">
     <nav>
@@ -1075,7 +1296,7 @@ border-radius: 50%;
     
     <div class="image-container">
         <div class="image-container parallax-container">
-            <img src="https://wallpaperset.com/w/full/c/8/a/465060.jpg" alt="">
+            <img src="https://getwallpapers.com/wallpaper/full/2/7/6/389041.jpg" alt="">
         </div>
     </div>
   </section>
@@ -1113,7 +1334,7 @@ border-radius: 50%;
         </div>
         </div>
         </div>
-        <div id="motive"><h2>Essence</h2>
+        <div id="motive" class="cool"><h2>Essence</h2>
         <p>Early African art <span id="un"></span>  reveals primal beauty through cave paintings, enigmatic sculptures, and sacred masks <span id="deux"></span>.</p>
         </div>
     </div>
@@ -1152,8 +1373,10 @@ border-radius: 50%;
         </div>
         </div>
         </div>
-        <div id="motive2" ><h2>Essence</h2>
+        <div id="motive2" class="cool"><h2>Essence</h2>
+   
         <p>Metalwork mastery, vibrant textiles, and architectural wonders <span id="trois"></span> mark this era, embedding rich cultural narratives in every creation.</p>
+    
         </div>
     </div>
   </section>
@@ -1191,7 +1414,7 @@ border-radius: 50%;
         </div>
         </div>
         </div>
-        <div id="motive3"><h2>Essence</h2>
+        <div id="motive3" class="cool"><h2>Essence</h2>
         <p>Colonial challenges disrupt traditional expressions <span id="quatre"></span>, prompting a struggle for cultural preservation and a synthesis of indigenous and Western styles.</p>
         </div>
     </div>
@@ -1229,7 +1452,7 @@ border-radius: 50%;
           </div>
           </div>
           </div>
-          <div id="motive4"><h2>Essence</h2>
+          <div id="motive4" class="cool"><h2>Essence</h2>
           <p>Post-independence artists redefine identities, blending traditional motifs <span id="six"></span> with modern styles.</p>
           </div>
       </div>
@@ -1267,7 +1490,7 @@ border-radius: 50%;
       </div>
       </div>
       </div>
-      <div id="motive5"><h2>Essence</h2>
+      <div id="motive5" class="cool"><h2>Essence</h2>
       <p>Contemporary African art embraces diverse mediums <span id="seven"></span>, navigating globalization and cultural diversity <span id="eight"></span>. </p>
       </div>
   </div>
@@ -1283,11 +1506,134 @@ border-radius: 50%;
   <li class="scroll">ter</li>
   </ul>
   </section>
+  <div class="scroll">
   <section class="extra-space"></section>
-  <section class="overlap"></section>
+  
+  
+<div class="today">
+
+  <div class="anima">
+  <section class="overlap">
+    <div class="contain2">
+      <div class="textwrapper">
+        <p>The African artists that paved the way.</p>
+        <p>Exploring the rich history of African art.</p>
+        <p>Revolutionizing traditional art.</p>
+        <p>Celebrating diversity in African art forms.</p>
+        <p>Modern influences shaping the future .</p>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section class="overlap2">
+    <div class="circle">
+      <div class="text">
+        <p>Paving The way - African Art Redefined - </p>
+      </div>
+    </div>
+  </div>
+  </section>
+</div>
+  <div class="cover" id="cover">
+<div class="cover-content">
+    <h3>  The Artists</h3>
+     
+  </div>
+  </div>
+</div>
+<section class="coolio">
+  <img src="data:image/jpeg;base64,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" alt="" srcset="">
+ </section>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("scroll", revealCover);
+  });
+
+  function revealCover() {
+    const today = document.querySelector(".today");
+    const cover = document.getElementById("cover");
+
+    // Adjust the scroll position as needed
+    const revealScrollPosition = today.offsetTop;
+
+    // Calculate the amount to translate the .today section
+    const translateY = window.scrollY - revealScrollPosition;
+
+    // Update the transform property to create the sliding effect
+    today.style.transform = `translateY(-${translateY}px)`;
+
+    // Calculate opacity based on scroll position
+    const opacity = Math.min(1, Math.max(0, (translateY + revealScrollPosition) / revealScrollPosition));
+
+    // Update the opacity property for a gradual fade-in effect
+    cover.style.opacity = opacity;
+  }
+</script>
+
+
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  
+  <script>
+    const titles = gsap.utils.toArray('.textwrapper p');
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+  
+    titles.forEach(title => {
+      const splitTitle = new SplitType(title, { types: 'lines,words,chars' });
+  
+      tl.from(splitTitle.chars, {
+        opacity: 0,
+        y: window.innerWidth > 600 ? 25 : 30, // Adjust y value for smaller screens
+        rotateX: -90,
+        stagger: window.innerWidth > 600 ? 0.02 : 0.01, // Adjust staggering for smaller screens
+      }, "<")
+  
+      .to(splitTitle.chars, {
+        opacity: 0,
+        y: window.innerWidth > 600 ? -25 : -30, // Adjust y value for smaller screens
+        rotateX: 90,
+        stagger: window.innerWidth > 600 ? 0.02 : 0.01, // Adjust staggering for smaller screens
+      }, "<1");
+    });
+  </script>
+  
+
+  <script>
+    const text = document.querySelector('.text p');
+    text.innerHTML = text.innerText
+      .split('')
+      .map((char, i) =>
+        `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`
+      )
+      .join('');
+  </script>
+  
+<script>
+  window.addEventListener('scroll', function () {
+  var overlapSection = document.querySelector('.overlap');
+  var overlapRect = overlapSection.getBoundingClientRect();
+  var navigation = document.querySelector('.navigation');
+  var h2Elements = document.querySelectorAll('h2');
+
+  if (overlapRect.top < window.innerHeight * 0.2 && overlapRect.bottom > 0) {
+    // Overlap is in view
+    navigation.classList.add('scrolled');
+    h2Elements.forEach(function (h2) {
+      h2.style.color = 'black';
+    });
+  } else {
+    // Overlap is not in view
+    navigation.classList.remove('scrolled');
+    h2Elements.forEach(function (h2) {
+      h2.style.color = '#733200ff';
+    });
+  }
+});
+
+</script>
 <!--Parallax Text-->
 <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
-
 <script>
   const targets = document.querySelectorAll('.scroll');
   const extraSpace = document.querySelector('.extra-space');
@@ -1328,19 +1674,6 @@ border-radius: 50%;
 
   observer.observe(extraSpace);
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1759,65 +2092,66 @@ gsap.from(navlinks, {
 <!-- For Exposed Image effect -->
 
 <script>
-  
+  // Wrap your parallax effect in a function
   function initParallaxZoom() {
-      
+      // Select the parallax container
       const parallaxContainer = document.querySelector('.parallax-container');
 
-     
+      // Set up a GSAP timeline for the parallax, zoom, sepia, and rotation effects
       const parallaxZoomTL = gsap.timeline({
           scrollTrigger: {
               trigger: parallaxContainer,
-              start: 'top center',
+              start: 'top bottom',
               end: 'bottom center',
-              scrub: true,
+              scrub: true, // Enable scrubbing for a smoother effect
           },
       });
 
-      
+      // Add the parallax effect to the image
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          y: '-25%', 
-          duration: 2, 
-          ease: 'power1.inOut',
+          y: '-25%', // Adjust the parallax effect as needed
+          duration: 2, // Adjust the duration for a slower effect
+          ease: 'power1.inOut', // Add easing for smoother motion
       });
 
-    
+      // Add the zoom effect to the image
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          rotation: 10,
-          duration: 2,
-          ease: 'power1.inOut',
-      }, 0);
-
-    
-      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          opacity: 0.7,
-          duration: 2,
-          ease: 'power1.inOut',
-      }, 0);
-
-      
-      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          filter: 'hue-rotate(90deg)',
-          duration: 2,
-          ease: 'power1.inOut',
-      }, 0);
-
-     
-      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          scale: 1.1,
-          duration: 2,
-          ease: 'power1.inOut',
-      }, 0);
-
-     
-      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          scale: 1,
+          scale: 1.14, 
           duration: 2,
           ease: 'power1.inOut', 
+      }, 0); 
+
+      // Add the border radius decrease during the zoom effect
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          borderRadius: '0', // Set the border radius to 0
+          duration: 2, // Adjust the duration for the border radius decrease
+          ease: 'power1.inOut', // Add easing for smoother border radius change
+      }, 0);
+
+      // Add the sepia effect to the image
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          filter: 'sepia(60%)', // Adjust the sepia intensity (100% for full sepia)
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+      // Add the zoom out effect to the image
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          scale: 1, // Return to the original scale
+          duration: 2, // Adjust the duration for the zoom out effect
+          ease: 'power1.inOut', // Add easing for smoother zoom out motion
       });
+
+      // Reset the border radius, sepia, and rotation to the original values with smooth transition
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          borderRadius: '50px', // Set the original border radius
+          filter: 'sepia(20%)', // Reset the sepia effect
+          duration: 1, // Adjust the duration for the reset effect
+          ease: 'power1.inOut', // Add easing for a smooth transition
+      }, '-=2'); // Align with the end of the timeline
   }
 
- 
+  // Call the function to initialize the parallax, zoom, sepia, and rotation effects
   initParallaxZoom();
 </script>
 
@@ -1931,6 +2265,68 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     });
   });
 </script>
+<script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
+
+<script>
+  // Function to animate elements on view with a slower and elegant animation
+  function animateOnViewElegant(element) {
+    gsap.from(element, {
+      opacity: 0,
+      filter: "blur(20px)",
+      y: 20, // Adjust the y property for a subtle vertical movement
+      duration: 4, // Increase the duration for a slower animation
+      ease: 'Power2.easeInOut', // Use an easing function that gives a gentle and elegant effect
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom-=200',
+        end: '+=200',
+        scrub: 1,
+        markers: false
+      }
+    });
+  }
+
+  // Call the function for each susimagewrapper element
+  animateOnViewElegant('#susimagewrapper');
+  animateOnViewElegant('#susimagewrapper2');
+  animateOnViewElegant('#susimagewrapper3');
+  animateOnViewElegant('#susimagewrapper4');
+  animateOnViewElegant('#susimagewrapper5');
+</script>
+<script>
+  // Wrap your GSAP animations in a function
+  function initAnimations() {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Select all elements with the class .cool
+    const coolElements = document.querySelectorAll('.cool');
+
+    // Iterate over each .cool element and apply the animation
+    coolElements.forEach((coolElement) => {
+      gsap.from(coolElement.querySelectorAll('p'), {
+        y: '100%', // Start off the screen
+        opacity: 0.4, // Initially hidden
+        duration: 1.5,
+        stagger: 0.5, // Stagger the animations for a cool effect
+        ease: 'power4.out', // Use an easing function for a smooth animation
+        scrollTrigger: {
+          trigger: coolElement, // Trigger animation when any element with the class .cool is in view
+          start: 'top 35%', // Adjust as needed based on your design
+          end: 'bottom 20%', // Specify when the animation should end
+          toggleActions: 'play reverse play reverse', // Play the animation on enter, reverse on leave
+        },
+      });
+    });
+  }
+
+  // Call the function to initialize animations
+  initAnimations();
+</script>
+
+
+
+
 
 </body>
 </html>
