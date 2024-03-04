@@ -1,0 +1,1936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africa</title>
+  <link href="https://fonts.cdnfonts.com/css/new-york-extra-large" rel="stylesheet">
+  <!-- The Structure is as follows: style, html body, script -->
+  <style>
+    * {
+-webkit-font-smoothing: antialiased; 
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+html.lenis {
+      height: auto;
+    }
+    
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; 
+  overflow-x: hidden;
+
+  text-shadow: #fff;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+.container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+.title{
+  margin-left: -56px;
+}
+.about h2{
+  font-size: 28px;
+}
+.gallery h2{
+  font-size: 28px;
+}
+#story h2{
+  font-size: 28px;
+}
+body {
+background-color: #000000;
+  justify-content: center;
+  overscroll-behavior:  contain;
+  scrollbar-color: transparent transparent;
+}
+::selection {
+  /* Replace with your desired color */
+  color: rgb(255, 134, 41); /* Adjust text color for better visibility */
+}
+nav a:hover {
+    cursor: url('img/yass.png') 15 15, auto;
+}
+
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #733200ff;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 1000ms, height 1000ms;
+}
+
+.cursor.large {
+    height: 70px;
+    width: 70px;
+}
+
+    .animation-container {
+     text-align: center;
+    }
+    h1 {
+      font-size: 4.5vw;
+
+      text-align: center;
+      color:  #733200ff;
+      font-weight: 800;
+      margin: 0;
+      font-family: 'New york', sans-serif;
+      font-stretch: 45px;
+
+      padding-right: 6px;
+
+    }
+
+    .start {
+      background-color: #000000;
+      height: 100vh; 
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: url('img/yass.png') 15 15, auto;
+    }
+
+    .navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px;
+      z-index: 10;
+      font-family: 'SF Pro Text', sans-serif;
+      padding-top: 12px;
+      cursor: url('img/yass.png') 15 15, auto;
+      font-size: 2.2vh;
+    }
+
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+    }
+
+    .navigation a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #733200ff;
+      position: relative;
+      padding-bottom: 6px;
+
+    }
+
+    .navigation a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #733200ff; 
+      transition: width 0.3s ease; 
+    }
+    .hello-text{
+     color: #733200ff;
+   }
+   h2{
+    font-size: 3vw;
+      text-align: left;
+      color:  #733200ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+
+
+   }
+    .navigation a:hover::before {
+      width: 100%;
+    }
+
+    .navigation a:hover {
+      color: #59423a; 
+    }
+    .okay{
+        padding-right: 25px;
+    }
+    .hello-text {
+            margin-top: -2.5%;
+            width: 100vw;
+            font-family: 'SF Pro Rounded Regular', Arial, sans-serif;
+            text-align: center;
+            margin-left: 0%;
+            font-size: 1.25em;
+            animation: fadeInAnimation 1.5s, slideUpDownAnimation 1s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
+            text-shadow: #5e3c30;
+            font-weight: bolder;
+        }
+        @keyframes slideUpDownAnimation {
+        0%, 100% {
+            transform: translateY(10px);
+        }
+        50% {
+            transform: translateY(2px); 
+        }
+    }
+    .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 20px; 
+  width: 45%;
+  margin-left: 6%;
+}
+    p{
+        font-family: new york;
+        color:  #733200ff;
+        font-size: 2.5vh;
+        z-index: 5;
+        font-weight: 480;
+    }
+
+#story{
+ 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 6%;
+}
+    .gallery {
+        display: flex;
+        flex-direction: column;
+       height: 240vh;
+       margin-left: 6%;
+  
+    }
+    .image-container {
+    width: 97%;
+    height: 90%;
+    padding-top: 20px;
+}
+
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; 
+    border-radius: 50px;
+    
+    
+}
+
+.photo-container{
+
+    width: 100px;
+    height:  100px;
+
+}
+.photo-container img{
+   object-fit: cover;
+   width: 100%;
+    height: 100%; 
+    border-radius: 60px;
+}
+h4{
+    font-size: 16px;
+    color:#733200ff;
+    font-family: new york;
+}
+h3{
+    font-size: 26px;
+    color:#733200ff;
+    font-family: new york;
+}
+#main{
+    width: 100%;
+}
+
+#hero {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain #susimagewrapper {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 45px;
+}
+
+#susimagewrapper {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 25px;
+}
+
+#susimagewrapper img {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain p{
+    font-family: new york;
+    color:  #733200ff;
+    font-size: 2.5vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain {
+    width: 100%;
+}
+#ephemeral {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 39px;
+}
+
+#ephemeral h2{
+    font-size: 7vw;
+    font-weight: 100;
+ }
+ #headings{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new{
+    padding-bottom: 5%;
+}
+#visit {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+}
+
+#motive h2{
+
+    font-size: 28px;;
+}
+#motive{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+} 
+#motive p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive span{
+    display: inline-block;
+
+    height: 43px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 10px;
+    margin-bottom: -9.5px;
+} 
+#un{
+    width: 72px;
+    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nok_sculpture_Louvre_70-1998-11-1.jpg/250px-Nok_sculpture_Louvre_70-1998-11-1.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#deux{
+    width: 52px;
+    background-image:url('https://smithsonianassociates.org/ticketing/images/web-core-2020/african-art-centuries.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(10%);
+}
+#un, #deux {
+    width: 56px;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; /* Add transitions for smooth hover effect */
+}
+
+#un:hover, #deux:hover{
+    filter: sepia(30%);
+    width: 84px;
+    border-radius: 76px;
+}
+
+
+.gallery2 {
+        display: flex;
+        flex-direction: column;
+       height: 220vh;
+       margin-left: 6%;
+  
+    }
+
+#main2{
+    width: 100%;
+}
+
+#hero2 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain2 #susimagewrapper2 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 45px;
+}
+
+#susimagewrapper2 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 25px;
+}
+
+#susimagewrapper2 img {
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain2 p{
+    font-family: new york;
+    color:  #733200ff;
+    font-size: 2.5vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain2 {
+    width: 100%;
+}
+#ephemeral2 {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 39px;
+}
+
+#ephemeral2 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings2{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new2{
+    padding-bottom: 5%;
+}
+#visit2 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+}
+
+#motive2 h2{
+
+    font-size: 28px;
+
+}
+#motive2{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+} 
+#motive2 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive2 span{
+    display: inline-block;
+
+    height: 43px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+
+/*Section 3*/
+.gallery3 {
+        display: flex;
+        flex-direction: column;
+       height: 225vh;
+       margin-left: 6%;
+  
+    }
+
+#main3{
+    width: 100%;
+}
+
+#hero3 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain3 #susimagewrapper3 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 45px;
+}
+
+#susimagewrapper3 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 25px;
+}
+
+#susimagewrapper3 img {
+    position: absolute;
+    top: 70%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain3 p{
+    font-family: new york;
+    color:  #733200ff;
+    font-size: 2.5vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain3 {
+    width: 100%;
+}
+#ephemeral3 {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 39px;
+}
+
+#ephemeral3 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings3{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new3{
+    padding-bottom: 5%;
+}
+#visit3 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+}
+
+#motive3 h2{
+
+    font-size: 28px;
+
+}
+#motive3{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+} 
+#motive3 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive3 span{
+    display: inline-block;
+
+    height: 43px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#trois{
+    width: 72px;
+    background-image:url('https://www.researchgate.net/publication/293581542/figure/fig1/AS:400904978223104@1472594603370/Anonymous-Implements-and-Weapons-of-Central-Africa-plate-46-in-volume-1-from-Henry.png') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+#quatre{
+    width: 72px;
+    background-image:url('https://static.wixstatic.com/media/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg/v1/fill/w_800,h_605,al_c,q_85,enc_auto/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+
+/*Section 4*/
+.gallery4 {
+        display: flex;
+        flex-direction: column;
+       height: 225vh;
+       margin-left: 6%;
+  
+    }
+    
+
+#main4{
+    width: 100%;
+}
+
+#hero4 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain4 #susimagewrapper4 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 45px;
+}
+
+#susimagewrapper4 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 25px;
+}
+
+#susimagewrapper4 img {
+    position: absolute;
+    top: 35%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain4 p{
+    font-family: new york;
+    color:  #733200ff;
+    font-size: 2.5vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain4 {
+    width: 100%;
+}
+#ephemeral4 {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 39px;
+}
+
+#ephemeral4 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings4{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    
+}
+.new4{
+    padding-bottom: 5%;
+}
+#visit4 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+
+}
+
+#motive4 h2{
+
+    font-size: 28px;
+
+}
+#motive4{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+} 
+#motive4 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive4 span{
+    display: inline-block;
+
+    height: 43px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#cinq{
+    width: 56px;
+    background-image:url('https://africa.si.edu/wp-content/uploads/2A.chokwe.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+#trois:hover{
+  width: 100px;
+    filter: sepia(30%);
+    border-radius: 76px;
+}
+#quatre:hover{
+  width: 100px;
+    filter: sepia(30%);
+    border-radius: 76px;
+}
+
+
+#eight{
+  width: 62px;
+    background-image:url('https://cdn.myportfolio.com/dd3bd6d6-8058-48e4-b2ca-299c616cd8cc/259ed80e-694d-4e7b-8099-8b6b1e01faa5_rw_1200.gif?h=d1528ae961e7069cc557a918d07fc5f1') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+}
+/*Section 4*/
+.gallery5 {
+        display: flex;
+        flex-direction: column;
+       height: 225vh;
+       margin-left: 6%;
+  
+    }
+
+#main5{
+    width: 100%;
+}
+
+#hero5 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain5 #susimagewrapper5 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 45px;
+}
+
+#susimagewrapper5 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 25px;
+}
+
+#susimagewrapper5 img {
+    position: absolute;
+    top: 55%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain5 p{
+    font-family: new york;
+    color:  #733200ff;
+    font-size: 2.5vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain5 {
+    width: 100%;
+}
+#ephemeral5 {
+    width: 31.5vw;
+    height: 35vw;
+
+    border-radius: 39px;
+    
+}
+
+#ephemeral5 h2{
+    font-size: 7vw;
+    font-weight: 100;
+    
+
+ }
+ #headings5 {
+    position: relative;
+    top: -5%;
+
+ }
+.toflex5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new5{
+    padding-bottom: 5%;
+}
+#visit5 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 39px;
+    margin-top: -17%;
+}
+
+#motive5 h2{
+
+    font-size: 28px;
+
+}
+#motive5 {
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+} 
+#motive5 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive5 span{
+    display: inline-block;
+
+    height: 43px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#six{
+    width: 56px;
+    background-image:url('https://media.licdn.com/dms/image/C4D22AQHZH2hC9w37zQ/feedshare-shrink_1280/0/1547638247472?e=2147483647&v=beta&t=hCqErWUU4wpYSLs5Lw5YTNswRpzTthvqLsp2F7TOBzE') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#seven{
+  width: 56px;
+    background-image:url('https://i.makeagif.com/media/10-14-2015/kpib7W.gif') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#six, #seven {
+    width: 56px;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; /* Add transitions for smooth hover effect */
+}
+
+#six:hover, #seven:hover,  #eight:hover{
+    filter: sepia(30%);
+    width: 100px;
+    border-radius: 76px;
+}
+
+.extra-space{
+  height: 100vh;
+}
+
+.dynamic{
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: middle; 
+  place-items: center;
+  height: 100vh;
+}
+li{
+  color: #733200ff;
+  font-size: 7vw;
+  font-weight: 100;
+  font-family: new york;
+}
+
+.dynamic span {
+width: 110px;
+height: 110px;
+position: absolute;
+bottom: 0;
+left: 0;
+background: #733200ff;
+border-radius: 50%;
+
+}
+
+  </style>
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+</head>
+<body>
+    <div class="cursor"></div>
+  <div class="navigation">
+    <nav>
+        <div>
+            <a href="#">About</a>
+            <a href="#">Story</a>
+        </div>
+      <div class="title">
+        <h2>Frica.</h2>
+      </div>
+      <div class="okay">
+        <a href="#">Gallery</a>
+      </div>
+    </nav>
+  </div>
+  <div class="needed">
+  <section class="start">
+    <div class="animation-container">
+        <div class="photo-container">
+            
+          </div>
+      <h1>" Radiant Splendors of Africa: Where Beauty Harmonizes with Spirit "</h1> 
+    </div>
+</div>
+
+  </section>
+  <h2 class="hello-text" id="helloTextContent"> _______________ </h2>
+<section class="about">
+<h2>About</h2>
+<p>Step into our evolving art gallery, where each stroke narrates Africa's rich heritage. Feel the heartbeat of a cultural evolution, as artists weave tales of resilience. Witness the harmonious dance of tradition and innovation, inviting you to explore and be inspired by the ever-evolving spirit of African artistry.</p>
+</section>
+<section class="history" id="story">
+    <h2>Exposé</h2>
+    
+    <div class="image-container">
+        <div class="image-container parallax-container">
+            <img src="https://wallpaperset.com/w/full/c/8/a/465060.jpg" alt="">
+        </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Our Story</h2>
+    <div id="main">
+        <div id="hero">
+        <div class="sustained" id="sustain">
+            <div class="new">
+            <h4>01.</h4>
+            <h3>"Enigma"</h3>
+            <p>" Cave whispers, sculpted tales, sacred masks' dances. "</p>
+        </div>
+            <div class="toflex">
+            <div id="susimagewrapper">
+                <img src="https://mau.rs/images/collections/SculpturesInWood/SculpturesInWood_1.jpg" alt="">
+            </div>
+            <div id="ephemeral" class="susimagewrapper gsap-entrance">
+                <div id="headings">
+                <h2>Primordial </h2>
+                <h2>Elegance</h2>
+            </div>
+            <div id="imagntext" >
+            <img src="https://i.pinimg.com/originals/15/b7/8b/15b78b313f2a5265c275a7f402d390e4.jpg" alt="">
+            <p>Early African art: cave paintings, enigmatic sculptures, sacred masks.</p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>See More ?</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive"><h2>Essence</h2>
+        <p>Early African art <span id="un"></span>  reveals primal beauty through cave paintings, enigmatic sculptures, and sacred masks <span id="deux"></span>.</p>
+        </div>
+    </div>
+  </section>
+  <!-- No 2-->
+  <section id="gallery2" class="gallery2">
+
+    <div id="main2">
+        <div id="hero2">
+        <div class="sustained2" id="sustain2">
+            <div class="new2">
+            <h4>02.</h4>
+            <h3>"Artisan's Embrace"</h3>
+            <p>" Metal's symphony, vibrant weaves, architectural poetry. "</p>
+        </div>
+            <div class="toflex2">
+            <div id="susimagewrapper2">
+                <img src="https://img.freepik.com/free-vector/black-white-handdrawn-style-line-doodle-pattern-background_1409-3937.jpg" alt="">
+            </div>
+            <div id="ephemeral2"  class="susimagewrapper gsap-entrance">
+                <div id="headings2">
+                <h2>Forged </h2>
+                <h2>Legacies</h2>
+            </div>
+            <div id="imagntext2" >
+            <img src="https://image.invaluable.com/housePhotos/Capitolium/63/738063/H4007-L312568503.jpg" alt="">
+            <p>Metalwork mastery, vibrant textiles, architectural wonders: rich cultural narratives.</p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>See More ?</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive2" ><h2>Essence</h2>
+        <p>Metalwork mastery, vibrant textiles, and architectural wonders <span id="trois"></span> mark this era, embedding rich cultural narratives in every creation.</p>
+        </div>
+    </div>
+  </section>
+  <!-- No 3-->
+  <section id="gallery3" class="gallery3">
+
+    <div id="main3">
+        <div id="hero3">
+        <div class="sustained3" id="sustain3">
+            <div class="new3">
+            <h4>03.</h4>
+            <h3>"Colonial Crescendo"</h3>
+            <p>" Disrupted echoes, cultural alchemy, art's resilience. "</p>
+        </div>
+            <div class="toflex3">
+            <div id="susimagewrapper3" >
+                <img src="https://smarthistory.org/wp-content/uploads/2020/01/benin2.jpg" alt="">
+            </div>
+            <div id="ephemeral3">
+                <div id="headings3"  class="susimagewrapper gsap-entrance">
+                <h2>Conquest </h2>
+                <h2>Echoes</h2>
+            </div>
+            <div id="imagntext3" >
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=704x10000:format=jpg/path/s78e026e07f0805bc/image/i68fd79c0cf1c399b/version/1468592923/image.jpg" alt="">
+            <p>Colonizers uproot traditions, sparking cultural defense and artistic fusion. </p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>See More ?</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive3"><h2>Essence</h2>
+        <p>Colonial challenges disrupt traditional expressions <span id="quatre"></span>, prompting a struggle for cultural preservation and a synthesis of indigenous and Western styles.</p>
+        </div>
+    </div>
+  </section>
+    <!-- No 4-->
+    <section id="gallery4" class="gallery4">
+      <div id="main4">
+          <div id="hero4">
+          <div class="sustained4" id="sustain4">
+              <div class="new4">
+              <h4>04.</h4>
+              <h3>"Brighter Days"</h3>
+              <p>" Post-independence dance, tradition's fusion, modern heartbeat. "</p>
+          </div>
+              <div class="toflex4">
+              <div id="susimagewrapper4" >
+                  <img src="https://www.tingatingaart.com/cdn/shop/articles/OIG.uqPMLeU42E1yN_2048x.jpg?v=1701159335" alt="">
+              </div>
+              <div id="ephemeral4"  >
+                  <div id="headings4" class="susimagewrapper gsap-entrance">
+                  <h2>Self</h2>
+                  <h2>Quest</h2>
+              </div>
+              <div id="imagntext4" >
+      <div class="real">       <img src="https://75bdb6.a2cdn1.secureserver.net/wp-content/uploads/2019/03/Phila-Ndwandwe-Angolan-Liberation-Fighter.jpg" alt=""></div> 
+              <p>The Echoes of the freedom fighters change the outcome of events.</p>
+          </div> 
+             </div>
+              <div id="visit">
+                  <div id="circle">
+                      <h4>See More ?</h4>
+                      <div id="underline"></div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          <div id="motive4"><h2>Essence</h2>
+          <p>Post-independence artists redefine identities, blending traditional motifs <span id="six"></span> with modern styles.</p>
+          </div>
+      </div>
+    </section>
+<!--5th  Section -->
+<section id="gallery5" class="gallery5">
+  <div id="main5">
+      <div id="hero5">
+      <div class="sustained5" id="sustain5">
+          <div class="new5">
+          <h4>05.</h4>
+          <h3>"Contemporary Narratives"</h3>
+          <p>" Contemporary canvases, global dance, art's evolving tale."</p>
+      </div>
+          <div class="toflex5">
+          <div id="susimagewrapper5">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f8e1da104672025.5f688ca5a329a.gif" alt="">
+          </div>
+          <div id="ephemeral5"  class="susimagewrapper gsap-entrance">
+              <div id="headings5">
+              <h2>Eclipsed</h2>
+              <h2>Narratives</h2>
+          </div>
+          <div id="imagntext5">
+          <img src="https://static.vecteezy.com/system/resources/previews/026/593/833/large_2x/african-black-woman-portrait-cute-girl-stock-background-free-photo.jpg" alt="">
+          <p>Modern African art navigates global diversity. </p>
+      </div> 
+         </div>
+          <div id="visit">
+              <div id="circle">
+                  <h4>See More ?</h4>
+                  <div id="underline"></div>
+              </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      <div id="motive5"><h2>Essence</h2>
+      <p>Contemporary African art embraces diverse mediums <span id="seven"></span>, navigating globalization and cultural diversity <span id="eight"></span>. </p>
+      </div>
+  </div>
+</section>
+
+
+<!-- Cool Transition to my next page-->
+<section class="dynamic">
+  <ul>
+  
+  <li class="scroll">En</li>
+  <li>coun</li>
+  <li class="scroll">ter</li>
+  </ul>
+  </section>
+  <section class="extra-space"></section>
+  <section class="overlap"></section>
+<!--Parallax Text-->
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+
+<script>
+  const targets = document.querySelectorAll('.scroll');
+  const extraSpace = document.querySelector('.extra-space');
+  let initialScrollPositions = Array(targets.length).fill(null);
+  let lastScrollPositions = Array(targets.length).fill(0);
+
+  const updateParallax = (index) => {
+    if (initialScrollPositions[index] !== null) {
+      const scrolled = Math.max(0, window.pageYOffset - initialScrollPositions[index]);
+      const rate = scrolled * 0.5;
+
+      // Use GSAP to animate the translation
+      gsap.to(targets[index], { y: rate, duration: 0.5 });
+
+      if (window.pageYOffset < initialScrollPositions[index]) {
+        // Stop the movement only when scrolling up beyond the original position
+        initialScrollPositions[index] = null;
+      }
+    }
+
+    lastScrollPositions[index] = window.pageYOffset;
+    requestAnimationFrame(() => updateParallax(index));
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.98 && initialScrollPositions[index] === null) {
+        // Trigger the GSAP animation when 98% of .extra-space is in view
+        initialScrollPositions[index] = window.pageYOffset;
+        updateParallax(index);
+      }
+    });
+  }, { threshold: 0.98 }); // Adjust the threshold as needed
+
+  targets.forEach((target, index) => {
+    observer.observe(target);
+  });
+
+  observer.observe(extraSpace);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- for lenis smooth scroll-->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+  <script>
+    const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 2,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const h1 = document.querySelector('h1');
+      const splitText = new SplitType(h1);
+      const chars = splitText.chars;
+  
+      const animations = [
+        animateConnectedFadeIn,
+        animateConnectedSquashAndStretch,
+        animateConnectedScaleAndRotate,
+        animateConnectedFloat,
+      ];
+  
+      function playSequentialAnimations() {
+        
+        const timeline = gsap.timeline({ onComplete: playRandomAnimation });
+        animations.forEach((animation) => timeline.add(animation()));
+      }
+  
+      function playRandomAnimation() {
+       
+      }
+  
+      setTimeout(() => {
+        playSequentialAnimations();
+      }, 100);
+  
+      function animateConnectedFadeIn() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedSquashAndStretch() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, scaleY: 1.1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedScaleAndRotate() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, scale: 1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, rotate: 0, scaleX: 1, ease: 'elastic.out(1, 0.3)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedFloat() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, y: -20, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+    });
+  </script>
+  
+  <!-- For custom cursor -->
+<script>
+const cursor = document.querySelector(".cursor");
+const links = document.querySelectorAll("nav a");
+const navlinks = document.querySelectorAll("nav");
+
+
+let lastScrollY = window.scrollY;
+const scrollThreshold = 10;
+
+document.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  const scrollDiff = Math.abs(currentScrollY - lastScrollY);
+
+  if (scrollDiff > scrollThreshold) {
+    lastScrollY = currentScrollY;
+    gsap.to(cursor, { duration: 0.2, top: cursor.getBoundingClientRect().top + window.scrollY });
+  }
+});
+
+
+document.addEventListener("mousemove", (e) => {
+  gsap.to(cursor, { duration: 0.2, left: e.pageX, top: e.pageY, ease: "power1.out" });
+});
+
+links.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    gsap.to(cursor, { duration: 0.3, scale: 1.5, opacity: 0.8, ease: "power1.out" });
+  });
+
+  link.addEventListener("mouseleave", () => {
+    gsap.to(cursor, { duration: 0.3, scale: 1, opacity: 1, ease: "power1.out" });
+  });
+});
+
+gsap.from(navlinks, {
+  opacity: 0,
+  y: 20,
+  duration: 0.5,
+  stagger: 0.1,
+  ease: "power2.out",
+});
+
+</script>
+
+  <!-- For gsap p animations -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.new p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.about p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.toflex p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.new2 p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex2 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new3 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex3 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new4 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex4 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex5 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new5 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  
+<!-- For Exposed Image effect -->
+
+<script>
+  
+  function initParallaxZoom() {
+      
+      const parallaxContainer = document.querySelector('.parallax-container');
+
+     
+      const parallaxZoomTL = gsap.timeline({
+          scrollTrigger: {
+              trigger: parallaxContainer,
+              start: 'top center',
+              end: 'bottom center',
+              scrub: true,
+          },
+      });
+
+      
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          y: '-25%', 
+          duration: 2, 
+          ease: 'power1.inOut',
+      });
+
+    
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          rotation: 10,
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+    
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          opacity: 0.7,
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+      
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          filter: 'hue-rotate(90deg)',
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+     
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          scale: 1.1,
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+     
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          scale: 1,
+          duration: 2,
+          ease: 'power1.inOut', 
+      });
+  }
+
+ 
+  initParallaxZoom();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+
+  <!-- For bumpy images on the first screen -->
+<script>
+    const imageArray = [
+      'https://wallpaperset.com/w/full/0/b/0/465081.jpg',
+      'https://wallpaperset.com/w/full/8/c/4/465043.jpg',
+      'https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732247_1280.jpg',
+      'https://i.etsystatic.com/5294708/r/il/d813fc/3139277466/il_794xN.3139277466_g2y8.jpg',
+      'https://i.pinimg.com/originals/b8/cd/a8/b8cda88b2dc6cd408d0169e965891cdd.jpg',
+      'https://i.etsystatic.com/5294708/r/il/e0b84a/987044631/il_794xN.987044631_nr5y.jpg'
+    ];
+
+    function createImageElements() {
+      const photoContainer = document.querySelector('.photo-container');
+      imageArray.forEach((imageUrl, index) => {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.classList.add('animated-photo');
+        img.style.opacity = 0;
+        photoContainer.appendChild(img);
+        animatePhoto(img, index);
+      });
+    }
+
+    function animatePhoto(image, index) {
+      const startHeight = -600; 
+      gsap.fromTo(
+        image,
+        {
+          opacity: 0,
+          scale: 0.5,
+          rotation: gsap.utils.random(-15, 15),
+          x: gsap.utils.random(0, window.innerWidth),
+          y: startHeight + gsap.utils.random(0, window.innerHeight - startHeight),
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: gsap.utils.random(-5, 5), 
+          duration: 2.5, 
+          ease: 'power4.out',
+          delay: index * 0.5,
+          onComplete: () => {
+            animatePhotoOut(image);
+          }
+        }
+      );
+    }
+
+    function animatePhotoOut(image) {
+      gsap.to(
+        image,
+        {
+          opacity: 0,
+          scale: 0.8, 
+          rotation: gsap.utils.random(-5, 5), 
+          x: gsap.utils.random(0, window.innerWidth),
+          y: gsap.utils.random(0, window.innerHeight),
+          duration: 2.5,
+          ease: 'power3.inOut', 
+          onComplete: () => {
+            animatePhoto(image, 0);
+          }
+        }
+      );
+    }
+
+    createImageElements();
+</script>
+
+  
+  <script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to("#circle h4", {
+    duration: 0.3,
+    y: "0.3em",
+    ease: "power2.inOut",
+    paused: true
+});
+
+document.getElementById("circle").addEventListener("mouseenter", function() {
+    gsap.to("#circle h4", { y: 0 });
+});
+
+document.getElementById("circle").addEventListener("mouseleave", function() {
+    gsap.to("#circle h4", { y: "0.3em" });
+});
+
+  </script>
+  <!-- For image translate -->
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.gsap-entrance').forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+    });
+  });
+</script>
+
+</body>
+</html>

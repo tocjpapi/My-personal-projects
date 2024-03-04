@@ -1,0 +1,2998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Africa</title>
+  <link href="https://fonts.cdnfonts.com/css/new-york-extra-large" rel="stylesheet">
+  <!-- The Structure is as follows: style, html body, script -->
+  <style>
+    * {
+-webkit-font-smoothing: antialiased; 
+-moz-osx-font-smoothing: grayscale;
+text-rendering: optimizeLegibility;
+}
+html {
+  scroll-behavior: smooth;
+
+}
+html.lenis {
+      height: auto;
+    }
+    
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto; 
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-shadow: #fff;
+}
+html::-webkit-scrollbar {
+  width: 12px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+.container {
+            position: relative;
+            width: 100vw;
+            height: 120vh;
+            overflow: hidden;
+        }
+
+.title{
+  margin-left: -56px;
+}
+.about h2{
+  font-size: 28px;
+}
+.gallery h2{
+  font-size: 28px;
+}
+#story h2{
+  font-size: 28px;
+}
+body {
+background-color: #000000;
+  justify-content: center;
+  overscroll-behavior:  contain;
+  scrollbar-color: transparent transparent;
+}
+::selection {
+  color: rgb(255, 134, 41); 
+}
+nav a:hover {
+    cursor: url('img/yass.png') 15 15, auto;
+}
+
+.cursor {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #733200ff;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 1000ms, height 1000ms;
+}
+
+.cursor.large {
+    height: 70px;
+    width: 70px;
+}
+
+    .animation-container {
+     text-align: center;
+    }
+    h1 {
+      font-size: 3.5vw;
+
+      text-align: center;
+      color:  #733200ff;
+      font-weight: 800;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      font-stretch: 45px;
+
+      padding-right: 6px;
+
+    }
+
+    .start {
+      background-color: #000000;
+      height: 100vh; 
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: url('img/yass.png') 15 15, auto;
+    }
+
+    .navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px;
+      z-index: 10;
+      font-family: 'Romie', sans-serif;
+      padding-top: 12px;
+      cursor: url('img/yass.png') 15 15, auto;
+      font-size: 2.2vh;
+    }
+
+
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+    }
+
+    .navigation a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #733200ff;
+      position: relative;
+      padding-bottom: 6px;
+      font-weight: 400;
+    }
+    .navigation.scrolled a {
+  color: black; 
+}
+.cursor.large.scrolled {
+    height: 70px;
+    width: 70px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+
+
+.navigation h2{
+  font-weight: 800;
+  font-size: 5.1vh;
+}
+
+.navigation.scrolled h2,
+.scrolled h2 {
+  color: black; 
+}
+.navigation.scrolled a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0); 
+      transition: width 0.3s ease; 
+    }
+    .navigation.scrolled a:hover {
+      color: #1a1a1a; 
+    }
+
+    .cursor.scrolled {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgb(0, 0, 0);
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: width 1000ms, height 1000ms;
+}
+
+
+    .navigation a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #733200ff; 
+      transition: width 0.3s ease; 
+    }
+    .hello-text{
+     color: #733200ff;
+   }
+   h2{
+    font-size: 3vw;
+      text-align: left;
+      color:  #733200ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      transition: color 0.5s ease;
+
+   }
+    .navigation a:hover::before {
+      width: 100%;
+    }
+
+    .navigation a:hover {
+      color: #59423a; 
+    }
+    .okay{
+        padding-right: 25px;
+    }
+    .hello-text {
+            margin-top: -2.5%;
+            width: 100vw;
+            font-family: 'SF Pro Rounded Regular', Arial, sans-serif;
+            text-align: center;
+            margin-left: 0%;
+            font-size: 1.25em;
+            animation: fadeInAnimation 1.5s, slideUpDownAnimation 1s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
+            text-shadow: #5e3c30;
+            font-weight: bolder;
+        }
+        @keyframes slideUpDownAnimation {
+        0%, 100% {
+            transform: translateY(10px);
+        }
+        50% {
+            transform: translateY(2px); 
+        }
+    }
+    .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 20px; 
+  width: 45%;
+  margin-left: 6%;
+}
+    p{
+        font-family: New York;
+        color:  #733200ff;
+        font-size: 2.6vh;
+        z-index: 5;
+        font-weight: 480;
+    }
+
+#story{
+ 
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 6%;
+}
+    .gallery {
+        display: flex;
+        flex-direction: column;
+       height: 275vh;
+       margin-left: 6%;
+  
+    }
+    .image-container {
+    width: 97%;
+    height: 90%;
+    padding-top: 20px;
+}
+
+.image-container img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; 
+    border-radius: 50px;
+
+    
+}
+
+.photo-container{
+
+    width: 100px;
+    height:  100px;
+
+}
+.photo-container img{
+   object-fit: cover;
+   width: 100%;
+    height: 100%; 
+    border-radius: 50%;
+    
+}
+h4{
+    font-size: 16px;
+    color:#733200ff;
+    font-family: New York;
+}
+h3{
+    font-size: 26px;
+    color:#733200ff;
+    font-family: New York;
+}
+#main{
+    width: 100%;
+}
+
+#hero {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain #susimagewrapper {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 20%;
+}
+
+#susimagewrapper {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 20%;
+}
+
+#susimagewrapper img {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain p{
+    font-family: New York;
+    color:  #733200ff;
+    font-size: 2.6vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain {
+    width: 100%;
+}
+#ephemeral {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 20%;
+}
+
+#ephemeral h2{
+    font-size: 7vw;
+    font-weight: 100;
+ }
+ #headings{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    margin-top: -30%;
+}
+#motive{
+  padding-top: 28%;
+}
+.new{
+ 
+}
+#visit {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 56px;
+    filter: 'sepia(80%)';
+}
+
+#motive h2{
+
+    font-size: 28px;;
+}
+#motive{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    flex-direction: row;
+} 
+#motive p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.6vh;
+    line-height: 42px;
+}
+#motive span{
+    display: inline-block;
+
+    height: 37px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 10px;
+    margin-bottom: -9.5px;
+} 
+#un{
+    width: 72px;
+    background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nok_sculpture_Louvre_70-1998-11-1.jpg/250px-Nok_sculpture_Louvre_70-1998-11-1.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#deux{
+    width: 52px;
+    background-image:url('https://smithsonianassociates.org/ticketing/images/web-core-2020/african-art-centuries.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(10%);
+}
+#un, #deux {
+    width: 56px;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+
+#un:hover, #deux:hover{
+    filter: sepia(30%);
+    width: 84px;
+    border-radius: 76px;
+}
+
+
+.gallery2 {
+        display: flex;
+        flex-direction: column;
+       height: 240vh;
+       margin-left: 6%;
+  
+    }
+
+#main2{
+    width: 100%;
+}
+
+#hero2 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain2 #susimagewrapper2 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 20%;
+}
+
+#susimagewrapper2 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 20%;
+}
+
+#susimagewrapper2 img {
+    position: absolute;
+    top: 45%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain2 p{
+    font-family: New York;
+    color:  #733200ff;
+    font-size: 2.6vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain2 {
+    width: 100%;
+}
+#ephemeral2 {
+    width: 31.5vw;
+    height: 44vw;
+    border-radius: 20%;
+}
+
+#ephemeral2 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings2{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new2{
+  padding-bottom: 12%;
+}
+#visit2 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral2 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 56px;
+    filter: 'sepia(80%)';
+}
+
+#motive2 h2{
+
+    font-size: 28px;
+
+}
+#motive2{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    flex-direction: row;
+} 
+#motive2 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.6vh;
+    line-height: 42px;
+}
+#motive2 span{
+    display: inline-block;
+
+    height: 37px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+
+/*Section 3*/
+.gallery3 {
+        display: flex;
+        flex-direction: column;
+       height: 275vh;
+       margin-left: 6%;
+  
+    }
+
+#main3{
+    width: 100%;
+}
+
+#hero3 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain3 #susimagewrapper3 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 20%;
+}
+
+#susimagewrapper3 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 20%;
+}
+
+#susimagewrapper3 img {
+    position: absolute;
+    top: 70%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain3 p{
+    font-family: New York;
+    color:  #733200ff;
+    font-size: 2.6vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain3 {
+    width: 100%;
+}
+#ephemeral3 {
+    width: 31.5vw;
+    height: 44vw;
+
+    border-radius: 20%;
+}
+
+#ephemeral3 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings3{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new3{
+  padding-bottom: 12%;
+}
+#visit3 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral3 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 56px;
+    filter: 'sepia(80%)';
+}
+
+#motive3 h2{
+
+    font-size: 28px;
+
+}
+#motive3{
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    flex-direction: row;
+} 
+#motive3 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.6vh;
+    line-height: 42px;
+}
+#motive3 span{
+    display: inline-block;
+
+    height: 37px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#trois{
+    width: 72px;
+    background-image:url('https://www.researchgate.net/publication/293581542/figure/fig1/AS:400904978223104@1472594603370/Anonymous-Implements-and-Weapons-of-Central-Africa-plate-46-in-volume-1-from-Henry.png') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+#quatre{
+    width: 72px;
+    background-image:url('https://static.wixstatic.com/media/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg/v1/fill/w_800,h_605,al_c,q_85,enc_auto/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+
+/*Section 4*/
+.gallery4 {
+        display: flex;
+        flex-direction: column;
+       height: 275vh;
+       margin-left: 6%;
+  
+    }
+    
+
+#main4{
+    width: 100%;
+}
+
+#hero4 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain4 #susimagewrapper4 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 20%;
+}
+
+#susimagewrapper4 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 20%;
+}
+
+#susimagewrapper4 img {
+    position: absolute;
+    top: 35%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain4 p{
+    font-family: New York;
+    color:  #733200ff;
+    font-size: 2.6vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain4 {
+    width: 100%;
+}
+#ephemeral4 {
+    width: 31.5vw;
+    height: 44vw;
+    border-radius: 20%;
+}
+
+#ephemeral4 h2{
+    font-size: 7vw;
+    font-weight: 100;
+
+ }
+ #headings4{
+    position: absolute;
+    margin-top: -6%;
+
+ }
+.toflex4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    
+}
+.new4{
+  padding-bottom: 12%;
+}
+#visit4 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral4 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 56px;
+    filter: 'sepia(80%)';
+}
+
+#motive4 h2{
+
+    font-size: 28px;
+
+}
+#motive4{
+    padding-top: 29vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    flex-direction: row;
+} 
+
+
+#motive5{
+  padding-top: 29vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    flex-direction: row;
+} 
+#motive5 p{
+  width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.6vh;
+    line-height: 42px;
+}
+#motive4 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.6vh;
+    line-height: 42px;
+}
+#motive4 span{
+    display: inline-block;
+
+    height: 37px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#cinq{
+    width: 56px;
+    background-image:url('https://africa.si.edu/wp-content/uploads/2A.chokwe.jpg') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
+}
+#trois:hover{
+  width: 100px;
+    filter: sepia(30%);
+    border-radius: 76px;
+}
+#quatre:hover{
+  width: 100px;
+    filter: sepia(30%);
+    border-radius: 76px;
+}
+
+
+#eight{
+  width: 62px;
+    background-image:url('https://cdn.myportfolio.com/dd3bd6d6-8058-48e4-b2ca-299c616cd8cc/259ed80e-694d-4e7b-8099-8b6b1e01faa5_rw_1200.gif?h=d1528ae961e7069cc557a918d07fc5f1') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+}
+/*Section 4*/
+.gallery5 {
+        display: flex;
+        flex-direction: column;
+       height: 275vh;
+       margin-left: 6%;
+  
+    }
+
+#main5{
+    width: 100%;
+}
+
+#hero5 {
+    display: flex;
+    width: 100%;
+    margin-top: 13vw; 
+    padding: 0;
+    
+}
+#sustain5 #susimagewrapper5 {
+position: relative;
+overflow: hidden;
+width: 17%;
+height: 17vw;
+border-radius: 20%;
+}
+
+#susimagewrapper5 {
+    position: relative;
+    overflow: hidden;
+    width: 19vw;
+    height: 17vh;
+    border-radius: 20%;
+}
+
+#susimagewrapper5 img {
+    position: absolute;
+    top: 55%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 140%;
+    object-fit: cover;
+    filter: sepia(60%);
+}
+#sustain5 p{
+    font-family: New York;
+    color:  #733200ff;
+    font-size: 2.6vh;
+    z-index: 5;
+    font-weight: 480;
+    
+}
+
+#sustain5 {
+    width: 100%;
+}
+#ephemeral5 {
+    width: 31.5vw;
+    height: 35vw;
+    border-radius: 15%;
+    
+}
+
+#ephemeral5 h2{
+    font-size: 7vw;
+    font-weight: 100;
+    
+
+ }
+ #headings5 {
+    position: relative;
+    top: -5%;
+
+ }
+.toflex5 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+.new5{
+  padding-bottom: 12%;
+}
+#visit5 {
+    display: flex;
+    padding-right: 5%;
+    align-items: center;
+    cursor: pointer;
+}
+#ephemeral5 img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 56px;
+    margin-top: -17%;
+    filter: 'sepia(80%)';
+}
+
+#motive5 h2{
+
+    font-size: 28px;
+
+}
+#motive5 {
+    padding-top: 23vw;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18%;
+} 
+#motive5 p{
+    width: 50%;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 2.9vh;
+    line-height: 42px;
+}
+#motive5 span{
+    display: inline-block;
+
+    height: 37px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 5px;
+    margin-bottom: -9.5px;
+} 
+#six{
+    width: 56px;
+    background-image:url('https://media.licdn.com/dms/image/C4D22AQHZH2hC9w37zQ/feedshare-shrink_1280/0/1547638247472?e=2147483647&v=beta&t=hCqErWUU4wpYSLs5Lw5YTNswRpzTthvqLsp2F7TOBzE') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#seven{
+  width: 56px;
+    background-image:url('https://i.makeagif.com/media/10-14-2015/kpib7W.gif') ;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+}
+#six, #seven {
+    width: 56px;
+    background-size: cover;
+    background-position: center;
+    filter: sepia(60%);
+    transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
+}
+
+#six:hover, #seven:hover,  #eight:hover{
+    filter: sepia(30%);
+    width: 100px;
+    border-radius: 76px;
+}
+
+.extra-space{
+  height: 10vh;
+}
+
+.dynamic{
+  height: 100vh;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  align-items: middle; 
+  place-items: center;
+  height: 100vh;
+}
+.more{
+  height: 100vh;
+}
+li{
+  color: #733200ff;
+  font-size: 7vw;
+  font-weight: 100;
+  font-family: New York;
+}
+
+.dynamic span {
+width: 110px;
+height: 110px;
+position: absolute;
+bottom: 0;
+left: 0;
+background: #733200ff;
+border-radius: 50%;
+}
+
+.overlap {
+  height: 50vh;
+  background: #733200ff;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlap p {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  max-width: 80%; 
+  font-size: 11vh;
+  margin-top: 29%;
+}
+.cover{
+  color: #59423a;
+}
+.overlap2 {
+  height:59vh;
+  background: #733200ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  float: right;
+}
+
+.overlap2 p {
+  color: #000000;
+  font-family: New York ;
+  letter-spacing: 15px;
+}
+
+.circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: anim 90s linear infinite;
+}
+
+@keyframes anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.text span{
+position: absolute;
+left: 50%;
+font-size: 1.2en;
+transform-origin: 0 14.5vh;
+
+}
+.contain2{
+  justify-content: center;
+  align-items: center;
+}
+
+.textwrapper{
+margin-right: -26%;
+margin-top: -25%;
+line-height: 0;
+}
+
+.textwrapper p {
+  margin-bottom: -29%;
+  font-size: 8vh;
+}
+
+
+.anima{
+  background-color: #733200ff;
+}
+
+
+  .cover-content {
+    text-align: center;
+  }
+#cover {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  height: 10vh;
+
+  color: #fff;
+}
+
+.today {
+  height: 100vh; 
+  transition: transform 0.5s ease; 
+}
+
+.cover-content {
+  position: absolute;
+  justify-content: center;
+  text-align: center;
+
+  perspective: 200px;
+  z-index: 2;
+}
+
+.cover-content h3{
+  color: #733200ff;
+  text-align: center;
+  font-size: 4.5vw;
+  font-weight: 400;
+}
+
+.coolio {
+  overflow: hidden;
+}
+
+.projects__sticky {
+      overflow: hidden;
+    }
+
+    .slider__container {
+      overflow-x: scroll;
+      white-space: nowrap;
+    }
+
+    .projects__slider {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+.project {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  position: relative;
+  width: 25vw;
+  height: 100%;
+  padding: 80px 20px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.image__container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 6 / 7 ;
+  overflow: hidden;
+}
+
+.project__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: sepia(50%);
+  border-radius: 55px;
+
+}
+
+.project__details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+
+.project__details p {
+  font-size: 2vh;
+}
+
+.bannaner{
+position: relative;
+width: 250px;
+height: 415px;
+}
+
+  </style>
+
+
+
+
+<!--responsive-->
+  <style>
+    @media screen and (max-width: 932px) {
+      .overlap p {
+  position: relative;
+  color: #000000;
+  text-align: center;
+  max-width: 80%; 
+  margin-top: 29%;
+
+}
+.textwrapper p {
+  margin-bottom: -29%;
+  font-size: 2.7vh;
+}
+
+.toflex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+
+}
+#sustain p,#sustain2 p,#sustain3 p,#sustain4 p,#sustain5 p{
+    font-size: 1.8vh;
+}
+ .overlay .hover-btn2 {
+margin-right: 17%;
+    }
+
+.toflex{
+  margin-top: -95%;
+}
+.toflex2, .toflex3,.toflex4,.toflex5{
+  margin-top: 40%
+}
+
+.project__image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: sepia(50%);
+  border-radius: 28px;
+
+}
+
+
+#ephemeral,#ephemeral2,#ephemeral3,#ephemeral4,#ephemeral5  {
+    width: 32.5vh;
+    height: 48vh;
+}
+
+#ephemeral img,#ephemeral2 img,#ephemeral3 img,#ephemeral4 img,#ephemeral5 img  {
+    border-radius: 30px;
+}
+
+#susimagewrapper,
+#susimagewrapper2,
+#susimagewrapper3,
+#susimagewrapper4,
+#susimagewrapper5 {
+display: none;
+}
+
+#motive p,
+#motive2 p,
+#motive3 p,
+#motive4 p,
+#motive5 p {
+    font-size: 1.8vh;
+    line-height: 22px;
+    width: 60%;
+}
+#motive,#motive2,#motive3,#motive4,#motive5 {
+
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+} 
+
+#motive span,#motive2 span,#motive3 span,#motive4 span,#motive5 span{
+    display: inline-block;
+
+    height: 22px;
+    width: 40px;
+    background-color: red;
+    border-radius: 100px;
+    margin: 0 10px;
+    margin-bottom: -9.5px;
+} 
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 20px; 
+  width: 80%;
+  margin-left: 6%;
+}
+
+.hello-text{
+display: none;
+}
+.about p{
+  font-size: 1.8vh;
+}
+.text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: none;
+}
+.photo-container{
+  display: none;
+}
+h2{
+    font-size: 6vw;
+      text-align: left;
+      color:  #733200ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      transition: color 0.5s ease;
+
+   }
+
+.title{
+  margin-left: -10%;
+}
+
+.navigation a{
+  font-size: 13px;
+}
+.image__container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 /4 ;
+  overflow: hidden;
+}
+
+.project__details p {
+  font-size: 1.3vh;
+}
+
+.extra-space{
+height: 0vh;
+}
+
+
+#motive5,#motive,#motive2,#motive3,#motive4{
+  margin-top: 45%;
+}
+
+#gallery, #gallery2, #gallery3, #gallery4, #gallery5 {
+    margin-bottom: -40%; 
+  }
+
+.dynamic{
+  margin-top: -260%;
+  }
+  .navigation h2{
+    font-size: 3.7vh;
+  }
+}
+  </style>
+
+  <style>
+ @media screen and (max-width: 932px) and (orientation: landscape) {
+  .hello-text{
+    display: block;
+    margin-top: -3.4%;
+  }
+
+  .navigation h2{
+    font-size: 5.7vh;
+  }
+
+
+  .about{
+    width: 45%;
+  }
+
+  .toflex{
+  margin-top: -25%;
+}
+  
+
+#motive,#motive2,#motive3,#motive4,#motive5 {
+margin-top: -20%;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+} 
+
+.toflex2, .toflex3,.toflex4,.toflex5{
+  margin-top: -10%;
+}
+
+.happy{
+  margin-top: 210%;
+}
+
+#ephemeral h2, #ephemeral2 h2, #ephemeral3 h2, #ephemeral4 h2, #ephemeral5 h2{
+  font-size: 7.7vh;
+}
+
+
+#ephemeral,#ephemeral2,#ephemeral3,#ephemeral4,#ephemeral5  {
+    width: 42.5vh;
+    height: 58vh;
+}
+
+ }
+  </style>
+  <style id="INLINE_PEN_STYLESHEET_ID">
+
+
+
+    .chill {
+      position: relative;
+      height: 105vh;
+      width: 100vw;
+      
+      justify-content: center;
+    }
+
+    .chill section {
+      height: 105vh;
+      padding: 3em;
+      position: relative; 
+      text-align: center;
+      justify-content: center;
+    }
+
+
+    .chill .overlay {
+      background-color: #733200ff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 105vh;
+      clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
+      transition: clip-path 100ms;
+      text-align: center;
+    }
+
+    .chill .overlay p{
+      color: #000000;
+      text-align: center;
+      font-size: 8vh;
+    }
+    .chill p{
+      text-align: center;
+      font-size: 8vh;
+      color: #733200ff;
+    }
+    .chill {
+  position: relative;
+  clip-path: circle(100% at 50% 50%);
+  background-color: black;
+
+}
+
+.is-open .overlay {
+  clip-path: circle(200% at 100% 100%);
+  transition: clip-path 1.3s cubic-bezier(1, -0.01, 0.01, 0.99);
+}
+
+    .hover-btn2 {
+      top: 0;
+    }
+
+    .hover-btn {
+      top: 0;
+    }
+
+    .new {
+      height: 100vh;
+    }
+
+/* This is to remove default button styling */
+button, input[type="button"], input[type="submit"], input[type="reset"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+  color: #000000;
+}
+
+/* better readability */
+button, input[type="button"], input[type="submit"], input[type="reset"], a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  color: #000000;
+}
+
+.navigation a {
+    transition: color 0.5s ease;
+}
+
+.navigation a.clicked {
+    color: #000; 
+}
+
+  </style>
+
+
+<style>
+  #banner{
+    width: 100%;
+    margin-top: 8vw;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    padding-bottom: 3%;
+  }
+
+  #bimg{
+    width: 52%;
+    height: 37vw;
+
+  }
+  #bimg img{
+    width: 100%;
+    height: 100%;
+    object-position: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+    
+  }
+
+
+  #btext{
+    padding: 0 3vw;
+    text-align: center;
+  }
+  
+  #btext h2{
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #btext p{
+    font-size: 1.9vh;
+
+  }
+  .overlay video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.027;
+}
+.alja{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+.alj {
+  position: absolute;
+  width: 23%;
+  height: 47%;
+  align-items: center;
+  transform: rotate(-30deg) skew(25deg);
+  transition: 0.5s;
+  opacity: 0.75;
+  margin-top: 37%;
+  margin-right: 20%;
+  cursor: pointer;
+}
+
+.alj::after {
+  content: "Check Out Aljezeera's Documentation";
+  position: fixed;
+  background: transparent; 
+  padding: 10px;
+  font-family: New York;
+  font-size: 2.1vh;
+  font-weight: normal;
+  z-index: 999;
+  top: 0; 
+  left: 0;
+  max-width: 200px;
+  opacity: 0;
+  pointer-events: none; 
+  transition: opacity 0.5s ease; 
+}
+
+.alj:hover::after {
+  opacity: 1;
+}
+
+
+
+.alj img{
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.5s;
+
+}
+
+.alj:hover img:nth-child(4) {
+  transform: translate(120px, -120px);
+  opacity: 1;
+}
+
+.alj:hover img:nth-child(3) {
+  transform: translate(90px, -90px);
+  opacity: 0.8;
+}
+
+.alj:hover img:nth-child(2) {
+  transform: translate(60px, -60px);
+  opacity: 0.7;
+}
+
+.alj:hover img:nth-child(1) {
+  transform: translate(30px, -30px);
+  opacity: 0.6;
+}
+
+
+</style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+</head>
+<body>
+
+    <div class="cursor"></div>
+  <div class="navigation">
+    <nav>
+        <div>
+            <a href="#about">About</a>
+            <a href="#gallery">Story</a>
+        </div>
+      <div class="title">
+        <h2>Frica.</h2>
+      </div>
+      <div class="okay">
+        <a href="#">Gallery</a>
+      </div>
+    </nav>
+  </div>
+  <div class="needed">
+  <section class="start">
+    <div class="animation-container">
+        <div class="photo-container">
+            
+          </div>
+      <h1>" Radiant Splendors of Africa: Where Beauty Harmonizes with Spirit "</h1> 
+    </div>
+</div>
+
+  </section>
+  <h2 class="hello-text" id="helloTextContent"> _______________ </h2>
+<section id="about" class="about">
+<div class="change"><h2>About</h2></div>
+<p>Step into our evolving art gallery, where each stroke narrates Africa's rich heritage. Feel the heartbeat of a cultural evolution, as artists weave tales of resilience. Witness the harmonious dance of tradition and innovation, inviting you to explore and be inspired by the ever-evolving spirit of African artistry.</p>
+</section>
+<section class="history" id="story">
+    <h2>Exposé</h2>
+    
+    <div class="image-container">
+        <div class="image-container parallax-container">
+            <img src="https://getwallpapers.com/wallpaper/full/2/7/6/389041.jpg" alt="">
+        </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery">
+    <h2>Our Story</h2>
+    <div id="main">
+        <div id="hero">
+        <div class="sustained" id="sustain">
+            <div class="new">
+            <h4>01.</h4>
+            <h3>"Enigma"</h3>
+            <p>" Cave whispers, sculpted tales, sacred masks' dances. "</p>
+        </div>
+            <div class="toflex">
+            <div id="susimagewrapper">
+                <img src="https://mau.rs/images/collections/SculpturesInWood/SculpturesInWood_1.jpg" alt="">
+            </div>
+            <div id="ephemeral" class="susimagewrapper gsap-entrance">
+                <div id="headings">
+                <h2>Primordial </h2>
+                <h2>Elegance</h2>
+            </div>
+            <div id="imagntext" >
+            <img src="https://i.pinimg.com/originals/15/b7/8b/15b78b313f2a5265c275a7f402d390e4.jpg" alt="">
+            <p>Early African art: cave paintings, enigmatic sculptures, sacred masks.</p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>Phase One</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive" class="cool"><h2>Essence</h2>
+        <p>Early African art   reveals primal beauty through cave paintings, enigmatic sculptures, and made sacred masks <span id="deux"></span>.</p>
+        </div>
+    </div>
+  </section>
+  <!-- No 2-->
+  <section id="gallery2" class="gallery2">
+
+    <div id="main2">
+        <div id="hero2">
+        <div class="sustained2" id="sustain2">
+            <div class="new2">
+            <h4>02.</h4>
+            <h3>"Artisan's Embrace"</h3>
+            <p>" Metal's symphony, vibrant weaves, architectural poetry. "</p>
+        </div>
+            <div class="toflex2">
+            <div id="susimagewrapper2">
+                <img src="https://img.freepik.com/free-vector/black-white-handdrawn-style-line-doodle-pattern-background_1409-3937.jpg" alt="">
+            </div>
+            <div id="ephemeral2"  class="susimagewrapper gsap-entrance">
+                <div id="headings2">
+                <h2>Forged </h2>
+                <h2>Legacies</h2>
+            </div>
+            <div id="imagntext2" >
+            <img src="https://image.invaluable.com/housePhotos/Capitolium/63/738063/H4007-L312568503.jpg" alt="">
+            <p>Metalwork mastery, vibrant textiles, architectural wonders: rich cultural narratives.</p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>Phase  Two</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive2" class="cool"><h2>Essence</h2>
+   
+        <p>Metalwork mastery, vibrant textiles, and architectural wonders <span id="trois"></span> mark this era, embedding rich cultural narratives in every creation.</p>
+    
+        </div>
+    </div>
+  </section>
+  <!-- No 3-->
+  <section id="gallery3" class="gallery3">
+
+    <div id="main3">
+        <div id="hero3">
+        <div class="sustained3" id="sustain3">
+            <div class="new3">
+            <h4>03.</h4>
+            <h3>"Colonial Crescendo"</h3>
+            <p>" Disrupted echoes, cultural alchemy, art's resilience. "</p>
+        </div>
+            <div class="toflex3">
+            <div id="susimagewrapper3" >
+                <img src="https://smarthistory.org/wp-content/uploads/2020/01/benin2.jpg" alt="">
+            </div>
+            <div id="ephemeral3">
+                <div id="headings3"  class="susimagewrapper gsap-entrance">
+                <h2>Conquest </h2>
+                <h2>Echoes</h2>
+            </div>
+            <div id="imagntext3" >
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=704x10000:format=jpg/path/s78e026e07f0805bc/image/i68fd79c0cf1c399b/version/1468592923/image.jpg" alt="">
+            <p>Colonizers uproot traditions, sparking cultural defense and artistic fusion. </p>
+        </div> 
+           </div>
+            <div id="visit">
+                <div id="circle">
+                    <h4>Phase Three</h4>
+                    <div id="underline"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        <div id="motive3" class="cool"><h2>Essence</h2>
+        <p>Colonial challenges disrupt traditional expressions <span id="quatre"></span>, prompting a struggle for cultural preservation and a synthesis of indigenous and Western styles.</p>
+        </div>
+    </div>
+  </section>
+    <!-- No 4-->
+    <section id="gallery4" class="gallery4">
+      <div id="main4">
+          <div id="hero4">
+          <div class="sustained4" id="sustain4">
+              <div class="new4">
+              <h4>04.</h4>
+              <h3>"Brighter Days"</h3>
+              <p>" Post-independence dance, tradition's fusion, modern heartbeat. "</p>
+          </div>
+              <div class="toflex4">
+              <div id="susimagewrapper4" >
+                  <img src="https://www.tingatingaart.com/cdn/shop/articles/OIG.uqPMLeU42E1yN_2048x.jpg?v=1701159335" alt="">
+              </div>
+              <div id="ephemeral4"  >
+                  <div id="headings4" class="susimagewrapper gsap-entrance">
+                  <h2>Self</h2>
+                  <h2>Quest</h2>
+              </div>
+              <div id="imagntext4" >
+      <div class="real">       <img src="https://75bdb6.a2cdn1.secureserver.net/wp-content/uploads/2019/03/Phila-Ndwandwe-Angolan-Liberation-Fighter.jpg" alt=""></div> 
+              <p>The Echoes of the freedom fighters change the outcome of events.</p>
+          </div> 
+             </div>
+              <div id="visit">
+                  <div id="circle">
+                      <h4>Phase Four</h4>
+                      <div id="underline"></div>
+                  </div>
+              </div>
+          </div>
+          </div>
+          </div>
+          <div id="motive4" class="cool"><h2>Essence</h2>
+          <p>Post-independence artists redefine identities, blending traditional motifs <span id="six"></span> with some modern styles.</p>
+          </div>
+      </div>
+    </section>
+<!--5th  Section -->
+<section id="gallery5" class="gallery5">
+  <div id="main5">
+      <div id="hero5">
+      <div class="sustained5" id="sustain5">
+          <div class="new5">
+          <h4>05.</h4>
+          <h3>"Contemporary Narratives"</h3>
+          <p>" Contemporary canvases, global dance, art's evolving tale."</p>
+      </div>
+          <div class="toflex5">
+          <div id="susimagewrapper5">
+              <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f8e1da104672025.5f688ca5a329a.gif" alt="">
+          </div>
+          <div id="ephemeral5"  class="susimagewrapper gsap-entrance">
+              <div id="headings5">
+              <h2>Eclipsed</h2>
+              <h2>Narratives</h2>
+          </div>
+          <div id="imagntext5">
+          <img src="https://static.vecteezy.com/system/resources/previews/026/593/833/large_2x/african-black-woman-portrait-cute-girl-stock-background-free-photo.jpg" alt="">
+          <p>Modern African art navigates global diversity. </p>
+      </div> 
+         </div>
+          <div id="visit">
+              <div id="circle">
+                  <h4>Phase Four</h4>
+                  <div id="underline"></div>
+              </div>
+          </div>
+      </div>
+      </div>
+      </div>
+      <div id="motive5" class="cool"><h2>Essence</h2>
+      <p>Contemporary African art embraces diverse mediums <span id="seven"></span>, navigating globalization and cultural diversity <span id="eight"></span>. </p>
+      </div>
+  </div>
+</section>
+
+<div class="happy">
+<!-- Cool Transition to my next page-->
+<section class="dynamic">
+  <ul>
+  
+  <li class="scroll">En</li>
+  <li>coun</li>
+  <li class="scroll">ter</li>
+  </ul>
+  </section>
+  <div class="scroll">
+  <section class="extra-space"></section>
+  
+  
+<div class="today">
+
+  <div class="anima">
+  <section class="overlap">
+    <div class="contain2">
+      <div class="textwrapper">
+        <p>The African artists that paved the way.</p>
+        <p>Exploring the rich history of African art.</p>
+        <p>Revolutionizing traditional art.</p>
+        <p>Celebrating diversity in African art forms.</p>
+        <p>Modern influences shaping the future .</p>
+      </div>
+    </div>
+  </div>
+  </section>
+  <section class="overlap2">
+    <div class="circle">
+      <div class="text">
+        <p>Paving The way - African Art Redefined - </p>
+      </div>
+    </div>
+  </div>
+  </section>
+</div>
+  <div class="cover" id="cover">
+<div class="cover-content">
+    <h3>  The Artists</h3>
+     
+  </div>
+  </div>
+</div>
+
+<section class="coolio">
+  <div class="projects__sticky">
+    <div class="slider__container">
+      <div class="projects__slider" id="projectsSlider"></div>
+    </div>
+  </div>
+</section>
+<div id="banner">
+  <div id="bimg">
+    <img src="https://mediaim.expedia.com/destination/2/09cf6b718de8a0dd9d662492ad3bbbaf.jpg" alt="" srcset="">
+  </div>
+  <div id="btext">
+    <h2>Ancient Times</h2>
+    <p>Featured: Amenhotep III & Ibn Battuta</p>
+  </div>
+</div>
+<div class="chill">
+  <section>
+
+    <p>Have we Reached the End ?</p>
+
+  </section>
+ 
+  <section class="overlay">
+    <div class="hover-btn2">
+      <button onclick="showandhide(); toggleVideo();">
+      <p>No we Haven't Click Here .</p>
+  </BUTTON>
+</div>
+<div class="alja">
+  <div class="alj">
+    <img src="https://yt3.googleusercontent.com/YKrh5sIYpesEIHbjfgqwFjFx3ZgIjM_zak2z0LO8QENSgrmgKBes1m65POj9jkmzm0qoKwgl=s900-c-k-c0x00ffffff-no-rj" alt="" srcset="">
+    <img src="https://yt3.googleusercontent.com/YKrh5sIYpesEIHbjfgqwFjFx3ZgIjM_zak2z0LO8QENSgrmgKBes1m65POj9jkmzm0qoKwgl=s900-c-k-c0x00ffffff-no-rj" alt="" srcset="">
+    <img src="https://yt3.googleusercontent.com/YKrh5sIYpesEIHbjfgqwFjFx3ZgIjM_zak2z0LO8QENSgrmgKBes1m65POj9jkmzm0qoKwgl=s900-c-k-c0x00ffffff-no-rj" alt="" srcset="">
+    <img src="https://yt3.googleusercontent.com/YKrh5sIYpesEIHbjfgqwFjFx3ZgIjM_zak2z0LO8QENSgrmgKBes1m65POj9jkmzm0qoKwgl=s900-c-k-c0x00ffffff-no-rj" alt="" srcset="">
+  </div>
+
+</div>
+<video src="Modern African art shines at Dakar’s Biennale.mp4" muted autoplay></video>
+  </section>
+
+</div>
+</div>
+
+<script>
+    function showImages() {
+    var images = document.querySelectorAll('.alj img');
+    images.forEach(function (img) {
+      img.style.display = 'block';
+    });
+  }
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var button = document.querySelector('.hover-btn2 button');
+  button.addEventListener('click', function() {
+    ShowAndHide();
+  });
+
+  ShowAndHide();
+});
+
+function ShowAndHide() {
+  var x = document.querySelector('.scrollable-section');
+  var button = document.querySelector('.hover-btn2 button');
+
+  x.classList.toggle('hide');
+
+  if (x.classList.contains('hide')) {
+    x.style.display = 'block';
+    button.classList.remove('hide'); 
+  } else {
+    x.style.display = 'none'; 
+    button.classList.add('hide');
+  }
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+<script>
+const span = document.querySelector('.hover-btn2');
+const chillSection = document.querySelector('.chill');
+const overlay = chillSection.querySelector('.overlay');
+
+window.addEventListener('mousemove', (e) => {
+const { clientX, clientY } = e;
+
+const x = (clientX / window.innerWidth) * 100;
+const y = (clientY / window.innerHeight) * 100;
+
+gsap.to(overlay, {
+  '--x': `${x}%`,
+  '--y': `${y}%`,
+  duration: 0.3,
+  ease: 'sine.out'
+});
+});
+
+span.addEventListener('click', () => {
+chillSection.classList.toggle('is-open'); 
+});
+
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    window.addEventListener("scroll", revealCover);
+  });
+
+  function revealCover() {
+    const today = document.querySelector(".today");
+    const cover = document.getElementById("cover");
+
+    const revealScrollPosition = today.offsetTop;
+
+    const translateY = window.scrollY - revealScrollPosition;
+
+    today.style.transform = `translateY(-${translateY}px)`;
+
+    const opacity = Math.min(1, Math.max(0, (translateY + revealScrollPosition) / revealScrollPosition));
+
+    cover.style.opacity = opacity;
+  }
+</script>
+
+
+  <script src="https://unpkg.com/split-type"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+  
+  <script>
+    const titles = gsap.utils.toArray('.textwrapper p');
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+  
+    titles.forEach(title => {
+      const splitTitle = new SplitType(title, { types: 'lines,words,chars' });
+  
+      tl.from(splitTitle.chars, {
+        opacity: 0,
+        y: window.innerWidth > 600 ? 25 : 30, 
+        rotateX: -90,
+        stagger: window.innerWidth > 600 ? 0.02 : 0.01, 
+      }, "<")
+  
+      .to(splitTitle.chars, {
+        opacity: 0,
+        y: window.innerWidth > 600 ? -25 : -30,
+        rotateX: 90,
+        stagger: window.innerWidth > 600 ? 0.02 : 0.01,
+      }, "<1");
+    });
+  </script>
+  
+
+  <script>
+    const text = document.querySelector('.text p');
+    text.innerHTML = text.innerText
+      .split('')
+      .map((char, i) =>
+        `<span style="transform:rotate(${i * 8.3}deg)">${char}</span>`
+      )
+      .join('');
+  </script>
+  
+<script>
+  window.addEventListener('scroll', function () {
+  var overlapSection = document.querySelector('.overlap');
+  var overlapRect = overlapSection.getBoundingClientRect();
+  var navigation = document.querySelector('.navigation');
+  var h2Elements = document.querySelectorAll('h2');
+
+  if (overlapRect.top < window.innerHeight * 0.2 && overlapRect.bottom > 0) {
+    navigation.classList.add('scrolled');
+    h2Elements.forEach(function (h2) {
+      h2.style.color = 'black';
+    });
+  } else {
+    navigation.classList.remove('scrolled');
+    h2Elements.forEach(function (h2) {
+      h2.style.color = '#733200ff';
+    });
+  }
+});
+
+</script>
+<!--Parallax Text-->
+<script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+<script>
+  const targets = document.querySelectorAll('.scroll');
+  const extraSpace = document.querySelector('.extra-space');
+  let initialScrollPositions = Array(targets.length).fill(null);
+  let lastScrollPositions = Array(targets.length).fill(0);
+
+  const updateParallax = (index) => {
+    if (initialScrollPositions[index] !== null) {
+      const scrolled = Math.max(0, window.pageYOffset - initialScrollPositions[index]);
+      const rate = scrolled * 0.5;
+
+      gsap.to(targets[index], { y: rate, duration: 0.5 });
+
+      if (window.pageYOffset < initialScrollPositions[index]) {
+        initialScrollPositions[index] = null;
+      }
+    }
+
+    lastScrollPositions[index] = window.pageYOffset;
+    requestAnimationFrame(() => updateParallax(index));
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.98 && initialScrollPositions[index] === null) {
+        initialScrollPositions[index] = window.pageYOffset;
+        updateParallax(index);
+      }
+    });
+  }, { threshold: 0.98 }); 
+
+  targets.forEach((target, index) => {
+    observer.observe(target);
+  });
+
+  observer.observe(extraSpace);
+</script>
+
+
+
+<!-- for lenis smooth scroll-->
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+  <script>
+    const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    direction: "vertical",
+    gestureDirection: "vertical",
+    smooth: true,
+    smoothTouch: false,
+    touchMultiplier: 2,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const h1 = document.querySelector('h1');
+      const splitText = new SplitType(h1);
+      const chars = splitText.chars;
+  
+      const animations = [
+        animateConnectedFadeIn,
+        animateConnectedSquashAndStretch,
+        animateConnectedScaleAndRotate,
+        animateConnectedFloat,
+      ];
+  
+      function playSequentialAnimations() {
+        
+        const timeline = gsap.timeline({ onComplete: playRandomAnimation });
+        animations.forEach((animation) => timeline.add(animation()));
+      }
+  
+      function playRandomAnimation() {
+       
+      }
+  
+      setTimeout(() => {
+        playSequentialAnimations();
+      }, 100);
+  
+      function animateConnectedFadeIn() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedSquashAndStretch() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, scaleY: 1.1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedScaleAndRotate() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, scale: 1, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, rotate: 0, scaleX: 1, ease: 'elastic.out(1, 0.3)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+  
+      function animateConnectedFloat() {
+        return gsap.timeline()
+          .to(h1, { duration: 2, opacity: 1, y: -20, ease: 'power3.inOut' })
+          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
+          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
+      }
+    });
+  </script>
+  
+  <!-- For custom cursor -->
+<script>
+const cursor = document.querySelector(".cursor");
+const links = document.querySelectorAll("nav a");
+const navlinks = document.querySelectorAll("nav");
+
+
+let lastScrollY = window.scrollY;
+const scrollThreshold = 10;
+
+document.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
+  const scrollDiff = Math.abs(currentScrollY - lastScrollY);
+
+  if (scrollDiff > scrollThreshold) {
+    lastScrollY = currentScrollY;
+    gsap.to(cursor, { duration: 0.2, top: cursor.getBoundingClientRect().top + window.scrollY });
+  }
+});
+
+
+document.addEventListener("mousemove", (e) => {
+  gsap.to(cursor, { duration: 0.2, left: e.pageX, top: e.pageY, ease: "power1.out" });
+});
+
+links.forEach((link) => {
+  link.addEventListener("mouseenter", () => {
+    gsap.to(cursor, { duration: 0.3, scale: 1.5, opacity: 0.8, ease: "power1.out" });
+  });
+
+  link.addEventListener("mouseleave", () => {
+    gsap.to(cursor, { duration: 0.3, scale: 1, opacity: 1, ease: "power1.out" });
+  });
+});
+
+gsap.from(navlinks, {
+  opacity: 0,
+  y: 20,
+  duration: 0.5,
+  stagger: 0.1,
+  ease: "power2.out",
+});
+
+</script>
+
+  <!-- For gsap p animations -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.new p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.about p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.toflex p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const aboutParagraphs = document.querySelectorAll('.new2 p');
+      const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+  
+      const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+  
+      splitTexts.forEach((splitText, index) => {
+        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+      });
+  
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+            tl.play();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.9 });
+  
+      aboutParagraphs.forEach(paragraph => {
+        observer.observe(paragraph);
+      });
+    });
+  </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex2 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new3 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex3 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new4 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex4 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.toflex5 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aboutParagraphs = document.querySelectorAll('.new5 p');
+    const splitTexts = Array.from(aboutParagraphs, p => new SplitType(p));
+
+    const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
+
+    splitTexts.forEach((splitText, index) => {
+      tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+    });
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.8) {
+          tl.play();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.9 });
+
+    aboutParagraphs.forEach(paragraph => {
+      observer.observe(paragraph);
+    });
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+  
+<!-- For Exposed Image effect -->
+
+<script>
+  function initParallaxZoom() {
+      const parallaxContainer = document.querySelector('.parallax-container');
+      const parallaxZoomTL = gsap.timeline({
+          scrollTrigger: {
+              trigger: parallaxContainer,
+              start: 'top bottom',
+              end: 'bottom center',
+              scrub: true, 
+          },
+      });
+
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          y: '-25%',
+          duration: 2,
+          ease: 'power1.inOut',
+      });
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          scale: 1.14, 
+          duration: 2,
+          ease: 'power1.inOut', 
+      }, 0); 
+
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          borderRadius: '0', 
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          filter: 'sepia(60%)',
+          duration: 2,
+          ease: 'power1.inOut',
+      }, 0);
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          scale: 1,
+          duration: 2,
+          ease: 'power1.inOut',
+      });
+
+      parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
+          borderRadius: '50px',
+          filter: 'sepia(20%)',
+          duration: 1,
+          ease: 'power1.inOut',
+      }, '-=2'); 
+  }
+
+  initParallaxZoom();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+
+
+  <!-- For bumpy images on the first screen -->
+<script>
+    const imageArray = [
+      'https://wallpaperset.com/w/full/0/b/0/465081.jpg',
+      'https://wallpaperset.com/w/full/8/c/4/465043.jpg',
+      'https://cdn.pixabay.com/photo/2016/10/11/17/46/african-art-1732247_1280.jpg',
+      'https://i.etsystatic.com/5294708/r/il/d813fc/3139277466/il_794xN.3139277466_g2y8.jpg',
+      'https://i.pinimg.com/originals/b8/cd/a8/b8cda88b2dc6cd408d0169e965891cdd.jpg',
+      'https://i.etsystatic.com/5294708/r/il/e0b84a/987044631/il_794xN.987044631_nr5y.jpg'
+    ];
+
+    function createImageElements() {
+      const photoContainer = document.querySelector('.photo-container');
+      imageArray.forEach((imageUrl, index) => {
+        const img = document.createElement('img');
+        img.src = imageUrl;
+        img.classList.add('animated-photo');
+        img.style.opacity = 0;
+        photoContainer.appendChild(img);
+        animatePhoto(img, index);
+      });
+    }
+
+    function animatePhoto(image, index) {
+      const startHeight = -600; 
+      gsap.fromTo(
+        image,
+        {
+          opacity: 0,
+          scale: 0.5,
+          rotation: gsap.utils.random(-15, 15),
+          x: gsap.utils.random(0, window.innerWidth),
+          y: startHeight + gsap.utils.random(0, window.innerHeight - startHeight),
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          rotation: gsap.utils.random(-5, 5), 
+          duration: 2.5, 
+          ease: 'power4.out',
+          delay: index * 0.5,
+          onComplete: () => {
+            animatePhotoOut(image);
+          }
+        }
+      );
+    }
+
+    function animatePhotoOut(image) {
+      gsap.to(
+        image,
+        {
+          opacity: 0,
+          scale: 0.8, 
+          rotation: gsap.utils.random(-5, 5), 
+          x: gsap.utils.random(0, window.innerWidth),
+          y: gsap.utils.random(0, window.innerHeight),
+          duration: 2.5,
+          ease: 'power3.inOut', 
+          onComplete: () => {
+            animatePhoto(image, 0);
+          }
+        }
+      );
+    }
+
+    createImageElements();
+</script>
+
+  
+  <script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to("#circle h4", {
+    duration: 0.3,
+    y: "0.3em",
+    ease: "power2.inOut",
+    paused: true
+});
+
+document.getElementById("circle").addEventListener("mouseenter", function() {
+    gsap.to("#circle h4", { y: 0 });
+});
+
+document.getElementById("circle").addEventListener("mouseleave", function() {
+    gsap.to("#circle h4", { y: "0.3em" });
+});
+
+  </script>
+  <!-- For image translate -->
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.gsap-entrance').forEach((element) => {
+    gsap.from(element, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: element,
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+    });
+  });
+</script>
+<script src="https://unpkg.com/gsap@3.9.2/dist/gsap.min.js"></script>
+
+<script>
+  function animateOnViewElegant(element) {
+    gsap.from(element, {
+      opacity: 0,
+      filter: "blur(20px)",
+      y: 20,
+      duration: 4,
+      ease: 'Power2.easeInOut',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom-=200',
+        end: '+=200',
+        scrub: 1,
+        markers: false
+      }
+    });
+  }
+
+  //This is used to call the function for each susimagewrapper element
+  animateOnViewElegant('#susimagewrapper');
+  animateOnViewElegant('#susimagewrapper2');
+  animateOnViewElegant('#susimagewrapper3');
+  animateOnViewElegant('#susimagewrapper4');
+  animateOnViewElegant('#susimagewrapper5');
+</script>
+<script>
+  function initAnimations() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const coolElements = document.querySelectorAll('.cool');
+
+    coolElements.forEach((coolElement) => {
+      gsap.from(coolElement.querySelectorAll('p'), {
+        opacity: 0,
+        scale: 0.95,
+        duration: 1.5,
+        stagger: 0.5,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: coolElement,
+          start: 'top 60%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+      gsap.from(coolElement.querySelectorAll('.cool p span'), {
+        opacity: 0,
+        rotation: 25, 
+        scale: 1,
+        duration: 1.5,
+        stagger: 0.2,
+        ease: 'elastic.out(1, 0.3)',
+        scrollTrigger: {
+          trigger: coolElement,
+          start: 'top 60%',
+          toggleActions: 'play none none reverse',
+        },
+      });
+    });
+  }
+
+  initAnimations();
+</script>
+
+
+<script>
+  const projects = [
+    { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'https://upload.wikimedia.org/wikipedia/commons/b/bb/Colossal_Amenhotep_III_British_Museum.jpg' },
+    { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'https://moroccoworldnews.com/wp-content/uploads/2014/06/Islamic-mystic-Ibn-Battuta.jpg' },
+    { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'https://media.cnn.com/api/v1/images/stellar/prod/220919134942-01-ben-enwonwu.jpg?c=original' },
+    { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'https://makeba-dz.com/wp-content/uploads/2020/08/b98574ac0f2f4b9d8fb53298d680024d.jpg' },
+    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'https://media.licdn.com/dms/image/D4E12AQFDbG4PEk97kg/article-cover_image-shrink_600_2000/0/1692465262261?e=2147483647&v=beta&t=0fLCFpxYqdFhIJf1EbE1wT0thDDCcYFRd1OF-3qUDIk' },
+    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'https://p-news-upload.storage.googleapis.com/2023/02/El-Anatsui-scaled.jpeg' }
+  ];
+
+  const projectsSlider = document.getElementById('projectsSlider');
+  const projectContainer = document.querySelector('.projects__slider');
+
+  // Create projects
+  projects.forEach(project => {
+    let panel = document.createElement('div');
+    panel.classList.add('project', project.pos);
+
+    let imageContainer = document.createElement('div');
+    imageContainer.className = 'image__container';
+
+    let image = document.createElement('img');
+    image.classList.add('project__image');
+    image.src = project.image;
+
+    let projectDetails = document.createElement('div');
+    projectDetails.classList.add('project__details');
+
+    let projectTitle = document.createElement('p');
+    projectTitle.innerText = project.name;
+
+    let projectType = document.createElement('p');
+    projectType.innerText = project.type;
+
+    projectDetails.append(projectTitle, projectType);
+    imageContainer.appendChild(image);
+    panel.append(imageContainer, projectDetails);
+
+    projectsSlider.appendChild(panel);
+  });
+
+  projectsSlider.style.width = `${projects.length * 25}vw`;
+
+  function autoSlide() {
+    let offsetTop = projectContainer.offsetTop;
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    let projectTargetX = percentage;
+    let projectCurrentX = lerp(0, projectTargetX, 0.1);
+    projectsSlider.style.transform = `translate3d(${-projectCurrentX}%, 0, 0)`;
+  }
+
+  document.addEventListener('scroll', autoSlide);
+
+  function lerp(a, b, t) {
+    return (1 - t) * a + t * b;
+  }
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+     
+        $("a").on('click', function(event) {
+          
+            if (this.hash !== "") {
+
+                event.preventDefault();
+
+                var hash = this.hash;
+
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function(){
+                 
+                    window.location.hash = hash;
+                });
+            } 
+        });
+    });
+</script>
+
+
+  
+
+</body>
+</html>

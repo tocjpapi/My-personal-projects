@@ -16,6 +16,8 @@ html {
   scroll-behavior: smooth;
 
 }
+
+
 html.lenis {
       height: auto;
     }
@@ -77,7 +79,7 @@ html::-webkit-scrollbar-track {
   font-size: 28px;
 }
 body {
-background-color: #000000;
+background-color: #b8b8b8ff;
   justify-content: center;
   overscroll-behavior:  contain;
   scrollbar-color: transparent transparent;
@@ -86,7 +88,7 @@ background-color: #000000;
   color: rgb(255, 134, 41); 
 }
 nav a:hover {
-    cursor: url('img/yass.png') 15 15, auto;
+    cursor: url('toochill.png') 15 15, auto;
 }
 
 .cursor {
@@ -94,7 +96,7 @@ nav a:hover {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 2px solid #733200ff;
+    border: 2px solid #1a1a1a;
     left: 0;
     transform: translate(-50%, -50%);
     pointer-events: none;
@@ -110,29 +112,65 @@ nav a:hover {
      text-align: center;
     }
     h1 {
-      font-size: 4.5vw;
-
+      font-size: 3.5vw;
       text-align: center;
-      color:  #733200ff;
-      font-weight: 800;
+      color:  #1d1d1d;
+      font-weight: 630;
       margin: 0;
-      font-family: 'New york', sans-serif;
+      font-family: 'New York', sans-serif;
       font-stretch: 45px;
 
       padding-right: 6px;
 
     }
 
+    .text__reveal{
+    overflow: hidden;
+    white-space: pre; 
+}
+
+.text__reveal span{
+    display: inline-block;
+    transform: translateY(110%);
+    transition: .5s;
+}
+
+.change{
+    overflow: hidden;
+    white-space: pre; 
+}
+
+.change span{
+    display: inline-block;
+    transform: translateY(110%);
+    transition: .5s;
+}
+
+
     .start {
-      background-color: #000000;
+      background-color: #b8b8b8ff;
       height: 100vh; 
       width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
-      cursor: url('img/yass.png') 15 15, auto;
+      cursor: url('toochill.png') 15 15, auto;
+      z-index: 9;
     }
 
+
+    .photo-container{
+    filter: grayscale(90%);
+    opacity: 0.7;
+    }
+
+    .navigation {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navigation.hidden {
+    transform: translateY(-100%);
+  }
     .navigation {
       position: fixed;
       top: 0;
@@ -141,9 +179,9 @@ nav a:hover {
       background-color: transparent;
       padding: 10px;
       z-index: 10;
-      font-family: 'SF Pro Text', sans-serif;
+      font-family: 'Sf Pro Text', sans-serif;
       padding-top: 12px;
-      cursor: url('img/yass.png') 15 15, auto;
+      cursor: url('toochill.png') 15 15, auto;
       font-size: 2.2vh;
     }
 
@@ -157,27 +195,28 @@ nav a:hover {
     .navigation a {
       margin: 0 15px;
       text-decoration: none;
-      color: #733200ff;
+      color: #1a1a1a;
       position: relative;
       padding-bottom: 6px;
-
+      font-weight: 450;
+      font-size: medium;
     }
     .navigation.scrolled a {
-  color: black; 
-}
-.cursor.large.scrolled {
-    height: 70px;
-    width: 70px;
-    border: 2px solid rgb(0, 0, 0);
+  color: #b5b5b5ff; 
 }
 
 
 
 
+.navigation h2{
+  font-weight: 700;
+  font-size: 5.1vh;
+  mix-blend-mode: difference;
+}
 
 .navigation.scrolled h2,
 .scrolled h2 {
-  color: black; 
+  color: #b5b5b5ff; 
 }
 .navigation.scrolled a::before {
       content: '';
@@ -190,7 +229,7 @@ nav a:hover {
       transition: width 0.3s ease; 
     }
     .navigation.scrolled a:hover {
-      color: #1a1a1a; 
+      color: #fff; 
     }
 
     .cursor.scrolled {
@@ -213,21 +252,21 @@ nav a:hover {
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: #733200ff; 
+      background-color: #1a1a1a; 
       transition: width 0.3s ease; 
     }
     .hello-text{
-     color: #733200ff;
+     color: #1a1a1a;
    }
    h2{
     font-size: 3vw;
       text-align: left;
-      color:  #733200ff;
+      color:  #1a1a1a;
       font-weight: 600;
       margin: 0;
       font-family: 'New York', sans-serif;
       transition: color 0.5s ease;
-
+      
    }
     .navigation a:hover::before {
       width: 100%;
@@ -269,11 +308,11 @@ nav a:hover {
   margin-left: 6%;
 }
     p{
-        font-family: new york;
-        color:  #733200ff;
-        font-size: 2.6vh;
+        font-family: Sf Pro Text;
+        color:  #1a1a1a;
+        font-size: 2.3vh;
         z-index: 5;
-        font-weight: 480;
+        font-weight: 450;
     }
 
 #story{
@@ -308,26 +347,30 @@ nav a:hover {
 
 .photo-container{
 
-    width: 100px;
-    height:  100px;
+    width: 33px;
+    height:  33px;
 
 }
 .photo-container img{
    object-fit: cover;
    width: 100%;
     height: 100%; 
-    border-radius: 50%;
+    border-radius: 28%;
     
+}
+
+.parallax-container{
+  filter: grayscale(100%);
 }
 h4{
     font-size: 16px;
-    color:#733200ff;
-    font-family: new york;
+    color:#1a1a1a;
+    font-family: New York;
 }
 h3{
     font-size: 26px;
-    color:#733200ff;
-    font-family: new york;
+    color:#1a1a1a;
+    font-family: New York;
 }
 #main{
     width: 100%;
@@ -364,12 +407,12 @@ border-radius: 20%;
     width: 110%;
     height: 140%;
     object-fit: cover;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #sustain p{
-    font-family: new york;
-    color:  #733200ff;
-    font-size: 2.6vh;
+    font-family: Sf Pro Text;
+    color:  #1a1a1a;
+    font-size: 2.3vh;
     z-index: 5;
     font-weight: 480;
     
@@ -388,11 +431,14 @@ border-radius: 20%;
 #ephemeral h2{
     font-size: 7vw;
     font-weight: 100;
+    color: #b5b5b5ff;
  }
  #headings{
     position: absolute;
     margin-top: -6%;
-
+    mix-blend-mode: difference;
+    color: #b5b5b5ff;
+    transition: opacity 0.5s, mix-blend-mode 0.5s;
  }
 .toflex {
     display: flex;
@@ -417,8 +463,10 @@ border-radius: 20%;
     height: 100%;
     object-fit: cover;
     border-radius: 56px;
-    filter: 'sepia(80%)';
+    
 }
+
+
 
 #motive h2{
 
@@ -435,7 +483,7 @@ border-radius: 20%;
     width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive span{
@@ -446,31 +494,34 @@ border-radius: 20%;
     border-radius: 100px;
     margin: 0 10px;
     margin-bottom: -9.5px;
+    filter: grayscale(90%);
 } 
+
+
 #un{
     width: 72px;
     background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nok_sculpture_Louvre_70-1998-11-1.jpg/250px-Nok_sculpture_Louvre_70-1998-11-1.jpg') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #deux{
     width: 52px;
-    background-image:url('https://smithsonianassociates.org/ticketing/images/web-core-2020/african-art-centuries.jpg') ;
+    background-image:url('https://1.api.artsmia.org/full/5601.jpg') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(10%);
+    filter: grayscale(90%);
 }
 #un, #deux {
     width: 56px;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(40%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
 }
 
 #un:hover, #deux:hover{
-    filter: sepia(30%);
+    filter: grayscale(40%);
     width: 84px;
     border-radius: 76px;
 }
@@ -519,12 +570,12 @@ border-radius: 20%;
     width: 110%;
     height: 140%;
     object-fit: cover;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #sustain2 p{
-    font-family: new york;
-    color:  #733200ff;
-    font-size: 2.6vh;
+    font-family: Sf Pro Text;
+    color:  #1a1a1a;
+    font-size: 2.3vh;
     z-index: 5;
     font-weight: 480;
     
@@ -542,12 +593,13 @@ border-radius: 20%;
 #ephemeral2 h2{
     font-size: 7vw;
     font-weight: 100;
-
+    color: #b5b5b5ff;
  }
  #headings2{
-    position: absolute;
+  position: absolute;
     margin-top: -6%;
-
+    mix-blend-mode: difference;
+    color: #b5b5b5ff;
  }
 .toflex2 {
     display: flex;
@@ -587,7 +639,7 @@ border-radius: 20%;
     width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive2 span{
@@ -644,12 +696,12 @@ border-radius: 20%;
     width: 110%;
     height: 140%;
     object-fit: cover;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #sustain3 p{
-    font-family: new york;
-    color:  #733200ff;
-    font-size: 2.6vh;
+    font-family: Sf Pro Text;
+    color:  #1a1a1a;
+    font-size: 2.3vh;
     z-index: 5;
     font-weight: 480;
     
@@ -666,14 +718,15 @@ border-radius: 20%;
 }
 
 #ephemeral3 h2{
-    font-size: 7vw;
+  font-size: 7vw;
     font-weight: 100;
-
+    color: #b5b5b5ff;
  }
  #headings3{
-    position: absolute;
+  position: absolute;
     margin-top: -6%;
-
+    mix-blend-mode: difference;
+    color: #b5b5b5ff;
  }
 .toflex3 {
     display: flex;
@@ -713,7 +766,7 @@ border-radius: 20%;
     width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive3 span{
@@ -725,12 +778,27 @@ border-radius: 20%;
     margin: 0 5px;
     margin-bottom: -9.5px;
 } 
+
+#ephemeral img,
+    #ephemeral2 img,
+    #ephemeral3 img,
+    #ephemeral4 img,
+    #ephemeral5 img {
+      transition: filter 0.5s ease, transform 0.5s ease;
+    }
+
+    .clicked {
+      filter: sepia(30%);
+      transform: scale(1.1);
+    }
+
+
 #trois{
     width: 72px;
-    background-image:url('https://www.researchgate.net/publication/293581542/figure/fig1/AS:400904978223104@1472594603370/Anonymous-Implements-and-Weapons-of-Central-Africa-plate-46-in-volume-1-from-Henry.png') ;
+    background-image:url('https://i.ebayimg.com/images/g/vCAAAOSw-lhhQa9x/s-l1600.jpg') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
 }
 #quatre{
@@ -738,7 +806,7 @@ border-radius: 20%;
     background-image:url('https://static.wixstatic.com/media/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg/v1/fill/w_800,h_605,al_c,q_85,enc_auto/345484_95f7d063a97145569e4b6e4aac377543~mv2.jpg') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
 }
 
@@ -787,12 +855,12 @@ border-radius: 20%;
     width: 110%;
     height: 140%;
     object-fit: cover;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #sustain4 p{
-    font-family: new york;
-    color:  #733200ff;
-    font-size: 2.6vh;
+    font-family: Sf Pro Text;
+    color:  #1a1a1a;
+    font-size: 2.3vh;
     z-index: 5;
     font-weight: 480;
     
@@ -810,12 +878,13 @@ border-radius: 20%;
 #ephemeral4 h2{
     font-size: 7vw;
     font-weight: 100;
-
+    color: #b5b5b5ff;
  }
  #headings4{
     position: absolute;
     margin-top: -6%;
-
+    mix-blend-mode: difference;
+    color: #b5b5b5ff;
  }
 .toflex4 {
     display: flex;
@@ -852,6 +921,8 @@ border-radius: 20%;
     margin-top: 5%;
     flex-direction: row;
 } 
+
+
 #motive5{
   padding-top: 29vw;
     display: flex;
@@ -863,14 +934,14 @@ border-radius: 20%;
   width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive4 p{
     width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.6vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive4 span{
@@ -887,7 +958,7 @@ border-radius: 20%;
     background-image:url('https://africa.si.edu/wp-content/uploads/2A.chokwe.jpg') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease; 
 }
 #trois:hover{
@@ -907,9 +978,12 @@ border-radius: 20%;
     background-image:url('https://cdn.myportfolio.com/dd3bd6d6-8058-48e4-b2ca-299c616cd8cc/259ed80e-694d-4e7b-8099-8b6b1e01faa5_rw_1200.gif?h=d1528ae961e7069cc557a918d07fc5f1') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
 }
+
+
+
 /*Section 4*/
 .gallery5 {
         display: flex;
@@ -936,6 +1010,7 @@ overflow: hidden;
 width: 17%;
 height: 17vw;
 border-radius: 20%;
+margin-top: 27%;
 }
 
 #susimagewrapper5 {
@@ -954,15 +1029,14 @@ border-radius: 20%;
     width: 110%;
     height: 140%;
     object-fit: cover;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #sustain5 p{
-    font-family: new york;
-    color:  #733200ff;
-    font-size: 2.6vh;
+    font-family: Sf Pro Text;
+    color:  #1a1a1a;
+    font-size: 2.3vh;
     z-index: 5;
     font-weight: 480;
-    
 }
 
 #sustain5 {
@@ -978,14 +1052,17 @@ border-radius: 20%;
 #ephemeral5 h2{
     font-size: 7vw;
     font-weight: 100;
-    
-
+    color: #b5b5b5ff;
  }
  #headings5 {
-    position: relative;
-    top: -5%;
-
+    position: absolute;
+    margin-top: 5.6%;
+    mix-blend-mode: difference;
+    color: #b5b5b5ff;
+    
  }
+
+
 .toflex5 {
     display: flex;
     justify-content: space-between;
@@ -1005,7 +1082,7 @@ border-radius: 20%;
     height: 100%;
     object-fit: cover;
     border-radius: 56px;
-    margin-top: -17%;
+    margin-top: 37%;
     filter: 'sepia(80%)';
 }
 
@@ -1024,7 +1101,7 @@ border-radius: 20%;
     width: 50%;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 2.9vh;
+    font-size: 2.3vh;
     line-height: 42px;
 }
 #motive5 span{
@@ -1041,25 +1118,25 @@ border-radius: 20%;
     background-image:url('https://media.licdn.com/dms/image/C4D22AQHZH2hC9w37zQ/feedshare-shrink_1280/0/1547638247472?e=2147483647&v=beta&t=hCqErWUU4wpYSLs5Lw5YTNswRpzTthvqLsp2F7TOBzE') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #seven{
   width: 56px;
     background-image:url('https://i.makeagif.com/media/10-14-2015/kpib7W.gif') ;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
 }
 #six, #seven {
     width: 56px;
     background-size: cover;
     background-position: center;
-    filter: sepia(60%);
+    filter: grayscale(80%);
     transition: filter 0.3s ease, width 0.3s ease, border-radius 0.3s ease;
 }
 
 #six:hover, #seven:hover,  #eight:hover{
-    filter: sepia(30%);
+  filter: grayscale(20%);
     width: 100px;
     border-radius: 76px;
 }
@@ -1087,10 +1164,10 @@ ul {
   height: 100vh;
 }
 li{
-  color: #733200ff;
+  color: #1a1a1a;
   font-size: 7vw;
   font-weight: 100;
-  font-family: new york;
+  font-family: New York;
 }
 
 .dynamic span {
@@ -1099,13 +1176,13 @@ height: 110px;
 position: absolute;
 bottom: 0;
 left: 0;
-background: #733200ff;
+background: #1a1a1a;
 border-radius: 50%;
 }
 
 .overlap {
   height: 50vh;
-  background: #733200ff;
+  background: #1a1a1a;
   z-index: 10;
   display: flex;
   align-items: center;
@@ -1114,7 +1191,7 @@ border-radius: 50%;
 
 .overlap p {
   position: relative;
-  color: #000000;
+  color: #b5b5b5ff;
   text-align: center;
   max-width: 80%; 
   font-size: 11vh;
@@ -1125,7 +1202,7 @@ border-radius: 50%;
 }
 .overlap2 {
   height:59vh;
-  background: #733200ff;
+  background: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1136,8 +1213,8 @@ border-radius: 50%;
 }
 
 .overlap2 p {
-  color: #000000;
-  font-family: new york ;
+  color: #b8b8b8ff;
+  font-family: New York ;
   letter-spacing: 15px;
 }
 
@@ -1187,11 +1264,12 @@ line-height: 0;
 .textwrapper p {
   margin-bottom: -29%;
   font-size: 8vh;
+  font-family: new york;
 }
 
 
 .anima{
-  background-color: #733200ff;
+  background-color: #1a1a1a;
 }
 
 
@@ -1222,7 +1300,7 @@ line-height: 0;
 }
 
 .cover-content h3{
-  color: #733200ff;
+  color: #1a1a1a;
   text-align: center;
   font-size: 4.5vw;
   font-weight: 400;
@@ -1270,7 +1348,7 @@ line-height: 0;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: sepia(50%);
+  filter: grayscale(80%);
   border-radius: 55px;
 
 }
@@ -1286,7 +1364,11 @@ line-height: 0;
   font-size: 2vh;
 }
 
-
+.bannaner{
+position: relative;
+width: 250px;
+height: 415px;
+}
 
   </style>
 
@@ -1298,7 +1380,7 @@ line-height: 0;
     @media screen and (max-width: 932px) {
       .overlap p {
   position: relative;
-  color: #000000;
+  color: #b8b8b8ff;
   text-align: center;
   max-width: 80%; 
   margin-top: 29%;
@@ -1365,6 +1447,7 @@ display: none;
 #motive5 p {
     font-size: 1.8vh;
     line-height: 22px;
+    width: 60%;
 }
 #motive,#motive2,#motive3,#motive4,#motive5 {
 
@@ -1412,7 +1495,7 @@ display: none;
 h2{
     font-size: 6vw;
       text-align: left;
-      color:  #733200ff;
+      color:  #1a1a1a;
       font-weight: 600;
       margin: 0;
       font-family: 'New York', sans-serif;
@@ -1454,7 +1537,59 @@ height: 0vh;
 .dynamic{
   margin-top: -260%;
   }
+  .navigation h2{
+    font-size: 3.7vh;
+  }
 }
+  </style>
+
+  <style>
+ @media screen and (max-width: 932px) and (orientation: landscape) {
+  .hello-text{
+    display: block;
+    margin-top: -3.4%;
+  }
+
+  .navigation h2{
+    font-size: 5.7vh;
+  }
+
+
+  .about{
+    width: 45%;
+  }
+
+  .toflex{
+  margin-top: -25%;
+}
+  
+
+#motive,#motive2,#motive3,#motive4,#motive5 {
+margin-top: -20%;
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+} 
+
+.toflex2, .toflex3,.toflex4,.toflex5{
+  margin-top: -10%;
+}
+
+.happy{
+  margin-top: 210%;
+}
+
+#ephemeral h2, #ephemeral2 h2, #ephemeral3 h2, #ephemeral4 h2, #ephemeral5 h2{
+  font-size: 7.7vh;
+}
+
+
+#ephemeral,#ephemeral2,#ephemeral3,#ephemeral4,#ephemeral5  {
+    width: 42.5vh;
+    height: 58vh;
+}
+
+ }
   </style>
   <style id="INLINE_PEN_STYLESHEET_ID">
 
@@ -1462,14 +1597,14 @@ height: 0vh;
 
     .chill {
       position: relative;
-      height: 100vh;
+      height: 105vh;
       width: 100vw;
       
       justify-content: center;
     }
 
     .chill section {
-      height: 100vh;
+      height: 105vh;
       padding: 3em;
       position: relative; 
       text-align: center;
@@ -1478,31 +1613,33 @@ height: 0vh;
 
 
     .chill .overlay {
-      background-color: #733200ff;
+      background-color: #1a1a1a;
       position: absolute;
       top: 0;
       left: 0;
       width: 100vw;
-      height: 100%;
+      height: 105vh;
       clip-path: circle(100px at var(--x, 50%) var(--y, 50%));
       transition: clip-path 100ms;
       text-align: center;
     }
 
     .chill .overlay p{
-      color: #000000;
+      color: #b8b8b8ff;
       text-align: center;
       font-size: 8vh;
+      font-family: new york;
     }
     .chill p{
       text-align: center;
       font-size: 8vh;
-      color: #733200ff;
+      color: #1a1a1a;
+      font-family: new york;
     }
     .chill {
   position: relative;
   clip-path: circle(100% at 50% 50%);
-  background-color: black;
+  background-color: #b8b8b8ff;
 
 }
 
@@ -1523,7 +1660,7 @@ height: 0vh;
       height: 100vh;
     }
 
-/* Remove default button styling */
+/* This is to remove default button styling */
 button, input[type="button"], input[type="submit"], input[type="reset"] {
   appearance: none;
   -webkit-appearance: none;
@@ -1536,26 +1673,242 @@ button, input[type="button"], input[type="submit"], input[type="reset"] {
   cursor: pointer;
   outline: none;
   text-align: left;
-  color: #000000;
+  color: #b8b8b8ff;
 }
 
-/* Additional styling for better readability */
+/* better readability */
 button, input[type="button"], input[type="submit"], input[type="reset"], a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  color: #000000;
+  color: #b8b8b8ff;
+}
+
+.navigation a {
+    transition: color 0.5s ease;
+}
+
+.navigation a.clicked {
+    color: #000; 
 }
 
   </style>
+
+
+<style>
+  #banner{
+    width: 100%;
+    margin-top: 8vw;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    padding-bottom: 3%;
+  }
+
+  #bimg{
+    width: 52%;
+    height: 37vw;
+    filter: grayscale(90%); 
+    overflow: hidden;
+    border-radius: 65px;
+  }
+  #bimg img{
+    width: 100%;
+    height: 100%;
+    object-position: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    display: none;
+  }
+
+
+
+  #btext{
+    padding: 0 3vw;
+    text-align: center;
+  }
+  
+  #btext h2{
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #btext p{
+    font-size: 1.9vh;
+
+  }
+
+
+  #banner2{
+    width: 100%;
+    margin-top: 8vw;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-left: 3%;
+    padding-bottom: 3%;
+  }
+
+  #bimg2{
+    width: 52%;
+    height: 37vw;
+    filter: grayscale(90%); 
+    overflow: hidden;
+    border-radius: 65px;
+    margin-right:5% ;
+  }
+  #bimg2 img{
+    width: 100%;
+    height: 100%;
+    object-position: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    display: none;
+  }
+
+
+
+  #btext2{
+    padding: 0 3vw;
+    text-align: center;
+  }
+  
+  #btext2 h2{
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #btext2 p{
+    font-size: 1.9vh;
+
+  }
+
+
+  #banner3{
+    width: 100%;
+    margin-top: 8vw;
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    padding-bottom: 3%;
+  }
+
+  #bimg3{
+    width: 52%;
+    height: 37vw;
+    filter: grayscale(90%); 
+    overflow: hidden;
+    border-radius: 65px;
+  }
+  #bimg3 img{
+    width: 100%;
+    height: 100%;
+    object-position: 100%;
+    object-fit: cover;
+    border-radius: 28px;
+    display: none;
+
+  }
+
+
+
+  #btext3{
+    padding: 0 3vw;
+    text-align: center;
+  }
+  
+  #btext3 h2{
+    font-weight: 400;
+    text-align: center;
+  }
+
+  #btext3 p{
+    font-size: 1.9vh;
+
+  }
+  .overlay video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.027;
+}
+.alja{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh;
+}
+.alj {
+  position: absolute;
+  width: 23%;
+  height: 47%;
+  align-items: center;
+  transform: rotate(-30deg) skew(25deg);
+  transition: 0.5s;
+  opacity: 0.8;
+  margin-top: 42%;
+  margin-right: 20%;
+  cursor: pointer;
+  mix-blend-mode: difference;
+}
+
+
+
+
+.alj img{
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    transition: 0.5s;
+
+}
+
+.alj:hover img:nth-child(4) {
+  transform: translate(120px, -120px);
+  opacity: 1;
+}
+
+.alj:hover img:nth-child(3) {
+  transform: translate(90px, -90px);
+  opacity: 0.8;
+}
+
+.alj:hover img:nth-child(2) {
+  transform: translate(60px, -60px);
+  opacity: 0.7;
+}
+
+.alj:hover img:nth-child(1) {
+  transform: translate(30px, -30px);
+  opacity: 0.6;
+}
+
+.imagntext img{
+ filter: grayscale(80%);
+}
+
+
+</style>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
 
 </head>
 <body>
+ 
 
-    <div class="cursor"></div>
+     <div class="cursor"></div>
   <div class="navigation">
     <nav>
         <div>
@@ -1576,7 +1929,9 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
         <div class="photo-container">
             
           </div>
-      <h1>" Radiant Splendors of Africa: Where Beauty Harmonizes with Spirit "</h1> 
+
+          
+      <h1 class="text__reveal">" Africa's Radiant Fusion: Beauty and Spirit. "</h1> 
     </div>
 </div>
 
@@ -1584,7 +1939,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
   <h2 class="hello-text" id="helloTextContent"> _______________ </h2>
 <section id="about" class="about">
 <div class="change"><h2>About</h2></div>
-<p>Step into our evolving art gallery, where each stroke narrates Africa's rich heritage. Feel the heartbeat of a cultural evolution, as artists weave tales of resilience. Witness the harmonious dance of tradition and innovation, inviting you to explore and be inspired by the ever-evolving spirit of African artistry.</p>
+<p>Step into our evolving art gallery, where each stroke narrates Africa's rich heritage. Feel the heartbeat of a cultural evolution, as artists weave tales of resilience. Witness the harmonious dance of tradition and innovation, inviting you to explore and be inspired by the ever-evolving spirit of African artistry. You can click the images with text on top for a clearer view</p>
 </section>
 <section class="history" id="story">
     <h2>Exposé</h2>
@@ -1610,29 +1965,29 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
             <div id="susimagewrapper">
                 <img src="https://mau.rs/images/collections/SculpturesInWood/SculpturesInWood_1.jpg" alt="">
             </div>
-            <div id="ephemeral" class="susimagewrapper gsap-entrance">
-                <div id="headings">
+            <div id="ephemeral" >
+                <div id="headings" class="susimagewrapper gsap-entrance">
                 <h2>Primordial </h2>
                 <h2>Elegance</h2>
             </div>
             <div id="imagntext" >
-            <img src="https://i.pinimg.com/originals/15/b7/8b/15b78b313f2a5265c275a7f402d390e4.jpg" alt="">
-            <p>Early African art: cave paintings, enigmatic sculptures, sacred masks.</p>
+            <img src="https://i.pinimg.com/originals/15/b7/8b/15b78b313f2a5265c275a7f402d390e4.jpg" alt="" onclick="toggleClass(this)">
+
         </div> 
            </div>
             <div id="visit">
                 <div id="circle">
-                    <h4>Discover</h4>
+                    <h4>Phase One</h4>
                     <div id="underline"></div>
                 </div>
             </div>
         </div>
         </div>
         </div>
-        <div id="motive" class="cool"><h2>Essence</h2>
+        <div id="motive" class="cool"><h2>"essence"</h2>
         <p>Early African art   reveals primal beauty through cave paintings, enigmatic sculptures, and made sacred masks <span id="deux"></span>.</p>
         </div>
-    </div>
+           </div>
   </section>
   <!-- No 2-->
   <section id="gallery2" class="gallery2">
@@ -1649,26 +2004,26 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
             <div id="susimagewrapper2">
                 <img src="https://img.freepik.com/free-vector/black-white-handdrawn-style-line-doodle-pattern-background_1409-3937.jpg" alt="">
             </div>
-            <div id="ephemeral2"  class="susimagewrapper gsap-entrance">
-                <div id="headings2">
+            <div id="ephemeral2">
+                <div id="headings2" class="susimagewrapper gsap-entrance">
                 <h2>Forged </h2>
                 <h2>Legacies</h2>
             </div>
             <div id="imagntext2" >
-            <img src="https://image.invaluable.com/housePhotos/Capitolium/63/738063/H4007-L312568503.jpg" alt="">
-            <p>Metalwork mastery, vibrant textiles, architectural wonders: rich cultural narratives.</p>
+            <img src="https://image.invaluable.com/housePhotos/Capitolium/63/738063/H4007-L312568503.jpg" alt="" onclick="toggleClass(this)">
+
         </div> 
            </div>
             <div id="visit">
                 <div id="circle">
-                    <h4>Discover</h4>
+                    <h4>Phase  Two</h4>
                     <div id="underline"></div>
                 </div>
             </div>
         </div>
         </div>
         </div>
-        <div id="motive2" class="cool"><h2>Essence</h2>
+        <div id="motive2" class="cool"><h2>"essence"</h2>
    
         <p>Metalwork mastery, vibrant textiles, and architectural wonders <span id="trois"></span> mark this era, embedding rich cultural narratives in every creation.</p>
     
@@ -1696,20 +2051,20 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
                 <h2>Echoes</h2>
             </div>
             <div id="imagntext3" >
-            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=704x10000:format=jpg/path/s78e026e07f0805bc/image/i68fd79c0cf1c399b/version/1468592923/image.jpg" alt="">
-            <p>Colonizers uproot traditions, sparking cultural defense and artistic fusion. </p>
+            <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=704x10000:format=jpg/path/s78e026e07f0805bc/image/i68fd79c0cf1c399b/version/1468592923/image.jpg" alt="" onclick="toggleClass(this)">
+
         </div> 
            </div>
             <div id="visit">
                 <div id="circle">
-                    <h4>Discover</h4>
+                    <h4>Phase Three</h4>
                     <div id="underline"></div>
                 </div>
             </div>
         </div>
         </div>
         </div>
-        <div id="motive3" class="cool"><h2>Essence</h2>
+        <div id="motive3" class="cool"><h2>"essence"</h2>
         <p>Colonial challenges disrupt traditional expressions <span id="quatre"></span>, prompting a struggle for cultural preservation and a synthesis of indigenous and Western styles.</p>
         </div>
     </div>
@@ -1734,20 +2089,20 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
                   <h2>Quest</h2>
               </div>
               <div id="imagntext4" >
-      <div class="real">       <img src="https://75bdb6.a2cdn1.secureserver.net/wp-content/uploads/2019/03/Phila-Ndwandwe-Angolan-Liberation-Fighter.jpg" alt=""></div> 
-              <p>The Echoes of the freedom fighters change the outcome of events.</p>
+      <div class="real">       <img src="https://75bdb6.a2cdn1.secureserver.net/wp-content/uploads/2019/03/Phila-Ndwandwe-Angolan-Liberation-Fighter.jpg" alt="" onclick="toggleClass(this)"></div> 
+
           </div> 
              </div>
               <div id="visit">
                   <div id="circle">
-                      <h4>Discover</h4>
+                      <h4>Phase Four</h4>
                       <div id="underline"></div>
                   </div>
               </div>
           </div>
           </div>
           </div>
-          <div id="motive4" class="cool"><h2>Essence</h2>
+          <div id="motive4" class="cool"><h2>"essence"</h2>
           <p>Post-independence artists redefine identities, blending traditional motifs <span id="six"></span> with some modern styles.</p>
           </div>
       </div>
@@ -1766,32 +2121,32 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
           <div id="susimagewrapper5">
               <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/f8e1da104672025.5f688ca5a329a.gif" alt="">
           </div>
-          <div id="ephemeral5"  class="susimagewrapper gsap-entrance">
-              <div id="headings5">
+          <div id="ephemeral5">
+              <div id="headings5"  class="susimagewrapper gsap-entrance">
               <h2>Eclipsed</h2>
               <h2>Narratives</h2>
           </div>
-          <div id="imagntext5">
-          <img src="https://static.vecteezy.com/system/resources/previews/026/593/833/large_2x/african-black-woman-portrait-cute-girl-stock-background-free-photo.jpg" alt="">
-          <p>Modern African art navigates global diversity. </p>
+          <div id="imagntext5" >
+          <img src="https://static.vecteezy.com/system/resources/previews/026/593/833/large_2x/african-black-woman-portrait-cute-girl-stock-background-free-photo.jpg" alt="" onclick="toggleClass(this)">
+      
       </div> 
          </div>
           <div id="visit">
               <div id="circle">
-                  <h4>Discover</h4>
+                  <h4>Phase Four</h4>
                   <div id="underline"></div>
               </div>
           </div>
       </div>
       </div>
       </div>
-      <div id="motive5" class="cool"><h2>Essence</h2>
+      <div id="motive5" class="cool"><h2>"essence"</h2>
       <p>Contemporary African art embraces diverse mediums <span id="seven"></span>, navigating globalization and cultural diversity <span id="eight"></span>. </p>
       </div>
   </div>
 </section>
 
-
+<div class="happy">
 <!-- Cool Transition to my next page-->
 <section class="dynamic">
   <ul>
@@ -1844,7 +2199,36 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
     </div>
   </div>
 </section>
-<section class="more"></section>
+<div class="banner" id="banner">
+  <div id="bimg">
+    
+  </div>
+  <div id="btext">
+    <h2 class="text__reveal">Ancient Times</h2>
+    <p>Featured: Amenhotep III & Ibn Battuta</p>
+  </div>
+</div>
+
+<div class="banner2" id="banner2">
+  <div id="bimg2">
+    
+  </div>
+  <div id="btext2">
+    <h2 class="text__reveal">Renaissance</h2>
+    <p>Featured:  Ben Enwonwu & Miriam Makeba</p>
+  </div>
+</div>
+
+<div class="banner3" id="banner3">
+  <div id="bimg3">
+    
+  </div>
+  <div id="btext3">
+    <h2 class="text__reveal">Colonial to Post-Colonial</h2>
+    <p>Featured:  Chinua Achebe & El Anatsui</p>
+  </div>
+</div>
+
 <div class="chill">
   <section>
 
@@ -1854,15 +2238,228 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
  
   <section class="overlay">
     <div class="hover-btn2">
-      <BUTTON ONCLICK="ShowAndHide()">
-      <p>No we Haven't Click Here .</p>
+      <button onclick="showandhide(); toggleVideo();">
+      <p>Not yet Click Here .</p>
   </BUTTON>
- 
-
 </div>
+<a href="Gallery.html">
+  <div class="alja">
+    <div class="alj">
+      <img src="Gala.png" alt="" srcset="">
+      <img src="Gala.png" alt="" srcset="">
+      <img src="Gala.png" alt="" srcset="">
+      <img src="Gala.png" alt="" srcset="">
+    </div>
+  </div>
+</a>
+
+<video src="Modern African art shines at Dakar’s Biennale.mp4" muted autoplay></video>
   </section>
 
 </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+<script src="hover-effect.umd.js"></script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add a class to the image container with border-radius in your CSS
+    var imgContainer = document.querySelector('#bimg');
+    if (imgContainer) {
+      imgContainer.classList.add('img');
+    }
+  
+    var hoverDistort = new hoverEffect({
+      parent: document.querySelector('#bimg'),
+      intensity: 0.5,
+      image1: 'https://static.wixstatic.com/media/7335d9_26d9a7c67eda44be858eac0ce0c0a44b~mv2.jpeg/v1/fill/w_980,h_689,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7335d9_26d9a7c67eda44be858eac0ce0c0a44b~mv2.jpeg',
+      image2: 'https://static.wixstatic.com/media/7335d9_26d9a7c67eda44be858eac0ce0c0a44b~mv2.jpeg/v1/fill/w_980,h_689,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7335d9_26d9a7c67eda44be858eac0ce0c0a44b~mv2.jpeg',
+      displacementImage: '4.png'
+    });
+  
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.hero-title');
+    if (textWrapper) {
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+  
+    // Hover effect using Anime.js
+    $('#bimg').hover(
+      function () {
+        anime.timeline({ loop: false })
+        .add({
+          targets: '.hero-title .letter',
+          translateX: [80, 0],
+          translateZ: 0,
+          opacity: [0, 1],
+          easing: "easeOutExpo",
+          duration: 1400,
+          delay: (el, i) => 100 + 40 * i
+        })
+      },
+  
+      function () {
+        anime.timeline({ loop: false })
+        .add({
+          targets: '.hero-title .letter',
+          translateX: [0, -80],
+          opacity: [1, 0],
+          easing: "easeInExpo",
+          duration: 800,
+          delay: (el, i) => 40 * i
+        });
+      }
+    );
+    
+  });
+  </script>
+  
+
+ 
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      var imgContainer = document.querySelector('#bimg3');
+      if (imgContainer) {
+        imgContainer.classList.add('img');
+      }
+    
+      var hoverDistort = new hoverEffect({
+        parent: document.querySelector('#bimg3'),
+        intensity: 0.5,
+        image1: 'https://artlogic-res.cloudinary.com/w_1200,c_limit,f_auto,fl_lossy,q_auto/ws-gazelli/usr/images/artists/group_images_override/items/01/01d86ddc57f2498db357c5bb2919fd2b/el-anatsui.jpg',
+        image2: 'https://artlogic-res.cloudinary.com/w_1200,c_limit,f_auto,fl_lossy,q_auto/ws-gazelli/usr/images/artists/group_images_override/items/01/01d86ddc57f2498db357c5bb2919fd2b/el-anatsui.jpg',
+        displacementImage: '6.jpg'
+      });
+    
+      // Wrap every letter in a span
+      var textWrapper = document.querySelector('.hero-title');
+      if (textWrapper) {
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+      }
+    
+      // Hover effect using Anime.js
+      $('#bimg').hover(
+        function () {
+          anime.timeline({ loop: false })
+          .add({
+            targets: '.hero-title .letter',
+            translateX: [80, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 100 + 40 * i
+          })
+        },
+    
+        function () {
+          anime.timeline({ loop: false })
+          .add({
+            targets: '.hero-title .letter',
+            translateX: [0, -80],
+            opacity: [1, 0],
+            easing: "easeInExpo",
+            duration: 800,
+            delay: (el, i) => 40 * i
+          });
+        }
+      );
+      
+    });
+    </script>
+    
+  
+  
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var button = document.querySelector('.hover-btn2 button');
+  button.addEventListener('click', function() {
+    ShowAndHide();
+  });
+
+  ShowAndHide();
+});
+
+function ShowAndHide() {
+  var x = document.querySelector('.scrollable-section');
+  var button = document.querySelector('.hover-btn2 button');
+
+  x.classList.toggle('hide');
+
+  if (x.classList.contains('hide')) {
+    x.style.display = 'block';
+    button.classList.remove('hide'); 
+  } else {
+    x.style.display = 'none'; 
+    button.classList.add('hide');
+  }
+}
+</script>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Add a class to the image container with border-radius in your CSS
+    var imgContainer = document.querySelector('#bimg2');
+    if (imgContainer) {
+      imgContainer.classList.add('img');
+    }
+  
+    var hoverDistort = new hoverEffect({
+      parent: document.querySelector('#bimg2'),
+      intensity: 0.5,
+      image1: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/8A49/production/_114810453_benenwonwuthecourtoftheobaofbeninest.100000-150000.jpg',
+      image2: 'https://ichef.bbci.co.uk/news/976/cpsprodpb/8A49/production/_114810453_benenwonwuthecourtoftheobaofbeninest.100000-150000.jpg',
+      displacementImage: '7.jpg'
+    });
+  
+    // Wrap every letter in a span
+    var textWrapper = document.querySelector('.hero-title');
+    if (textWrapper) {
+      textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+  
+    // Hover effect using Anime.js
+    $('#bimg').hover(
+      function () {
+        anime.timeline({ loop: false })
+        .add({
+          targets: '.hero-title .letter',
+          translateX: [80, 0],
+          translateZ: 0,
+          opacity: [0, 1],
+          easing: "easeOutExpo",
+          duration: 1400,
+          delay: (el, i) => 100 + 40 * i
+        })
+      },
+  
+      function () {
+        anime.timeline({ loop: false })
+        .add({
+          targets: '.hero-title .letter',
+          translateX: [0, -80],
+          opacity: [1, 0],
+          easing: "easeInExpo",
+          duration: 800,
+          delay: (el, i) => 40 * i
+        });
+      }
+    );
+    
+  });
+  </script>
+  
+  
+  
+  
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -1976,27 +2573,27 @@ chillSection.classList.toggle('is-open');
       .join('');
   </script>
   
-<script>
-  window.addEventListener('scroll', function () {
-  var overlapSection = document.querySelector('.overlap');
-  var overlapRect = overlapSection.getBoundingClientRect();
-  var navigation = document.querySelector('.navigation');
-  var h2Elements = document.querySelectorAll('h2');
-
-  if (overlapRect.top < window.innerHeight * 0.2 && overlapRect.bottom > 0) {
-    navigation.classList.add('scrolled');
-    h2Elements.forEach(function (h2) {
-      h2.style.color = 'black';
+  <script>
+    window.addEventListener('scroll', function () {
+      var overlapSection = document.querySelector('.overlap');
+      var overlapRect = overlapSection.getBoundingClientRect();
+      var navigation = document.querySelector('.navigation');
+      var h2Elements = navigation.querySelectorAll('h2'); // Select only h2 elements within the navigation class
+  
+      if (overlapRect.top < window.innerHeight * 0.2 && overlapRect.bottom > 0) {
+        navigation.classList.add('scrolled');
+        h2Elements.forEach(function (h2) {
+          h2.style.color = '#b5b5b5ff';
+        });
+      } else {
+        navigation.classList.remove('scrolled');
+        h2Elements.forEach(function (h2) {
+          h2.style.color = '#1a1a1a';
+        });
+      }
     });
-  } else {
-    navigation.classList.remove('scrolled');
-    h2Elements.forEach(function (h2) {
-      h2.style.color = '#733200ff';
-    });
-  }
-});
-
-</script>
+  </script>
+  
 <!--Parallax Text-->
 <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
 <script>
@@ -2060,63 +2657,64 @@ function raf(time) {
 requestAnimationFrame(raf);
   </script>
   
+
+
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const h1 = document.querySelector('h1');
-      const splitText = new SplitType(h1);
-      const chars = splitText.chars;
-  
-      const animations = [
-        animateConnectedFadeIn,
-        animateConnectedSquashAndStretch,
-        animateConnectedScaleAndRotate,
-        animateConnectedFloat,
-      ];
-  
-      function playSequentialAnimations() {
-        
-        const timeline = gsap.timeline({ onComplete: playRandomAnimation });
-        animations.forEach((animation) => timeline.add(animation()));
-      }
-  
-      function playRandomAnimation() {
-       
-      }
-  
-      setTimeout(() => {
-        playSequentialAnimations();
-      }, 100);
-  
-      function animateConnectedFadeIn() {
-        return gsap.timeline()
-          .to(h1, { duration: 2, opacity: 1, ease: 'power3.inOut' })
-          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
-          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
-      }
-  
-      function animateConnectedSquashAndStretch() {
-        return gsap.timeline()
-          .to(h1, { duration: 2, opacity: 1, scaleY: 1.1, ease: 'power3.inOut' })
-          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
-          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
-      }
-  
-      function animateConnectedScaleAndRotate() {
-        return gsap.timeline()
-          .to(h1, { duration: 2, opacity: 1, scale: 1, ease: 'power3.inOut' })
-          .staggerTo(chars, 1, { opacity: 1, y: 0, rotate: 0, scaleX: 1, ease: 'elastic.out(1, 0.3)', stagger: 0.02 })
-          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
-      }
-  
-      function animateConnectedFloat() {
-        return gsap.timeline()
-          .to(h1, { duration: 2, opacity: 1, y: -20, ease: 'power3.inOut' })
-          .staggerTo(chars, 1, { opacity: 1, y: 0, ease: 'elastic.out(1, 0.5)', stagger: 0.02 })
-          .staggerTo(chars, 0.8, { opacity: 0.8, rotate: 360, scaleX: 0.9, ease: 'power2.inOut', stagger: 0.02 }, '-=1');
-      }
+const textReveals = document.querySelectorAll('.text__reveal');
+
+function animateTextReveal(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            console.log(entry);
+            const spans = entry.target.querySelectorAll('span');
+            spans.forEach((span, idx) => {
+                setTimeout(() => {
+                    span.style.transform = 'translateY(0)';
+                }, (idx + 1) * 50);
+            });
+
+            // Using requestAnimationFrame for smoother rendering
+            let startTime;
+            function animate(time) {
+                if (!startTime) startTime = time;
+                const progress = time - startTime;
+
+                spans.forEach((span, idx) => {
+                    const delay = (idx + 1) * 50;
+                    if (progress > delay) {
+                        span.style.transform = 'translateY(0)';
+                    }
+                });
+
+                if (progress < spans.length * 50) {
+                    requestAnimationFrame(animate);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
     });
+}
+
+const options = {
+    rootMargin: '0px',
+    threshold: 1.0
+};
+
+const observe = new IntersectionObserver(animateTextReveal, options);
+
+textReveals.forEach(text => {
+    const string = text.innerText;
+    const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+    text.innerHTML = spans;
+    observe.observe(text);
+});
+
   </script>
   
+
+
+      
   <!-- For custom cursor -->
 <script>
 const cursor = document.querySelector(".cursor");
@@ -2171,7 +2769,7 @@ gsap.from(navlinks, {
       const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
   
       splitTexts.forEach((splitText, index) => {
-        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+        tl.from(splitText.chars, { opacity: 0.1, y: 0, stagger: 0.02 }, index * 0.05);
       });
   
       const observer = new IntersectionObserver((entries, observer) => {
@@ -2196,7 +2794,7 @@ gsap.from(navlinks, {
       const tl = gsap.timeline({ defaults: { duration: 0.3, ease: 'power1.out' }, paused: true });
   
       splitTexts.forEach((splitText, index) => {
-        tl.from(splitText.chars, { opacity: 0.3, y: 0, stagger: 0.02 }, index * 0.05);
+        tl.from(splitText.chars, { opacity: 0.1, y: 0, stagger: 0.02 }, index * 0.05);
       });
   
       const observer = new IntersectionObserver((entries, observer) => {
@@ -2473,20 +3071,20 @@ gsap.from(navlinks, {
       });
 
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          scale: 1.14, 
+          scale: 1.07, 
           duration: 2,
           ease: 'power1.inOut', 
       }, 0); 
 
 
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          borderRadius: '0', 
+          
           duration: 2,
           ease: 'power1.inOut',
       }, 0);
 
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          filter: 'sepia(60%)',
+          filter: 'grayscale(80%)',
           duration: 2,
           ease: 'power1.inOut',
       }, 0);
@@ -2495,11 +3093,12 @@ gsap.from(navlinks, {
           scale: 1,
           duration: 2,
           ease: 'power1.inOut',
+          
       });
 
       parallaxZoomTL.to(parallaxContainer.querySelector('img'), {
-          borderRadius: '50px',
-          filter: 'sepia(20%)',
+          borderRadius: '90px',
+          filter: 'grayscale(20%)',
           duration: 1,
           ease: 'power1.inOut',
       }, '-=2'); 
@@ -2638,7 +3237,7 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     });
   }
 
-  // Call the function for each susimagewrapper element
+  //This is used to call the function for each susimagewrapper element
   animateOnViewElegant('#susimagewrapper');
   animateOnViewElegant('#susimagewrapper2');
   animateOnViewElegant('#susimagewrapper3');
@@ -2660,7 +3259,7 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
         ease: 'power4.out',
         scrollTrigger: {
           trigger: coolElement,
-          start: 'top 60%',
+          start: 'top 30%',
           toggleActions: 'play none none reverse',
         },
       });
@@ -2673,7 +3272,7 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
         ease: 'elastic.out(1, 0.3)',
         scrollTrigger: {
           trigger: coolElement,
-          start: 'top 60%',
+          start: 'top 30%',
           toggleActions: 'play none none reverse',
         },
       });
@@ -2690,8 +3289,8 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'https://moroccoworldnews.com/wp-content/uploads/2014/06/Islamic-mystic-Ibn-Battuta.jpg' },
     { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'https://media.cnn.com/api/v1/images/stellar/prod/220919134942-01-ben-enwonwu.jpg?c=original' },
     { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'https://makeba-dz.com/wp-content/uploads/2020/08/b98574ac0f2f4b9d8fb53298d680024d.jpg' },
-    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'https://media.newyorker.com/photos/59097b1dc14b3c606c1093a8/master/pass/080526_r17409_p646.jpg' },
-    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'URL_TO_IMAGE' }
+    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'https://media.licdn.com/dms/image/D4E12AQFDbG4PEk97kg/article-cover_image-shrink_600_2000/0/1692465262261?e=2147483647&v=beta&t=0fLCFpxYqdFhIJf1EbE1wT0thDDCcYFRd1OF-3qUDIk' },
+    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'https://p-news-upload.storage.googleapis.com/2023/02/El-Anatsui-scaled.jpeg' }
   ];
 
   const projectsSlider = document.getElementById('projectsSlider');
@@ -2725,10 +3324,8 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     projectsSlider.appendChild(panel);
   });
 
-  // Set the width of projectsSlider to accommodate all projects
   projectsSlider.style.width = `${projects.length * 25}vw`;
 
-  // Function to handle the automatic horizontal sliding effect
   function autoSlide() {
     let offsetTop = projectContainer.offsetTop;
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
@@ -2737,10 +3334,8 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     projectsSlider.style.transform = `translate3d(${-projectCurrentX}%, 0, 0)`;
   }
 
-  // Initialize the automatic sliding effect on scroll
   document.addEventListener('scroll', autoSlide);
 
-  // Linear interpolation function
   function lerp(a, b, t) {
     return (1 - t) * a + t * b;
   }
@@ -2750,30 +3345,50 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function(){
-        // Add smooth scrolling to all links
+     
         $("a").on('click', function(event) {
-            // Make sure this.hash has a value before overriding default behavior
+          
             if (this.hash !== "") {
-                // Prevent default anchor click behavior
+
                 event.preventDefault();
 
-                // Store hash
                 var hash = this.hash;
 
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
                 $('html, body').animate({
                     scrollTop: $(hash).offset().top
                 }, 800, function(){
-                    // Add hash (#) to URL when done scrolling (default click behavior)
+                 
                     window.location.hash = hash;
                 });
-            } // End if
+            } 
         });
     });
 </script>
+<script>
+  var lastScrollPosition = 0;
+  var navigation = document.querySelector('.navigation');
 
+  window.addEventListener('scroll', function () {
+    var currentScrollPosition = window.scrollY;
 
+    if (currentScrollPosition > lastScrollPosition) {
+
+      navigation.classList.add('hidden');
+    } else {
+
+      navigation.classList.remove('hidden');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  });
+
+</script>
+
+<script>
+  function toggleClass(element) {
+    element.classList.toggle('clicked');
+  }
+</script>
 
 </body>
 </html>
