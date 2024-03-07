@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Imersion</title>
+    <style>
+            * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html.lenis {
+      height: auto;
+    }
+
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      text-shadow: #fff;
+      color: #b8b8b8ff;
+    }
+
+    html::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    html::-webkit-scrollbar-thumb {
+      background-color: transparent;
+    }
+
+    html::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    body {
+      background-color: #000000;
+      justify-content: center;
+      overscroll-behavior: contain;
+      scrollbar-color: transparent transparent;
+    }
+
+    ::selection {
+      color: rgb(255, 134, 41);
+    }
+
+    .navigation {
+    transition: transform 0.3s ease-in-out;
+    opacity: 0.7;
+  }
+
+  .navigation.hidden {
+    transform: translateY(-100%);
+  }
+    .navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px;
+      z-index: 10;
+      font-family: 'Sf Pro Text', sans-serif;
+      padding-top: 12px;
+
+      font-size: 2.2vh;
+    }
+
+
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+    }
+
+    .navigation a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #b8b8b8ff;
+      position: relative;
+      padding-bottom: 6px;
+      font-weight: 380;
+      font-size: 14px;
+      mix-blend-mode: difference;
+    }
+    .navigation.scrolled a {
+  color: #b5b5b5ff; 
+}
+
+.okay{
+        padding-right: 25px;
+    }
+
+
+
+
+.navigation h2{
+  font-weight: 700;
+  font-size: 5.1vh;
+  mix-blend-mode: difference;
+}
+
+.navigation.scrolled h2,
+.scrolled h2 {
+  color: #b5b5b5ff; 
+}
+.navigation.scrolled a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0); 
+      transition: width 0.3s ease; 
+    }
+    .navigation.scrolled a:hover {
+      color: #fff; 
+    }
+
+    .navigation a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #b8b8b8ff; 
+      transition: width 0.3s ease; 
+    }
+    h2{
+    font-size: 3vw;
+      text-align: left;
+      color:  b8b8b8ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      transition: color 0.5s ease;
+      
+   }
+    .navigation a:hover::before {
+      width: 100%;
+    }
+
+
+    .white{
+      height: 100vh;
+    }
+
+    footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+padding: 0.2em 2em;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-family: sf pro text;
+font-size: 11px;
+color: rgb(53, 53, 53);
+mix-blend-mode: difference;
+}
+
+
+.container {
+  width: 100%;
+  height: 2000vh;
+}
+
+.active-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  opacity: 0.35;
+  z-index: -1;
+}
+
+
+
+
+
+.active-slide img {
+position: absolute;
+filter: blur(35px);
+transform: scale(1.125);
+width: 100vw;
+height: 100vh;
+object-fit: cover;
+}
+
+.slider {
+position: fixed;
+top: 0;
+width: 100vw;
+height: 100vh;
+transform-style: preserve-3d;
+perspective: 750px;
+overflow: hidden;
+}
+
+.slide{
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  
+}
+.slide img{
+  width: 71%;
+  height: 71%;
+  border-radius: 35px;
+  border: 0.05px solid rgba(51, 51, 51,0.3 );
+} 
+
+.slide-copy p {
+    text-align: center;
+    font-family: "Sf Pro rounded", sans-serif;
+    font-size: 12px;
+    font-weight: 350; /* Use a standard font weight */
+    line-height: 1.5; /* Use a unitless value for line-height for better responsiveness */
+    color:#b5b5b5ff;
+    -webkit-font-smoothing: antialiased; /* Enable antialiasing on Webkit browsers */
+    -moz-osx-font-smoothing: grayscale; 
+    mix-blend-mode: difference;
+    opacity: 0.7;
+  }
+
+.slide-copy p#index {
+    font-family: "Sf Pro Text", sans-serif;
+    font-size: 11px;
+    font-weight: 350; 
+    margin-bottom: 0.75em;
+}
+
+#slide-1 {
+position: absolute;
+top: 50%;
+left: 70%;
+transform: translateX(-50%) translateY(-50%) translateZ(-22500px);
+opacity: 0;
+}
+
+#slide-2 {
+position: absolute;
+top: 50%;
+left: 30%;
+transform: translateX(-50%) translateY(-50%) translateZ(-20000px);
+opacity: 0;
+}
+
+#slide-3 {
+position: absolute;
+top: 50%;
+left: 70%;
+transform: translateX(-50%) translateY(-50%) translateZ(-17500px);
+opacity: 0;
+}
+
+#slide-4 {
+position: absolute;
+top: 50%;
+left: 30%;
+transform: translateX(-50%) translateY(-50%) translateZ(-15000px);
+opacity: 0;
+}
+
+#slide-5 {
+position: absolute;
+top: 50%;
+left: 70%;
+transform: translateX(-50%) translateY(-50%) translateZ(-12500px);
+opacity: 0;
+}
+
+#slide-6 {
+position: absolute;
+top: 50%;
+left: 30%;
+transform: translateX(-50%) translateY(-50%) translateZ(-10000px);
+opacity: 0;
+}
+
+#slide-7 {
+position: absolute;
+top: 50%;
+left: 70%;
+transform: translateX(-50%) translateY(-50%) translateZ(-7500px);
+opacity: 0;
+}
+
+#slide-8 {
+position: absolute;
+top: 50%;
+left: 30%;
+transform: translateX(-50%) translateY(-50%) translateZ(-5000px);
+opacity: 0;
+}
+
+#slide-9 {
+position: absolute;
+top: 50%;
+left: 70%;
+transform: translateX(-50%) translateY(-50%) translateZ(-2500px);
+opacity: 0.5;
+}
+#slide-10 {
+position: absolute;
+top: 50%;
+left: 30%;
+transform: translateX(-50%) translateY(-50%) translateZ(0px);
+opacity: 1;
+}
+.sidebar {
+  margin-top: 5.7vh;
+            position: fixed;
+            top: 0;
+            right: -500px; /* initially off-screen */
+            width: 320px;
+            height: 90%;
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+             font-size: 16px;
+            border: 0.02px solid #333; 
+            overflow-y: scroll;
+            padding: 20px;
+         
+            transition: right 0.3s ease-in-out;
+            z-index: 9;
+            border-radius: 25px;
+            margin-right:2vh ;
+        }
+        .sidebar h2{
+  font-weight: 700;
+  font-size: 5.1vh;
+  mix-blend-mode: difference;
+  padding-left: 1vh;
+}
+        .sidebar.show {
+            right: 0;
+        }
+
+        .sidebar button {
+            color: #fff;
+            background-color: transparent;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+
+        }
+
+    </style>
+</head>
+<body>
+  <!--Nav Bar-->
+    <div class="navigation">
+        <nav>
+            <div>
+                <a href="#about">Home</a>
+                <a href="#gallery">Gallery</a>
+            </div>
+          <div class="title">
+            <h2>Frica.</h2>
+          </div>
+          <div class="okay">
+            <a href="#">Let's Talk</a>
+          </div>
+        </nav>
+      </div>
+      <div class="sidebar" id="sidebar">
+   
+        <h2>Description</h2>
+        <p id="image-description">Click on an image in the slider to see its description.</p>
+        <button onclick="closeSidebar()"></button>
+    </div>
+
+  <!--Fixed Footer-->
+      <footer>
+        <p>Ewà Inú</p>
+        <p id="footer-mystere">Mystère Africain</p>
+      </footer>
+
+
+      <div class="container">
+        <div class="active-slide">
+        <img src="https://vasari21.com/wp-content/uploads/2016/03/Dusasa-1.jpg" alt="" />
+        <img src="https://www.culturetype.com/wp-content/uploads/2022/03/feat_2_amoako_boafo_hands_up_2018.jpg" alt="" />
+        <img src="https://www.dailyartmagazine.com/wp-content/uploads/2022/07/TraceyRose_Kiss_2001.jpg" alt="" />
+        <img src="https://files.ocula.com/anzax/05/05390a0a-8a02-487d-b138-9432153962de_1116_1116.jpg" alt="" />
+        <img src="https://lh3.googleusercontent.com/ci/AE9Axz8XsLaf5VcUHT9l5_kBEX8zyskWqc7VgYFy8SjtARouCp-L2Q6oV1GxpCDaFwTJwkOEK4Sks8E=s1200" alt="" />
+        <img src="https://www.dailyartmagazine.com/wp-content/uploads/2022/07/JulieMehretu_Black_City_2007-1536x959.jpg" alt="" />
+        <img src="https://cdn.artcld.com/img/w_1920,h_1920,c_fit/8vboga5w8a13l7o07ni1.jpg" alt="" />
+        <img src="https://media.licdn.com/dms/image/D4D12AQGaxWfDobiSQg/article-cover_image-shrink_720_1280/0/1683881865039?e=2147483647&v=beta&t=AwEPbEr477HhE2cUG4cSeT6AdUm8pvzKnBecOjOn0AU" alt="" />
+        <img src="https://www.okayafrica.com/media-library/image.jpg?id=10395712&width=980" alt="" />
+        <img src="https://f4.bcbits.com/img/a1461574303_10.jpg" alt="" />
+        </div>
+
+    <div class="slider">
+          <div class="slide" id="slide-1">
+          <div class="slide-copy">
+          <p>El Anatsui</p>
+          <p id="index">Dusasa I</p>
+          </div>
+          <div class="slide-img">
+            <img src="https://vasari21.com/wp-content/uploads/2016/03/Dusasa-1.jpg" alt="" />
+          </div>
+          </div>
+
+          <div class="slide" id="slide-2">
+            <div class="slide-copy">
+              <p>Amoako Boafo </p> 
+            <p id="index">Hands Up</p>
+            </div>
+            <div class="slide-img">
+              <img src="https://www.culturetype.com/wp-content/uploads/2022/03/feat_2_amoako_boafo_hands_up_2018.jpg" alt="" />
+            </div>
+            </div>
+
+            <div class="slide" id="slide-3">
+              <div class="slide-copy">
+              <p>Tracey Rose</p>
+              <p id="index">The Kiss</p>
+              </div>
+              <div class="slide-img">
+                <img src="https://www.dailyartmagazine.com/wp-content/uploads/2022/07/TraceyRose_Kiss_2001.jpg" alt="" />
+              </div>
+              </div>
+
+              <div class="slide" id="slide-4">
+                <div class="slide-copy">
+                <p>Abdoulaye Konaté</p>
+                <p id="index">Ocula Artist</p>
+                </div>
+                <div class="slide-img">
+                  <img src="https://files.ocula.com/anzax/05/05390a0a-8a02-487d-b138-9432153962de_1116_1116.jpg" alt="" />
+                </div>
+                </div>
+
+                <div class="slide" id="slide-5">
+                  <div class="slide-copy">
+                  <p>Wangechi Mutu</p>
+                  <p id="index">Homeward bound</p>
+                  </div>
+                  <div class="slide-img">
+                    <img src="https://lh3.googleusercontent.com/ci/AE9Axz8XsLaf5VcUHT9l5_kBEX8zyskWqc7VgYFy8SjtARouCp-L2Q6oV1GxpCDaFwTJwkOEK4Sks8E=s1200" alt="" />
+                  </div>
+                  </div>
+
+                  <div class="slide" id="slide-6">
+                    <div class="slide-copy">
+                    <p>Julie Mehretu</p>
+                    <p id="index">Black City</p>
+                    </div>
+                    <div class="slide-img">
+                      <img src="https://www.dailyartmagazine.com/wp-content/uploads/2022/07/JulieMehretu_Black_City_2007-1536x959.jpg" alt="" />
+                    </div>
+                    </div>
+
+
+                    <div class="slide" id="slide-7">
+                      <div class="slide-copy">
+                      <p>Zephaniah Lukamba</p>
+                      <p id="index">Iko Nini</p>
+                      </div>
+                      <div class="slide-img">
+                        <img src="https://cdn.artcld.com/img/w_1920,h_1920,c_fit/8vboga5w8a13l7o07ni1.jpg" alt="" />
+                      </div>
+                      </div>
+
+
+                      <div class="slide" id="slide-8">
+                        <div class="slide-copy">
+                        <p>Zephaniah Lukamba</p>
+                        <p id="index">Contemporary African Art</p>
+                        </div>
+                        <div class="slide-img">
+                          <img src="https://media.licdn.com/dms/image/D4D12AQGaxWfDobiSQg/article-cover_image-shrink_720_1280/0/1683881865039?e=2147483647&v=beta&t=AwEPbEr477HhE2cUG4cSeT6AdUm8pvzKnBecOjOn0AU" alt="" />
+                        </div>
+                        </div>
+
+                        <div class="slide" id="slide-9">
+                          <div class="slide-copy">
+                          <p>African Artist in london fair</p>
+                          <p id="index">Rethink Traditions</p>
+                          </div>
+                          <div class="slide-img">
+                            <img src="https://www.okayafrica.com/media-library/image.jpg?id=10395712&width=980" alt="" />
+                          </div>
+                          </div>
+
+                          <div class="slide" id="slide-10">
+                            <div class="slide-copy">
+                            <p>Korokoro</p>
+                            <p id="index">Could we be more ?</p>
+                            </div>
+                            <div class="slide-img">
+                              <img src="https://f4.bcbits.com/img/a1461574303_10.jpg" alt="" />
+                            </div>
+                            </div>
+
+  
+      </div>
+        </div>
+
+
+
+<section class="white"></section>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+      <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+      <script>
+const lenis = new Lenis()
+
+lenis.on('scroll', (e) => {
+  console.log(e)
+})
+
+lenis.on('scroll', ScrollTrigger.update)
+
+gsap.ticker.add((time)=>{
+  lenis.raf(time * 1000)
+})
+
+gsap.ticker.lagSmoothing(0)
+      </script>
+    
+    <script>
+      var lastScrollPosition = 0;
+      var navigation = document.querySelector('.navigation');
+    
+      window.addEventListener('scroll', function () {
+        var currentScrollPosition = window.scrollY;
+    
+        if (currentScrollPosition > lastScrollPosition) {
+    
+          navigation.classList.add('hidden');
+        } else {
+    
+          navigation.classList.remove('hidden');
+        }
+    
+        lastScrollPosition = currentScrollPosition;
+      });
+    
+    </script>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", function () {
+  const slides = gsap.utils.toArray(".slide");
+  const activeSlideImages = gsap.utils.toArray(".active-slide img");
+
+  function getInitialTranslateZ(slide) {
+    const style = window.getComputedStyle(slide);
+    const matrix = style.transform.match(/matrix3d\((.+)\)/);
+    if (matrix) {
+      const values = matrix[1].split(", ");
+      return parseFloat(values[14] || 0);
+    }
+    return 0;
+  }
+
+  function mapRange(value, inMin, inMax, outMin, outMax) {
+    return ((value - inMin) * (outMax - outMin)) / (inMax - inMin) + outMin;
+  }
+  slides.forEach((slide, index) => {
+  const initialZ = getInitialTranslateZ(slide);
+
+  ScrollTrigger.create({
+    trigger: ".container",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: true,
+    onUpdate: (self) => {
+      const progress = self.progress;
+      const zIncrement = progress * 22500;
+      const currentZ = initialZ + zIncrement;
+
+      let opacity;
+
+      if (currentZ > -2500) {
+  opacity = mapRange(currentZ, -2500, 0, 0.5, 1);
+} else {
+  opacity = mapRange(currentZ, -5000, -2500, 0, 0.5);
+}
+
+slide.style.opacity = opacity;
+slide.style.transform = `translateX(-50%) translateY(-50%) translateZ(${currentZ}px)`;
+
+if (currentZ < 100) {
+  gsap.to(activeSlideImages[index], 1.5, {
+    opacity: 1,
+    ease: "power3.out",
+    // Add any other properties or callbacks you need for the tween
+  });
+} else {
+  gsap.to(activeSlideImages[index], 1.5, {
+opacity: 0,
+ease: "power3.out",
+})
+}
+
+    },
+  });
+});
+});
+</script>
+
+<script>
+  var lastScrollPosition = 0;
+  var navigation = document.querySelector('.navigation');
+  var mystereAfricain = document.querySelector('.footer-mystere');
+
+  window.addEventListener('scroll', function () {
+    var currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition > lastScrollPosition) {
+      navigation.classList.add('hidden');
+    } else {
+      navigation.classList.remove('hidden');
+    }
+
+    // Calculate how much the user has scrolled and update Mystère Africain text
+    var scrolledPercentage = (currentScrollPosition / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    mystereAfricain.textContent = "Mystère Africain " + scrolledPercentage.toFixed(2) + "%";
+
+    lastScrollPosition = currentScrollPosition;
+  });
+</script>
+
+
+<script>
+  // Function to open the sidebar with image description
+  function openSidebar(description) {
+      const sidebar = document.getElementById('sidebar');
+      const descriptionElement = document.getElementById('image-description');
+
+      descriptionElement.textContent = description;
+      sidebar.classList.add('show');
+  }
+
+  // Function to close the sidebar
+  function closeSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.remove('show');
+  }
+
+  // Update your existing image click event listeners to show/hide the sidebar
+  const slides = gsap.utils.toArray(".slide");
+
+  slides.forEach((slide, index) => {
+      slide.addEventListener('click', () => {
+          const descriptions = [
+              "Description for image 1.",
+              "Description for image 2.",
+              // Add descriptions for other images accordingly
+          ];
+
+          if (document.getElementById('sidebar').classList.contains('show')) {
+              closeSidebar();
+          } else {
+              openSidebar(descriptions[index]);
+          }
+      });
+  });
+</script>
+</script>
+</body>
+</html>

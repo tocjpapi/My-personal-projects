@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>African Art Gallery</title>
+   <link rel="stylesheet" href="style.css">
+  <!--The order is as follows style, html and script-->
   <style>
     * {
       -webkit-font-smoothing: antialiased;
@@ -45,6 +47,7 @@
       overflow-x: hidden;
       overflow-y: hidden;
       text-shadow: #fff;
+      color: #b8b8b8ff;
     }
 
     html::-webkit-scrollbar {
@@ -70,6 +73,103 @@
       color: rgb(255, 134, 41);
     }
 
+    .navigation {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navigation.hidden {
+    transform: translateY(-100%);
+  }
+    .navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 10px;
+      z-index: 10;
+      font-family: 'Sf Pro Text', sans-serif;
+      padding-top: 12px;
+
+      font-size: 2.2vh;
+    }
+
+
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+    }
+
+    .navigation a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #b8b8b8ff;
+      position: relative;
+      padding-bottom: 6px;
+      font-weight: 380;
+      font-size: medium;
+    }
+    .navigation.scrolled a {
+  color: #b5b5b5ff; 
+}
+
+.okay{
+        padding-right: 25px;
+    }
+
+
+
+
+.navigation h2{
+  font-weight: 700;
+  font-size: 5.1vh;
+  mix-blend-mode: difference;
+}
+
+.navigation.scrolled h2,
+.scrolled h2 {
+  color: #b5b5b5ff; 
+}
+.navigation.scrolled a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: rgb(0, 0, 0); 
+      transition: width 0.3s ease; 
+    }
+    .navigation.scrolled a:hover {
+      color: #fff; 
+    }
+
+    .navigation a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #b8b8b8ff; 
+      transition: width 0.3s ease; 
+    }
+    h2{
+    font-size: 3vw;
+      text-align: left;
+      color:  b8b8b8ff;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'New York', sans-serif;
+      transition: color 0.5s ease;
+      
+   }
+    .navigation a:hover::before {
+      width: 100%;
+    }
+
+
     section {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -93,9 +193,80 @@ margin: 0 auto;
 }
 
 .img{
-    width: 6vw;
-    height: 8vh;
+    width: 100px;
+    height: 100px;
+    filter: grayscale(90%);
+
 }
+
+.image{
+    margin: 0;
+}
+
+.img-gallery-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image:nth-child(1)
+ {
+left: 75%;
+top: 760%;
+}
+.image:nth-child(3)
+{
+    top: 560%;
+left: 75%;
+
+}
+
+.image:nth-child(2)
+ {
+left: 25%;
+}
+.image:nth-child(4)
+ {
+left: 25%;
+top: 660%;
+}
+.btn {
+  position: absolute;
+  top: 448%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+  border: 0.02px solid #333; 
+  border-radius: 30px;
+  padding: 1em 2em;
+  cursor: pointer;
+  z-index: 2;
+  color: #b8b8b8; 
+  font-family: 'sf pro text', sans-serif; 
+  transition: background 0.3s, color 0.3s, transform 0.3s; /* Add transform to the transition */
+  padding-bottom: 2vh;
+
+}
+
+.img-gallery-container {
+  width: 100vw;
+  padding-top: 30vh;
+}
+
+.btn:hover {
+  background: rgba(26, 26, 26, 0.7); 
+  color: #b8b8b8;
+  transform: translate(-50%, -50%) scale(1.02); 
+}
+
+
+.wrapper{
+  z-index: -1;
+}
+
+
 
     .img img {
       width: 100%;
@@ -107,36 +278,48 @@ margin: 0 auto;
 
       .img:nth-of-type(1) {
       background-image: url('art1.png');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(2) {
       background-image: url('Art2.png');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(3) {
       background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZFAXwr4cTOz3hTvGaZjMP6Ane-jJU2U1fddAPnozZOxyJtRRwGwJe8zIYG-oDYGwYwLc&usqp=CAU');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(4) {
-      background-image: url('https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5b87fa9a-112a-4c4d-a7c9-d368266319d4_1426x1445.webp');
+      background-image: url('art4.png');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(5) {
-      background-image: url('https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5b87fa9a-112a-4c4d-a7c9-d368266319d4_1426x1445.webp');
+      background-image: url('art3.png');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(6) {
-      background-image: url('https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5b87fa9a-112a-4c4d-a7c9-d368266319d4_1426x1445.webp');
+      background-image: url('https://wallpaperset.com/w/full/0/b/0/465081.jpg');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(7) {
-      background-image: url('https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5b87fa9a-112a-4c4d-a7c9-d368266319d4_1426x1445.webp');
+      background-image: url('https://i.pinimg.com/originals/b8/cd/a8/b8cda88b2dc6cd408d0169e965891cdd.jpg');
+      border-radius: 10px;
     }
 
     .img:nth-of-type(8) {
-      background-image: url('https://substackcdn.com/image/fetch/w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5b87fa9a-112a-4c4d-a7c9-d368266319d4_1426x1445.webp');
+      background-image: url('https://i.etsystatic.com/5294708/r/il/e0b84a/987044631/il_794xN.987044631_nr5y.jpg');
+      border-radius: 10px;
     }
 
+    .img:nth-of-type(9) {
+      background-image: url('https://i.pinimg.com/originals/b8/cd/a8/b8cda88b2dc6cd408d0169e965891cdd.jpg');
+      border-radius: 10px;
+    }
 
 
 .line{
@@ -144,13 +327,43 @@ margin: 0 auto;
 
     }
 
+
+
+
     .next {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; /* Add this line to center align the content */
+  text-align: center; 
+  padding-top: 30vh;
+  padding-bottom: 5vh;
+}
+
+.image {
+position: absolute;
+margin-bottom: 1em;
+width: 400px;
+height: 500px;
+overflow: hidden;
+top: 460%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 35px;
+}
+.image.reorder {
+position: absolute;
+  top: 423%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 400px;
+height: 500px;
+filter: grayscale(70%);
+}
+
+.image:last-child {
+  border: 2px solid #000000; 
 }
 
     .sticky-text {
@@ -163,6 +376,7 @@ margin: 0 auto;
       font-size: 7vw;
       color: #b8b8b8ff;
       text-align: center;
+      backdrop-filter: blur(4px);
     }
 
     .next  p{
@@ -186,36 +400,289 @@ margin: 0 auto;
     transform: translateY(110%);
     transition: .5s;
 }
+ 
+
+.tobe{
+    margin-top: 24%;
+}
+
+.sec1{
+position: relative;
+padding: none;
+}
+
+
+
+footer {
+position: fixed;
+bottom: 0;
+width: 100%;
+padding: 0.2em 2em;
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-family: sf pro text;
+font-size: 11px;
+color: rgb(53, 53, 53);
+mix-blend-mode: difference;
+}
+
+
+.white{
+  background-color: #b5b5b5ff;
+}
+
+
+
+  </style>
+
+  <style>
+     @media screen and (max-width: 932px) {
+      .navigation a{
+          font-size: 13px;
+}
+
+        .navigation h2{
+    font-size: 3.7vh;
+  }
+     }
+
+
+     @media screen and (max-width: 932px) and (orientation: landscape) {
+      .navigation h2{
+    font-size: 5.7vh;
+  }
+
+     }
+
+  </style>
+
+  <style>
+    .contai {
+  position:relative;
+  height:100vh;
+}
+
+.contai p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #b5b5b5ff;
+  font-family: "New York";
+  font-size: 7vw; 
+  font-weight: 100;
+  mix-blend-mode: difference;
+  cursor: pointer;
+  z-index: 4;
+}
+.contai p::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 0.5px; /* Set the underline height */
+      background-color: #b5b5b5ff; /* Set the underline color */
+      transition: width 0.7s ease; 
+
+    }
+
+    .contai p:hover::after {
+      width: 100%;
+    }
+#like {
+  background-image:url('https://i.makeagif.com/media/10-14-2015/kpib7W.gif') no-repeat center center;
+      background-size: cover; /* Adjust as needed */
+      display: inline-block; /* Ensure the span takes the size of the background image */
+      padding: 10px; /* Optional: Add padding to the span if needed */
+    }
+
+
+
+.imag {
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  transition-timing-function: ease-out;
+  overflow: hidden;
+  border-radius: 35px;
+}
+
+.imag-1 {
+  background: url(https://www.dailyartmagazine.com/wp-content/uploads/2022/07/TraceyRose_Kiss_2001.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  transition-duration: 1000ms;
+}
+
+.imag-2 {
+  background: url(https://www.okayafrica.com/media-library/image.jpg?id=10395712&width=980) no-repeat 50% 50%;
+  background-size: cover;
+  transition-duration: 800ms;
+}
+
+.imag-3 {
+  background: url(https://f4.bcbits.com/img/a1461574303_10.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  transition-duration: 600ms;
+}
+
+.imag-4 {
+  background: url(https://www.dailyartmagazine.com/wp-content/uploads/2022/07/JulieMehretu_Black_City_2007-1536x959.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  transition-duration: 400ms;
+}
+
+.imag-5 {
+  background: url(https://files.ocula.com/anzax/05/05390a0a-8a02-487d-b138-9432153962de_1116_1116.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  transition-duration: 200ms;
+}
+
   </style>
 </head>
 
 <body>
-  <section>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-  </section>
-
-  <section class="gallery">
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-    <div class="img"></div>
-  </section>
-
-  <div class="sticky-text">
-    <p class="text__reveal">This is African art</p>
+  
+  
+  <div class="navigation">
+    <nav>
+        <div>
+            <a href="#about">Home</a>
+            <a href="#gallery">Explore</a>
+        </div>
+      <div class="title">
+        <h2>Frica.</h2>
+      </div>
+      <div class="okay">
+        <a href="#">Let's Talk</a>
+      </div>
+    </nav>
   </div>
+    <section>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </section>
+    
+      <section class="gallery">
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+        <div class="img"></div>
+      </section>
+    
+      <div class="sticky-text">
+        <p class="text__reveal">This is African art</p>
+      </div>
+       <div class="newadd">
+      <section class="next">
+        <p class="text__reveal tobe">Welcome</p>
+      </section>
+    
+      <!-- Image Gallery Section -->
+      <div class="img-gallery">
+        <div class="img-gallery-container order">
+          <div class="image reorder">
+            <img src="https://www.tingatingaart.com/cdn/shop/articles/OIG.uqPMLeU42E1yN_2048x.jpg?v=1701159335" alt="">
+          </div>
+          <div class="image reorder">
+            <img src="https://wallpaperset.com/w/full/0/b/0/465081.jpg" alt="">
+          </div>
+          <div class="image reorder">
+            <img src="https://mau.rs/images/collections/SculpturesInWood/SculpturesInWood_1.jpg" alt="">
+          </div>
+          <div class="image reorder">
+            <img src="https://image.invaluable.com/housePhotos/Capitolium/63/738063/H4007-L312568503.jpg" alt="">
+          </div>
+        </div>
+      </div>
+        
+        <div class="btn id="followBtn"">Explore</div>
 
-  <section class="next">
-<p class="text__reveal">Welcome</p>
-  </section>
+    </div>
+        <div class="wrapper">
 
+          <div class="container scrollx">
+  
+              <section class="sec1 pin">
+
+                  <h1>Why Africa ?</h1>
+  
+                  <div class="col">
+                      <p>Delving into African art is like embarking on a mesmerizing journey through time, where every brushstroke and sculpted form tells a tale of resilience, identity, and the boundless creativity that transcends borders. </p>
+                      <p>It's not just about art it's about embracing a kaleidoscope of cultures and traditions that paint a canvas of inspiration, inviting us all to witness the extraordinary beauty that emerges when diversity meets artistic expression.</p>
+                  </div>
+              </section>
+              <section class="sec2 pin">
+                <div class="canta"></div>
+                  <span class="anim"></span>
+                  <h1 class="anim"></h1>
+  
+                  <div class="col anim">
+                      <p></p>
+                      <p></p>
+                  </div>
+              </section>
+
+              
+             
+          </div>
+      </div>
+  
+
+      <footer>
+        <p>Ewà Inú</p>
+        <p>Mystère Africain</p>
+      </footer>
+
+      <div class="contai">
+      
+        <div class="imag-1 imag"></div>
+        <div class="imag-2 imag"></div>
+        <div class="imag-3 imag"></div>
+        <div class="imag-4 imag"></div>
+        <div class="imag-5 imag"></div>
+          <p class="text__reveal mytext">Feel the Art</p>
+        </div>
+        <script>
+          const img1 = document.querySelector(".imag-1");
+          const img2 = document.querySelector(".imag-2");
+          const img3 = document.querySelector(".imag-3");
+          const img4 = document.querySelector(".imag-4");
+          const img5 = document.querySelector(".imag-5");
+          const contai = document.querySelector(".contai");
+          function handleMove(e) {
+            const rect = contai.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            const offsetY = e.clientY - rect.top;
+      
+            // Use GSAP for smooth animations
+            gsap.to([img1, img2, img3, img4, img5], {
+              x: offsetX - 200,
+              y: offsetY - 225,
+              duration: 0.5,
+              ease: "power2.out",
+            });
+          }
+      
+          // Add event listeners to both the container and the <p> element for mousemove
+          contai.addEventListener("mousemove", handleMove);
+          pElement.addEventListener("mousemove", handleMove);
+      
+          // Add event listener for scroll on the window
+          window.addEventListener("scroll", handleMove);
+        </script>
+
+
+        </body>
+<!--First script-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/gsap@3.9.0/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
@@ -241,13 +708,14 @@ margin: 0 auto;
   <script>
   gsap.registerPlugin(ScrollTrigger);
 
-const t1 = gsap.timeline({
+  const t1 = gsap.timeline({
   scrollTrigger: {
     trigger: '.img:last-child',
-    start: 'top 80%',
-    endTrigger: 'body',
+    start: 'top 80%', // Adjust this value
+    endTrigger: '.next',
     end: 'bottom bottom',
     scrub: true,
+    immediateRender: false,
   },
 });
 
@@ -326,6 +794,158 @@ t1.to('.sticky-text', {
     });
     
       </script>
+
+<!--First picture effect-->
+  <!-- custom ease -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/CustomEase.min.js"></script>
+<script src="https://assets.codepen.io/16327/Flip.min.js"></script>
+<script src="script.js"></script>
+<script>
+  gsap.registerPlugin(Flip);
+  CustomEase.create("cubic", "0.83, 0, 0.17, 1");
+
+  const gallery = document.querySelector(".img-gallery-container");
+  const images = gsap.utils.toArray(".image");
+  let rotationValues = [0, 0, 0, 0];
+
+  let isFlipped = false;
+
+  function applyRotation() {
+    images.forEach((img, index) => {
+      const rotation = isFlipped ? 0 : rotationValues[index];
+
+      gsap.to(img, {
+        rotate: rotation,
+        filter: isFlipped ? "grayscale(30%)" : "grayscale(70%)", // Adjust the grayscale here
+        duration: 2,
+        ease: "cubic",
+        delay: 0.155,
+      });
+    });
+  }
+
+  document.querySelector(".btn").addEventListener("click", () => {
+    isFlipped = !isFlipped;
+
+    setTimeout(() => {
+      document.querySelector(".btn").textContent = isFlipped ? "Hide" : "Explore";
+    }, 1000);
+
+    let state = Flip.getState(".img-gallery-container, .image");
+
+    gallery.classList.toggle("order");
+    images.forEach((img) => img.classList.toggle("reorder"));
+
+    Flip.from(state, {
+      absolute: true,
+      duration: 2,
+      rotate: 0,
+      stagger: 0.05,
+      ease: "cubic",
+      onStart: () => {
+        applyRotation();
+      },
+      onComplete: () => {
+        scroller.update();
+      },
+    });
+  });
+</script>
+
+<script>
+  var lastScrollPosition = 0;
+  var navigation = document.querySelector('.navigation');
+
+  window.addEventListener('scroll', function () {
+    var currentScrollPosition = window.scrollY;
+
+    if (currentScrollPosition > lastScrollPosition) {
+
+      navigation.classList.add('hidden');
+    } else {
+
+      navigation.classList.remove('hidden');
+    }
+
+    lastScrollPosition = currentScrollPosition;
+  });
+
+</script>
+<script>
+  const container = document.querySelector(".container");
+  const sections = gsap.utils.toArray(".container section");
+  const texts = gsap.utils.toArray(".anim");
+  const mask = document.querySelector(".mask");
+
+  let scrollTween = gsap.to(sections, {
+    xPercent: -100 * (sections.length + 0),
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".container",
+      pin: true,
+      scrub: 1,
+      end: "+=3000"
+    }
+  });
+
+  // Progress bar animation
+
+  gsap.to(mask, {
+    width: "100%",
+    scrollTrigger: {
+      trigger: ".wrapper",
+      start: "top left",
+      scrub: 1
+    }
+  });
+
+  // Whizz around the sections
+  sections.forEach((section) => {
+    // Grab the scoped text
+    let text = section.querySelectorAll(".anim");
+    
+    // Bump out if there's no items to animate
+    if(text.length === 0)  return 
+    
+    // Do a little stagger
+    gsap.from(text, {
+      y: 10,
+      opacity: 0, // Updated from 1 to 0
+      duration: 2,
+      ease: "forwords",
+      stagger: 0.1,
+      scrollTrigger: {
+        trigger: section,
+        containerAnimation: scrollTween,
+        start: "left center"
+      }
+    });
+  });
+</script>
+
+<script>
+    let items = document.querySelectorAll('.btn').forEach(item => {
+      item.addEventListener('mousemove', (e) => {
+          let x = e.offsetX;
+          let y = e.offsetY;
+  
+          let itemWidth = item.clientWidth;
+          let itemHeight = item.clientHeight;
+  
+          let transX = (x - itemWidth);
+          let transY = (y - itemHeight);
+  
+          item.style.transform = `translateX(${transX}px) translateY(${transY}px)`;
+      });
+      item. addEventListener('mouseout', (e) => {
+item.style.transform = ``})
+  });
+  </script>
+ 
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+		<script src="js/TweenMax.min.js"></script>
+		<script src="js/script.js"></script>
+
 
 </body>
 

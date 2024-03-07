@@ -18,6 +18,7 @@ html {
 }
 
 
+
 html.lenis {
       height: auto;
     }
@@ -71,12 +72,15 @@ html::-webkit-scrollbar-track {
 }
 .about h2{
   font-size: 28px;
+  font-weight: 700;
 }
 .gallery h2{
   font-size: 28px;
+  font-weight: 700;
 }
 #story h2{
   font-size: 28px;
+  font-weight: 700;
 }
 body {
 background-color: #b8b8b8ff;
@@ -222,7 +226,7 @@ nav a:hover {
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
+      height: 1.5px;
       bottom: 0;
       left: 0;
       background-color: rgb(0, 0, 0); 
@@ -249,7 +253,7 @@ nav a:hover {
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
+      height: 1.5px;
       bottom: 0;
       left: 0;
       background-color: #1a1a1a; 
@@ -272,9 +276,7 @@ nav a:hover {
       width: 100%;
     }
 
-    .navigation a:hover {
-      color: #59423a; 
-    }
+
     .okay{
         padding-right: 25px;
     }
@@ -328,7 +330,6 @@ nav a:hover {
         flex-direction: column;
        height: 275vh;
        margin-left: 6%;
-  
     }
     .image-container {
     width: 97%;
@@ -341,22 +342,20 @@ nav a:hover {
     width: 100%;
     height: 100%; 
     border-radius: 50px;
-
-    
 }
 
 .photo-container{
 
-    width: 33px;
-    height:  33px;
+    width: 38px;
+    height:38px;
 
 }
 .photo-container img{
    object-fit: cover;
    width: 100%;
     height: 100%; 
-    border-radius: 28%;
-    
+    border-radius: 25%;
+    animation: animate 2s ease-in-out infinite;
 }
 
 .parallax-container{
@@ -394,10 +393,13 @@ border-radius: 20%;
 #susimagewrapper {
     position: relative;
     overflow: hidden;
-    width: 19vw;
-    height: 17vh;
+    width: 19vh;
+    height: 19vh;
     border-radius: 20%;
+    animation: animate 5s ease-in-out infinite;
 }
+
+
 
 #susimagewrapper img {
     position: absolute;
@@ -449,9 +451,7 @@ border-radius: 20%;
 #motive{
   padding-top: 28%;
 }
-.new{
- 
-}
+
 #visit {
     display: flex;
     padding-right: 5%;
@@ -469,7 +469,7 @@ border-radius: 20%;
 
 
 #motive h2{
-
+  font-weight: 700;
     font-size: 28px;;
 }
 #motive{
@@ -557,9 +557,10 @@ border-radius: 20%;
 #susimagewrapper2 {
     position: relative;
     overflow: hidden;
-    width: 19vw;
-    height: 17vh;
+    width: 19vh;
+    height: 19vh;
     border-radius: 20%;
+    animation: animate 5s ease-in-out infinite;
 }
 
 #susimagewrapper2 img {
@@ -624,7 +625,7 @@ border-radius: 20%;
 }
 
 #motive2 h2{
-
+  font-weight: 700;
     font-size: 28px;
 
 }
@@ -683,9 +684,10 @@ border-radius: 20%;
 #susimagewrapper3 {
     position: relative;
     overflow: hidden;
-    width: 19vw;
-    height: 17vh;
+    width: 19vh;
+    height: 19vh;
     border-radius: 20%;
+    animation: animate 5s ease-in-out infinite;
 }
 
 #susimagewrapper3 img {
@@ -751,7 +753,7 @@ border-radius: 20%;
 }
 
 #motive3 h2{
-
+  font-weight: 700;
     font-size: 28px;
 
 }
@@ -842,9 +844,10 @@ border-radius: 20%;
 #susimagewrapper4 {
     position: relative;
     overflow: hidden;
-    width: 19vw;
-    height: 17vh;
+    width: 19vh;
+    height: 19vh;
     border-radius: 20%;
+    animation: animate 5s ease-in-out infinite;
 }
 
 #susimagewrapper4 img {
@@ -910,7 +913,7 @@ border-radius: 20%;
 }
 
 #motive4 h2{
-
+  font-weight: 700;
     font-size: 28px;
 
 }
@@ -943,6 +946,10 @@ border-radius: 20%;
     flex-wrap: wrap;
     font-size: 2.3vh;
     line-height: 42px;
+}
+
+#motive5 h2{
+  font-weight: 700;
 }
 #motive4 span{
     display: inline-block;
@@ -1016,9 +1023,10 @@ margin-top: 27%;
 #susimagewrapper5 {
     position: relative;
     overflow: hidden;
-    width: 19vw;
-    height: 17vh;
+    width: 19vh;
+    height: 19vh;
     border-radius: 20%;
+    animation: animate 5s ease-in-out infinite;
 }
 
 #susimagewrapper5 img {
@@ -1835,6 +1843,7 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
     object-fit: cover;
     z-index: -1;
     opacity: 0.027;
+    filter: grayscale(90%);
 }
 .alja{
   width: 100vw;
@@ -2171,6 +2180,16 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
         <p>Revolutionizing traditional art.</p>
         <p>Celebrating diversity in African art forms.</p>
         <p>Modern influences shaping the future .</p>
+        <p>Discover African art pioneers.</p>
+        <p>Explore the vibrant history of African art.</p>
+        <p>Experience the evolution of traditional art.</p>
+        <p>Celebrate diversity in African artistic forms.</p>
+        <p>See modern influences shaping the future.</p>
+        <p>Embrace innovation in contemporary African art.</p>
+        <p>Admire iconic masterpieces from Africa.</p>
+        <p>Spotlight on emerging talents in African art.</p>
+        <p>Explore the fusion of culture and creativity.</p>
+        <p>See African artists on the global stage.</p>
       </div>
     </div>
   </div>
@@ -2259,6 +2278,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
 </div>
 </div>
 
+
+<!--Last script-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="hover-effect.umd.js"></script>
@@ -2266,7 +2287,6 @@ button, input[type="button"], input[type="submit"], input[type="reset"], a {
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Add a class to the image container with border-radius in your CSS
     var imgContainer = document.querySelector('#bimg');
     if (imgContainer) {
       imgContainer.classList.add('img');
@@ -3389,6 +3409,9 @@ document.getElementById("circle").addEventListener("mouseleave", function() {
     element.classList.toggle('clicked');
   }
 </script>
+
+
+
 
 </body>
 </html>

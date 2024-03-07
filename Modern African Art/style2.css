@@ -1,0 +1,117 @@
+#circle__section{
+    position: relative;
+    height: 200%;
+
+}
+
+.circle__sticky{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circle{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 150vmax;
+    height: 150vmax;
+    background-color: white;
+    border-radius: 50% ;
+
+}
+
+.circle__sticky h2{
+    font-size: clamp(2rem, 20cqi, 20rem);
+    color: #000000;
+    z-index: 1;
+
+}
+
+
+/* Discover */
+
+#discover{
+    background-color: white;
+    height: 100%;
+}
+
+.discover__container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+.discover__container p{
+    color: black;
+    will-change: transform;
+    font-size: 1.4rem;
+}
+
+/* End video */
+
+#end__video{
+    position: relative;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.end__video__container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+}
+
+.end__video{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Footer */
+
+#footer{
+    height: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.footer__container{
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__title h2 span{
+    color: black;
+    display: inline-block;
+    transition: .5s;
+    overflow: hidden;
+
+}
