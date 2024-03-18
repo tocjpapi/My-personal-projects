@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>African Art Gallery</title>
    <link rel="stylesheet" href="style.css">
+   <link rel="shortcut icon" type="image/jpg" href="logo.png"/>
   <!--The order is as follows style, html and script-->
   <style>
     * {
@@ -67,6 +68,13 @@
       justify-content: center;
       overscroll-behavior: contain;
       scrollbar-color: transparent transparent;
+      transition: background-color 0.5s ease;
+    }
+
+
+    .blur {
+      filter: blur(10px);
+      transition: filter 0.5s ease;
     }
 
     ::selection {
@@ -173,7 +181,7 @@
     section {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      height: 100vh;
+      height: 100dvh;
       margin: 0 auto;
     }
 
@@ -188,7 +196,7 @@
 section {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-height: 100vh;
+height: 100dvh;
 margin: 0 auto;
 }
 
@@ -331,7 +339,7 @@ top: 660%;
 
 
     .next {
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -460,7 +468,7 @@ mix-blend-mode: difference;
   <style>
     .contai {
   position:relative;
-  height:100vh;
+  height:100dvh;
 }
 
 .contai p {
@@ -541,6 +549,8 @@ mix-blend-mode: difference;
 }
 
   </style>
+
+
 </head>
 
 <body>
@@ -549,8 +559,8 @@ mix-blend-mode: difference;
   <div class="navigation">
     <nav>
         <div>
-            <a href="#about">Home</a>
-            <a href="#gallery">Explore</a>
+            <a href="Modern African Art.html">Home</a>
+            <a href="galleria.html">Explore</a>
         </div>
       <div class="title">
         <h2>Frica.</h2>
@@ -639,7 +649,7 @@ mix-blend-mode: difference;
 
       <footer>
         <p>Ewà Inú</p>
-        <p>Mystère Africain</p>
+        <p>Just Keep Scrolling</p>
       </footer>
 
       <div class="contai">
@@ -649,7 +659,7 @@ mix-blend-mode: difference;
         <div class="imag-3 imag"></div>
         <div class="imag-4 imag"></div>
         <div class="imag-5 imag"></div>
-          <p class="text__reveal mytext">Feel the Art</p>
+          <p class="text__reveal mytext" id="tonic">Feel the Art</p>
         </div>
         <script>
           const img1 = document.querySelector(".imag-1");
@@ -946,6 +956,21 @@ item.style.transform = ``})
 		<script src="js/TweenMax.min.js"></script>
 		<script src="js/script.js"></script>
 
+
+    <script>
+      document.getElementById('tonic').addEventListener('click', function(event) {
+        event.preventDefault();
+  
+        // Add the blur class to the body for the blur effect
+        document.body.classList.add('blur');
+  
+        // Wait for a short delay for the blur effect to take place
+        setTimeout(function() {
+          // Replace 'path/to/your/other/file.html' with the actual path to your other HTML file
+          window.location.href = 'galleria.html';
+        }, 500); // Adjust the delay to match the transition duration
+      });
+    </script>
 
 </body>
 
