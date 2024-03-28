@@ -377,7 +377,7 @@ clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 position: relative;
 text-align: center;
 font-weight: 450;
-font-size: 15vw;
+font-size: 17vw;
 line-height: 3rem;
 will-change: transform;
 }
@@ -425,8 +425,9 @@ opacity: 0;
 
 .sub-nav a{
   text-decoration: none;
-  color: #e8e8e8;
+  color: #9a9a9a;
   font-weight: 440;
+  font-size: 1.8vh;
 }
 
 .about{
@@ -551,6 +552,8 @@ padding-top: 0.6%;
   padding-bottom: 2%;
 }
 
+
+
 .btn2{
   margin-top: -2%;
 }
@@ -666,14 +669,11 @@ padding-top: 0.6%;
   object-position: center;
   filter: grayscale(80%);
   border-radius: 55px;
-
 }
 
 
 
-.project__image img:hover {
-  filter: scale(1.06);
-}
+
 
 
 .project__details {
@@ -697,23 +697,502 @@ height: 415px;
 
 .new{
   background: #e8e8e8;
-  height: 100vh;
-  margin-top: 12%;
+  height: 150vh;
+  margin-top: 16%;
+  margin-left: 6%;
+  margin-right: 6%;
+
 }
 
 .new h2{
   font-weight: 530;
-   padding-bottom: 3%;
+   padding-bottom: 5%;
    color: #333;
    font-size: 2vh;
-   margin-left: 5.5%;
+   margin-left: 0.5%;
+}
+
+.new h5{
+  font-weight: 430;
+   padding-bottom: 3%;
+   color: #6b6b6b;
+   font-size: 7.5vh;
 }
 
 
+.miss{
+  margin-top: 7%;
+  border-bottom:0.2px solid #6b6b6b;
+  cursor: pointer;
+  width: 93%;
+  padding-bottom: 3%;
+  transition: width 0.5s ease;
+}
+
+.miss:hover {
+  width: 85%; /* Adjust width on hover */
+}
+
+.answer{
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.5s ease-in-out;
+  font-family: sf pro text;
+}
+
+.answer h3{
+  font-weight: 430;
+        color: #555;
+        font-size: large;
+        padding-left: 1%;
+        letter-spacing: 1%;
+        width: 55%;
+        border: 0.02px solid #b2b2b2;
+        padding: 3%;
+        border-radius: 25px;
+}
+.miss.active .answer{
+max-height: 300px;
+animation: fade 1s ease-in-out;
+
+}
+
+
+
+.miss.active svg {
+transform: rotate(-180deg);
+}
+svg{
+transition: transform 0.5s ease-in;
+}
+@keyframes fade {
+from {
+opacity: 0.5;
+transform: translateY(-5px);
+filter: blur(2px);
+}
+to {
+  opacity: 1;
+  transform: translateY(0px);
+  filter: blur(0px);
+}
+}
+
+
+.question{
+  display: flex;
+justify-content: space-between;
+}
+
+
+.idg{
+  height: 104dvh;
+  width: 100vw;
+  background: #000000;
+  position: relative;
+  margin-top: 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 .2px .5px rgba(0, 0, 0, 0.03);
+}
+
+
+.tata{
+  float: right;
+  color:#333;
+  font-size: 2vh;
+  margin-top: 10%;
+}
+
+.dont h2{
+  color:#726e6e;
+  padding-top: 6%;
+  font-size: 6vh;
+  font-weight: 530;
+  padding-left: 6%;
+}
+
+.idg p{
+  color:#726e6e;
+  padding-top: 6%;
+  font-size: 4vh;
+}
+
+.social-media {
+  color:#726e6e;
+}
+
+.contact-info{
+  color: #726e6e;
+}
+
+.menu-icon {
+font-size: 14px;
+text-transform: uppercase;
+font-weight: 300;
+}
+.menu-icon ion-icon {
+position: relative;
+top: 2px;
+}
+
+.col {
+width: 50%;
+padding: 1em;
+padding-left: 6.3%;
+}
+
+.wii{
+  display: flex;
+}
+
+.item {
+padding: 4em 0 0 0;
+}
+.contact-info {
+display: flex;
+gap: 16%;
+}
+
+address {
+padding-left: 4em 0 4em
+}
+
+.col h3{
+  font-size: small;
+  font-weight: 400;
+  color: #333;
+  padding-bottom: 3%;
+}
+
+.lili{
+  padding-right: 4%;
+}
+
+input {
+background: none;
+outline: none;
+border: none;
+border-bottom: 1px solid #747474;
+font-size: 24px;
+padding: 0.4em;
+width: 100%;
+color:#747474;
+padding-bottom: 3.3%;
+}
+
+.lover {
+    position: relative;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* For Safari */
+    transform: translateY(10px);
+}
+
+.lover.reveal {
+    animation: reveal 3.5s forwards ease;
+}
+
+@keyframes reveal {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* For Safari */
+        transform: translateY(10px);
+    }
+    100% {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* For Safari */
+        transform: translateY(0px);
+    }
+}
+
+
+
+
+.row {
+display: flex;
+margin: 2em 0 !important;
+padding-top: 3%;
+padding-bottom: 1%;
+}
+
+textarea#message {
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #747474;
+    font-size: 24px;
+    padding: 0.4em;
+    color: #726e6e;
+    font-family: "Sf pro Text";
+    text-decoration: none;
+    float: right;
+    /* Remove default styling */
+    border-radius: 0; /* Remove rounded corners */
+    resize: none; /* Disable textarea resizing */
+}
+
+
+
+.submit a[role="button"] {
+    text-decoration: none;
+    color: #726e6e;
+    font-family: "Sf pro text";
+    font-size: 2.5vh;
+    font-weight: 400;
+    padding-right: 2%;
+    transition: padding-right 0.5s;
+    padding-left: 1%;
+}
+
+.submit a[role="button"]:hover{
+  padding-right: 4%;
+}
     </style>
 
-</head>
 
+<style>
+
+  @media (max-width: 900px) {
+.location,
+.service {
+display: none;
+}
+}
+
+@media (max-width: 932px) and (min-height: 430px){
+.navigation{
+  display: none;
+}
+
+.toflex{
+flex-direction: column;
+gap: 5%;
+}
+
+.number1{
+width: 90%;
+}
+
+.number1 p{
+font-size: 5.2vw;
+font-weight: 430;
+}
+
+.number2{
+width: 90%;
+margin-top: 19%;
+}
+
+.btn{
+margin-top: 42%;
+}
+
+.image__container {
+position: relative;
+width: 100px;
+height: 150px;
+overflow: hidden;
+}
+
+.project__image {
+position: relative;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+filter: grayscale(80%);
+border-radius: 28px;
+
+}
+
+.project__details p {
+font-size: 0.8vh;
+opacity: 0;
+}
+
+
+.new h5{
+  font-weight: 430;
+   padding-bottom: 3%;
+   color: #6b6b6b;
+   font-size: 2.2vh;
+}
+
+
+.idg{
+  margin-top: -200%;
+}
+
+.toggle-btn{
+  position: fixed;
+  left: 35%;
+  z-index: 15;
+  backdrop-filter: blur(10px);
+  border-radius: 11px;
+}
+
+}
+
+@media (max-width: 1368px) {
+
+
+.image__container {
+  position: relative;
+  width: 100px;
+height: 150px;
+  overflow: hidden;
+}
+
+.toflex{
+  flex-direction: column;
+ }
+ .number1{
+  width: 90%;
+ }
+  
+ .number1 p{
+  font-size: 5.7vw;
+  font-weight: 430;
+ }
+
+ .number2{
+  width: 90%;
+  margin-top: 10%;
+ }
+
+ 
+.number2 p{
+font-size: 3vw;
+}
+
+
+.new h5{
+font-weight: 430;
+padding-bottom: 3%;
+color: #6b6b6b;
+font-size: 3.2vh;
+}
+
+.project__details p {
+font-size: 0.8vh;
+opacity: 0;
+}
+
+.navigation-item a {
+  font-size: 3.2vh;
+}
+
+.navigation{
+  display: none;
+}
+
+.burger{
+  margin-top: -92%;
+}
+
+.btn span {
+  position: relative;
+  pointer-events: none;
+  color: #424242;
+  transition: 0.5s;
+  font-size: 2.2vh;
+  transition: color 0.1s;
+}
+
+.idg{
+  margin-top: -100%;
+}
+
+
+}
+
+@media (max-width: 1180px) and (min-height: 820px) {
+
+
+.image__container {
+  position: relative;
+  width: 200px;
+height: 250px;
+  overflow: hidden;
+}
+
+.toflex{
+  flex-direction: column;
+ }
+ .number1{
+  width: 90%;
+ }
+  
+ .number1 p{
+  font-size: 5.7vw;
+  font-weight: 430;
+ }
+
+ .number2{
+  width: 90%;
+  margin-top: 10%;
+ }
+
+ 
+.number2 p{
+font-size: 3vw;
+}
+
+
+.new h5{
+font-weight: 430;
+padding-bottom: 3%;
+color: #6b6b6b;
+font-size: 3.2vh;
+}
+
+.project__details p {
+font-size: 0.8vh;
+opacity: 0;
+}
+
+.navigation-item a {
+  font-size: 3.2vh;
+}
+
+.navigation{
+  display: none;
+}
+
+.burger{
+  margin-top: -92%;
+}
+
+.btn span {
+  position: relative;
+  pointer-events: none;
+  color: #424242;
+  transition: 0.5s;
+  font-size: 2.2vh;
+  transition: color 0.1s;
+}
+
+.idg{
+  margin-top: -100%;
+}
+
+
+.toggle-btn{
+  position: fixed;
+  left: 85%;
+  z-index: 15;
+  backdrop-filter: blur(10px);
+  border-radius: 11px;
+}
+
+}
+
+
+
+</style>
+</head>
+    
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 
     <!-- TweenMax - GSAP -->
@@ -736,7 +1215,7 @@ height: 415px;
               <div class="title">
               </div>
               <div class="okay">
-                <a href="mailto:treasure32109@gmail.com">© Code by CJ</a>
+                <a href="#">© Code by CJ</a>
               </div>            
             </nav>
           </div>
@@ -831,9 +1310,186 @@ height: 415px;
 
   <section class="new">
     <h2>(Frequently asked)</h2>
-   
+        <div class="miss">
+        <div class="question">
+          <h5>Treasure, are you Available ?</h5>
+          <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+            <defs>
+              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
+            </defs>
+            <title>arrow-ios-downward</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="arrow-ios-downward">
+                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                  <rect class="cls-1" width="15" height="10"/>
+                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        </div>
+          <div class="answer">
+            <h3>Yeah, I'm always available. Wagwan? Let me know what you need
+            by sending me an email. It's at the bottom of the page.</h3>
+        </div>
+      </div>
+      <div class="miss">
+        <div class="question">
+          <h5>Treasure, do you enjoy your work ?</h5>
+          <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+            <defs>
+              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
+            </defs>
+            <title>arrow-ios-downward</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="arrow-ios-downward">
+                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                  <rect class="cls-1" width="15" height="10"/>
+                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        </div>
+          <div class="answer">
+            <h3>Yeah, bruv, you know I'm out here in the coding game, stacking that tech paper.
+            The grind's real. but I love what I do. Building them sick apps and websites,
+           it's a mad ting. Always chasing success and excellence to be honest, you feel me?
+            I reckoned to stay on that hustle, but I enjoy every minute of it, no cap.</h3>
+        </div>
+      </div>
+      <div class="miss">
+        <div class="question">
+          <h5>Treasure, will you marry me ?</h5>
+          <div class="svg-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+            <defs>
+              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
+            </defs>
+            <title>arrow-ios-downward</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="arrow-ios-downward">
+                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                  <rect class="cls-1" width="15" height="10"/>
+                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        </div>
+          <div class="answer">
+            <h3>Ah, currently, I'm already locked in with someone special. Can't be making moves
+            like that.  Gotta stay loyal, you feel me? Respect for being straight up, though.
+            Let's keep it professional and keep it moving on good terms.</h3>
+        </div>
+      </div>
+      <div class="miss">
+        <div class="question">
+          <h5>Treasure, do you make company websites ?</h5>
+          <div class="svg-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
+            <defs>
+              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
+            </defs>
+            <title>arrow-ios-downward</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <g id="arrow-ios-downward">
+                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
+                  <rect class="cls-1" width="15" height="10"/>
+                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        </div>
+          <div class="answer">
+            <h3>Yeah, per usual, I create elegant websites for companies avoiding unnecessary
+            animations as seen here and keeping things simple. Gotta keep that code flowing
+            and deliver excellence to my clients.</h3>
+           
+        </div>
+      </div>
+      <p class="tata">(Let's work together)</p>
   </section>
+
+  <section class="idg">
+    <div class="dont">
+      <h2>(Contact Me)</h2>
+    </div>
+    
+    <div class="contact-section">
+      <div class="wii">
+      <div class="contact-details col">
+        <p class="lover">
+         Let's unlock together the next<br/>
+          level of possibilities <br />
+          Reach out.
+        </p>
+        <div class="social-media item">
+          <h3>Socials</h3>
+          <span>Instagram - GitHub - Awwwards - LinkedIn</span>
+        </div>
+        <div class="contact-info">
+          <div class="email item">
+            <h3>Let's Talk</h3>
+            <span>cjwebdesigned@gmail.com</span>
+          </div>
+    
+          <div class="address item">
+            <h3>Location</h3>
+            <span>Lagos - Nigeria</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form col lili">
+        <form id="contact-form">
+            <div class="wrapper">
+                <div class="row">
+                    <input type="text" id="name" name="name" placeholder="Name" />
+                    <input type="text" id="service" name="service" placeholder="Service" />
+                </div>
+                <div class="row">
+                    <input type="email" id="email" name="email" placeholder="Email" />
+                    <input type="text" id="company" name="company" placeholder="Company" />
+                </div>
+                <div class="row">
+                    <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+                </div>
+                <div class="row submit">
+                    <a href="#" role="button" onclick="submitForm()">Submit</a>
+                    <div class="arrow menu-icon">
+                        <?xml version="1.0" encoding="UTF-8"?>
+                        <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <title>arrow-up-right</title>
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                                    <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                                        <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                                        <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                                    </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+    
+  </section>
+
 </div>
+
+
+
 
   <!--Always bottom-->
   <div class="overlay">
@@ -862,6 +1518,10 @@ height: 415px;
       <p><a href="#">Gmail</a></p>
       </div>
     </div>
+
+
+ 
+    
 </body>
 
 <script>
@@ -1147,14 +1807,32 @@ buttons.forEach(button => observer.observe(button));
     });
   }
 
-
+  addParallaxEffect('.miss', 0.9); 
   addParallaxEffect('.btn', 1.2); 
   addParallaxEffect('.btn2', 1.2);
   addParallaxEffect('.navigation-wrapper p', 0.9);
   addParallaxEffect('.new h2', 0.9);
+
 </script>
 
+<script>
+  gsap.registerPlugin(ScrollTrigger);
 
+
+  function addParallaxEffect(element, strength) {
+    gsap.to(element, {
+      y: -strength * 100, 
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom', 
+        end: 'bottom top', 
+        scrub: true, 
+      },
+    });
+  }
+  addParallaxEffect('.idg', 7.9);
+</script>
 <script>
   $(document).ready(function() {
     TweenMax.set(".project-preview", { width: 0 });
@@ -1280,4 +1958,76 @@ buttons.forEach(button => observer.observe(button));
     return (1 - t) * a + t * b;
   }
 </script>
+
+<script>
+  const faqs = document.querySelectorAll(".miss");
+  faqs.forEach((miss) => {
+miss.addEventListener("click", () =>{miss.classList.toggle("active");
+});
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  entry.target.classList.add('reveal');
+              }
+          });
+      }, {
+ 
+      });
+
+      const lover = document.querySelector('.lover');
+      observer.observe(lover);
+  });
+</script>
+
+
+<script>
+  function submitForm() {
+      var name = document.getElementById('name').value.trim();
+      var service = document.getElementById('service').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var company = document.getElementById('company').value.trim();
+      var message = document.getElementById('message').value.trim();
+
+      var mailtoLink = 'mailto:cjwebdesigned@gmail.com';
+
+      if (service !== '') {
+          mailtoLink += '?subject=Inquiry about ' + encodeURIComponent(service);
+      }
+      
+      var body = '';
+
+      if (name !== '') {
+          body += 'Hi my name is: ' + encodeURIComponent(name) + '%0A';
+      }
+      if (email !== '') {
+          body += 'and this is my email address: ' + encodeURIComponent(email) + '%0A';
+      }
+      if (company !== '') {
+          body += 'I\'m a member of: ' + encodeURIComponent(company) + '%0A';
+      }
+      if (message !== '') {
+          body += 'This is my message: ' + encodeURIComponent(message);
+      }
+
+      if (body !== '') {
+          mailtoLink += (service !== '' ? '&' : '?') + 'body=' + body;
+      }
+
+      window.location.href = mailtoLink;
+
+      // Clear input fields after submission
+      document.getElementById('name').value = '';
+      document.getElementById('service').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('company').value = '';
+      document.getElementById('message').value = '';
+  }
+</script>
+
+
+
 </html>

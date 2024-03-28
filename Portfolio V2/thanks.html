@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    }
+
+    
+    body{
+        font-family: 'Sf Pro Text', sans-serif;
+        overflow-x:hidden;
+        overflow-y: hidden;
+        background: #000000;
+    }
+
+    #loader{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOutLoader 0.7s 4s forwards; /* Added fadeOutLoader animation */
+}
+
+#loader h1{
+    font-size: 4vw;
+    color: transparent;
+    background: #e8e8e8;
+    -webkit-background-clip: text;
+    position: absolute;
+    opacity: 0;
+    animation-name: load;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    font-family: Sf pro text;
+    font-weight: 320;
+}
+#loader h1:nth-child(2){
+    animation-delay: 2s;
+}
+#loader h1:nth-child(3){
+    animation-delay: 3s;
+}
+
+@keyframes load {
+    0%{
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutLoader {
+    from {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Start with full visibility */
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Gradually hide with a vertical clip-path */
+    }
+}
+
+@media (max-width:600px) {
+    #loader h1{
+        font-size: 9vw;
+    }
+}
+
+
+.main{
+    height: 100vh;
+    width: 100vw;
+
+}
+
+.main video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.527;
+    filter: grayscale(0%);
+}
+
+    </style>
+</head>
+<body>
+    
+    <div id="loader">
+        <h1>Wagwan </h1>
+        <h1>Hello</h1>
+        <h1>Salut</h1>
+    </div>
+    
+    
+    <section class="main">
+        <video src="lala.mp4" muted autoplay></video>
+    </section>
+
+    
+
+    
+    <script>
+    
+    function loaderAnimation() {
+      var loader = document.querySelector("#loader")
+      setTimeout(function () {
+          loader.style.top = "-100%"
+      }, 4200)
+    }
+    
+    loaderAnimation()
+    
+    </script>
+
+</body>
+</html>
