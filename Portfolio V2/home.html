@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CJ • Web Designer & Developer</title>
 <link rel="stylesheet" href="responsive.css">
+
+<link rel="shortcut icon" type="image/jpg" href="fav.png"/>
+
     <style>
 
     *{
@@ -47,10 +50,11 @@ html.lenis {
         font-family: 'Sf Pro Text', sans-serif;
         overflow-x:hidden;
         background: #e8e8e8;
+        height: 100vh;
     }
 
     .first{
-    height: 100dvh;
+    height: 100vh;
     }
 
     .navigation {
@@ -63,7 +67,6 @@ html.lenis {
       z-index: 10;
       font-family: 'Sf Pro Text', sans-serif;
       padding-top: 27px;
-
     }
 
 
@@ -80,8 +83,8 @@ html.lenis {
     color: #333;
     position: relative;
     padding-bottom: 6px;
-    font-weight: 500;
-    font-size: 2.2dvh;
+    font-weight: 430;
+    font-size: medium;
     background-color: transparent;
     height: 20px;
     width: 10px;
@@ -132,7 +135,7 @@ height: 200px;
   position: relative;
   padding-bottom: 6px;
   font-weight: 500;
-  font-size: 2.2dvh;
+  font-size: medium;
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s ease;
@@ -182,8 +185,18 @@ height: 200px;
     .work{
         padding-left: 5%;
         margin-top: 15%;
+        animation: opacity 2.1s;
     }
-
+@keyframes opacity{
+  from{
+    opacity: 0;
+    blur:2px;
+  }
+  to{
+    opacity:1;
+    blur:0px;
+  }
+}
     ::selection {
     color: #e8e8e8; 
     background-color: #333;
@@ -194,8 +207,8 @@ height: 200px;
       z-index: 1;
       top: 0;
       left: 18%;
-      height: 100dvh;
-      width:100dvh;
+      height: 100vh;
+      width:100vh;
       overflow:hidden;
       background: transparent;
     }
@@ -222,7 +235,7 @@ height: 200px;
             font-family: 'SF Pro Rounded Regular', Arial, sans-serif;
             text-align: center;
             font-size: 1.25em;
-            animation: fadeInAnimation 1.5s, slideUpDownAnimation 1.5s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
+            animation: fade 1.5s, slideUpDownAnimation 1.5s ease-in-out infinite, blurFadeIn 1s ease-out forwards;
             font-weight: bolder;
             color:#333;
             z-index:6;
@@ -243,8 +256,8 @@ height: 200px;
     z-index: 1;
     top: 0;
     left: 18%;
-    height: 100dvh;
-    width: 100dvh;
+    height: 100vh;
+    width: 100vh;
     overflow: hidden;
     clip-path: inset(100% 0 0 0);
     animation: revealImageAnimation 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
@@ -338,7 +351,7 @@ position: fixed;
 top: 0;
 left: 0;
 width: 100vw;
-height: 100dvh;
+height: 100vh;
 display: flex;
 background: #000000;
 backdrop-filter: blur(20px);
@@ -351,7 +364,7 @@ overflow: hidden;
  text-decoration: none;
  background: transparent;
  color: #e8e8e8;
- font-size: 7.3dvh;
+ font-size: 7.3vh;
 
 }
 .overlay-menu {
@@ -359,7 +372,7 @@ position: fixed;
 top: 0;
 left: 0;
 width: 100vw;
-height: 100dvh;
+height: 100vh;
 display: flex;
 gap: 1em;
 flex-direction: column;
@@ -389,7 +402,7 @@ top: 45%;
 left: 0;
 transform: translateY(-50%);
 background: #6f6f6f;
-width: 24%;
+width: 0%;
 height:1.2px;
 }
 body {
@@ -546,7 +559,7 @@ padding-top: 0.6%;
 .navigation-item {
   display: block;
   user-select: none;
-  margin: 90px 0;
+  padding: 90px 0;
   border-bottom:0.2px solid #6b6b6b;
   width: 85.4vw;
   padding-bottom: 2%;
@@ -569,6 +582,7 @@ padding-top: 0.6%;
   position: relative;
   display: block;
   color: rgb(110, 110, 110) ;
+  height: 100%;
 }
 
 .navigation-item span:before {
@@ -578,10 +592,12 @@ padding-top: 0.6%;
   position: absolute;
   content: attr(data-text);
   transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+  height: 100%;
 }
 
 .navigation-item span:hover:before {
   width: 100%;
+  height: 100%;
 }
 
 .project-preview-wrapper {
@@ -597,14 +613,18 @@ padding-top: 0.6%;
   left: 50%;
   width: 0px;
   height: 400px;
-  background: url(img-1.jpg) no-repeat 50% 50%;
-  background-size: cover;
+  background: url(img-1.jpg) no-repeat center/cover;
   overflow: hidden;
   border-radius: 35px;
   filter: grayscale(85%);
   z-index: 26;
+  id: "project-preview";
+  will-change: transform; /* Improve performance */
 }
-
+.division a {
+  text-decoration: none;
+  color: #6b6b6b;
+}
 .project-preview::after {
   width: 0px;
   height: 400px;
@@ -628,6 +648,49 @@ padding-top: 0.6%;
   padding-top: 2%;
 }
 
+.division{
+  cursor: pointer;
+}
+.division {
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .division::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.5px;
+    bottom: -40%;
+    left: 0;
+    background-color:#444;
+    transform: scaleX(1);
+    transition: all 0.6s ease-in-out;
+    transform-origin: right;
+  }
+
+
+  .division:hover::after {
+    visibility: visible;
+    transform: scaleX(0);
+  }
+
+
+  .comuni a {
+    text-decoration: none;
+    color: #6b6b6b;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .coolio{
+    margin-top: 25%;
+  }
+
+  
+
+
 .projects__sticky {
       overflow: hidden;
     }
@@ -642,16 +705,52 @@ padding-top: 0.6%;
       transition: transform 0.2s ease;
 }
 
-
 .project {
-  scroll-snap-align: start;
   flex-shrink: 0;
   position: relative;
   width: 25vw;
-  height: 100%;
+  height: 100vh;
   padding: 80px 20px 60px;
   display: flex;
   flex-direction: column;
+}
+
+.comuni span a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #6b6b6b;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.comuni span a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.2px;
+  background-color: #6b6b6b;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: right top;;
+}
+
+.comuni span a:hover {
+  transform: translateY(-5px);
+}
+
+.comuni span a:hover::before {
+  transform: scaleX(1);
+}
+.magnetic-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  transform-style: preserve-3d;
 }
 
 .image__container {
@@ -659,20 +758,27 @@ padding-top: 0.6%;
   width: 100%;
   aspect-ratio: 6 / 7 ;
   overflow: hidden;
+  border-radius: 45px;
+  object-fit: cover;
 }
 
 .project__image {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  position: absolute;
   object-fit: cover;
   object-position: center;
   filter: grayscale(80%);
-  border-radius: 55px;
+  overflow: hidden;
+  left: -50%;
+scale: 1;
+
 }
 
 
 
+.project__image img{
+  width: 100%;
+  height: 100%;
+}
 
 
 
@@ -687,6 +793,7 @@ padding-top: 0.6%;
 .project__details p {
   font-size: 2vh;
   color: #333;
+  display: none;
 }
 
 .bannaner{
@@ -701,7 +808,6 @@ height: 415px;
   margin-top: 16%;
   margin-left: 6%;
   margin-right: 6%;
-
 }
 
 .new h2{
@@ -783,16 +889,19 @@ to {
   display: flex;
 justify-content: space-between;
 }
+.miss{
+  overflow: hidden;
+}
 
-
-.idg{
-  height: 104dvh;
+.idg {
+  height: 110vh;
   width: 100vw;
   background: #000000;
   position: relative;
   margin-top: 10%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 .2px .5px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05), 0 .2px .5px rgba(0, 0, 0, 0.03); /* Adjusted shadow */
 }
+
 
 
 .tata{
@@ -815,6 +924,8 @@ justify-content: space-between;
   padding-top: 6%;
   font-size: 4vh;
 }
+
+
 
 .social-media {
   color:#726e6e;
@@ -856,6 +967,64 @@ address {
 padding-left: 4em 0 4em
 }
 
+
+#returnAnimation {
+    height: 100vh;
+    width: 100%;
+    background-color: #000000;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
 .col h3{
   font-size: small;
   font-weight: 400;
@@ -871,7 +1040,7 @@ input {
 background: none;
 outline: none;
 border: none;
-border-bottom: 1px solid #747474;
+border-bottom: 0.2px solid #333;
 font-size: 24px;
 padding: 0.4em;
 width: 100%;
@@ -919,14 +1088,13 @@ textarea#message {
     background: none;
     outline: none;
     border: none;
-    border-bottom: 1px solid #747474;
+    border-bottom: 1px solid #333;
     font-size: 24px;
     padding: 0.4em;
     color: #726e6e;
     font-family: "Sf pro Text";
     text-decoration: none;
     float: right;
-    /* Remove default styling */
     border-radius: 0; /* Remove rounded corners */
     resize: none; /* Disable textarea resizing */
 }
@@ -947,19 +1115,167 @@ textarea#message {
 .submit a[role="button"]:hover{
   padding-right: 4%;
 }
+.idg * {
+    transition: color 1s ease-in-out;
+  }
+
+  .black-text {
+    color: #000000 !important;
+  }
+
+  /* Hide the content while transitioning */
+  .content-hidden {
+    visibility: hidden;
+  }
+
+
+  .cursor {
+    position: absolute;
+    background: rgba(173, 168, 168, 0.3);
+  backdrop-filter: blur(2px);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.3s  transform,
+    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+    font-family: sf pro text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.3vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
+}
+
+.cursor p{
+    text-align: center;
+    font-family: sf pro text;
+    color: #555555;
+    mix-blend-mode: difference;
+}
+
+
+
+.cursor.active {
+    opacity: 1;
+    transform: scale(6.5);
+}
+
+.cursor.active::before {
+    opacity: 1;
+}
+
+.cursor-follower {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier transform,
+        0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
+    display: none;
+}
+
+.cursor-follower.active {
+    opacity: 0.3;
+    transform: scale(0);
+}
+
+.centered-image-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 23%;
+  padding-bottom: 28.125%; /* 16:9 aspect ratio with 50% width */
+  overflow: hidden;
+  filter: grayscale(35%);
+  border-radius: 15px;
+  opacity: 0.9;
+}
+
+
+
+/* CSS animation to reduce GIF speed */
+@keyframes slowGif {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+.centered-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: slowGif 5s infinite linear; /* Adjust the duration (5s) as needed */
+}
+
+
+.preview-text{
+  color: #777;
+  padding: 3.5vh;
+  font-size: 2.2vh;
+  font-weight: 500;
+  mix-blend-mode: difference;
+  float: right;
+}
+
+        .project-preview img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 65%;
+            object-fit: cover;
+            border-radius: 25px;
+        }
     </style>
 
 
 <style>
 
-  @media (max-width: 900px) {
+  @media (max-width: 600px) {
 .location,
 .service {
 display: none;
 }
 }
 
-@media (max-width: 932px) and (min-height: 430px){
+@media (max-width: 600px) and (orientation: landscape) {
+.navigation a {
+  display:none;
+}
+
+.navigation{
+  display: none;
+}
+}
+
+@media (hover: none) {
+  .contact-form{
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 600px) {
 .navigation{
   display: none;
 }
@@ -987,6 +1303,8 @@ margin-top: 19%;
 margin-top: 42%;
 }
 
+
+
 .image__container {
 position: relative;
 width: 100px;
@@ -1010,30 +1328,147 @@ font-size: 0.8vh;
 opacity: 0;
 }
 
-
-.new h5{
-  font-weight: 430;
-   padding-bottom: 3%;
-   color: #6b6b6b;
-   font-size: 2.2vh;
-}
-
-
 .idg{
-  margin-top: -200%;
+  margin-top: -110%;
 }
 
 .toggle-btn{
   position: fixed;
-  left: 35%;
+  left: 80%;
   z-index: 15;
   backdrop-filter: blur(10px);
   border-radius: 11px;
 }
 
+.hello-text{
+  left: 35%;
 }
 
-@media (max-width: 1368px) {
+.navigation-item {
+  display: block;
+  user-select: none;
+  padding: 45px 0;
+  border-bottom:0.2px solid #6b6b6b;
+  width: 85.4vw;
+  padding-bottom: 4%;
+}
+
+
+.btn2{
+  margin-top: -7%;
+}
+
+
+
+.answer h3{
+
+        width: 85%;
+        font-size: 3.4vw;
+        border-radius: 15px;
+}
+
+.new h5{
+font-weight: 430;
+padding-bottom: 3%;
+color: #6b6b6b;
+font-size: 2.7vh;
+}
+.projects__slider {
+      display: none;
+}
+
+
+.lover{
+  display: none;
+}
+
+
+.wii{
+  display: flex;
+  flex-direction: column;
+}
+.col {
+width: 98vw;
+padding: 1em;
+padding-left: 6.3%;
+}
+
+.contact-form{
+  display: none;
+}
+.nada{
+opacity: 0;
+}
+
+.dont h2{
+  padding-top: 12%;
+}
+
+.frimg{
+        position: absolute;
+      z-index: 1;
+      top: 5%;
+      left: 0%;
+      height: 100vh;
+      width:100vw;
+      background: transparent;
+    }
+
+
+
+.frimg img{
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      object-fit:cover;
+      position: absolute;
+      filter: grayscale(100%);
+      background: transparent;
+    }
+
+}
+
+@media (max-width: 1280px) {
+  .number1 p{
+ font-size: 5.6vh;
+ font-weight: 430;
+  }
+}
+
+@media (max-width: 960px) {
+  .coolio{
+    display: none;
+  }
+
+  .contact-form{
+    display: none;
+  }
+
+  .col{
+    width: 100%;
+  }
+
+
+  .idg{
+    margin-top:-100% ;
+  }
+}
+
+@media (max-width: 1180px) and (orientation:potrait){
+  .nada{
+opacity: 0;
+}
+.contact-form{
+  display: none;
+}
+
+.idg p{
+  color:#726e6e;
+  padding-top: 6%;
+  font-size: 2.5vh;
+  width: 75%;
+}
+
 
 
 .image__container {
@@ -1066,12 +1501,6 @@ font-size: 3vw;
 }
 
 
-.new h5{
-font-weight: 430;
-padding-bottom: 3%;
-color: #6b6b6b;
-font-size: 3.2vh;
-}
 
 .project__details p {
 font-size: 0.8vh;
@@ -1100,7 +1529,8 @@ opacity: 0;
 }
 
 .idg{
-  margin-top: -100%;
+  padding-bottom: 100%;
+  height: 110vh;
 }
 
 
@@ -1108,7 +1538,27 @@ opacity: 0;
 
 @media (max-width: 1180px) and (min-height: 820px) {
 
+  .frimg{
+        position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0%;
+      height: 100vh;
+      width:100vw;
+      background: transparent;
+    }
 
+
+
+.frimg img{
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      object-fit:cover;
+      position: absolute;
+      filter: grayscale(100%);
+      background: transparent;
+    }
 .image__container {
   position: relative;
   width: 200px;
@@ -1173,7 +1623,7 @@ opacity: 0;
 }
 
 .idg{
-  margin-top: -100%;
+  padding-bottom: 100%;
 }
 
 
@@ -1187,7 +1637,25 @@ opacity: 0;
 
 }
 
+@media (max-width: 1280px) and (max-height: 720px) {
+  .idg{
+    height: 140vh;
+  }
+}
 
+
+@media (max-height: 1080px) and (max-width:1920 ) and (-webkit-min-device-pixel-ratio: 1) {
+  .project__image {
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(80%);
+  overflow: hidden;
+  left: -50%;
+scale: 1.4;
+top: 15%;
+}
+}
 
 </style>
 </head>
@@ -1202,30 +1670,33 @@ opacity: 0;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/gsap@3/dist/CSSRulePlugin.min.js"></script>
 <body>
+  <div class="cursor">
+    <p>See</p>
+</div>
+<div class="cursor-follower"></div>
  
   <div class="website-content">
     <section class="first">
-        <div class="navigation">
-            <nav>
-                <div class="import">
-                    <a href="">Work</a>
-                    <a href="">About</a>
-                    <a href="">Contact</a>
-                </div>
-              <div class="title">
-              </div>
-              <div class="okay">
-                <a href="#">© Code by CJ</a>
-              </div>            
-            </nav>
+      <div class="navigation">
+        <nav>
+          <div class="import">
+            <a href="" class="letswork">Work</a>
+            <a href="about.html" class="thisis">About</a>
+            <a href="" class="talkto">Contact</a>
           </div>
+          <div class="title"></div>
+          <div class="okay">
+            <a href="#" class="magnetic-link">CJ Crafted ®️</a>
+          </div>
+        </nav>
+      </div>
           <div class="toggle-btn">
             <button class="burger" onclick="rotateBurger();"></button>
         </div>
         <div class="work">
           <div class="arrow big"><?xml version="1.0" encoding="UTF-8"?>
             <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>arrow-up-right</title>
+                <title>I'm a web designer</title>
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#333333" stroke-width="1.5">
                         <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
@@ -1258,7 +1729,7 @@ opacity: 0;
     </div>
   </div>
 
-  <a href="#" class="btn" style="--clr: #ff6464;"><span>About</span></a>
+  <a href="about.html" class="btn" style="--clr: #ff6464;"><span>About</span></a>
 
   </section>
 
@@ -1271,25 +1742,26 @@ opacity: 0;
         <div class="project-preview"></div>
       </div>
       <ul class="navigation-list">
-        <li class="navigation-item">
-          <a class="navigation-link navigation-link-1" href="#">
-            <span data-text="Mouthwash">Mouthwash</span>
+        <li class="navigation-item" onclick="window.location.href='#'">
+
+          <a href="#" class="navigation-link navigation-link-1">
+            <span data-text="Parks ">Parks</span>
           </a>
         </li>
         <div class="project-overlay"></div>
-        <li class="navigation-item">
-          <a class="navigation-link navigation-link-2" href="#">
-            <span data-text="Offbeat">Offbeat</span>
+        <li class="navigation-item" onclick="window.location.href='#'">
+          <a class="navigation-link navigation-link-2">
+            <span data-text="Frica">Frica</span>
           </a>
         </li>
-        <li class="navigation-item">
-          <a class="navigation-link navigation-link-3" href="#">
-            <span data-text="Expansions">Expansions</span>
+        <li class="navigation-item" onclick="window.location.href='#'">
+          <a class="navigation-link navigation-link-3">
+            <span data-text="Images">Images</span>
           </a>
         </li>
-        <li class="navigation-item">
-          <a class="navigation-link navigation-link-4" href="#">
-            <span data-text="Canals">Canals</span>
+        <li class="navigation-item" onclick="window.location.href='#'">
+          <a class="navigation-link navigation-link-4">
+            <span data-text="Commerce">Commerce</span>
           </a>
         </li>
 
@@ -1312,7 +1784,7 @@ opacity: 0;
     <h2>(Frequently asked)</h2>
         <div class="miss">
         <div class="question">
-          <h5>Treasure, are you Available ?</h5>
+          <h5>CJ, are you Available ?</h5>
           <div class="svg-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
             <defs>
@@ -1331,13 +1803,13 @@ opacity: 0;
         </div>
         </div>
           <div class="answer">
-            <h3>Yeah, I'm always available. Wagwan? Let me know what you need
-            by sending me an email. It's at the bottom of the page.</h3>
+            <h3>I wont be available till towards the end of this month but still let me know what you need
+            by sending me a message. It's at the bottom of the page.</h3>
         </div>
       </div>
       <div class="miss">
         <div class="question">
-          <h5>Treasure, do you enjoy your work ?</h5>
+          <h5>CJ, what do you create with ?</h5>
           <div class="svg-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
             <defs>
@@ -1356,15 +1828,12 @@ opacity: 0;
         </div>
         </div>
           <div class="answer">
-            <h3>Yeah, bruv, you know I'm out here in the coding game, stacking that tech paper.
-            The grind's real. but I love what I do. Building them sick apps and websites,
-           it's a mad ting. Always chasing success and excellence to be honest, you feel me?
-            I reckoned to stay on that hustle, but I enjoy every minute of it, no cap.</h3>
+            <h3>I typically make websites with html css and JavaScript. I'm learning how to use Word Press and Webflow. I use React, Next and Node JS for web apps.</h3>
         </div>
       </div>
       <div class="miss">
         <div class="question">
-          <h5>Treasure, will you marry me ?</h5>
+          <h5>CJ, will you marry me ?</h5>
           <div class="svg-container">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
             <defs>
@@ -1383,14 +1852,12 @@ opacity: 0;
         </div>
         </div>
           <div class="answer">
-            <h3>Ah, currently, I'm already locked in with someone special. Can't be making moves
-            like that.  Gotta stay loyal, you feel me? Respect for being straight up, though.
-            Let's keep it professional and keep it moving on good terms.</h3>
+            <h3>No.</h3>
         </div>
       </div>
       <div class="miss">
         <div class="question">
-          <h5>Treasure, do you make company websites ?</h5>
+          <h5>CJ, do you make company websites ?</h5>
           <div class="svg-container">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
             <defs>
@@ -1409,9 +1876,7 @@ opacity: 0;
         </div>
         </div>
           <div class="answer">
-            <h3>Yeah, per usual, I create elegant websites for companies avoiding unnecessary
-            animations as seen here and keeping things simple. Gotta keep that code flowing
-            and deliver excellence to my clients.</h3>
+            <h3>Yeah I do.</h3>
            
         </div>
       </div>
@@ -1425,64 +1890,81 @@ opacity: 0;
     
     <div class="contact-section">
       <div class="wii">
-      <div class="contact-details col">
-        <p class="lover">
-         Let's unlock together the next<br/>
-          level of possibilities <br />
-          Reach out.
-        </p>
-        <div class="social-media item">
-          <h3>Socials</h3>
-          <span>Instagram - GitHub - Awwwards - LinkedIn</span>
-        </div>
-        <div class="contact-info">
-          <div class="email item">
-            <h3>Let's Talk</h3>
-            <span>cjwebdesigned@gmail.com</span>
-          </div>
-    
-          <div class="address item">
-            <h3>Location</h3>
-            <span>Lagos - Nigeria</span>
-          </div>
-        </div>
-      </div>
-      <div class="contact-form col lili">
-        <form id="contact-form">
-            <div class="wrapper">
-                <div class="row">
-                    <input type="text" id="name" name="name" placeholder="Name" />
-                    <input type="text" id="service" name="service" placeholder="Service" />
+        
+          <div class="contact-details col">
+              <p class="lover">
+                  Let's make something new<br/>
+                  while we team up<br/>
+                  Reach out.
+              </p>
+              <div class="social-media item">
+                  <h3>Socials</h3>
+                  <div class="comuni">
+                  <span><a href="https://www.instagram.com/varmoux/" class="magnetic-btn">Instagram </a>  ‏‏‎ ‎‏‏‎ <a href="https://github.com/tocjpapi" class="magnetic-btn">GitHub</a> ‏‏‎ ‎‏‏‎ <a href="" class="magnetic-btn">Awwwards</a> ‏‏‎ ‎‏‏‎ <a href="" class="magnetic-btn">LinkedIn</a></span>
                 </div>
-                <div class="row">
-                    <input type="email" id="email" name="email" placeholder="Email" />
-                    <input type="text" id="company" name="company" placeholder="Company" />
                 </div>
-                <div class="row">
-                    <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
-                </div>
-                <div class="row submit">
-                    <a href="#" role="button" onclick="submitForm()">Submit</a>
-                    <div class="arrow menu-icon">
-                        <?xml version="1.0" encoding="UTF-8"?>
-                        <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <title>arrow-up-right</title>
-                            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
-                                    <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-                                        <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-                                        <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
-                                    </g>
-                                </g>
-                            </g>
-                        </svg>
+              <div class="contact-info">
+                  <div class="email item">
+                      <h3>Let's Talk</h3>
+                         <div class="division">
+                          <div class="division">
+                            <a href="mailto:cjwebdesigned@gmail.com">
+                                <span>cjwebdesigned@gmail.com</span>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </form>
-    </div>
-    </div>
-    </div>
+                  </div>
+  
+                  <div class="address item">
+                      <h3>Location</h3>
+                      <span>Lagos <span class="nada">- Nigeria</span> <span class="nada" style="display: inline-block; vertical-align: middle; color: #6b6b6b; font-size: 12px;">
+                        <svg class="svg-icon globe" style="width: 25px; height: 25px; fill: currentColor; overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                          <path class="globe-path" d="M512 96h-1.4c-110.8 0.4-214.8 43.8-293.2 122.2C139.2 296.8 96 401 96 512s43.2 215.2 121.6 293.8c78.2 78.4 182.4 121.8 293.2 122.2h1.4c229.4 0 416-186.6 416-416S741.4 96 512 96z m360.4 388h-155.2c-1.8-53.4-8.4-104.4-19.6-152.4 34.2-11 67.4-25 99.4-42 44 56.4 70 123.2 75.4 194.4zM484 484h-123.6c1.6-49 7.6-95.4 17.6-138.2 34.8 7.8 70.2 12.6 106 14.2v124z m0 56v123.8c-35.6 1.6-71.2 6.4-106 14.2-10-42.8-16-89.2-17.6-138H484z m56 0h122.6c-1.6 48.8-7.6 95.2-17.6 137.8-34.4-7.8-69.6-12.4-105-14V540z m0-56v-124c35.6-1.6 70.8-6.4 105-14 10 42.8 16 89 17.6 138H540z m218.8-235.8c-24.6 12.2-50 22.6-76 31-14.2-42.8-32.2-79.8-53-109 48 16.6 91.8 43.2 129 78zM630 293.6c-29.4 6.4-59.6 10.4-90 12V158.8c34 18.4 67.2 67.8 90 134.8zM484 158v147.4c-30.8-1.6-61.2-5.6-91-12.2 23.2-67.6 56.8-117 91-135.2z m-91.2 12.8c-20.6 29-38.4 65.8-52.6 108.2-25.6-8.4-50.8-18.8-75-30.8 36.8-34.6 80.2-61 127.6-77.4z m-165.8 119c31.6 16.8 64.6 30.8 98.4 41.6-11.4 47.8-18 99-19.6 152.4h-154c5.2-70.8 31.2-137.6 75.2-194zM151.6 540h154c1.8 53.4 8.4 104.6 19.6 152.4-33.8 11-66.8 25-98.4 41.6-43.8-56.2-69.8-123-75.2-194z m113.4 235.8c24.2-12 49.4-22.4 75.2-30.8 14.2 42.6 32 79.2 52.6 108.4-47.4-16.8-90.8-43-127.8-77.6z m128-45.2c29.8-6.6 60.4-10.6 91-12.2V866c-34.4-18.2-67.8-67.8-91-135.4z m147 134.6v-147c30.4 1.6 60.6 5.6 90 12-22.8 67.2-56 116.6-90 135z m90-11.4c20.8-29.2 38.8-66.2 53-109 26 8.4 51.6 19 76 31.2-37.2 34.6-81.2 61.2-129 77.8z m167-119.6c-32-17-65.2-31-99.4-42 11.2-47.8 17.8-98.8 19.6-152.2h155.2c-5.4 71-31.2 137.8-75.4 194.2z" fill="" />
+                        </svg>
+                      </span>
+                    
+                    </span>
+                  </div>
+              </div>
+          </div>
+          <div class="contact-form col lili">
+              <form id="contact-form">
+                  <div class="wrapper">
+                      <div class="row">
+                          <input type="text" id="name" name="name" placeholder="Name" required />
+                          <input type="text" id="service" name="service" placeholder="Inquiry" required />
+                      </div>
+                      <div class="row">
+                          <input type="email" id="email" name="email" placeholder="Email" />
+                          <input type="text" id="company" name="company" placeholder="Company" />
+                      </div>
+                      <div class="row">
+                          <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+                      </div>
+                      <div class="row submit">
+                          <a href="thanks.html" role="button" onclick="submitForm()">Submit</a>
+                          <div class="arrow menu-icon">
+                              <?xml version="1.0" encoding="UTF-8"?>
+                              <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                  <title>next</title>
+                                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                      <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                                          <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                                              <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                                              <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                                          </g>
+                                      </g>
+                                  </g>
+                              </svg>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  
+
     
   </section>
 
@@ -1495,13 +1977,13 @@ opacity: 0;
   <div class="overlay">
     <div class="overlay-menu">
       <div class="menu-item">
-        <p id="active"><a href="#">Index</a></p>
+        <p id="active"><a href="home.html">Index</a></p>
         </div>
     <div class="menu-item">
     <p><a href="#">Work</a></p>
     </div>
     <div class="menu-item">
-    <p><a href="#">About</a></p>
+      <p><a href="about.html" class="thisis" onclick="returnAnimation3(event)">About</a></p>
     </div>
     <div class="menu-item">
     <p><a href="#">Contact</a></p>
@@ -1509,18 +1991,26 @@ opacity: 0;
     </div>
 
     <div class="sub-nav">
-      <p><a href="#">Instagram</a></p>
+      <p><a href="https://www.instagram.com/varmoux/">Instagram</a></p>
       <p> .</p>
       <p><a href="#">Awwwards</a></p>
       <p> .</p>
       <p><a href="#">LinkedIn</a></p>
       <p> .</p>
-      <p><a href="#">Gmail</a></p>
+      <p><a href="">CJ Crafted ®️</a></p>
       </div>
     </div>
 
 
- 
+    <div id="returnAnimation"></div>
+
+
+
+    <div id="returnAnimation2">
+      <h1>About •</h1>
+    </div>
+    
+  </div>
     
 </body>
 
@@ -1815,13 +2305,51 @@ buttons.forEach(button => observer.observe(button));
 
 </script>
 
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      var form = document.getElementById('contact-form');
+      var submitButton = document.getElementById('submit-button');
+  
+      form.addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent form submission
+          submitForm();
+      });
+  
+      form.addEventListener('keydown', function(event) {
+          if (event.key === 'Enter' && event.target.tagName === 'INPUT') {
+              event.preventDefault();
+              var formInputs = Array.from(form.querySelectorAll('input, textarea'));
+              var index = formInputs.indexOf(event.target);
+              if (index !== -1 && index < formInputs.length - 1) {
+                  formInputs[index + 1].focus();
+              } else {
+                  submitButton.click(); // Click the submit button if Enter is pressed in the last input field
+              }
+          }
+      });
+  });
+  
+  function submitForm() {
+      // Here you can add code to handle form submission
+      // For example, you can send form data to a server via AJAX
+      // or perform client-side validation before submission
+  
+      // Simulating transition
+      setTimeout(function() {
+          window.location.href = "thanks.html"; // Redirect to the next page after the transition
+      }, 1000); 
+      // Adjust the time delay according to your transition duration
+  }
+  </script>
+
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
 
   function addParallaxEffect(element, strength) {
     gsap.to(element, {
-      y: -strength * 100, 
+      y: -strength * 80, 
       ease: 'power2.inOut',
       scrollTrigger: {
         trigger: element,
@@ -1831,133 +2359,173 @@ buttons.forEach(button => observer.observe(button));
       },
     });
   }
-  addParallaxEffect('.idg', 7.9);
+  addParallaxEffect('.idg', 5.9);
 </script>
+
+
+
+
 <script>
-  $(document).ready(function() {
-    TweenMax.set(".project-preview", { width: 0 });
+  gsap.registerPlugin(ScrollTrigger);
 
-    var tl = new TimelineLite();
 
-    $(document)
-      .on("mouseenter", ".navigation-item", function(evt) {
-        tl = new TimelineLite();
-        tl.to($(".project-preview"), 1, {
-          width: "600px",
-          ease: Expo.easeOut
-        });
-      })
-      .on("mouseleave", ".navigation-item", function(evt) {
-        tl.to($(".project-preview"), 0.5, {
-          width: 0,
-        });
+  function addParallaxEffect(element, strength) {
+    gsap.to(element, {
+      x: -strength * 150, 
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        trigger: element,
+        start: 'top bottom', 
+        end: 'bottom top', 
+        scrub: true, 
+      },
+    });
+  }
+  addParallaxEffect('.project__image img', 5.9);
+</script>
+  
+
+
+
+</script>
+
+<script>
+  $(document).ready(function () {
+      TweenMax.set(".project-preview", { width: 0 });
+
+      var tl = new TimelineLite();
+      var easeIn = Power1.easeIn;
+      var easeOut = Power1.easeOut;
+
+      $(document)
+          .on("mouseenter", ".navigation-item", function (evt) {
+              tl = new TimelineLite();
+              tl.to($(".project-preview"), 0.5, { width: "600px", ease: easeOut });
+          })
+          .on("mouseleave", ".navigation-item", function (evt) {
+              tl = new TimelineLite();
+              tl.to($(".project-preview"), 0.5, { width: 0, ease: easeIn });
+          });
+
+      function preloadImages(imageUrls) {
+          $(imageUrls).each(function () {
+              $('<img/>')[0].src = this;
+          });
+      }
+
+      preloadImages(["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg"]);
+
+      function addImageToPreview(imageUrl, text) {
+          $(".project-preview").html(`<div class="preview-text">${text}</div><img src="${imageUrl}" alt="Project Image">`);
+      }
+
+      $(".navigation-link-1").hover(function () {
+          $(".project-preview").css({"background-image": "url(img-1.jpg)", "opacity": 1});
+          addImageToPreview("https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif", "1");
       });
 
+      $(".navigation-link-2").hover(function () {
+          $(".project-preview").css({"background-image": "url(img-2.jpg)", "opacity": 1});
+          addImageToPreview("img-3.jpg", "2");
+      });
 
+      $(".navigation-link-3").hover(function () {
+          $(".project-preview").css({"background-image": "url(img-3.jpg)", "opacity": 1});
+          addImageToPreview("img-2.jpg", "3");
+      });
 
+      $(".navigation-link-4").hover(function () {
+          $(".project-preview").css({"background-image": "url(img-4.jpg)", "opacity": 1});
+          addImageToPreview("img-1.jpg", "4");
+      });
 
-  });
-
-  $(".navigation-link-1").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-1.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-2").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-2.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-3").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-3.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-4").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-4.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-5").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-5.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-6").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-6.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-7").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-7.jpg)", "opacity": 1 });
-  });
-
-  $(".navigation-link-8").hover(function() {
-    $(".project-preview").css({ "background-image": "url(img-8.jpg)", "opacity": 1 });
-  });
-
-  $(window).scroll(function() {
-    var scroll = $(window).scrollTop(),
-      dh = $(document).height(),
-      wh = $(window).height();
-    scrollPercent = (scroll / (dh - wh)) * 100;
-    $(".progressbar").css("height", scrollPercent + "%");
+      $(window).scroll(function () {
+          var scroll = $(window).scrollTop(),
+              dh = $(document).height(),
+              wh = $(window).height();
+          scrollPercent = (scroll / (dh - wh)) * 100;
+          $(".progressbar").css("height", scrollPercent + "%");
+      });
   });
 </script>
+
+
 
 
 
 <script>
   const projects = [
-    { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'img-5.jpg' },
-    { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'img-6.jpg' },
-    { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'img-7.jpg' },
-    { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'img-8.jpg' },
-    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'img-1.jpg' },
-    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'img-2.jpg' }
+    { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'img-1.jpg', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGVqcHhrZWFzNDBlNWE0NTRzNW52ZHphMzg4NWRtYTVoOWc5bXpjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rhywamGb85tzzgw02j/giphy.gif' },
+    { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'img-5.jpg', centeredImage: 'https://miro.medium.com/v2/resize:fit:1400/1*cM16uwRoaseF39auW9nP_g.gif' },
+    { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'img-6.jpg', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhpNHBneHU2a3JqeW5uemVrcjM2c294dWt1dGdrenZzNTFwa2ZnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DbgpbpOE7y6u2zGUIt/giphy.gif'},
+    { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'img-4.jpg', centeredImage: 'https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif' },
+    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'img-1.jpg', centeredImage: 'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif' },
+    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'img-2.jpg', centeredImage: 'centered-img-6.jpg' }
   ];
-
+  
   const projectsSlider = document.getElementById('projectsSlider');
   const projectContainer = document.querySelector('.projects__slider');
-
+  
   // Create projects
   projects.forEach(project => {
     let panel = document.createElement('div');
     panel.classList.add('project', project.pos);
-
+  
+    let projectContainer = document.createElement('div');
+    projectContainer.classList.add('project-container');
+    panel.appendChild(projectContainer);
+  
     let imageContainer = document.createElement('div');
     imageContainer.className = 'image__container';
-
     let image = document.createElement('img');
     image.classList.add('project__image');
     image.src = project.image;
-
+    imageContainer.appendChild(image);
+    projectContainer.appendChild(imageContainer);
+  
+    let centeredImageContainer = document.createElement('div');
+    centeredImageContainer.classList.add('centered-image-container');
+    let centeredImage = document.createElement('img');
+    centeredImage.src = project.centeredImage;
+    centeredImageContainer.appendChild(centeredImage);
+    projectContainer.appendChild(centeredImageContainer);
+  
     let projectDetails = document.createElement('div');
     projectDetails.classList.add('project__details');
-
     let projectTitle = document.createElement('p');
     projectTitle.innerText = project.name;
-
     let projectType = document.createElement('p');
     projectType.innerText = project.type;
-
     projectDetails.append(projectTitle, projectType);
-    imageContainer.appendChild(image);
-    panel.append(imageContainer, projectDetails);
-
+    panel.appendChild(projectDetails);
+  
     projectsSlider.appendChild(panel);
   });
-
+  
   projectsSlider.style.width = `${projects.length * 25}vw`;
-
+  
   function autoSlide() {
     let offsetTop = projectContainer.offsetTop;
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
     let projectTargetX = percentage;
     let projectCurrentX = lerp(0, projectTargetX, 0.1);
+    let imageTargetX = percentage * 0.7; // Adjust the 0.7 value to control the parallax effect
+    let imageCurrentX = lerp(0, imageTargetX, 0.1);
     projectsSlider.style.transform = `translate3d(${-projectCurrentX}%, 0, 0)`;
+  
+    // Apply parallax effect to images
+    const images = document.querySelectorAll('.project__image');
+    images.forEach(image => {
+      image.style.transform = `translate3d(${-imageCurrentX}%, 0, 0)`;
+    });
   }
-
+  
   document.addEventListener('scroll', autoSlide);
-
+  
   function lerp(a, b, t) {
     return (1 - t) * a + t * b;
   }
-</script>
+  </script>
 
 <script>
   const faqs = document.querySelectorAll(".miss");
@@ -2028,6 +2596,187 @@ miss.addEventListener("click", () =>{miss.classList.toggle("active");
   }
 </script>
 
+<script>
+  function applyTransition(event) {
+    // Prevent the default behavior of the anchor tag
+    event.preventDefault();
+    
+    // Apply the transition by adding the black-text class
+    document.querySelector('.idg').classList.add('black-text');
+    
+    // After a delay, navigate to the specified URL
+    setTimeout(function() {
+      window.location.href = event.target.getAttribute('href');
+    }, 1000); // Adjust the delay as needed
+  }
+  </script>
+  
+
+
+<script>
+    var cursor = $(".cursor");
+    
+    var posX = 0,
+        posY = 0,
+        mouseX = 0,
+        mouseY = 0;
+
+    TweenMax.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function() {
+            posX += (mouseX - posX) / 6;
+            posY += (mouseY - posY) / 6;
+
+            TweenMax.set(cursor, {
+                css: {
+                    left: posX,
+                    top: posY
+                }
+            });
+        }
+    });
+    
+
+    $(document).on("mousemove", function(e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+        
+    });
+
+    $(".navigation-item").on("mouseenter", function() {
+        cursor.addClass("active");
+    });
+
+    $(".navigation-item").on("mouseleave", function() {
+        cursor.removeClass("active");
+    });
+
+  
+    // Update mouse position during scrolling
+
+</script>
+
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation() {
+      var returnAnimation = document.querySelector("#returnAnimation");
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "thanks.html"; // Redirect to home.html after animation
+      }, 500); // Adjust timing as needed
+  }
+
+  // Event listener for button click
+  document.querySelector('.submit a[role="button"]').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation(); // Trigger return animation
+  });
+</script>
+
+<script>
+  document.querySelectorAll('.magnetic-btn').forEach(btn => {
+    btn.addEventListener("mousemove", (e) => {
+      let rect = btn.getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      let y = e.clientY - rect.top;
+      let btnWidth = btn.clientWidth;
+      let btnHeight = btn.clientHeight;
+  
+      // Adjust sensitivity for movements
+      let transX = (x - btnWidth / 2) * 0.7; // Adjust the 0.3 value to control horizontal sensitivity
+      let transY = (y - btnHeight / 2) * 0.7; // Adjust the 0.3 value to control vertical sensitivity
+  
+      // GSAP animation for smoother movement
+      gsap.to(btn, { duration: 0.003, x: transX, y: transY, ease: "bounce.out" });
+  
+      // Update custom properties for mouse position
+      btn.style.setProperty('--x', `${x}px`);
+      btn.style.setProperty('--y', `${y}px`);
+    });
+  
+    btn.addEventListener('mouseout', (e) => {
+      // Reset button position
+      gsap.to(btn, { duration: 0.3, x: 0, y: 0, ease: "bounce.out" });
+    });
+  });
+  </script>
+  
+  <script>
+const projectPreview = document.getElementById('project-preview');
+let lastScrollPosition = 0;
+const parallaxStrength = 0.3; // Adjust this value to control the parallax effect strength
+
+window.addEventListener('scroll', function() {
+  const scrollPosition = window.pageYOffset;
+  const scrollDifference = scrollPosition - lastScrollPosition;
+  const translateY = scrollDifference * parallaxStrength;
+  projectPreview.style.transform = `translateY(${translateY}px)`;
+  lastScrollPosition = scrollPosition;
+});
+  </script>
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation2() {
+      var returnAnimation = document.querySelector("#returnAnimation2");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "about.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+// Event listener for About link click
+document.querySelector('.thisis').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    returnAnimation2(); // Trigger return animation
+});
+</script>
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation2() {
+      var returnAnimation = document.querySelector("#returnAnimation2");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "about.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+// Event listener for About link click
+document.querySelector('.btn').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    returnAnimation2(); // Trigger return animation
+});
+</script>
+
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation3(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    var returnAnimation = document.querySelector("#returnAnimation2");
+    var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+
+    // Add a class to trigger the opacity animation
+    h1Element.classList.add('fade-out');
+
+    returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+    setTimeout(function () {
+      window.location.href = "about.html"; // Redirect to about.html after animation
+    }, 1200); // Adjust timing as needed
+  }
+</script>
 
 
 </html>

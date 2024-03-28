@@ -444,26 +444,6 @@ mix-blend-mode: difference;
 
   </style>
 
-  <style>
-     @media screen and (max-width: 932px) {
-      .navigation a{
-          font-size: 13px;
-}
-
-        .navigation h2{
-    font-size: 3.7vh;
-  }
-     }
-
-
-     @media screen and (max-width: 932px) and (orientation: landscape) {
-      .navigation h2{
-    font-size: 5.7vh;
-  }
-
-     }
-
-  </style>
 
   <style>
     .contai {
@@ -551,6 +531,65 @@ mix-blend-mode: difference;
   </style>
 
 
+<style>
+  @media screen and (max-width: 932px) {
+   .navigation a{
+       font-size: 13px;
+}
+
+     .navigation h2{
+ font-size: 3.7vh;
+}
+
+.image {
+position: absolute;
+margin-bottom: 1em;
+width: 200px;
+height: 300px;
+overflow: hidden;
+top: 460%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 35px;
+}
+.image.reorder {
+position: absolute;
+  top: 423%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 200px;
+height: 300px;
+filter: grayscale(70%);
+}
+
+.btn{
+  top: 435.5%;
+  left: 50%;
+}
+
+.img{
+    width: 50px;
+    height: 50px;
+    filter: grayscale(90%);
+}
+
+.tobe{
+    margin-top: 188%;
+}
+  }
+
+
+  @media screen and (max-width: 932px) and (orientation: landscape) {
+   .navigation h2{
+ font-size: 5.7vh;
+}
+
+
+  }
+
+
+
+</style>
 </head>
 
 <body>
@@ -566,7 +605,7 @@ mix-blend-mode: difference;
         <h2>Frica.</h2>
       </div>
       <div class="okay">
-        <a href="#">Let's Talk</a>
+        <a href="mailto:treasure32109@gmail.com">Let's Talk</a>
       </div>
     </nav>
   </div>
