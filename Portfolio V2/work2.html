@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJ • Work</title>
+    <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    }
+
+    html {
+  scroll-behavior: smooth;
+
+}
+
+
+
+html.lenis {
+      height: auto;
+    }
+    
+    .lenis.lenis-smooth {
+      scroll-behavior: auto;
+    }
+    
+    .lenis.lenis-smooth [data-lenis-prevent] {
+      overscroll-behavior: contain;
+    }
+    
+    .lenis.lenis-stopped {
+      overflow: hidden;
+    }
+    
+    .lenis.lenis-scrolling iframe {
+      pointer-events: none;
+    }
+
+    body{
+        font-family: 'Sf Pro Text', sans-serif;
+        overflow-x:hidden;
+        background: #e8e8e8;
+        height: 100vh;
+        color: #333;
+    }
+
+    .first{
+    height: 100vh;
+    }
+
+    .navigation {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 18px;
+      z-index: 10;
+      font-family: 'Sf Pro Text', sans-serif;
+      padding-top: 27px;
+      animation: fade-in-down 1.5s ease;
+    }
+ 
+
+    @keyframes fade-in-down{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+    
+}
+
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+      background-color: transparent;
+    }
+
+    .navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: medium;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+    transition: 0.5s ease;
+}
+
+.import a:hover::before {
+      width: 100%;
+    }
+
+    .import a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1.5px;
+      bottom: 0;
+      left: 0;
+      background-color: #333; 
+      transition: width 0.3s ease; 
+    }
+
+
+    .okay a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: medium;
+  background-color: transparent;
+  justify-content: space-between;
+  transition: 0.5s ease;
+
+}
+
+.okay a::before,
+.okay a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s ease;
+}
+
+.okay a::after {
+  transform-origin: right;
+}
+
+.okay a:hover {
+  color: #333;
+
+}
+
+.okay a:hover::before,
+.okay a:hover::after {
+  transform: scaleX(1);
+}
+
+body {
+    font-family: 'Sf Pro Text', sans-serif;
+    overflow-x: hidden;
+    overflow-y: scroll; 
+}
+
+
+::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;  
+}
+
+html {
+    scrollbar-width: none;
+}
+
+.title h1{
+    font-size: 9vh;
+    font-weight: 400;
+    color: #333;
+   transform: translateX();
+    animation: cool 1.5s ease;
+}
+
+
+.title{
+    padding-top: 5.5%;
+    padding-left: 5%;
+}
+
+
+    </style>
+    <style>
+
+    
+    
+    
+    
+    main{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+    
+    }
+    
+    .scroll__container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+    
+
+    
+    #projects{
+        position: relative;
+        height: 200%;
+
+        filter: grayscale();
+    }
+
+    @keyframes fadeup{
+        from{
+            opacity: 0;
+            transform: translateY(7vh);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+    
+    .projects__sticky{
+        position: sticky;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+
+    }
+    
+    .slider__container{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .projects__slider{
+        height: 100%;
+        display: flex;
+        width: min-content;
+        overflow: hidden;
+        will-change: transform;
+        margin-left: 7%;
+        padding-top: 4%;
+    }
+    
+    .project{
+        position: relative;
+        width: 25vw;
+        height: 100%;
+        padding: 80px 20px 60px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .image__container{
+        position: relative;
+        width: 100%;
+        aspect-ratio: 17 / 11;
+        overflow: hidden;
+        border-radius: 20px;
+    }
+
+    .project__image img{
+        scale: 1.5;
+
+    }
+    
+    .project__image{
+        position: relative;
+        width: 150%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+    
+    .start{
+        justify-content: flex-start;
+    
+    }
+    
+    .mid{
+        justify-content: center;
+    }
+    .end{
+        justify-content: end;
+    }
+    
+    .project__details{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 1rem;
+    }
+    
+    .project__details p{
+        font-size: .8rem ;
+    }
+    
+    .text-reveal {
+    font-size: 16.5vh; /* Increase font size for emphasis */
+    font-weight:normal;
+    overflow: hidden; 
+}
+
+.text-reveal span {
+    display: inline-block;
+    overflow: hidden;
+}
+
+#returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    #returnAnimation {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+
+    
+
+
+    
+    @media only screen and (max-width: 1100px){
+        p{
+            font-size: .8rem;
+        }
+    
+        #projects{
+            height: 400%;
+        }
+    
+        .projects__sticky{
+            height: 25%;
+        }
+    
+        .project {
+            width: 50vw;
+        }
+    }
+    
+    @media only screen and (max-width: 600px){
+        #projects{
+            height: 800%;
+        }
+    
+        .projects__sticky{
+            height: 12.5%;
+        }
+    
+        .project {
+            width:100vw ;
+        }
+    
+        .post{
+            width: 80%;
+        }
+    }
+
+    .contd{
+        height: 100vh;
+    }
+
+
+
+.btn1 {
+    position: relative;
+    border: 1px solid #333;
+    padding: 29%;
+    border-radius: 35px;
+    padding-left: 38%;
+    padding-right: 38%;
+    display: inline-block;
+    transition: all 1s ease;
+    animation: expand 1.5s ease;
+    background: #333;
+    pointer-events: none;
+}
+
+.btn1{
+ color: #e8e8e8;
+}
+
+@keyframes expand{
+    from{
+        opacity: 0;
+       padding-left: 0%;
+       transform: translateY(10px);
+    }
+
+
+}
+
+
+
+.btn2 {
+    position: relative;
+    border: 1px solid #333;
+    padding: 18%;
+    border-radius: 35px;
+    padding-left: 25%;
+    padding-right: 25%;
+    display: inline-block;
+    margin-left: 65%;
+    animation: expand 1.5s ease;
+}
+
+
+.btn2 p {
+    font-size: medium;
+}
+
+.btn1 p {
+    font-size: medium;
+}
+
+
+.more{
+    display: flex;
+}
+
+.hero{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.more{
+    float: right;
+    margin-right: 10%;
+}
+
+.firstbtn{
+    cursor: pointer;
+    z-index: 5;
+}
+
+.firstbtn2{
+    cursor: pointer;
+    z-index: 5;
+}
+
+
+.firstbtn a{
+    text-decoration: none;
+    color: #333;
+}
+
+.firstbtn2 a{
+    text-decoration: none;
+    color: #333;
+}
+
+
+.firststep{
+    display: flex;
+    padding-top: 12%;
+    padding-left: 8%;
+    width: 93vw;
+}
+
+.project1{
+    height: 86vh;
+    width: 55vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+    animation: fadeup 1.5s ease forwards;
+}
+
+
+
+.text{
+border: 1px solid #6b6b6b;
+position: absolute;
+color: #333;
+padding: 0.5%;
+padding-left: 1.2%;
+padding-right: 1.2%;
+right: 10%;
+top: 5%;
+border-radius: 35px;
+}
+.img{
+    position: absolute;
+    height:46%;
+    width: 65%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 35px;
+}
+
+.img img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.project1 img:hover{
+   scale: 1.1;
+   filter: grayscale(20%);
+}
+.project2 img:hover{
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project3 img:hover{
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project4 img:hover{
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project5 img:hover{
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project6 img:hover{
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project7  img:hover {
+    scale: 1.1;
+   filter: grayscale(20%);
+}
+
+.project2 {
+    height: 86vh;
+    width: 55vw;
+    background: #d1d1d1;
+    margin-left: 3%;
+    border-radius: 35px;
+    position: relative;
+    opacity: 0; /* Initial opacity set to 0 */
+    animation: fadeups 1.5s ease forwards; /* Use 'forwards' to keep the final state of the animation */
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeups{
+        from{
+            opacity: 0;
+            transform: translateY(6vh);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+.img{
+    position: absolute;
+    height:46%;
+    width: 65%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 35px;
+}
+
+.img img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: grayscale();
+}
+
+.img1{
+    position: absolute;
+    height:58%;
+    width: 74%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 35px;
+    transition: all 1s ease;
+}
+
+.img1 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    filter: grayscale();
+}
+
+
+.secondstep{
+    display: flex;
+    padding-top: 2.5%;
+    padding-left: 3.5%;
+    height: 130vh;
+    width: 93vw;
+}
+
+.project3{
+    height: 130vh;
+    width: 93vw;
+    background: #d1d1d1;
+    margin-left: 5%;
+    border-radius: 35px;
+    position: relative;
+}
+
+.img2{
+    position: absolute;
+    height:54%;
+    width: 65%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 35px;
+    transition: all 1s ease;
+}
+
+.img2 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    filter: grayscale();
+}
+
+
+.img3{
+    position: absolute;
+    height:58%;
+    width: 65%;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 35px;
+    transition: all 1s ease;
+}
+
+.img3 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    filter: grayscale();
+}
+
+
+.superscript {
+        position: relative;
+        display: inline-block;
+    }
+
+    .superscript sup {
+        position: absolute;
+        top: -0.5em;
+        right: -0.2em;
+        font-size: 0.5em;
+    }
+
+
+.thirdstep{
+display: flex;
+padding-top: 5%;
+padding-left: 7.5%;
+width: 93vw;
+}
+
+.project4{
+    height: 70vh;
+    width: 65vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+}
+
+.project5{
+    height: 70vh;
+    width: 45vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+    margin-left: 3%;
+}
+
+
+.fourthstep{
+display: flex;
+padding-top: 2.5%;
+padding-bottom: 2.5%;
+padding-left: 7.5%;
+width: 93vw;
+}
+
+.project6{
+    height: 70vh;
+    width: 45vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+}
+
+.project7{
+    height: 70vh;
+    width: 65vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    position: relative;
+    margin-left: 3%;
+}
+
+
+#returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    #returnAnimation {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+
+
+@media (max-width: 900px) {
+    .navigation a{
+        display: none;
+    }
+
+    .more{
+        margin-right: 20%;
+    }
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <nav>
+          <div class="import">
+            <a href="" class="letswork">Work</a>
+            <a href="about.html" class="thisis">About</a>
+            <a href="mailto:cjwebdesigned@gmail.com" class="talkto">Contact</a>
+          </div>
+          <div class="title"></div>
+          <div class="okay">
+            <a href="#" class="magnetic-link thatsme">CJ Crafted ®️</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="hero">
+        <div class="title"><h1 class="text-reveal">Catalogue</h1>
+        </div>
+
+
+      </div>
+
+      <div class="more">
+           
+      <div class="firstbtn"><div class="btn1">Grid</div> </div>
+      <div class="firstbtn2">
+        <div class="btn2">
+            <!-- Note: Corrected the anchor tag closure -->
+            <a href="work.html">Gallery</a>
+        </div>
+    </div>
+    </div>
+
+
+<div class="firststep">
+    <div class="project1">
+        <div class="text"><p>Case one</p></div>
+        <div class="img">
+        <img src="img-8.jpg" alt="" srcset="">
+    </div>
+    </div>
+    <div class="project2">
+        <div class="text"><p>Case two</p></div>
+        <div class="img">
+            <img src="img-7.jpg" alt="" srcset="">
+        </div>
+    </div>
+</div>
+
+ <div class="secondstep">
+    <div class="project3">
+        <div class="text"><p>Featured case <sup class="superscript">(3)</sup></p></div>
+    <div class="img2">
+        <img src="img-6.jpg" alt="" srcset="">
+    </div>
+ </div>
+</div>
+
+ <div class="thirdstep">
+    <div class="project4">
+        <div class="text"><p>Case four</p></div>
+        <div class="img3">
+            <img src="img-5.jpg" alt="" srcset="">
+        </div>
+    </div>
+    <div class="project5">
+        <div class="text"><p>Case five</p></div>
+        <div class="img1">
+            <img src="img-4.jpg" alt="" srcset="">
+        </div>
+    </div>
+ </div>
+
+
+ <div class="fourthstep">
+    <div class="project6">
+        <div class="text"><p>Case six</p></div>
+        <div class="img1">
+            <img src="img-3.jpg" alt="" srcset="">
+        </div>
+    </div>
+    <div class="project7">
+        <div class="text"><p>Case seven</p></div>
+        <div class="img3">
+            <img src="img-2.jpg" alt="" srcset="">
+        </div>
+    </div>
+ </div>
+          
+ 
+ <div id="returnAnimation2">
+    <h1>About •</h1>
+</div>
+
+<div id="returnAnimation">
+    <h1>Index •</h1>
+  </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script>
+            // Function to trigger return animation
+            function returnAnimation() {
+                var returnAnimation = document.querySelector("#returnAnimation");
+                var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+                
+                // Add a class to trigger the opacity animation
+                h1Element.classList.add('fade-out');
+          
+                returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+                setTimeout(function () {
+                    window.location.href = "home.html"; // Redirect to about.html after animation
+                }, 1200); // Adjust timing as needed
+            }
+          
+          // Event listener for About link click
+          document.querySelector('.thatsme').addEventListener('click', function(event) {
+              event.preventDefault(); // Prevent the default link behavior
+              returnAnimation(); // Trigger return animation
+          });
+</script>
+
+
+<script>
+    const elementsToAnimate = document.querySelectorAll('.text-reveal');
+
+    elementsToAnimate.forEach(text => {
+        const string = text.innerText;
+        const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+        text.innerHTML = spans;
+    });
+
+    gsap.set(".text-reveal span", { y: "200%" });
+
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+    tl.fromTo(".text-reveal span", { y: "200%" }, { y: "0%", stagger: 0.02 });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                tl.play();
+            } else {
+                tl.reverse();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    elementsToAnimate.forEach(text => {
+        observer.observe(text);
+    });
+</script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+        <script>
+          const lenis = new Lenis({
+          duration: 1.5,
+          easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+          direction: "vertical",
+          gestureDirection: "vertical",
+          smooth: true,
+          smoothTouch: false,
+          touchMultiplier: 2,
+        });
+        
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+        
+        requestAnimationFrame(raf);
+        </script>
+
+
+    <script>
+        // Projects data
+        const projects = [
+  { name: '( Parks )', type: '', pos: 'start', image: 'img-1.jpg' },
+  { name: '( Frica )', type: '', pos: 'mid', image: 'img-2.jpg' },
+  { name: '( E-commerce )', type: '', pos: 'end', image: 'img-3.jpg' },
+  { name: '( Product Design )', type: '', pos: 'mid', image: 'img-4.jpg' },
+  { name: '( Web Design )', type: '', pos: 'end', image: 'img-5.jpg' },
+  { name: '( UI/UX Case )', type: '', pos: 'mid', image: 'img-6.jpg' },
+  { name: '( E-commerce )', type: '', pos: 'start', image: 'hero-img.jpeg' },
+];
+
+        const projectsSticky = document.querySelector('.projects__sticky');
+const projectSlider = document.querySelector('.projects__slider');
+
+// Create projects
+createProjects();
+
+// Projects animation
+let projectTargetX = 0;
+let projectCurrentX = 0;
+let percentages = {
+    small: 700,
+    medium: 300,
+    large: 100
+};
+let limit = window.innerWidth <= 600 ? percentages.small : window.innerWidth <= 1100 ? percentages.medium : percentages.large;
+
+function setLimit() {
+    limit = window.innerWidth <= 600 ? percentages.small : window.innerWidth <= 1100 ? percentages.medium : percentages.large;
+}
+
+window.addEventListener('resize', setLimit);
+
+function animateProjects() {
+    let offsetTop = projectsSticky.parentElement.offsetTop;
+    let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+    percentage = percentage < 0 ? 0 : percentage > limit ? limit : percentage;
+    projectTargetX = percentage;
+    projectCurrentX = lerp(projectCurrentX, projectTargetX, 0.1);
+    projectSlider.style.transform = `translate3d(${-(projectCurrentX)}vw, 0 , 0)`;
+
+
+    let parallaxValue = -(projectCurrentX / 10); 
+    document.querySelectorAll('.project__image').forEach(image => {
+        image.style.transform = `translateX(${parallaxValue}vw)`;
+    });
+}
+
+function animate() {
+    animateProjects();
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+        // Functions to create projects
+        function createProjects() {
+            projects.forEach(project => {
+                let panel = document.createElement('div');
+                panel.classList.add('project', `${project.pos}`);
+
+                let imageContainer = document.createElement('div');
+                imageContainer.className = `image__container`;
+
+                let image = document.createElement('img');
+                image.classList.add('project__image');
+                image.src = project.image;
+
+                let projectDetails = document.createElement('div');
+                projectDetails.classList.add('project__details');
+
+                let projectTitle = document.createElement('p');
+                projectTitle.innerText = project.name;
+
+                let projectType = document.createElement('p');
+                projectType.innerText = project.type;
+
+                projectDetails.append(projectTitle, projectType);
+
+                imageContainer.appendChild(image);
+                panel.append(imageContainer, projectDetails);
+
+                document.querySelector('.projects__slider').appendChild(panel);
+            });
+        }
+
+        // Utility function
+        function lerp(start, end, t) {
+            return start * (1 - t) + end * t;
+        }
+    </script>
+    <script>
+        window.onload = function() {
+            // Get the div element with class "firstbtn2"
+            var firstbtn2Div = document.querySelector('.firstbtn2');
+        
+            // Get the anchor element inside the div
+            var anchorElement = firstbtn2Div.querySelector('a');
+        
+            // Get the href attribute value
+            var hrefValue = anchorElement.getAttribute('href');
+        
+            // Add click event listener to the whole div
+            firstbtn2Div.addEventListener('click', function() {
+                // Navigate to the href when the div is clicked
+                window.location.href = hrefValue;
+            });
+        };
+        </script>
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation2() {
+        var returnAnimation = document.querySelector("#returnAnimation2");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "about.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thisis').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation2(); // Trigger return animation
+  });
+</script>
+
+</body>
+</html>
