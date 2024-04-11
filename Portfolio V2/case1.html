@@ -59,6 +59,9 @@ html {
         color: #333;
     }
 
+
+
+
     .navigation {
       position: relative;
       top: 0;
@@ -114,55 +117,31 @@ html {
       content: '';
       position: absolute;
       width: 0;
-      height: 1.5px;
+      height: 1px;
       bottom: 0;
       left: 0;
       background-color: #333; 
       transition: width 0.3s ease; 
     }
 
-.okay a {
+    .okay a {
   margin: 0 15px;
   text-decoration: none;
   color: #333;
   position: relative;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-bottom: 6px;
   font-weight: 500;
   font-size: medium;
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s ease;
-
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
 }
-
-.okay a::before,
-.okay a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: #333;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s ease;
-}
-
-.okay a::after {
-  transform-origin: right;
-}
-
-.okay a:hover {
-  color: #333;
-
-}
-
-.okay a:hover::before,
-.okay a:hover::after {
-  transform: scaleX(1);
-}
-
 .first {
     padding-left: 6%;
     height: 55vh;
@@ -188,13 +167,12 @@ html {
     font-size: 12vh;
     color: #333;
     font-weight: 400;
-    animation: fadein 1.5s ease;
 }
 
 .text__reveal{
     overflow: hidden;
     white-space: pre; 
-    animation: fadein 1.5s ease;
+
     
 }
 
@@ -202,7 +180,7 @@ html {
     display: inline-block;
     transform: translateY(110%);
     transition:all .5s ease;
-    animation: fadein 1.5s ease;
+
 }
 
 
@@ -286,7 +264,7 @@ animation: fadeup 1.5s ease ;
 
 .pointer::before {
     content: '';
-    background: rgba(53, 53, 53, 0.2);
+    background: rgba(55, 55, 55, 0.1);
     backdrop-filter: blur(10px);
     width: 100%;
     height: 100%;
@@ -303,6 +281,12 @@ animation: fadeup 1.5s ease ;
     transform: scale(1); /* Scale up on hover */
     opacity: 1; /* Show the pseudo-element */
 }
+
+
+.position1:hover .pointer{
+    rotate: 45deg;
+}
+
 
 .livesite {
     position: absolute;
@@ -347,7 +331,7 @@ animation: fadeup 1.5s ease ;
 
 
     .livesite:hover{
-     background:rgba(55, 55, 55, 0.07);
+     background:rgba(55, 55, 55, 0.1);
     }
 
 .livesite p {
@@ -401,6 +385,7 @@ animation: fadeup 1.5s ease ;
     font-size: 7vh;
      width: 84%;
      line-height: 150%;
+     padding-left: 1%;
 }
 
 .who{
@@ -418,6 +403,8 @@ animation: fadeup 1.5s ease ;
     margin-top: 10%;
     height: 100vh;
 }
+
+
 
 .thestuff{
     margin-top: 5%;
@@ -454,10 +441,14 @@ border-radius: 35px;
 
 .spacer2{
     height:5vh;
-    width: 100vh;
+    width: 100vw;
     position: relative;
     padding-bottom: 7%;
+    display: flex;
+    justify-content: center;
 }
+
+
 .thestuff2{
     margin-top: 5%;
     margin-left: 5%;
@@ -491,20 +482,22 @@ border-radius: 35px;
 }
 
 .img{
-    height: 60%;
-    width: 45%;
+    height: 63%;
+    width: 50%;
     overflow: hidden;
-    border-radius: 35px;
+    border-radius: 45px;
 }
 
 .img img{
-    height: 117%;
+    height: 127%;
     width: 117%;
+    object-fit: cover;
 }
 
 .thestuff2 img{
     height: 350px;
 }
+
 .chill2 {
     display: inline-block;
     width: 0; /* Start with width 0 */
@@ -560,6 +553,12 @@ border-radius: 35px;
     font-weight: 350;
     color: #212121;
 }
+
+
+::selection {
+    color: #e8e8e8; 
+    background-color: #333;
+    }
 
 .block2 h1{
     font-size: 3.5vh;
@@ -686,17 +685,17 @@ font-size: small;
 .divisions{
     display: flex;
     flex-direction: row;
-    margin-left: 17%;
-    margin-bottom: 10%;
     justify-content: space-between;
     width: 85vw;
     border: 1px solid #d0d0d0;
-    padding: 2%;
-    padding-left: 4%;
-    padding-right: 4%;
+    height: 7vh;
+    align-items: center;
     border-radius: 35px;
     background: #e4e4e4;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
+
 
 
 
@@ -786,6 +785,153 @@ font-size: small;
 }
 
 
+#returnAnimation {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+
+
+    #returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+    #returnAnimation3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation3 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation3 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+    #returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -797,19 +943,20 @@ font-size: small;
         <nav>
           <div class="import">
             <a href="work2.html" class="magnetic-btn" onclick="returnAnimation3(event)">Work</a>
-            <a href="" class="magnetic-link">About</a>
+            <a href="" class="thisis">About</a>
             <a href="" class="talkto">Contact</a>
           </div>
           <div class="title"></div>
           <div class="okay">
-            <a href="home.html" class="thatsme">CJ Crafted ®️</a>
+            <a href="home.html" class="thatsme">CJ <span class="hide">Cr<span class="kion">aft</span>ed </span>®</a>
           </div>
+
         </nav>
       </div>
 
 
 <div class="first">
-    <div class="title"><h1 class="text__reveal">Parks <span>®️</span></h1></div>
+    <div class="title"><h1 class="text__reveal">Parks <span>®</span></h1></div>
     <div class="extratxt"><p>This is a concept project that showcases the importance of minimalism. </p></div>
 </div>
 <div class="goto">
@@ -831,7 +978,7 @@ font-size: small;
    </div>
 </div>
 <div class="toflex">
-<div class="mainimg" style="position: relative;">
+<div class="mainimg" id="mainimg" style="position: relative;">
     <img src="https://images.unsplash.com/photo-1665512700003-00268126eef3?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #e8e8e8; font-family: sf pro text; font-size: 12vh; font-weight: 500;mix-blend-mode: difference;border-radius: 35px;">
         <p style="text-align: center;">Parks ®️</p>
@@ -867,6 +1014,8 @@ font-size: small;
         <img src="Devices\iphone.png" alt="" srcset="">
     </div>
 </div>
+
+
 <div class="spacer"></div>
 
 <div class="more">
@@ -965,7 +1114,7 @@ font-size: small;
         <div class="text"><p>Case two</p></div>  
         <div class="img" style="cursor: pointer;">
             <img src="https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
-            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #e8e8e8; font-family: New york; font-size: 12vh; font-weight: 800;mix-blend-mode: difference;border-radius: 35px;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #fff9f0; font-family: New york; font-size: 12vh; font-weight: 800;mix-blend-mode: difference;border-radius: 35px;">
                 <p style="text-align: center;">Frica.</p>
             </div>
 
@@ -994,7 +1143,7 @@ font-size: small;
         <div class="malt">
 
     <div class="division">
-        <p>Parks ®️</p>
+        <p>Parks ®</p>
     </div>
 </div>
     <div class="division">
@@ -1008,9 +1157,29 @@ font-size: small;
 </div>
 
 
+
+<div id="returnAnimation">
+    <h1>Index •</h1>
+</div>
+
+
+<div id="returnAnimation2">
+    <h1>About •</h1>  
+</div>
+
+<div id="returnAnimation3">
+    <h1>Work •</h1>
+</div>
+
+
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+
+
+
   <script src="https://unpkg.com/split-type"></script>
   <script>
     const textReveals = document.querySelectorAll('.text__reveal');
@@ -1319,5 +1488,150 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const kayItems = document.querySelectorAll(".okay");
+      kayItems.forEach((kayItem) => {
+        kayItem.addEventListener("mouseenter", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          startShuffleAnimation(kionItem);
+        });
+        kayItem.addEventListener("mouseleave", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          stopShuffleAnimation(kionItem);
+        });
+      });
+    });
+    
+    function getRandomCharacter() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+    
+    function startShuffleAnimation(item) {
+      if (item.dataset.animating) {
+        return;
+      }
+      item.dataset.animating = true;
+      item.dataset.originalText = item.textContent;
+      const length = item.textContent.length;
+      let shuffles = 0;
+      const maxShuffles = 10;
+      const intervalDuration = 200 / maxShuffles;
+      item.dataset.animationInterval = setInterval(() => {
+        if (shuffles >= maxShuffles) {
+          stopShuffleAnimation(item); // Reset text content when max shuffles reached
+          clearInterval(item.dataset.animationInterval);
+          delete item.dataset.animating;
+        } else {
+          let shuffledText = "";
+          for (let i = 0; i < length; i++) {
+            shuffledText += getRandomCharacter();
+          }
+          item.textContent = shuffledText;
+          shuffles++;
+        }
+      }, intervalDuration);
+    }
+    
+    function stopShuffleAnimation(item) {
+      if (!item.dataset.animating) {
+        return;
+      }
+      clearInterval(item.dataset.animationInterval);
+      delete item.dataset.animating;
+      item.textContent = item.dataset.originalText; // Restore original text
+    }
+</script>
+
+
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation() {
+        var returnAnimation = document.querySelector("#returnAnimation");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "home.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thatsme').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation(); // Trigger return animation
+  });
+</script>
+
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation3(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      var returnAnimation = document.querySelector("#returnAnimation3");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+  
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+  
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+        window.location.href = "work2.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+    }
+</script>
+
+
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation2() {
+        var returnAnimation = document.querySelector("#returnAnimation2");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "about.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thisis').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation2(); // Trigger return animation
+  });
+  </script>
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation2() {
+        var returnAnimation = document.querySelector("#returnAnimation2");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "about.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thisis').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation2(); // Trigger return animation
+  });
+  </script>
+
 </body>
 </html>

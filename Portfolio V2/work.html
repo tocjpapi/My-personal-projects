@@ -111,7 +111,7 @@ html.lenis {
       content: '';
       position: absolute;
       width: 0;
-      height: 1.5px;
+      height: 0.5px;
       bottom: 0;
       left: 0;
       background-color: #333; 
@@ -124,41 +124,18 @@ html.lenis {
   text-decoration: none;
   color: #333;
   position: relative;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-bottom: 6px;
   font-weight: 500;
   font-size: medium;
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s ease;
-
-}
-
-.okay a::before,
-.okay a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: #333;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s ease;
-}
-
-.okay a::after {
-  transform-origin: right;
-}
-
-.okay a:hover {
-  color: #333;
-
-}
-
-.okay a:hover::before,
-.okay a:hover::after {
-  transform: scaleX(1);
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
 }
 
 body {
@@ -357,7 +334,7 @@ html {
         width: 100%;
         aspect-ratio: 17 / 11;
         overflow: hidden;
-        border-radius: 20px;
+        border-radius: 35px;
     }
 
     .project__image img{
@@ -458,7 +435,7 @@ html {
 
 .btn1 {
     position: relative;
-    border: 1px solid #333;
+    border:1px solid #888;
     padding: 29%;
     border-radius: 35px;
     padding-left: 38%;
@@ -481,15 +458,15 @@ html {
 
 .btn2 {
     position: relative;
-    border: 1px solid #333;
+    border:1px solid #888;
     padding: 18%;
     border-radius: 35px;
     padding-left: 25%;
     padding-right: 25%;
     display: inline-block;
     margin-left: 65%;
-    background: #333;
-    color: #e8e8e8;
+    background: rgba(53, 53, 53, 0.2);
+    color: #333;
     animation: expand 1.5s ease;
 }
 
@@ -531,7 +508,7 @@ html {
 
 .firstbtn2 a{
     text-decoration: none;
-    color: #e8e8e8;
+    color: #333;
 }
 
 @media (max-width: 900px) {
@@ -555,7 +532,7 @@ html {
           </div>
           <div class="title"></div>
           <div class="okay">
-            <a href="#" class="magnetic-link thatsme">CJ Crafted ®️</a>
+            <a href="#" class="magnetic-link thatsme">CJ Cr<span class="kion">aft</span>ed ®️</a>
           </div>
         </nav>
       </div>
@@ -703,13 +680,13 @@ html {
     <script>
         // Projects data
         const projects = [
-  { name: '( Parks )', type: '', pos: 'start', image: 'img-1.jpg' },
-  { name: '( Frica )', type: '', pos: 'mid', image: 'img-2.jpg' },
-  { name: '( E-commerce )', type: '', pos: 'end', image: 'img-3.jpg' },
-  { name: '( Product Design )', type: '', pos: 'mid', image: 'img-4.jpg' },
-  { name: '( Web Design )', type: '', pos: 'end', image: 'img-5.jpg' },
-  { name: '( UI/UX Case )', type: '', pos: 'mid', image: 'img-6.jpg' },
-  { name: '( E-commerce )', type: '', pos: 'start', image: 'hero-img.jpeg' },
+  { name: '( Parks )', type: '', pos: 'start', image: 'https://images.unsplash.com/photo-1665512700003-00268126eef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTN8fHxlbnwwfHx8fHw%3D' },
+  { name: '( Frica )', type: '', pos: 'mid', image: 'https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: '( E-commerce )', type: '', pos: 'end', image: 'https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: '( Product Design )', type: '', pos: 'mid', image: 'https://images.unsplash.com/photo-1659193788664-f085e3076db8?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: '( Web Design )', type: '', pos: 'end', image: 'https://images.unsplash.com/photo-1655255201488-766303d720a2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: '( UI/UX Case )', type: '', pos: 'mid', image: 'https://images.unsplash.com/photo-1643411392418-cf98257251cc?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+  { name: '( E-commerce )', type: '', pos: 'start', image: 'https://images.unsplash.com/photo-1657046309976-f1e80ce2fd5f?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
 ];
 
         const projectsSticky = document.querySelector('.projects__sticky');
@@ -810,6 +787,61 @@ animate();
             });
         };
         </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const kayItems = document.querySelectorAll(".okay");
+              kayItems.forEach((kayItem) => {
+                kayItem.addEventListener("mouseenter", (event) => {
+                  const kionItem = event.currentTarget.querySelector('.kion');
+                  startShuffleAnimation(kionItem);
+                });
+                kayItem.addEventListener("mouseleave", (event) => {
+                  const kionItem = event.currentTarget.querySelector('.kion');
+                  stopShuffleAnimation(kionItem);
+                });
+              });
+            });
+            
+            function getRandomCharacter() {
+              const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+              return chars[Math.floor(Math.random() * chars.length)];
+            }
+            
+            function startShuffleAnimation(item) {
+              if (item.dataset.animating) {
+                return;
+              }
+              item.dataset.animating = true;
+              item.dataset.originalText = item.textContent;
+              const length = item.textContent.length;
+              let shuffles = 0;
+              const maxShuffles = 10;
+              const intervalDuration = 200 / maxShuffles;
+              item.dataset.animationInterval = setInterval(() => {
+                if (shuffles >= maxShuffles) {
+                  stopShuffleAnimation(item); // Reset text content when max shuffles reached
+                  clearInterval(item.dataset.animationInterval);
+                  delete item.dataset.animating;
+                } else {
+                  let shuffledText = "";
+                  for (let i = 0; i < length; i++) {
+                    shuffledText += getRandomCharacter();
+                  }
+                  item.textContent = shuffledText;
+                  shuffles++;
+                }
+              }, intervalDuration);
+            }
+            
+            function stopShuffleAnimation(item) {
+              if (!item.dataset.animating) {
+                return;
+              }
+              clearInterval(item.dataset.animationInterval);
+              delete item.dataset.animating;
+              item.textContent = item.dataset.originalText; // Restore original text
+            }
+    </script>
 
 </body>
 </html>

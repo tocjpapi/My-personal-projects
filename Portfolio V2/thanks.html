@@ -1,117 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thanks !</title>
-    
-<link rel="shortcut icon" type="image/jpg" href="fav.png"/>
-
+    <title>Done</title>
+    <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
     <style>
-    *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    }
-
-    
-    body{
-        font-family: 'Sf Pro Text', sans-serif;
-        overflow-x:hidden;
-        overflow-y: hidden;
-        background: #000000;
-        height: 100vh;
-        width: 100vw;
-    }
-
-    #loader{
-    height: 100%;
-    width: 100%;
-    background-color: #000;
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    transition: all ease 0.7s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: fadeOutLoader 1s 4s forwards ease-in-out; /* Added fadeOutLoader animation */
-}
-
-#loader h1{
-    font-size: 4vw;
-    color: transparent;
-    background: #e8e8e8;
-    -webkit-background-clip: text;
-    position: absolute;
-    opacity: 0;
-    animation-name: load;
-    animation-duration: 1s;
-    animation-delay: 1s;
-    animation-timing-function: linear;
-    font-family: Sf pro text;
-    font-weight: 420;
-}
-#loader h1:nth-child(2){
-    animation-delay: 2s;
-}
-#loader h1:nth-child(3){
-    animation-delay: 3s;
-}
-
-@keyframes load {
-    0%{
-        opacity: 0;
-    }
-    10%{
-        opacity: 1;
-    }
-    90%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
-}
-
-@keyframes fadeOutLoader {
-    from {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Start with full visibility */
-    }
-    to {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Gradually hide with a vertical clip-path */
-    }
-}
-
-@media (max-width:600px) {
-    #loader h1{
-        font-size: 9vw;
-    }
-}
-
-
-.main{
-    height: 100vh;
-    width: 100vw;
-
-}
-
-.main video{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    opacity: 0.527;
-    filter: grayscale(25%);
-}
-
-.navigation {
+            .navigation {
       position: relative;
       top: 0;
       left: 0;
@@ -121,65 +17,398 @@
       z-index: 10;
       font-family: 'Sf Pro Text', sans-serif;
       padding-top: 27px;
+      animation: fade-in-down 1.5s ease;
+    }
+ 
+
+    body {
+    margin: 0;
+    background: #e8e8e8;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Sf Pro Text', sans-serif;
+    color: #333;
+  }
+  
+  .container {
+    height: 97vh;
+    width: 98vw;
+    background: #e3e3e3;
+    overflow: hidden;
+    position: relative;
+    border: 0.02px solid #b2b2b2;
+    border-radius: 35px;
+    animation: fadein 1.5s ease ;
+    }
+    
+    ::selection{
+    background-color: #999;
+    color: #e8e8e8;
+}
+
+
+    @keyframes fadein{
+       from{
+        opacity: 0;
+        scale: 1.07;
+        border-radius: 0;
+       }
     }
 
-    .import a:hover::before {
-      width: 100%;
+  /* The Player */
+  .player {
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    transform: translateX(-50%) translateY(-50%);
+    width: 35px;
+    height: 45px;
+    background: white;
+    border-radius: 10px;
+    z-index: 5;
+  }
+  .player .hat {
+    position: absolute;
+    top: 26%;
+    transform: translateY(-100%);
+    width: 100%;
+    height: 34%;
+    background: white;
+    border-top-right-radius: 35px;
+    border-top-left-radius: 35px;
+  }
+  .player .hat::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 35%;
+    height: 2px;
+    background: none;
+    transform: translateY(-100%);
+  }
+  .player .eye {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: #333; /* Green color, Sega-inspired */
+    top: 25%;
+    border-radius: 50%;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    0% {
+        transform: scaleY(1); /* Eye open */
+    }
+    50% {
+        transform: scaleY(0.1); /* Eye closed */
+        background: #555; /* Red color */
+    }
+    100% {
+        transform: scaleY(1); /* Eye open */
+        background: #333; /* Green color */
+    }
+}
+
+  .player .eye.right {
+    right: 10%;
+  }
+  .player .eye.left {
+    right: 50%;
+  }
+  .player .mouth {
+    position: absolute;
+    top: 42%;
+    width: 20%;
+    height: 2px;
+    background: #555;
+    left: 61%;
+    border-radius: 1px;
+    animation: talk 4s infinite alternate; /* Adjust the animation duration as needed */
+}
+
+#returnAnimation3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation3 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
     }
 
-    .import a::before {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 1.5px;
-      bottom: 0;
-      left: 0;
-      background-color: #999; 
-      transition: width 0.3s ease; 
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation3 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
     }
 
-    .okay a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #fff;
-  position: relative;
-  padding-bottom: 6px;
-  font-weight: 500;
-  font-size: 2.2dvh;
-  background-color: transparent;
-  justify-content: space-between;
-  transition: 0.5s ease;
+
+@keyframes talk {
+    0% {
+        transform: scaleY(1); /* Mouth closed */
+    }
+    50% {
+        transform: scaleY(1.3); /* Partially open */
+    }
+    100% {
+        transform: scaleY(1); /* Mouth closed */
+    }
 }
 
-.okay a::before,
-.okay a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: #999;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s ease;
+/* Add variations to the animation timing */
+.player .mouth {
+    animation-delay: calc(5s * random()); /* Random delay for mouth animation */
 }
 
-.okay a::after {
-  transform-origin: right;
+  .player .shirt {
+    position: absolute;
+    bottom: -1px;
+    width: 105%;
+    height: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    overflow: hidden;
+    /* The Undershirt */
+  }
+  .player .shirt .tie {
+    background: #b2b2b2;
+    width: 10%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    left: 55%;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 55px;
+  }
+  .player .shirt .under {
+    position: absolute;
+    left: 60%;
+    top: 0px;
+    width: 40%;
+    height: 99%;
+    transform: translateX(-50%);
+    background: white;
+  }
+  .player .arm {
+    position: absolute;
+    width: 25%;
+    height: 40%;
+    background: white;
+    border-radius: 10px;
+    top: 60%;
+    transform-origin: 50% 5%;
+  }
+  .player .arm.right {
+    right: -10%;
+    transform: rotate(-1.5rad);
+    z-index: 0;
+  }
+  .player .arm.right .gun {
+    position: absolute;
+    top: 80%;
+    left: 100%;
+    width: 100%;
+    height: 150%;
+    background: #333;
+    transform-origin: -100% 0%;
+    border-radius: 25px;
+  }
+  .player .arm.right .gun::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250%;
+    height: 40%;
+    background: #333;
+    border-radius: 25px;
+  }
+  .player .arm.right .gun .barrel {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 1px;
+    height: 1px;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .player .arm.left {
+    left: -5%;
+  }
+  .player .arm .sleeve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    background: white;
+    width: 100%;
+    height: 50%;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .player .leg {
+    position: absolute;
+    top: 80%;
+    width: 25%;
+    height: 45%;
+    background: white;
+    border-radius: 10px;
+    z-index: -1;
+    transform-origin: 50% 5%;
+    transform: translateX(-50%);
+  }
+  .player .leg.right {
+    right: -5%;
+  }
+  .player .leg.left {
+    left: 20%;
+  }
+  .player .leg .pant {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+  .player::after {
+    content: "";
+    position: absolute;
+    top: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: RGBA(0, 0, 0, 0.2);
+    z-index: -2;
+    width: 100%;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  /* Bullets */
+  .bullet {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #555;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10;
+    border-radius: 25px;
+  }
+  
+  /* Bullet Flash */
+  .flash {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  /* Smoke Clouds */
+  .cloud {
+    position: absolute;
+    background: Silver;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  /* Enemies */
+  .enemy {
+    position: absolute;
+    transform: translateX(-50%) translateY(-50%);
+    /* Good ol' Jimmy */
+  }
+  .enemy.jimmy {
+    width: 35px;
+    height: 35px;
+    background: #FECEA8;
+    border-radius: 10px;
+  }
+  .enemy.jimmy .eye {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: black;
+    position: absolute;
+    top: 20%;
+  }
+  .enemy.jimmy .eye.right {
+    right: 10%;
+  }
+  .enemy.jimmy .eye.left {
+    right: 50%;
+  }
+  .enemy.jimmy .mouth {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 10px;
+    background: black;
+  }
+  .enemy.jimmy .arm {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    border-radius: 10px;
+    background: #FECEA8;
+    transform-origin: 50% 5%;
+    top: 5px;
+    transform: rotate(125deg);
+    z-index: -1;
+  }
+  .enemy.jimmy .arm.right {
+    right: 0;
+  }
+  .enemy.jimmy .arm.left {
+    left: 0;
+  }
+
+    @keyframes fade-in-down{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+    } 
 }
-
-.okay a:hover {
-  color: #999;
-
-}
-
-.okay a:hover::before,
-.okay a:hover::after {
-  transform: scaleX(1);
-}
-
-
     .navigation nav {
       display: flex;
       justify-content: space-between;
@@ -190,128 +419,169 @@
     .navigation a {
     margin: 0 15px;
     text-decoration: none;
-    color: #999;
+    color: #333;
     position: relative;
     padding-bottom: 6px;
-    font-weight: 500;
+    font-weight: 430;
     font-size: medium;
     background-color: transparent;
     height: 20px;
     width: 10px;
     justify-content: space-between;
-    transition: 0.5s ease;
 }
 
+.import a:hover::before {
+      width: 100%;
+    }
 
-.maintext p{
-    font-size: 9vh;
-    color:#999;
+    .import a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0.5px;
+      bottom: 0;
+      left: 0;
+      background-color: #333; 
+      transition: width 0.3s ease; 
+    }
 
-}
-
-::selection{
-    background-color: #999;
-
-    color: #e8e8e8;
-}
-
-.toflex{
-    flex-direction: row;
-
-}
-
-.content{
-    border-bottom: 0.02px solid #999;
-    padding-bottom: 3%;
-    flex-direction: row;  
-    gap: 5%;
+    .cursor {
+    position: absolute;
+    background: rgba(173, 168, 168, 0.3);
+  backdrop-filter: blur(2px);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.3s  transform,
+    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+    font-family: sf pro text;
     display: flex;
-    width: 65vw;
-    margin-left: 25%;
-    margin-top: 12%;
-}
-.maintext {
-    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.3vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
 }
 
-.maintext2 p{
-   font-size: medium;
-   color: #999;
+.cursor p{
+    text-align: center;
+    font-family: sf pro text;
+    color: #555555;
+    mix-blend-mode: difference;
 }
-.btn {
-  position: relative;
-  width: 0; /* Initial width set to 0 */
-  padding: 17px 20px;
-  background: rgba(173, 168, 168, 0.1);
-  backdrop-filter: blur(10px);
-  border: 0.01px solid #6f6f6f; /* Updated border */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5em;
-  font-weight: 600;
-  margin-top: 8%;
-  float: right;
-  margin-right: 6%;
-  border-radius: 40px;
+
+
+
+.cursor.active {
+    opacity: 1;
+    transform: scale(6.5);
+}
+
+.cursor.active::before {
+    opacity: 1;
+}
+
+.cursor-follower {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier transform,
+        0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
+    display: none;
+}
+
+.cursor-follower.active {
+    opacity: 0.3;
+    transform: scale(0);
+}
+
+
+
+    .okay a {
+      margin: 0 15px;
   text-decoration: none;
-  transition: width 0.3s, border-color 0.3s; 
-  overflow: hidden;
-  visibility: hidden;
-}
-
-.btn::before
-    {
-content:'';
-position: absolute;
-top:var(--y) ;
-left:var(--x) ;
-transform: translate(-50%,-50%);
-background: rgba(26, 26, 26, 0.5);
-backdrop-filter: blur(10px);
-width: 0px;
-height: 0px;
-transition: 1s, left 0s, top 0s;
-border-radius: 50%;
-mix-blend-mode: difference;
-}
-
-.btn:hover::before{
-  width: 200px;
-height: 200px;
-}
-.btn span {
+  color: #333;
   position: relative;
-  pointer-events: none;
-  color: #999;
-  transition: 0.5s;
-  font-size: 2.6vh;
-  transition: color 0.1s;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: medium;
+  background-color: transparent;
+  justify-content: space-between;
+  transition: 0.5s ease;
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
 }
 
-.btn:hover {
-  border-color: #6f6f6fd6; /* Updated border color on hover */
+h1{
+    font-size: 6.5vh;
+    color:#333;
+    font-weight: 400;
+    line-height: 140%;
+    animation: blurfade 1.5s ease;
 }
 
-.btn:hover span {
-  color: #b2b2b2;
+@keyframes blurfade {
+  from{
+    opacity: 0;
+    pxfilter: blur(2px);
+  }
 }
 
-/* On View Animation */
-@keyframes grow {
-  from { width: 0; padding: 15px 0px; } /* Start from 0 width */
-  to { width: 120px; } /* Animate to final width */
+.message{
+  position: absolute;
+  left: 5%;
+  top: 30%;
 }
 
-.btn.in-view {
-  animation: grow 1s ease-in-out forwards;
-  visibility: visible;
+.chill2 {
+    display: inline-block;
+    width: 0; /* Start with width 0 */
+    height: 7vh;
+    background: url("https://mir-s3-cdn-cf.behance.net/project_modules/hd/2184d053313911.592fd4ffb4b10.gif") no-repeat center center;
+    background-size: cover;
+    border-radius: 12px;
+    margin: -1.2% auto; 
+    transition: width 0.5s; /* Apply transition effect on width change */
+    animation: showself 1.5s ease forwards;
+    animation-delay: 0.4s;
+    filter: grayscale();
+    border: 1px solid #6f6f6f;
 }
 
-/* Animation Trigger (using Intersection Observer API) */
-.btn-container {
-  opacity: 1;
+#chill2:hover {
+    width: 120px; /* Set hover width */
 }
+
+.animate {
+    width: 90px; /* End width */
+
+}
+
+@keyframes showself {
+    from {
+        width: 0; /* Start width */
+    }
+    to {
+        width: 11vh; /* End width */
+    }
+}
+
+
+
 
 #returnAnimation {
     height: 100%;
@@ -354,118 +624,1135 @@ height: 200px;
         animation: fadeOut 1.1s ease forwards;
     }
 
+    #returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
 
     </style>
+
+
+<style>
+  @media (max-width: 600px) {
+.navigation a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: small;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+}
+
+.okay a {
+  margin: 0 35px;
+}
+
+h1{
+    font-size: 4.5vh;
+    color:#444;
+    font-weight: 350;
+    line-height: 140%;
+    width: 84%;
+}
+
+.chill2 {
+    display: inline-block;
+    width: 0; /* Start with width 0 */
+    height: 4.5vh;
+    background-size: cover;
+    border-radius: 10px;
+    margin: -1.2% auto; 
+    transition: width 0.5s; /* Apply transition effect on width change */
+    animation: showself 1.2s ease forwards;
+    animation-delay: 1.2s;
+    filter: grayscale(96%);
+}
+
+
+@keyframes showself {
+    from {
+        width: 0; /* Start width */
+    }
+    to {
+        width: 8vh; /* End width */
+    }
+}
+
+}
+</style>
+
+
+
 </head>
+
 <body>
-    
-    <div id="loader">
-        <h1>Big Up •</h1>
-        <h1>Thanks •</h1>
-        <h1>Merci •</h1>
+    <div class="cursor">
+        <p>Don't</p>
     </div>
-    
-    
-    <section class="main">
+    <div class="container">
         <div class="navigation">
             <nav>
                 <div class="import">
-                    <a href="">Work</a>
-                    <a href="">About</a>
-                    <a href="">Contact</a>
+                    <a href="work2.html" class="letswork">Work</a>
+                    <a href="about.html" class="thisis">About</a>
+                    <a href="" class="talkto">Contact</a>
                 </div>
-              <div class="title">
-              </div>
-              <div class="okay">
-                <a href="#">CJ Crafted ®️</a>
-              </div>            
+                <div class="title"></div>
+                <div class="okay">
+                    <a href="home.html" class="thatsme">CJ <span class="hide">Cr<span class="kion">aft</span>ed </span>®</a>
+                </div>
             </nav>
-          </div>
-
-<div class="toflex">
-
-    <div class="content">
-          <div class="maintext"><p>
-            Voilà !</br>Continue with gmail.</p></div>
-
-          <div class="maintext2"><p>I'll try to respond as fast as I can. </p></div>
+        </div> 
+        <div class="message">
+          <h1>Voilà
+          </br><span class="chill2" id="chill2"></span> Continue with your Email app</h1>
         </div>
     </div>
-    <a href="home.html" class="btn" style="--clr: #ff6464;"><span>Return</span></a>
-    <video src="lala.mp4" muted autoplay></video>
-    </section>
-<footer>
-  <div class="thevid"><a href="">Video from Boardstudios</a></div>
-</footer>
-    
     <div id="returnAnimation"><h1>Index •</h1></div>
+    <div id="returnAnimation3">
+      <h1>Work •</h1>
+  </div>
+
+  <div id="returnAnimation2">
+    <h1>About •</h1>  
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      // Function to trigger return animation
+      function returnAnimation4() {
+          var returnAnimation = document.querySelector("#returnAnimation3");
+          var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+          
+          // Add a class to trigger the opacity animation
+          h1Element.classList.add('fade-out');
     
+          returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+          setTimeout(function () {
+              window.location.href = "work2.html"; // Redirect to about.html after animation
+          }, 1200); // Adjust timing as needed
+      }
+    
+    // Event listener for About link click
+    document.querySelector('.letswork').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        returnAnimation4(); // Trigger return animation
+    });
+    </script>
+
+    <script>
+var SHOOT_KNOCKBACK=5;
+var SHOOT_KNOCKBACKRESET=0.25;
+
+var mouse={
+  x:0,
+  y:0
+}
+
+class Player {
+  constructor(options) {
+    // Store references
+    this.controls = options.controls;
+    this.createBullet = options.createBullet;
+    this.createSmoke = options.createSmoke;
+
+    // Creating the player element
+    this.createElement(options.parentContainer);
+
+    // Position/movement
+    this.x = window.innerWidth - 0.05 * window.innerWidth - this.width / 2;
+    this.y = window.innerHeight - 0.08 * window.innerHeight - this.height / 2;
+    this.xvel = 0;
+    this.yvel = 0;
+    this.friction = 0.8;
+    this.speed = 0.8;
+    this.scaleX = 1;
+    this.width = 40;
+    this.height = 40;
+
+    // Anim
+    this.anim = {
+      counter: 0,
+      inc: Math.PI / 10,
+      rightArm: {
+        rot: 0,
+        offsetX: 0,
+        offsetY: 0
+      },
+      leftArm: {
+        rot: 0
+      },
+      leftLeg: {
+        rot: 0
+      },
+      rightLeg: {
+        rot: 0
+      },
+      gun: {
+        rot: 0
+      },
+      lift: 0,
+      knockback: 0
+    };
+
+    // Shooting
+    this.shoot();
+
+    // Updating
+    options.startUpdating(this.aim.bind(this));
+    options.startUpdating(this.turn.bind(this));
+    options.startUpdating(this.move.bind(this));
+    options.startUpdating(this.animate.bind(this));
+    options.startUpdating(this.boundaries.bind(this));
+    options.startUpdating(this.updateStyles.bind(this));
+  }
+  // Rest of the class remains unchanged...
+
+  
+  // Creating / injecting the element
+  createElement(parentContainer) {
+    // The Markup
+    this.el=$(`
+      <div class="player">
+        <div class='hat'></div>
+        <div class='eye right'></div>
+        <div class='eye left'></div>
+        <div class='mouth'></div>
+        <div class='shirt'>
+          <div class='under'></div>
+        </div>
+        <div class='arm right'>
+          <div class='sleeve'></div>
+          <div class='gun'>
+            <div class='grey'></div>
+            <div class='barrel'></div>
+          </div>
+        </div>
+        <div class='arm left'>
+          <div class='sleeve'></div>
+        </div>
+        <div class='leg right'>
+          <div class='pant'></div>
+        </div>
+        <div class='leg left'>
+          <div class='pant'></div>
+        </div>
+      </div>
+    `)
+    
+    // Injection
+    parentContainer.append(this.el);
+    
+    // Update dimensions
+    this.width=this.el.outerWidth();
+    this.height=this.el.outerHeight();
+  }
+  
+  // Animate the player
+  animate() {
+    var isMoving=(
+      this.controls.isDown('right') || this.controls.isDown('left') ||
+      this.controls.isDown('up') || this.controls.isDown('down')
+    ) ? true : false;
+    
+    // Running animation
+    if (isMoving) {
+      // Arms
+      this.anim.leftArm.rot=Math.sin(this.anim.counter)/2;
+
+      // Legs
+      this.anim.rightLeg.rot=Math.sin(this.anim.counter*0.9)*0.5;
+      this.anim.leftLeg.rot=Math.sin(-this.anim.counter*0.9)*0.5;
+
+      // Lift
+      this.anim.lift=Math.sin(this.anim.counter)*5;
+
+      // Inc
+      this.anim.counter+=this.anim.inc;
+    } else { // Resetting to idle state
+      var leftArm=this.anim.leftArm.rot;
+      var rightLeg=this.anim.rightLeg.rot;
+      var leftLeg=this.anim.leftLeg.rot;
+      var lift=this.anim.lift;
+      var resetSpeed=0.1;
+      
+      // Arms
+      this.anim.leftArm.rot=leftArm-(leftArm-0)*resetSpeed;
+      
+      // Legs
+      this.anim.rightLeg.rot=rightLeg-(rightLeg-0)*resetSpeed;
+      this.anim.leftLeg.rot=leftLeg-(leftLeg-0)*resetSpeed;
+      
+      // Lift
+      this.anim.lift=lift-(lift-0)*resetSpeed;
+    }
+    
+    // Shooting
+    var rightArmRot=this.anim.rightArm.rot;
+    this.anim.rightArm.offsetX=Math.cos(rightArmRot-Math.PI/2)*this.anim.knockback;
+    this.anim.rightArm.offsetY=Math.sin(rightArmRot-Math.PI/2)*this.anim.knockback;
+    this.anim.gun.rot=-this.anim.knockback*0.1;
+    
+    
+    // Resetting the knockback
+    this.anim.knockback=this.anim.knockback-(this.anim.knockback-0)*SHOOT_KNOCKBACKRESET;
+  }
+  
+  // Aiming at the mouse
+  aim() {
+    var rightArm = $('.player .arm.right');
+    var armX = rightArm.offset().left;
+    var armY = rightArm.offset().top;
+    
+    // Calculate the distance between mouse and player
+    var distance = Math.sqrt(Math.pow((mouse.x - armX), 2) + Math.pow((mouse.y - armY), 2));
+    
+    // Define a threshold for when to stop gun rotation
+    var threshold = 50; // Adjust as needed
+    
+    // Check if the mouse is within the threshold distance from the player
+    if (distance > threshold) {
+        // If mouse is not in the center, calculate the angle and rotate the gun
+        var angle = Math.atan2(mouse.y - armY, mouse.x - armX);
+        this.anim.rightArm.rot = (angle - Math.PI / 2) * this.scaleX;
+    } else {
+        // If mouse is in the center, stop gun rotation
+        this.anim.rightArm.rot = 0; // or any fixed value depending on the desired position
+    }
+}
+
+  
+  // Facing the mouse
+  turn() {
+    if (mouse.x<this.x) {
+      this.scaleX=-1;
+    } else {
+      this.scaleX=1;
+    }
+  }
+  
+  // Movement
+  move() {    
+    // Physics
+    this.x+=this.xvel;
+    this.y+=this.yvel
+    this.xvel*=this.friction;
+    this.yvel*=this.friction;
+    
+    // Keys
+    if (this.controls.isDown('right')) {
+      this.xvel+=this.speed;
+    } else if (this.controls.isDown('left')) {
+      this.xvel-=this.speed;
+    }
+    if (this.controls.isDown('up')) {
+      this.yvel-=this.speed;
+    } else if (this.controls.isDown('down')) {
+      this.yvel+=this.speed;
+    }
+  }
+  
+  // Staying on screen
+  boundaries() {
+    if (this.x-this.width/2<0) {
+      this.x=this.width/2+1;
+      this.xvel=0;
+    } else if (this.x+this.width/2>window.innerWidth) {
+      this.x=window.innerWidth-this.width/2-1;
+      this.xvel=0;
+    }
+    if (this.y-this.height/2<0) {
+      this.y=this.height/2+1;
+      this.yvel=0;
+    } else if (this.y+this.height/2>window.innerHeight) {
+      this.y=window.innerHeight-this.height/2-1;
+      this.yvel=0;
+    }
+  }
+  
+  // Listen for mousepresses and shoot
+  shoot() {
+    $(window).on('mousedown',function() {
+      var barrel=$('.barrel');
+      var x=barrel.offset().left;
+      var y=barrel.offset().top;
+      var dir=this.anim.rightArm.rot*this.scaleX;
+      
+      // Create the bullet
+      this.createBullet(
+        x,y,
+        dir
+      )
+      
+      // Knockback animations
+      this.anim.knockback=SHOOT_KNOCKBACK;
+      
+      // Pushback the player
+      this.xvel+=Math.cos(dir-Math.PI/2)*2.5;
+      this.yvel+=Math.sin(dir-Math.PI/2)*2.5;
+      
+      // Smoke
+      this.createSmoke(x,y,dir,1);
+    }.bind(this))
+  }
+  
+  // Updating the styles
+  updateStyles() {
+    var rightArm=$('.player .arm.right');
+    var leftArm=$('.player .arm.left');
+    var rightLeg=$('.leg.right');
+    var leftLeg=$('.leg.left');
+    var gun=$('.gun');
+    
+    // Main el
+    this.el.css({
+      left:this.x,
+      top:this.y,
+      transform:`
+        translateX(-50%)
+        translateY(-${50+this.anim.lift}%)
+        scaleX(${this.scaleX})
+      `
+    })
+    
+    // Arms
+    rightArm.css({
+      transform:`
+        translateX(${this.anim.rightArm.offsetX}px)
+        translateY(${this.anim.rightArm.offsetY}px)
+        rotate(${this.anim.rightArm.rot}rad)
+      `
+    })
+    leftArm.css({
+      transform:`rotate(${this.anim.leftArm.rot}rad)`
+    })
+    
+    // Legs
+    rightLeg.css({
+      transform:`
+        translateX(-50%)
+        rotate(${this.anim.rightLeg.rot}rad)
+      `
+    })
+    leftLeg.css({
+      transform:`
+        translateX(-50%)
+        rotate(${this.anim.leftLeg.rot}rad)
+      `
+    })
+    
+    // Gun
+    gun.css({
+      transform:`rotate(${this.anim.gun.rot}rad)`
+    })
+    
+  }
+}
+
+// The Bullet class
+class Bullet {
+  constructor(options) {
+    // Create the element
+    this.createElement(options.parentContainer);
+    this.createFlash(options.parentContainer,options.x,options.y);
+    
+    // Positioning / movement
+    this.x=options.x;
+    this.y=options.y;
+    this.speed=25;
+    this.dir=options.dir;    
+    
+    // Flash
+    this.flashTimer=0;
+  }
+  
+  // Creating / injecting the Player element
+  createElement(parentContainer) {
+    // The markup
+    this.el=$('<div class="bullet"></div>');
+    
+    // Injection
+    parentContainer.append(this.el);    
+    
+    // Dimensions
+    this.width=parseInt(this.el.css('width'));
+    this.height=parseInt(this.el.css('height'));
+  }
+  
+  // Create the flash effect element
+  createFlash(parentContainer,x,y) {
+    // The markup
+    this.flashEl=$('<div class="flash"></div>');
+    
+    // Positioning
+    this.flashEl.css({
+      left:x,
+      top:y
+    })
+    
+    // Injection
+    parentContainer.append(this.flashEl);
+  }
+  
+  // Updating (executed automatically by the `BulletHandler`
+  // class.)
+  update() {
+    
+    // Movement
+    this.x+=Math.cos(this.dir+Math.PI/2)*this.speed;
+    this.y+=Math.sin(this.dir+Math.PI/2)*this.speed;
+    
+    // Going out of bounds
+    if (this.x<0 || this.y<0 ||
+        this.x>window.innerWidth || this.y>window.innerHeight) {
+      this.delete=true;
+    }
+    
+    // Update styles
+    this.el.css({
+      left:this.x,
+      top:this.y,
+      transform:`
+        translateX(-50%)
+        translateY(-50%)
+        rotate(${this.dir+Math.PI/2}rad)
+      `
+    })
+    
+    // Removing the flash
+    this.flashTimer++;
+    if (this.flashTimer>1) {
+      this.flashEl.remove();
+    }
+  }
+}
+
+// The Bullet Handler class
+class BulletHandler {
+  constructor(options) {
+    // Store options references
+    this.parentContainer=options.parentContainer;
+
+    // Store all bullets
+    this.bullets=[];
+    
+    // Updating all bullets
+    options.startUpdating(this.updateBullets.bind(this));
+    
+    // Binding public functions
+    this.createBullet=this.createBullet.bind(this);
+  }
+  
+  // Updating all of the bullets
+  updateBullets() {
+    for (var i=0;i<this.bullets.length;i++) {
+      this.bullets[i].update();
+      
+      // Removing bullets
+      if (this.bullets[i].delete) {
+        this.bullets[i].el.remove();
+        this.bullets[i].flashEl.remove();
+        this.bullets.splice(i, 1);
+      }
+    }
+  }
+  
+  // Create a new bullet
+  createBullet(x,y,dir) {
+    this.bullets.push(new Bullet({
+      x:x,y:y,dir:dir,
+      parentContainer:this.parentContainer
+    }))
+  }
+}
+
+// The Controls class
+class Controls {
+  constructor(options) {
+    this.keys=[
+      {
+        name:'right',
+        keyCode:68
+      },
+      {
+        name:'left',
+        keyCode:65
+      },
+      {
+        name:'up',
+        keyCode:87
+      },
+      {
+        name:'down',
+        keyCode:83
+      }
+    ]
+    
+    // Listening for keypresses
+    this.createListeners();
+    
+    // Binding public functions
+    this.isDown=this.isDown.bind(this);
+  }
+  
+  // Get a key object based on it's keycode
+  getKey(keyCode) {
+    for (var i=0;i<this.keys.length;i++) {
+      if (this.keys[i].keyCode===keyCode) {
+        return this.keys[i];
+      }
+    }
+  }
+  
+  // Check if a key is down
+  isDown(key) {
+    for (var i=0;i<this.keys.length;i++) {
+      if (this.keys[i].name==key) {
+        return this.keys[i].isDown;
+      }
+    }
+  }
+  
+  // Create the keydown event listener
+  createListeners() {
+    
+    // Key presses
+    $(window).on('keydown',function(e) {
+      var pressedKey=this.getKey(e.which);
+      
+      if (pressedKey!=null) {
+        pressedKey.isDown=true;
+      }
+    }.bind(this))
+    
+    // Key released
+    $(window).on('keyup',function(e) {
+      var pressedKey=this.getKey(e.which);
+      
+      if (pressedKey!=null) {
+        pressedKey.isDown=false
+      }
+    }.bind(this))
+  }
+}
+
+// The Smoke class (🌲)
+var SMOKE_COUNT=[2,4];
+var SMOKE_SPEED=[5,10];
+var SMOKE_SIZE=[5,10];
+var SMOKE_FRICTION=0.85;
+var SMOKE_FADESPEED=0.035;
+var SMOKE_SPREAD=0.5;
+class Smoke {
+  constructor(options) {
+    // Store the parentContainer reference
+    this.parentContainer=options.parentContainer;
+    
+    // The clouds
+    this.clouds=[];
+    
+    // Updating
+    options.startUpdating(this.update.bind(this));
+    
+    // Binding public functions
+    this.create=this.create.bind(this);
+  }
+  
+  // Create a cloud puff
+  create(x,y,dir,intensity) {
+    
+    // Creating the individual clouds
+    var createCloud=function(x,y,dir,intensity) {
+      
+      // The cloud element
+      var el=$('<div class="cloud"></div>');
+      
+      // Positioning and sizing
+      var size=getRandom(SMOKE_SIZE[0],SMOKE_SIZE[1])*intensity;
+      el.css({
+        left:x,top:y,
+        width:size,height:size
+      })
+      
+      // Spread
+      dir+=getRandom(-SMOKE_SPREAD*100,SMOKE_SPREAD*100)/100;
+      
+      // Movement
+      var speed=getRandom(SMOKE_SPEED[0],SMOKE_SPEED[1])*intensity;
+      var xvel=Math.cos(dir+Math.PI/2)*speed;
+      var yvel=Math.sin(dir+Math.PI/2)*speed;
+      
+      // Return the cloud object
+      return {
+        el:el,
+        x:x,y:y,dir:dir,
+        xvel:xvel,yvel:yvel,
+        opacity:1
+      }
+    }
+    
+    // Generating the clouds
+    var count=getRandom(SMOKE_COUNT[0],SMOKE_COUNT[1]);
+    for (var i=0;i<count;i++) {
+      var newCloud=createCloud(x,y,dir,intensity)
+      
+      // Store the cloud object      
+      this.clouds.push(newCloud)
+      
+      // Inject the cloud element
+      this.parentContainer.append(newCloud.el);
+    }
+  }
+  
+  // Updating the clouds
+  update() {
+    for (var i=0;i<this.clouds.length;i++) {
+      var cloud=this.clouds[i];
+      
+      // Movement
+      cloud.x+=cloud.xvel;
+      cloud.y+=cloud.yvel;
+      cloud.xvel*=SMOKE_FRICTION;
+      cloud.yvel*=SMOKE_FRICTION;
+      
+      // Opacity
+      cloud.opacity-=SMOKE_FADESPEED;
+      
+      // Updating styles
+      cloud.el.css({
+        left:cloud.x,
+        top:cloud.y,
+        opacity:cloud.opacity
+      })
+      
+      // Removing it
+      if (cloud.opacity<=0) {
+        cloud.el.remove();
+        this.clouds.splice(i, 1);
+      }
+    }
+  }
+}
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+// Enemies
+class EnemyHandler {
+  constructor(options) {
+    // Storing references
+    this.parentContainer=options.parentContainer;
+    
+    // All the enemies
+    this.enemies=[];
+    
+    // Updating
+    options.startUpdating(this.updateEnemies.bind(this))
+    
+    // Binding public functions
+    this.createEnemy=this.createEnemy.bind(this);
+  }
+  
+  // Update all of the enemies n shit
+  updateEnemies() {
+    for (var i=0;i<this.enemies.length;i++) {
+      
+    }
+  }
+  
+  // Create a new enemy
+  createEnemy(x,y) {
+    var enemyIndex=Math.floor(getRandom(0,enemyTypes.length));
+    var enemyData=enemyTypes[enemyIndex];
+    
+    // Create the new object
+    var newEnemy={
+      x:x,y:y,
+      el:$(enemyData.markup),
+      animate:enemyData.animate,
+      update:enemyData.update,      
+    }
+    
+    // Inject the element
+    this.parentContainer.append(newEnemy.el);
+    
+    // Position the element
+    newEnemy.el.css({
+      left:x,top:y
+    })
+    
+    // Store the enemy object
+    this.enemies.push(newEnemy);
+  }
+}
+
+// Rooms
+class RoomHandler {
+  constructor(options) {
+    // Store references
+    this.parentContainer=options.parentContainer;
+    this.createEnemy=options.createEnemy;
+    
+    // Load a room on init
+    this.newRoom();
+  }
+  
+  // Unloading / loading a room
+  newRoom() {
+    var roomIndex=Math.floor(getRandom(0,rooms.length));
+    var roomData=rooms[roomIndex];
+    
+    // Generate everything
+    for (var i=0;i<roomData.length;i++) {
+      var item=roomData[i];
+      
+      // Enemies
+      if (item.type==='enemy') {
+        this.createEnemy(
+          window.innerWidth*item.x/100,
+          window.innerHeight*item.y/100
+        )
+      }
+    }
+  }
+}
+
+
+// The Game class
+class Game {
+  constructor() {
+    // The container element
+    this.container=$('.container');
+    
+    // Updating
+    this.updateQueue=[];
+    this.update();
+    
+    // Enemies
+    this.enemyHandler=new EnemyHandler({
+      parentContainer:this.container,
+      startUpdating:this.startUpdating.bind(this)
+    })
+    
+    // Rooms
+    this.roomHandler=new RoomHandler({
+      parentContainer:this.container,
+      startUpdating:this.startUpdating.bind(this),
+      createEnemy:this.enemyHandler.createEnemy
+    })
+    
+    // The controls
+    this.controls=new Controls();
+    
+    // Smoke
+    this.smoke=new Smoke({
+      parentContainer:this.container,
+      startUpdating:this.startUpdating.bind(this)
+    })
+    
+    // Bullets
+    this.bulletHandler=new BulletHandler({
+      parentContainer:this.container,
+      startUpdating:this.startUpdating.bind(this)
+    })
+    
+    // The player
+    this.player=new Player({
+      parentContainer:this.container,
+      startUpdating:this.startUpdating.bind(this),
+      controls:this.controls,
+      createBullet:this.bulletHandler.createBullet,
+      createSmoke:this.smoke.create
+    })
+  }
+  
+  // Adding a function to the update queue.
+  startUpdating(func) {
+    this.updateQueue.push(func);
+  }
+  
+  // Updating the queue
+  update() {
+    for (var i=0;i<this.updateQueue.length;i++) {
+      this.updateQueue[i]();
+    }
+    window.requestAnimationFrame(this.update.bind(this));
+  }
+}
+
+
+// Tracking the mouse position
+$(window).on('mousemove',function(e) {
+  mouse.x=e.pageX;
+  mouse.y=e.pageY;
+})
+
+
+function getRandom(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+var rooms=[]
+rooms[0]=[ 
+  
+]
+
+var enemyTypes=[]
+enemyTypes[0]={
+  markup:`
+    <div class="enemy jimmy">
+      <div class='eye right'></div>
+      <div class='eye left'></div>
+      <div class='mouth'></div>
+      <div class='arm right'></div>
+      <div class='arm left'></div>
+      <div class='leg right'></div>
+      <div class='leg left'></div>
+    </div>
+  `,
+  animate:function(counter) {
+    
+  },
+}
+
+new Game();
+    </script>
+
+
+
+    <script>
+      
+        document.addEventListener("DOMContentLoaded", () => {
+          const kayItems = document.querySelectorAll(".okay");
+          kayItems.forEach((kayItem) => {
+            kayItem.addEventListener("mouseenter", (event) => {
+              const kionItem = event.currentTarget.querySelector('.kion');
+              startShuffleAnimation(kionItem);
+            });
+            kayItem.addEventListener("mouseleave", (event) => {
+              const kionItem = event.currentTarget.querySelector('.kion');
+              stopShuffleAnimation(kionItem);
+            });
+          });
+        });
+        
+        function getRandomCharacter() {
+          const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+          return chars[Math.floor(Math.random() * chars.length)];
+        }
+        
+        function startShuffleAnimation(item) {
+          if (item.dataset.animating) {
+            return;
+          }
+          item.dataset.animating = true;
+          item.dataset.originalText = item.textContent;
+          const length = item.textContent.length;
+          let shuffles = 0;
+          const maxShuffles = 10;
+          const intervalDuration = 200 / maxShuffles;
+          item.dataset.animationInterval = setInterval(() => {
+            if (shuffles >= maxShuffles) {
+              stopShuffleAnimation(item); // Reset text content when max shuffles reached
+              clearInterval(item.dataset.animationInterval);
+              delete item.dataset.animating;
+            } else {
+              let shuffledText = "";
+              for (let i = 0; i < length; i++) {
+                shuffledText += getRandomCharacter();
+              }
+              item.textContent = shuffledText;
+              shuffles++;
+            }
+          }, intervalDuration);
+        }
+        
+        function stopShuffleAnimation(item) {
+          if (!item.dataset.animating) {
+            return;
+          }
+          clearInterval(item.dataset.animationInterval);
+          delete item.dataset.animating;
+          item.textContent = item.dataset.originalText; // Restore original text
+        }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+
+
 
 <script>
-  document.querySelectorAll('.btn').forEach(btn => {
-    btn.addEventListener("mousemove", (e) => {
-      let x = e.offsetX;
-      let y = e.offsetY;
-      let btnWidth = btn.clientWidth;
-      let btnHeight = btn.clientHeight;
-      let transX = (x - btnWidth / 2);
-      let transY = (y - btnHeight / 2);
-      
-      // GSAP animation for smoother movement
-      gsap.to(btn, {duration: 0.3, x: transX, y: transY, ease: "power2.out"});
+    var cursor = $(".cursor");
+    
+    var posX = 0,
+        posY = 0,
+        mouseX = 0,
+        mouseY = 0;
 
-      let mx = e.pageX - btn.offsetLeft;
-      let my = e.pageY - btn.offsetTop;
-      btn.style.setProperty('--x', mx + 'px');
-      btn.style.setProperty('--y', my + 'px');
+    TweenMax.to({}, 0.016, {
+        repeat: -1,
+        onRepeat: function() {
+            posX += (mouseX - posX) / 6;
+            posY += (mouseY - posY) / 6;
+
+            TweenMax.set(cursor, {
+                css: {
+                    left: posX,
+                    top: posY
+                }
+            });
+        }
+    });
+    
+    function updateMousePosition(e) {
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+    }
+
+    $(document).on("mousemove", function(e) {
+        updateMousePosition(e);
+    });
+    
+    // Call updateMousePosition initially to set cursor position
+    updateMousePosition({pageX: mouseX, pageY: mouseY});
+
+    $(".player").on("mouseenter", function() {
+        cursor.addClass("active");
     });
 
-    btn.addEventListener('mouseout', (e) => {
-      // Reset button position
-      gsap.to(btn, {duration: 0.3, x: 0, y: 0, ease: "power2.out"});
+    $(".player").on("mouseleave", function() {
+        cursor.removeClass("active");
     });
-  });
+</script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+
+
+
+<script>
+    // GSAP draggable with parallax effect
+    gsap.set(".player", { cursor: "grab" });
+    Draggable.create(".player", {
+        type: "x,y",
+        edgeResistance: 0.65,
+        bounds: ".player",
+        onPress: function () {
+            gsap.set(".player", { cursor: "grabbing" });
+        },
+        onDrag: function () {
+            // Apply parallax effect during dragging
+            gsap.to(".player", {
+                x: -this.x * 0.1, // Adjust the parallax effect strength
+                y: -this.y * 0.1, // Adjust the parallax effect strength
+                ease: "none" // No easing for immediate response
+            });
+        },
+        onDragEnd: function () {
+            gsap.set(".player", { cursor: "grab" });
+            // Return the image to its original position
+            gsap.to(".player", {
+                x: 0,
+                y: 0,
+                ease: "power2.out", // Adjust the easing for smooth motion
+                duration: 0.5 // Adjust the duration for the animation
+            });
+        }
+    });
 </script>
 
 
 <script>
-    const buttons = document.querySelectorAll('.btn');
-    
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    });
-    
-    buttons.forEach(button => observer.observe(button));
-    
-    </script>
-    
-    <script>
-    // Function to trigger return animation
-    function returnAnimation() {
-        var returnAnimation = document.querySelector("#returnAnimation");
-        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
-        
-        // Add a class to trigger the opacity animation
-        h1Element.classList.add('fade-out');
+  // Function to trigger return animation
+  function returnAnimation() {
+      var returnAnimation = document.querySelector("#returnAnimation");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
 
-        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
-        setTimeout(function () {
-            window.location.href = "home.html"; // Redirect to home.html after animation
-        }, 1200); // Adjust timing as needed
-    }
-        // Event listener for button click
-        document.querySelector('.btn').addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default link behavior
-            returnAnimation(); // Trigger return animation
-        });
-    </script>
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "home.html"; // Redirect to home.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+      // Event listener for button click
+      document.querySelector('.thatsme').addEventListener('click', function(event) {
+          event.preventDefault(); // Prevent the default link behavior
+          returnAnimation(); // Trigger return animation
+      });
+  </script>
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation2() {
+      var returnAnimation = document.querySelector("#returnAnimation2");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "about.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+// Event listener for About link click
+document.querySelector('.thisis').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    returnAnimation2(); // Trigger return animation
+});
+</script>
+
 
 </body>
+
 </html>

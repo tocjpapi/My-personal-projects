@@ -1,0 +1,2031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CJ • case two</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
+    <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+
+    ::-webkit-scrollbar {
+    width: 0;  
+    background: transparent;  
+}
+
+html {
+    scrollbar-width: none;
+}
+    html {
+        scroll-behavior: smooth;
+
+    }
+
+    html.lenis {
+        height: auto;
+    }
+
+    .lenis.lenis-smooth {
+        scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+    }
+
+    body {
+        font-family: 'Sf Pro Text', sans-serif;
+        overflow-x: hidden;
+        background: #e8e8e8;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: #333;
+    }
+
+    .navigation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: transparent;
+      padding: 18px;
+      z-index: 10;
+      font-family: 'Sf Pro Text', sans-serif;
+      padding-top: 27px;
+      animation: fade-in-down 1.5s ease;
+    }
+ 
+
+    @keyframes fade-in-down{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+    
+}
+    .navigation nav {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 9px;
+      background-color: transparent;
+    }
+
+    
+.spacer{
+    height:20vh;
+    width: 100vw;
+}
+
+
+.spacer3{
+    height:7vh;
+    width: 100vw;
+}
+
+
+
+    .navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: medium;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+}
+
+.import a:hover::before {
+      width: 100%;
+    }
+
+    .import a::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #333; 
+      transition: width 0.3s ease; 
+    }
+
+    .okay a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 6px;
+  font-weight: 500;
+  font-size: medium;
+  background-color: transparent;
+  justify-content: space-between;
+  transition: 0.5s ease;
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
+}
+
+
+
+.first {
+    padding-left: 6%;
+    height: 64vh;
+    width: 96vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2%;
+    }
+    @keyframes fade-in-down{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+    
+}
+
+
+.position1:hover .pointer{
+    rotate: 45deg;
+}
+
+
+    .livesite:hover{
+     background:rgba(55, 55, 55, 0.07);
+    }
+    .goto{
+    height:25vh;
+    width: 96vh;
+}
+@keyframes width {
+    from {
+        scale: 0.85;
+        opacity: 0;
+    }
+}
+.pointer {
+border:1px solid #333;
+    position: absolute;
+    left: 65px;
+    width: 34px; /* Width and height matching the SVG */
+    height: 34px;
+    border-radius: 50%; /* Making it perfectly round */
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    transition: all 0.5s; /* Smooth transition for background color */
+    animation: fadein 1.5s ease ;
+    }
+    
+    @keyframes fadein{
+       from{
+        opacity: 0;
+        scale: 1.07;
+       }
+    }
+
+.pointer::before {
+    content: '';
+    background: rgba(55, 55, 55, 0.1);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit; /* Inherit border-radius from parent */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place the pseudo-element behind the main content */
+    transition: transform 0.3s, opacity 0.3s; /* Smooth transition for scale and opacity */
+    transform: scale(0); /* Initially hidden */
+}
+
+.position1:hover .pointer::before {
+    transform: scale(1); /* Scale up on hover */
+    opacity: 1; /* Show the pseudo-element */
+}
+
+::selection {
+    color: #e8e8e8; 
+    background-color: #333;
+    }
+
+    #returnAnimation3 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation3 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation3 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+    #returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.position1{
+    position: absolute;
+    right: 10%;
+    cursor: pointer;
+}
+.livesite {
+    position: absolute;
+    border: 0.2px solid #333;
+    width: 57px; 
+    height: 34px; 
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: width 1.5s ease;
+    overflow: hidden;
+    transition: all 0.5s;
+    transform-origin: center; /* Added to specify transform origin */
+}
+    .first p{
+        width: 70%;
+        margin-left: 30%;
+        animation: fadein 1.5s ease ;
+    }
+
+    .text-reveal {
+    font-size: 16.5vh; /* Increase font size for emphasis */
+    font-weight:normal;
+    overflow: hidden; 
+}
+
+.text-reveal span {
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+    
+    .title h1{
+    font-size: 12vh;
+    color: #333;
+    font-weight: 400;
+}
+
+    .image {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto; /* Centers the element horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 5%;
+}
+
+
+    .image img{
+        object-fit: cover;
+        height: 200%;
+        width: 170%;
+    }
+
+    .introtxt{
+   padding-left: 5%;
+   padding-bottom: 5%;
+   height: 80vh;
+   padding-top: 5%;
+    }
+
+
+
+
+    .introtxt2{
+   padding-left: 5%;
+   padding-bottom: 5%;
+   height: 150vh;
+   padding-top: 35%;
+    }
+
+
+    .introtxt3{
+   padding-left: 5%;
+   padding-bottom: 5%;
+   height: 50vh;
+   padding-top: 15%;
+    }
+
+    .big{
+        font-size: 7vh;
+        width: 85%;
+        padding-left: 1%;
+    }
+
+    .why{
+ padding-bottom: 5%;
+}
+
+.why2 p{
+ padding-left: 5%;
+}
+
+.big{
+    line-height: 150%;
+}
+
+.who{
+    float: right;
+    padding: 0.5%;
+    padding-left: 1%;
+    padding-right: 1%;
+    margin-top: 10%;
+    margin-right: 6%;
+}
+.who p{
+    font-size: medium;
+}
+
+
+.mainimg{
+height: 70vh;
+width: 48vw;
+margin-left: 5%;
+border-radius: 55px;
+overflow: hidden;
+animation: fadeup 1.5s ease ;
+
+}
+
+.continue{
+    margin-top: 10%;
+    height: 100vh;
+}
+
+
+.thestuff3{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vh;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.img{
+    height: 63%;
+    width: 50%;
+    overflow: hidden;
+    border-radius: 45px;
+}
+
+.img img{
+    height: 125%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wh p{
+    padding-left: 5%;
+}
+
+.spacer2{
+    height:5vh;
+    width: 100vw;
+    position: relative;
+    padding-bottom: 7%;
+    display: flex;
+    justify-content: center;
+}
+
+.divisions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 85vw;
+    border: 1px solid #d0d0d0;
+    height: 7vh;
+    align-items: center;
+    border-radius: 35px;
+    background: #e4e4e4;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+
+
+.comuni a {
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .division{
+  cursor: pointer;
+}
+.division {
+    display: inline-block;
+    position: relative;
+  }
+
+  .division a {
+  text-decoration: none;
+  color: #333;
+}
+
+.malt{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+
+
+
+
+
+@keyframes fadeup{
+        from{
+            opacity: 0;
+            transform: translateY(7vh);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+.mainimg img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+}
+
+
+.toflex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.txt{
+    width: 35%;
+    padding-right: 3%;
+    font-size: 3.2vh;
+}
+
+.second{
+    height: 150vh;
+}
+
+.continue{
+    margin-top: 10%;
+    height: 100vh;
+}
+
+
+.thestuff{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vh;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+
+.thestuff img{
+    height: 350px;
+}
+.text{
+border: 1px solid #6b6b6b;
+position: absolute;
+color: #333;
+padding: 7px;
+padding-left: 15px;
+padding-right: 15px;
+right: 5%;
+top: 7%;
+border-radius: 35px;
+}
+
+.continue2{
+    margin-top: 10%;
+    height: 100vh;
+}
+
+
+.thestuff2{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vh;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.continue3{
+    margin-top: 10%;
+    height: 120vh;
+
+}
+
+
+
+
+.thestuff2 img{
+    height: 350px;
+}
+
+
+
+.mainting p{
+   font-size: 11vh;
+   font-weight: 600;
+}
+
+.chatgptloookingahh {
+    display: inline-block;
+    animation: rotate 2s ease infinite; 
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(8deg);
+
+    }
+    50% {
+        transform: rotate(-8deg);
+
+    }
+
+    75% {
+        transform: rotate(0deg);
+
+    }
+    
+}
+
+
+
+.mainting {
+    padding: 10%;
+}
+
+.letsendit{
+    height: 150vh;
+    width: 60vw;
+    margin-left: 19%;
+}
+
+.fade-in{
+    opacity: 0;
+}
+
+.group1{
+    display: flex;
+}
+
+
+
+.block1{
+    background: #d1d1d1;
+    height: 38vh;
+    width: 27vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background-image: url('https://images.unsplash.com/photo-1599826556883-fe1a0c9f9099?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+        @keyframes ouvrir {
+            from {
+                width: 32.5vw;
+            }
+        }
+
+.block1 p{
+    color: #fff;
+    opacity: 0.7;
+}
+
+.text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: -20%;
+  transform: translate(0, -50%);
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.7s ease;
+  animation: float-text 30s linear infinite;
+  animation-delay: 0s;
+  opacity: 0;
+  padding: 20px 0;
+  color: #fff;
+  backdrop-filter:blur(6px) ;
+}
+
+@keyframes float-text {
+  0% {
+    left: -20%;
+  }
+
+  50% {
+    left: -100%;
+  }
+
+  100% {
+    left: -20%;
+  }
+}
+
+.block1:hover .text-wrapper {
+  opacity: 0.7;
+}
+
+
+.halfway2{
+    position: relative;
+}
+
+
+.block2p{
+    font-family: New york;
+    font-size: 9vh;
+    font-weight: 800;
+}
+
+.text__reveal{
+    overflow: hidden;
+    white-space: pre; 
+    
+}
+
+.text__reveal span{
+    display: inline-block;
+    transform: translateY(110%);
+    transition:all .5s ease;
+    animation: fadein 1.5s ease;
+}
+
+
+.fade-in.animated {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+.slide-up.animated {
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateY(20px);
+    }
+
+    50%{
+        filter: blur(2px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+.block2{
+    margin-left: 17px;
+    background: #d1d1d1;
+    height: 38vh;
+    width: 38vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.position1:hover .pointer{
+  scale: 1.07;
+}
+
+
+.block3{
+    margin-top: 17px;
+    background: #d1d1d1;
+    height: 56vh;
+    width: 37vw;
+    position: relative;
+}
+
+.insidegroup{
+    display: flex;
+    flex-direction: column;
+}
+
+.block4{
+    margin-top: 17px;
+    background: #000000;
+    height: 38vh;
+    width: 37vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.block4 p{
+    color: #d1d1d1;
+}
+
+.block4p{
+    color: #d1d1d1;
+    font-size: 4.1vh;
+}
+
+
+.halfway{
+    height: 55%;
+    width: 90%;
+    margin: 5%;
+    background: #6b6b6b;
+    border-radius: 28px;
+    background-image: url('https://images.unsplash.com/photo-1600437898039-a326c15b07e1?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+background-position: center;
+filter: grayscale();
+}
+
+.block5{
+    margin-top:17px;
+    margin-left:17px;
+    background: #d1d1d1;
+    height: 96.1vh;
+    width: 28vw;
+    padding: 2%;
+}
+
+.group2{
+    display: flex;
+}
+.block1, .block2, .block3, .block4, .block5{
+    border-radius: 35px;
+}
+
+.containee{
+    width: 69vw;
+    overflow: hidden;
+    height: 140vh;
+}
+
+
+.flexthis{
+    display: flex;
+    padding-left: 7%;
+
+
+}
+
+
+
+.fromleft{
+    animation: fromleft 1s ease;
+}
+
+@keyframes fromleft{
+    from{
+      opacity: 0;
+    }
+}
+
+
+.halfway25{
+    margin: 5%;
+    line-height: 250%;
+    margin-top: 17%;
+}
+.halfway3{
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    line-height: 250%;
+    margin-top: 17%; 
+}
+
+.halfway3 p{
+font-size: larger;   
+}
+
+.halfway25 p{
+font-size: larger;   
+}
+.divi{
+    overflow: hidden;
+}
+
+.in-view {
+    animation: slideups 1.5s ease forwards; /* Animation applied when element is in view */
+}
+
+
+
+.cursor {
+    position: absolute;
+    background: rgba(248, 248, 248, 0.3);
+  backdrop-filter: blur(2px);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    z-index: 7;
+    transition: 0.3s  transform,
+    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+    font-family: sf pro text;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.3vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
+}
+
+.cursor p{
+    text-align: center;
+    font-family: sf pro text;
+    color: #1a1a1a;
+}
+
+
+
+.cursor.active {
+    opacity: 1;
+    transform: scale(6.5);
+}
+
+.cursor.active::before {
+    opacity: 1;
+}
+
+.cursor-follower {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    z-index: 1;
+    transition: 0.6s cubic-bezier transform,
+        0.4s cubic-bezier(0.75, -1.27, 0.3, 2.33) opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: translate(4px, 4px);
+    display: none;
+}
+
+.cursor-follower.active {
+    opacity: 0.3;
+    transform: scale(0);
+}
+
+
+.position2{
+    position: absolute;
+    right: 12%;
+    cursor: pointer;
+    bottom: 10%;
+}
+
+
+
+@keyframes slideups {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+
+
+#returnAnimation {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#returnAnimation h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+
+
+    #returnAnimation2 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation2 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation2 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+</style>
+
+
+
+<style>
+
+@media (max-width:600px) {
+    .navigation a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: small;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+}
+
+
+
+    .position1{
+        right: 40%;
+    }
+
+    .first{
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: -20%; 
+    }
+
+    .title{
+        margin-top: 16%;
+    }
+
+    .toflex{
+        flex-direction: column;
+    }
+
+.mainimg{
+height: 35vh;
+width: 93vw;
+margin-left: -1%;
+border-radius: 40px;
+}
+
+.nono p{
+ font-size: 7vh;
+}
+
+.mainimg img {
+    width: 140%;
+    height: 140%;
+    object-fit: cover;
+}
+
+.txt{
+    width: 85%;
+    padding-top: 20%;
+    padding-right: 3%;
+    font-size: 2.5vh;
+    margin-left: 3%;
+}
+
+.yo p{
+    font-size: 5vh;
+}
+
+
+.big {
+    font-size: 3vh;
+}
+    
+
+.introtxt{
+   height: 40vh;
+    }
+    .introtxt2{
+   height: 90vh;
+   padding-top: 125%;
+    }
+
+    .thestuff img{
+    height: 170px;
+}
+
+.thestuff{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vw;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+
+.continue{
+    margin-top: 30%;
+    height: 70vh;
+}
+
+.continue2{
+    height: 70vh;
+}
+
+.thestuff2 img{
+    height: 170px;
+}
+
+.thestuff2{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vw;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+    
+    <div class="cursor">
+        <p>See</p>
+    </div>
+    <div class="cursor-follower"></div>
+    <div class="navigation">
+        <nav>
+          <div class="import">
+            <a href="work2.html" class="magnetic-btn" onclick="returnAnimation3(event)">Work</a>
+            <a href="" class="thisis">About</a>
+            <a href="" class="talkto">Contact</a>
+          </div>
+          <div class="title"></div>
+          <div class="okay">
+            <a href="home.html" class="thatsme">CJ <span class="hide">Cr<span class="kion">aft</span>ed </span>®</a>
+          </div>
+
+        </nav>
+      </div>
+
+      <div class="first">
+        <div class="title"><h1 class="text-reveal">Frica</h1></div>
+        <div class="extratxt"><p>This is a magazine that showcases the beauty and character found in the art of Africa .  </p></div>
+
+      </div> 
+
+
+      <div class="goto">
+        <div class="position1">
+           <div class="livesite"><p>Live</p></div> 
+           <div class="pointer">
+            <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>next</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#333" stroke-width="1.5">
+                        <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                            <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                            <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+           </div>
+           </div>
+        </div>
+        <div class="toflex">
+            <div class="mainimg" id="mainimg" style="position: relative;">
+                <img src="https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <div class="yo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #e8e8e8; font-family: New york; font-size: 12vh; font-weight: 800;mix-blend-mode: difference;border-radius: 35px;">
+                    <p style="text-align: center;">Frica</p>
+                </div>
+            </div>
+            <div class="txt"><p>In this magazine, I embarked on a little journey where I decided to make a website on the voice and echo of African Art .</p></div>
+            </div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+        <div class="introtxt">
+            <p class="why">( The Big Picture )</p>
+            <p class="big fade-in">What comes to your mind when you think about African art ?</p>
+            <p class="who">( Apart from poverty)</p>
+            </div>
+            
+<div class="spacer"></div>
+
+<div class="spacer"></div>
+<div class="manting">
+<div class="image">
+    <img src="https://images.unsplash.com/photo-1518601794912-1af91724e528?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+    <div class="nono" style="position: absolute; top: 53%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #e8e8e8; font-family: New york; font-size: 22vh; font-weight: 800;border-radius: 35px;mix-blend-mode: difference;">
+        <p style="text-align: center;">Frica.</p>
+    </div>
+</div>
+</div>
+
+
+
+    <div class="introtxt2">
+        <p class="why">( The Bigger Picture )</p>
+        <p class="big">Is it beauty, freedom, Joy, Community ?</p>
+        <p class="who">( It's all the above )</p>
+        </div>
+
+        <div class="introtxt">
+            <p class="why">( The Biggest Picture )</p>
+            <p class="big">I tried to recreate this characteristics in this magazine.</p>
+            <p class="who">( Because why not )</p>
+            </div>
+
+
+            <div class="continue">
+                <div class="why2"><p>( Mock-Up  )</p></div>
+                <div class="thestuff">
+                    <div class="text"><p>MacBook</p></div>
+                    <img src="Devices\mac.png" alt="" srcset="">
+                </div>
+            </div>
+            
+            
+            <div class="continue2">
+                <div class="why2"><p>( Mock-Up  )</p></div>
+                <div class="thestuff2">
+                    <div class="text"><p>iPhone</p></div>
+                    <img src="Devices\iphone.png" alt="" srcset="">
+                </div>
+            </div>
+
+<div class="introtxt3">
+    <p class="why">( The Issue )</p>
+    <p class="big">If you search for an African art magazine, you wouldn't really find one that showcases the art for what it's really worth .</p>
+    <p class="who">( Made me start this project )</p>
+</div>
+    
+
+<div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+
+
+    <div class="letsendit">
+ <p class="why">( The Summary )</p>
+<div class="containee">
+
+<div class="group1 fade-in">
+  <div class="block1" data-animation="ouvrir">
+    <div class="text"><p>Queries</p></div>
+    <div class="text-wrapper">
+        • Why African art ? • Why African art ? • Why African art ? • Why African art ?
+        • Why African art ? • Why African art ? • Why African art ? • Why African art ?
+        • Why African art ? • Why African art ? • Why African art ? • Why African art ?
+        • Why African art ? • Why African art ? • Why African art ? • Why African art ?
+      </div>
+      
+  </div>
+  <div class="block2">
+    <div class="text"><p>Logo ®</p></div>
+    <p class="block2p text__reveal">Frica.</p>
+  </div>
+</div>
+
+
+<div class="group2">
+    <div class="insidegroup">
+  <div class="block3">
+    <div class="text"><p>Virtue</p></div>
+    <div class="mainting">
+        <p><span class="fade-in">ART MADE </br></span><span class="fade-in"> TO BE </br></span><span class="fade-in">SHARED <span class="chatgptloookingahh"></span></span></p>
+</div>
+  </div>
+
+
+
+
+  <div class="block4 fade-in">
+    <div class="text"><p>© Branding</p></div> 
+    <p class="block4p slide-up">CJ Crafted ® •</p>
+  </div>
+</div>
+
+<div class="last">
+  <div class="block5 fade-in">
+    <div class="halfway"></div>
+    <div class="halfway2">
+        <div class="text"><p>Solved</p></div>  
+    </div>
+<div class="flexthis">
+    
+    <div class="halfway25">
+        <p>•</p>
+        <p>•</p>
+        <p>•</p>
+        <p>•</p>
+    </div>
+    <div class="halfway25">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="halfway25">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="halfway3">
+        <div class="divi">
+        <p> Emotion </p>
+    </div>
+    <div class="divi">
+        <p> Navigation </p>
+    </div>
+    <div class="divi">
+        <p> Function </p>
+    </div>
+    <div class="divi">
+        <p> Animation </p>
+    </div>
+    </div>
+
+    
+</div>
+  </div>
+</div>
+</div>
+
+
+</div>
+    </div>
+
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="introtxt">
+        <p class="why">( My implementation )</p>
+        <p class="big fade-in">I didn't just go about adding animations based on modern trends I thought of what fit " Africa " </p>
+        <p class="who">( My approach )</p>
+        </div>
+
+    <div class="continue3">
+        <div class="wh"><p>( Up Next )</p></div>
+        <div class="thestuff3">
+            <div class="text"><p>Case two</p></div>  
+            <div class="img" style="cursor: pointer;">
+                <img src="https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #fff9f0; font-family: Arial, Helvetica, sans-serif; font-size: 12vh; font-weight: 800;mix-blend-mode: difference;border-radius: 35px;">
+                    <p style="text-align: center;">Muzen</p>
+                </div>
+    
+                <div class="position2 position1">
+                    <div class="livesite2 livesite"><p>All <sup>(7)</sup></p></div> 
+                    <div class="pointer pointer2">
+                     <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                         <title>next</title>
+                         <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                             <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#333" stroke-width="1.5">
+                                 <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                                     <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                                     <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                                 </g>
+                             </g>
+                         </g>
+                     </svg>
+                    </div>
+                    </div>    
+                </div>      
+    </div>
+    </div>
+
+    <div class="spacer2">
+        <div class="divisions">
+            <div class="malt">
+    
+        <div class="division">
+            <p>© Frica</p>
+        </div>
+    </div>
+        <div class="division">
+            <a href="mailto:cjwebdesigned@gmail.com">
+                <span>cjwebdesigned@gmail.com</span> 
+            </a>
+        </div>
+    
+    </div>
+    
+    </div>
+</div>
+
+
+
+
+<div id="returnAnimation">
+    <h1>Index •</h1>
+</div>
+
+
+<div id="returnAnimation2">
+    <h1>About •</h1>  
+</div>
+
+<div id="returnAnimation3">
+    <h1>Work •</h1>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+<script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> 
+
+
+
+<script>
+    const elementsToAnimate = document.querySelectorAll('.text-reveal');
+
+    elementsToAnimate.forEach(text => {
+        const string = text.innerText;
+        const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+        text.innerHTML = spans;
+    });
+
+    gsap.set(".text-reveal span", { y: "200%" });
+
+    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+    tl.fromTo(".text-reveal span", { y: "200%" }, { y: "0%", stagger: 0.02 });
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                tl.play();
+            } else {
+                tl.reverse();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    elementsToAnimate.forEach(text => {
+        observer.observe(text);
+    });
+</script>
+
+
+
+<script>
+    // Check if the device supports touch events
+    if (!('ontouchstart' in window || navigator.maxTouchPoints)) {
+        // If it doesn't support touch events, execute the script
+        Shery.imageEffect(".image img", {
+            style: 4
+        });
+    }
+    </script>
+    
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+
+<script>
+  const lenis = new Lenis({
+  duration: 1.5,
+  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 1,
+  
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+</script>
+
+
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+  
+    function addParallaxEffect(element, strength) {
+      gsap.to(element, {
+        y: -strength * 30, 
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top bottom', 
+          end: 'bottom top', 
+          scrub: true, 
+        },
+      });
+    }
+    addParallaxEffect('.mainimg img', 3.1);
+    addParallaxEffect('.image img', 3.1);
+  </script>
+  
+
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+  
+  
+    function addParallaxEffect(element, strength) {
+        if (window.innerWidth > 600) {
+      gsap.to(element, {
+        y: -strength * 50, 
+        ease: 'power2.inOut',
+        scrollTrigger: {
+          trigger: element,
+          start: 'top bottom', 
+          end: 'bottom top', 
+          scrub: true, 
+        },
+      });
+    }
+}
+    addParallaxEffect('.thestuff', 5.9);
+    addParallaxEffect('.thestuff2', 5.9);
+    addParallaxEffect('.thestuff3 img', 1.9);
+  </script>
+
+
+  <script>
+    const textReveals = document.querySelectorAll('.text__reveal');
+    
+    function animateTextReveal(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log(entry);
+                const spans = entry.target.querySelectorAll('span');
+                spans.forEach((span, idx) => {
+                    setTimeout(() => {
+                        span.style.transform = 'translateY(0)';
+                    }, (idx + 1) * 50);
+                });
+    
+                // Using requestAnimationFrame for smoother rendering
+                let startTime;
+                function animate(time) {
+                    if (!startTime) startTime = time;
+                    const progress = time - startTime;
+    
+                    spans.forEach((span, idx) => {
+                        const delay = (idx + 1) * 50;
+                        if (progress > delay) {
+                            span.style.transform = 'translateY(0)';
+                        }
+                    });
+    
+                    if (progress < spans.length * 50) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+    
+                requestAnimationFrame(animate);
+            }
+        });
+    }
+    
+    const options = {
+        rootMargin: '0px',
+        threshold: 1.0
+    };
+    
+    const observe = new IntersectionObserver(animateTextReveal, options);
+    
+    textReveals.forEach(text => {
+        const string = text.innerText;
+        const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+        text.innerHTML = spans;
+        observe.observe(text);
+    });
+    
+      </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+           // Function to check if an element is in viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to handle intersection
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('animated'); // Add your animation class here
+          observer.unobserve(entry.target);
+      }
+  });
+}
+
+// Intersection Observer options
+var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3 // Adjust threshold as needed
+};
+
+// Create Intersection Observer
+var observer = new IntersectionObserver(handleIntersection, options);
+
+// Select elements to be observed
+var elementsToObserve = document.querySelectorAll('.slide-up, .fade-in'); // Select elements with animation classes
+
+// Observe each selected element
+elementsToObserve.forEach(el => {
+  observer.observe(el);
+});
+
+// Check if elements are already in viewport on page load
+window.addEventListener('load', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+});
+
+// Check if elements are in viewport on scroll
+window.addEventListener('scroll', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+});
+
+
+    })
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Function to check if an element is in viewport
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+// Function to add class when element is in viewport
+function addClassIfVisible() {
+  var elements = document.querySelectorAll('.word');
+  elements.forEach(function (element) {
+      if (isElementInViewport(element)) {
+          element.classList.add('in-view');
+      }
+  });
+}
+
+// Initialize and configure Intersection Observer
+var observer = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+      }
+  });
+});
+
+// Start observing .word elements
+var elements = document.querySelectorAll('.halfway3 p');
+elements.forEach(function (element) {
+  observer.observe(element);
+});
+
+// Check for visibility on page load
+addClassIfVisible();
+
+// Check for visibility on scroll
+window.addEventListener('scroll', addClassIfVisible);
+
+    })
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var cursor = document.querySelector(".cursor");
+        var cursorFollower = document.querySelector(".cursor-follower");
+        var imgElements = document.querySelectorAll(".img img");
+    
+        var posX = 0,
+            posY = 0,
+            mouseX = 0,
+            mouseY = 0;
+    
+        function updateCursorPosition() {
+            posX += (mouseX - posX) / 6;
+            posY += (mouseY - posY) / 6;
+    
+            cursor.style.left = posX + 'px';
+            cursor.style.top = posY + 'px';
+    
+            requestAnimationFrame(updateCursorPosition);
+        }
+    
+        requestAnimationFrame(updateCursorPosition);
+    
+        document.addEventListener("mousemove", function(e) {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+    
+        imgElements.forEach(function(imgElement) {
+            imgElement.addEventListener("mouseenter", function() {
+                cursor.classList.add("active");
+                cursorFollower.classList.add("active");
+            });
+    
+            imgElement.addEventListener("mouseleave", function() {
+                cursor.classList.remove("active");
+                cursorFollower.classList.remove("active");
+            });
+        });
+    });
+    </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const blocks = document.querySelectorAll('.block1');
+
+        const options = {
+            threshold: 0.2 // Trigger when 20% of the element is visible
+        };
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const animationName = entry.target.getAttribute('data-animation');
+                    entry.target.style.animation = `${animationName} 1.7s ease forwards`;
+                    entry.target.style.opacity = 1; // Set opacity to 1 to reveal the element
+                    observer.unobserve(entry.target); // Unobserve the element to prevent multiple triggers
+                }
+            });
+        }, options);
+
+        blocks.forEach(block => {
+            observer.observe(block);
+        });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const kayItems = document.querySelectorAll(".okay");
+      kayItems.forEach((kayItem) => {
+        kayItem.addEventListener("mouseenter", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          startShuffleAnimation(kionItem);
+        });
+        kayItem.addEventListener("mouseleave", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          stopShuffleAnimation(kionItem);
+        });
+      });
+    });
+    
+    function getRandomCharacter() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+    
+    function startShuffleAnimation(item) {
+      if (item.dataset.animating) {
+        return;
+      }
+      item.dataset.animating = true;
+      item.dataset.originalText = item.textContent;
+      const length = item.textContent.length;
+      let shuffles = 0;
+      const maxShuffles = 10;
+      const intervalDuration = 200 / maxShuffles;
+      item.dataset.animationInterval = setInterval(() => {
+        if (shuffles >= maxShuffles) {
+          stopShuffleAnimation(item); // Reset text content when max shuffles reached
+          clearInterval(item.dataset.animationInterval);
+          delete item.dataset.animating;
+        } else {
+          let shuffledText = "";
+          for (let i = 0; i < length; i++) {
+            shuffledText += getRandomCharacter();
+          }
+          item.textContent = shuffledText;
+          shuffles++;
+        }
+      }, intervalDuration);
+    }
+    
+    function stopShuffleAnimation(item) {
+      if (!item.dataset.animating) {
+        return;
+      }
+      clearInterval(item.dataset.animationInterval);
+      delete item.dataset.animating;
+      item.textContent = item.dataset.originalText; // Restore original text
+    }
+</script>
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation() {
+        var returnAnimation = document.querySelector("#returnAnimation");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "home.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thatsme').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation(); // Trigger return animation
+  });
+</script>
+
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation3(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      var returnAnimation = document.querySelector("#returnAnimation3");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+  
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+  
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+        window.location.href = "work2.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+    }
+</script>
+
+
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation2() {
+        var returnAnimation = document.querySelector("#returnAnimation2");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "about.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thisis').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation2(); // Trigger return animation
+  });
+  </script>
+
+<script>
+    // Function to trigger return animation
+    function returnAnimation2() {
+        var returnAnimation = document.querySelector("#returnAnimation2");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "about.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.thisis').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation2(); // Trigger return animation
+  });
+  </script>
+
+
+</body>
+</html>

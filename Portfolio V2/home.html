@@ -21,6 +21,7 @@
 
     html {
   scroll-behavior: smooth;
+  
 
 }
 
@@ -51,12 +52,38 @@ html.lenis {
         overflow-x:hidden;
         background: #e8e8e8;
         height: 100vh;
+        width: 100vw;
     }
 
     .first{
-    height: 100vh;
+    height: 97vh;
+    width: 98vw;
+    background: #e3e3e3;
+    overflow: hidden;
+    position: relative;
+    border: 0.02px solid #b2b2b2;
+    border-radius: 35px;
+    animation: fadein 1.5s ease ;
+    }
+    
+    @keyframes fadein{
+       from{
+        opacity: 0;
+        scale: 1.07;
+        border-radius: 0;
+       }
     }
 
+
+
+
+    .mano{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .navigation {
       position: relative;
       top: 0;
@@ -67,7 +94,19 @@ html.lenis {
       z-index: 10;
       font-family: 'Sf Pro Text', sans-serif;
       padding-top: 27px;
+      animation: fade-in-down 1.5s ease;
     }
+
+    @keyframes fade-in-down{
+    0%{
+        opacity:0;
+        transform: translateY(-10px);
+    }
+
+    100%{
+        opacity: 1;
+    } 
+}
 
 
     .navigation nav {
@@ -94,13 +133,14 @@ html.lenis {
 
 .import a:hover::before {
       width: 100%;
+      transform-origin: right;
     }
 
     .import a::before {
       content: '';
       position: absolute;
       width: 0;
-      height: 1.5px;
+      height: 1px;
       bottom: 0;
       left: 0;
       background-color: #333; 
@@ -133,42 +173,20 @@ height: 200px;
   text-decoration: none;
   color: #333;
   position: relative;
+  padding-top: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-bottom: 6px;
   font-weight: 500;
   font-size: medium;
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s ease;
-
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
 }
 
-.okay a::before,
-.okay a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: #333;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s ease;
-}
-
-.okay a::after {
-  transform-origin: right;
-}
-
-.okay a:hover {
-  color: #333;
-
-}
-
-.okay a:hover::before,
-.okay a:hover::after {
-  transform: scaleX(1);
-}
 
 @keyframes typing {
   from { width: 0; }
@@ -176,11 +194,28 @@ height: 200px;
 }
 
     .work h2{
-        font-weight: 430;
+        font-weight: 400;
         color: #333;
-        font-size: larger;
+        font-size: large;
         z-index: 6;
     } 
+
+    .ohh{
+      color: #e8e8e8;
+    }
+
+     .mene{
+      display: flex;
+      position: absolute;
+      top:35%;
+      width: 170px;
+      z-index: 1;
+      justify-content: space-around;
+     }
+
+     .nutz{
+      margin-top: 2%;
+     }
 
     .work{
         padding-left: 5%;
@@ -202,36 +237,17 @@ height: 200px;
     background-color: #333;
     }
 
-    .frimg{
-        position: absolute;
-      z-index: 1;
-      top: 0;
-      left: 18%;
-      height: 100vh;
-      width:100vh;
-      overflow:hidden;
-      background: transparent;
-    }
-
-    .frimg img{
-      z-index: 1;
-      height: 130%;
-      width: 100%;
-      object-fit:cover;
-      position: absolute;
-      filter: grayscale(100%);
-      background: transparent;
-    }
 
     .arrow{
       padding-bottom: 3%;
-    }
+}
+
 
     .hello-text {
-      left:45%;
-            top:95%;
+      left:46%;
+            top:94%;
             position:absolute;
-            width: 100vw;
+            width: 96vw;
             font-family: 'SF Pro Rounded Regular', Arial, sans-serif;
             text-align: center;
             font-size: 1.25em;
@@ -259,9 +275,24 @@ height: 200px;
     height: 100vh;
     width: 100vh;
     overflow: hidden;
-    clip-path: inset(100% 0 0 0  round 15px);
-    animation: revealImageAnimation 2.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    clip-path: inset(100% 0 0 0  round 75px);
+    animation: revealImageAnimation 3.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    animation-delay: 0.7s;
 }
+
+@keyframes revealImageAnimation {
+    0% {
+        clip-path: inset(100% 0 0 0 round 75px);
+        filter: blur(5px);
+    }
+    100% {
+        clip-path: inset(0 0 0 0 round 75px);
+        filter: blur(0px);
+    }
+}
+
+
+
 
 .frimg img {
     height: 130%;
@@ -271,16 +302,7 @@ height: 200px;
     filter: grayscale(100%);
 }
 
-@keyframes revealImageAnimation {
-    0% {
-        clip-path: inset(100% 0 0 0  round 35px);
-        filter: blur(5px);
-    }
-    100% {
-        clip-path: inset(0 0 0 0  round 35px);
-        filter: blur(0px);
-    }
-}
+
 
 .website-content {
   position: absolute;
@@ -291,60 +313,7 @@ height: 100vh;
 background: #e8e8e8;
 }
 
-.toggle-btn{
-  position: fixed;
-  left: 95%;
-  z-index: 15;
-  backdrop-filter: blur(10px);
-  border-radius: 11px;
-}
 
-.burger {
-display: flex;
-justify-content: center;
-align-items: center;
-padding: 1.75em 2em 1.5em 2em;
-background: rgba(255, 255, 255, 0);
-outline: none;
-border: none;
-width: 28px;
-height: 20px;
-transition: all 250ms ease-out;
-cursor: pointer;
-mix-blend-mode: difference;
-}
-
-
-.burger:before,
-.burger:after {
-    content: "";
-    width: 33px;
-    height: 1.4px;
-    position: absolute;
-    background: #000000;
-    transition: transform 0.3s ease;
-}
-
-.burger:before {
-    transform: translateY(-3px);
-}
-
-.burger:after {
-    transform: translateY(3px);
-}
-
-.burger.rotate:before {
-    transform: translateY(0) rotate(-45deg);
-}
-
-.burger.rotate:after {
-    transform: translateY(0) rotate(45deg);
-}
-
-.burger.rotate:before,
-.burger.rotate:after {
-    transform-origin: center;
-}
 
 .overlay {
 position: fixed;
@@ -469,11 +438,12 @@ padding-top: 0.6%;
 .toflex{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .text__reveal{
     overflow: hidden;
-    white-space:pre; 
+    white-space:pre;
 }
 
 .text__reveal span{
@@ -568,9 +538,8 @@ padding-top: 0.6%;
 }
 
 
-
 .btn2{
-  margin-top: 3%;
+  margin-top: 7%;
 }
 
 .navigation-item a {
@@ -615,13 +584,17 @@ padding-top: 0.6%;
   left: 50%;
   width: 0px;
   height: 400px;
-  background: url(img-1.jpg) no-repeat center/cover;
+  background: url(https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) no-repeat center/cover;
   filter: grayscale(65%);
   overflow: hidden;
   border-radius: 35px;
   z-index: 1;
   will-change: transform;
   pointer-events: none;
+}
+
+.cooling p{
+  font-weight: 400;
 }
 
 
@@ -712,6 +685,26 @@ padding-top: 0.6%;
       transition: transform 0.2s ease;
 }
 
+
+@-moz-document url-prefix() {
+  .projects__slider {
+    display: none;
+    transition: transform 0.2s ease;
+  }
+
+  .frimg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 18%;
+    height: 100vh;
+    width: 100vh;
+    overflow: hidden;
+    clip-path: inset(0 0 0 0 round 75px);
+    animation:fadein 1s ease;
+}
+
+}
 .project {
   flex-shrink: 0;
   position: relative;
@@ -780,8 +773,9 @@ padding-top: 0.6%;
   position: absolute;
   object-fit: cover;
   overflow: hidden;
-  scale: 1.1;
+  scale: 1.2;
 }
+
 
 .centered-image-container {
   position: absolute;
@@ -794,12 +788,10 @@ padding-top: 0.6%;
   overflow: hidden;
   backdrop-filter: blur(10px);
   border-radius: 23px;
+  display: none;
 }
 
 
-.theimages{
-
-}
 
 .theimages img{
   opacity: 0;
@@ -862,18 +854,19 @@ height: 415px;
 }
 
 .new h2{
-  font-weight: 530;
+  font-weight: 400;
    padding-bottom: 5%;
    color: #333;
    font-size: 2vh;
    margin-left: 0.5%;
 }
 
+
 .new h5{
   font-weight: 430;
-   padding-bottom: 3%;
-   color: #6b6b6b;
-   font-size: 7.5vh;
+  padding-bottom: 2%;
+   color: #6e6e6e;
+   font-size: 100px;
 }
 
 
@@ -881,13 +874,13 @@ height: 415px;
   margin-top: 7%;
   border-bottom:0.2px solid #6b6b6b;
   cursor: pointer;
-  width: 93%;
+  width: 85.4vw;
   padding-bottom: 3%;
   transition: width 0.5s ease;
 }
 
 .miss:hover {
-  width: 85%; /* Adjust width on hover */
+  width: 86.4vw;
 }
 
 .answer{
@@ -900,13 +893,14 @@ height: 415px;
 .answer h3{
   font-weight: 430;
         color: #555;
-        font-size: large;
+        font-size: medium;
         padding-left: 1%;
         letter-spacing: 1%;
         width: 55%;
         border: 0.02px solid #b2b2b2;
         padding: 3%;
         border-radius: 25px;
+        background: #e3e3e3;
 }
 .miss.active .answer{
 max-height: 300px;
@@ -914,13 +908,29 @@ animation: fade 1s ease-in-out;
 
 }
 
+.miss .svg-container{
+width: 50px;
+height: 50px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: all 1s;
+border:1px solid #888;
+}
+
+.miss:hover .svg-container{
+background: rgba(53, 53, 53, 0.1);
+scale: 0.9;
+
+}
 
 
 .miss.active svg {
-transform: rotate(-180deg);
+transform: rotate(-170deg);
 }
 svg{
-transition: transform 0.5s ease-in;
+transition: transform 0.7s ease;
 }
 @keyframes fade {
 from {
@@ -945,19 +955,24 @@ justify-content: space-between;
 }
 
 .idg {
-  height: 115vh;
-  width: 99.8%;
-  margin-left:0.1% ;
+  height: 105vh;
+  width: 100vw;
   background: #000000;
   position: relative;
-  margin-top: 10%;
+  margin-top: 30%;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05), 0 .2px .5px rgba(0, 0, 0, 0.03);
   border-top-right-radius: 40px;
   border-top-left-radius: 40px;
-  margin-bottom: 10%;
-}
+  padding-bottom: 10%;}
 
-
+.mano2{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10%;
+    }
 
 .tata{
   float: right;
@@ -969,7 +984,7 @@ justify-content: space-between;
 .dont h2{
   color:#726e6e;
   padding-top: 6%;
-  font-size: 6vh;
+  font-size: 5vh;
   font-weight: 530;
   padding-left: 6%;
 }
@@ -985,6 +1000,8 @@ justify-content: space-between;
 .social-media {
   color:#726e6e;
 }
+
+
 
 .contact-info{
   color: #726e6e;
@@ -1026,7 +1043,7 @@ padding-left: 4em 0 4em
 #returnAnimation {
     height: 100vh;
     width: 100%;
-    background-color: #000000;
+    background-color: #e8e8e8;
     position: fixed;
     z-index: 999;
     top: 0;
@@ -1036,6 +1053,34 @@ padding-left: 4em 0 4em
     align-items: center;
     justify-content: center;
 }
+
+
+#returnAnimation h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
 
 
 #returnAnimation2 {
@@ -1050,6 +1095,7 @@ padding-left: 4em 0 4em
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
 }
 
 
@@ -1212,8 +1258,10 @@ textarea#message {
 }
 
 .submit a[role="button"]:hover{
-  padding-right: 4%;
+  padding-right: 2.5%;
 }
+
+
 .idg * {
     transition: color 1s ease-in-out;
   }
@@ -1314,7 +1362,7 @@ textarea#message {
 
 
 .preview-text{
-  color: #555;
+  color: #fff;
   font-size: small;
   font-weight: 400;
   position: absolute;
@@ -1327,10 +1375,15 @@ textarea#message {
   padding-right: 1.5%;
   border-radius: 25px;
   backdrop-filter: blur(55px);
-  background: rgba(255, 255, 255, 0.2);
+opacity: 0.6;
 }
 
-        .project-preview img {
+.menu{
+  display: none;
+  text-decoration: underline;
+}
+
+  .project-preview img {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1339,7 +1392,99 @@ textarea#message {
             height: 65%;
             object-fit: cover;
             border-radius: 25px;
+  }
+
+
+
+
+  #returnAnimation4 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation4 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
         }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation4 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
+
+    #returnAnimation5 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation5 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        70% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation5 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
     </style>
 
 
@@ -1350,17 +1495,68 @@ textarea#message {
 .service {
 display: none;
 }
+.menu-item p#active::after {
 
+top: -5%;
+
+}
+
+.menu-item p {
+font-size: 12vw;
+}
+.first{
+    height: 97vh;
+    width: 97vw;}
+
+.spacer {
+  height: 17vh;
+}
+
+
+.mene{
+      display: flex;
+      position: absolute;
+      top:19%;
+      right: 50%;
+      width: 170px;
+      z-index: 1;
+      justify-content: space-around;
+     }
+
+.miss .svg-container{
+width: 40px;
+height: 40px;
+}
+
+.navigation a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: small;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+}
 
 }
 
 @media (max-width: 600px) and (orientation: landscape) {
-.navigation a {
-  display:none;
-}
-
-.navigation{
-  display: none;
+  .navigation a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: medium;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
 }
 }
 
@@ -1371,11 +1567,10 @@ display: none;
 }
 
 
-
 @media (max-width: 600px) {
-.navigation{
-  display: none;
-}
+
+
+
 
 .toflex{
 flex-direction: column;
@@ -1431,13 +1626,7 @@ opacity: 0;
   border-top-left-radius: 32px;
 }
 
-.toggle-btn{
-  position: fixed;
-  left: 80%;
-  z-index: 15;
-  backdrop-filter: blur(10px);
-  border-radius: 11px;
-}
+
 
 .hello-text{
   left: 35%;
@@ -1454,7 +1643,7 @@ opacity: 0;
 
 
 .btn2{
-  margin-top: -7%;
+  margin-top: -1%;
 }
 
 
@@ -1470,8 +1659,14 @@ opacity: 0;
 font-weight: 430;
 padding-bottom: 3%;
 color: #6b6b6b;
-font-size: 2.7vh;
+font-size: 24px;
 }
+
+.miss{
+  padding-top: 3%;
+  padding-bottom: 2%;
+}
+
 .projects__slider {
       display: none;
 }
@@ -1514,7 +1709,6 @@ opacity: 0;
     }
 
 
-
 .frimg img{
       z-index: 1;
       height: 100%;
@@ -1525,9 +1719,8 @@ opacity: 0;
       background: transparent;
     }
 
-    .new{
-      margin-top: 100%;
-    }
+
+
 
     
 }
@@ -1541,6 +1734,11 @@ opacity: 0;
     display: none;
   }
 
+  .btn2{
+  margin-top: -7%;
+}
+
+
   .contact-form{
     display: none;
   }
@@ -1549,14 +1747,14 @@ opacity: 0;
     width: 100%;
   }
 
-  .new{
-      margin-top: 70%;
-    }
 
+  
 
   .idg{
     margin-top:-100% ;
   }
+
+
 }
 
 @media (max-width: 1180px) and (orientation:potrait){
@@ -1567,12 +1765,22 @@ opacity: 0;
   display: none;
 }
 
+.menu{
+  display: block;
+}
+
 .idg p{
   color:#726e6e;
   padding-top: 6%;
   font-size: 2.5vh;
   width: 75%;
 }
+
+.spacer {
+  height: 17vh;
+}
+
+
 
 .btn{
       margin-top: 24%;
@@ -1602,11 +1810,18 @@ height: 150px;
   margin-top: 10%;
  }
 
- 
+
+
 .number2 p{
 font-size: 3vw;
 }
 
+.okay{
+   display: none;
+}
+.import a {
+  display:none;
+}
 
 
 .project__details p {
@@ -1618,9 +1833,7 @@ opacity: 0;
   font-size: 3.2vh;
 }
 
-.navigation{
-  display: none;
-}
+
 
 .burger{
   margin-top: -92%;
@@ -1647,6 +1860,29 @@ opacity: 0;
 }
 
 @media (max-width: 1180px) and (min-height: 820px) {
+
+  .lover{
+  display: none;
+ }
+ 
+ .menu{
+  display: block;
+}
+ .spacer {
+  height: 17vh;
+}
+
+
+
+ .idg{
+    margin-top:-80% ;
+  }
+
+
+  .hello-text{
+    left: 43%;
+    top: 96%;
+  }
 
   .frimg{
         position: absolute;
@@ -1715,9 +1951,6 @@ opacity: 0;
   font-size: 3.2vh;
 }
 
-.navigation{
-  display: none;
-}
 
 .burger{
   margin-top: -92%;
@@ -1737,19 +1970,25 @@ opacity: 0;
 }
 
 
-.toggle-btn{
-  position: fixed;
-  left: 85%;
-  z-index: 15;
-  backdrop-filter: blur(10px);
-  border-radius: 11px;
-}
+
+
 
 }
 
+@media (max-width:1366px) and (max-height: 768px) and (orientation: landscape) {
+  .idg{
+    height: 115vh;
+  }
+  .spacer2{
+  height: 57vh;
+}
+}
 
-
-
+@media (max-width:1280px) and (max-height: 720px) and (orientation: landscape) {
+.spacer{
+  height: 57vh;
+}
+}
 
 @media (max-width:1280px) and (max-height: 800px) and (orientation: landscape) {
   .number1 p{
@@ -1758,10 +1997,7 @@ opacity: 0;
 }
 
 
-.question h5{
 
-   font-size: 6.5vh;
-}
 
 .project img {
   width: 130%;
@@ -1794,6 +2030,9 @@ opacity: 0;
 }
 
 </style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@builder.io/partytown@0.10.1/lib/partytown-sw.min.js"></script>
 </head>
     
     
@@ -1812,6 +2051,7 @@ opacity: 0;
 <div class="cursor-follower"></div>
  
   <div class="website-content">
+    <div class="mano">
     <section class="first">
       <div class="navigation">
         <nav>
@@ -1822,46 +2062,35 @@ opacity: 0;
           </div>
           <div class="title"></div>
           <div class="okay">
-            <a href="#" class="magnetic-link">CJ Crafted ®️</a>
+            <a href="home.html" class="magnetic-link koi">CJ Cr<span class="kion">aft</span>ed ®</a>
           </div>
         </nav>
       </div>
-          <div class="toggle-btn">
-            <button class="burger" onclick="rotateBurger();"></button>
-        </div>
         <div class="work">
-          <div class="arrow big"><?xml version="1.0" encoding="UTF-8"?>
-            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <title>I'm a web designer</title>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#333333" stroke-width="1.5">
-                        <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(90.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-                            <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-                            <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
-                        </g>
-                    </g>
-                </g>
-            </svg></div>
-        <h2>Web</h2>
-        <h2>Designer & Developer</h2>
+          <div class="mene">
+
+
+        <h2>○ Web D<span class="import" id="import"></span>r</h2>
+    
+      </div>
         <div class="frimg">
             <img src="hero-img.png" alt="" srcset="">
         </div>
         </div>
           <h2 class="hello-text" id="helloTextContent"> ________</h2>
     </section>
+  </div>
 
 
 
   <section class="about">
     <div class="toflex">
     <div class="number1">
-      <p class="text__reveal">I exert to perfect my craft In order to</p>
-      <p class="text__reveal"> deliver exellence to my clients.</p>
+      ○ Short Form
     </div>
 
     <div class="number2">
-      <p>With an intuitive approach, I delve deep into projects, crafting captivating designs that aim to meet client expectations and leave a lasting impression.</p>
+      <p>With an intuitive approach, I delve deep into projects, crafting effective designs that aim to meet client expectations and leave a good impression.</p>
     </div>
   </div>
 
@@ -1874,24 +2103,24 @@ opacity: 0;
 
     <div class="navigation-wrapper">
       <div class="cooling">
-      <p>( Selected Works )</p>
+      <p>( Featured Work )</p>
     </div>
       <ul class="navigation-list">
-        <li class="navigation-item" onclick="window.location.href='#'">
+        <li class="navigation-item">
 
-          <a href="#" class="navigation-link navigation-link-1">
+          <a href="case1.html" class="case1 navigation-link navigation-link-1">
             <span data-text="Parks ">Parks</span>
           </a>
         </li>
         <div class="project-overlay"></div>
-        <li class="navigation-item" onclick="window.location.href='#'">
-          <a class="navigation-link navigation-link-2">
+        <li class="navigation-item">
+          <a href="case2.html" class="case2 navigation-link navigation-link-2">
             <span data-text="Frica">Frica</span>
           </a>
         </li>
         <li class="navigation-item" onclick="window.location.href='#'">
           <a class="navigation-link navigation-link-3">
-            <span data-text="Images">Images</span>
+            <span data-text="Élanique">Élanique</span>
           </a>
         </li>
         <li class="navigation-item" onclick="window.location.href='#'">
@@ -1918,26 +2147,23 @@ opacity: 0;
     </div>
   </section>
 
-
+  <div class="spacer"></div>
   <section class="new">
     <h2>( Frequently asked )</h2>
         <div class="miss">
         <div class="question">
-          <h5>CJ, are you Available ?</h5>
+          <h5> Available ?</h5>
           <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
-            <defs>
-              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
-            </defs>
-            <title>arrow-ios-downward</title>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="arrow-ios-downward">
-                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
-                  <rect class="cls-1" width="15" height="10"/>
-                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
-                </g>
+            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>next</title>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                      <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                          <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                          <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                      </g>
+                  </g>
               </g>
-            </g>
           </svg>
         </div>
         </div>
@@ -1948,21 +2174,18 @@ opacity: 0;
       </div>
       <div class="miss">
         <div class="question">
-          <h5>CJ, what do you create with ?</h5>
+          <h5>Create with ?</h5>
           <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
-            <defs>
-              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
-            </defs>
-            <title>arrow-ios-downward</title>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="arrow-ios-downward">
-                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
-                  <rect class="cls-1" width="15" height="10"/>
-                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
-                </g>
+            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>next</title>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                      <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                          <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                          <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                      </g>
+                  </g>
               </g>
-            </g>
           </svg>
         </div>
         </div>
@@ -1972,59 +2195,59 @@ opacity: 0;
       </div>
       <div class="miss">
         <div class="question">
-          <h5>CJ, will you marry me ?</h5>
+          <h5>Marry me ?</h5>
           <div class="svg-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
-            <defs>
-              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
-            </defs>
-            <title>arrow-ios-downward</title>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="arrow-ios-downward">
-                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
-                  <rect class="cls-1" width="15" height="10"/>
-                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
-                </g>
+            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>next</title>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                      <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                          <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                          <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                      </g>
+                  </g>
               </g>
-            </g>
           </svg>
         </div>
         </div>
           <div class="answer">
-            <h3>No.</h3>
+            <h3>No way you actualy opened this lol.</h3>
         </div>
       </div>
       <div class="miss">
         <div class="question">
-          <h5>CJ, do you make company websites ?</h5>
+          <h5>Websites ?</h5>
           <div class="svg-container">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.5 32.5" width="54.6" height="32.5">
-            <defs>
-              <style>.cls-1{fill:#fff;opacity:0;}.cls-2{fill:#6b6b6b;}</style>
-            </defs>
-            <title>arrow-ios-downward</title>
-            <g id="Layer_2" data-name="Layer 2">
-              <g id="arrow-ios-downward">
-                <g id="arrow-ios-downward-2" data-name="arrow-ios-downward">
-                  <rect class="cls-1" width="15" height="10"/>
-                  <path class="cls-2" d="M12,16a1,1,0,0,1-.64-.23l-6-5A1,1,0,1,1,6.64,9.23L12,13.71l5.36-4.32a1,1,0,0,1,1.41.15A1,1,0,0,1,18.63,11l-6,4.83A1,1,0,0,1,12,16Z"/>
-                </g>
+
+            <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>next</title>
+              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#726e6e" stroke-width="1.5">
+                      <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                          <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                          <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                      </g>
+                  </g>
               </g>
-            </g>
           </svg>
         </div>
         </div>
           <div class="answer">
-            <h3>Yeah I do.</h3>
-           
+
+            <h3>Yeah I make those and I try to demonstrate the value of whatever I create in my websites.        
+          </h3>
+    
         </div>
       </div>
-      <p class="tata">( Let's work together )</p>
+
   </section>
 
+  <div class="spacer2"></div>
+
+  
   <section class="idg">
     <div class="dont">
-      <h2>( Contact Me )</h2>
+      <h2>{ Contact Me }</h2>
     </div>
     
     <div class="contact-section">
@@ -2033,7 +2256,7 @@ opacity: 0;
           <div class="contact-details col">
               <p class="lover">
                   Let's make something<br/>
-                  new while we can<br/>
+                  Special together.<br/>
                   Reach out.
               </p>
               <div class="social-media item">
@@ -2078,7 +2301,7 @@ opacity: 0;
                           <input type="text" id="company" name="company" placeholder="Company" />
                       </div>
                       <div class="row">
-                          <textarea id="message" name="message" placeholder="Message" rows="5"></textarea>
+                          <textarea id="message" name="message" placeholder="Message ..." rows="5"></textarea>
                       </div>
                       <div class="row submit">
                           <a href="thanks.html" role="button" onclick="submitForm()">Submit</a>
@@ -2102,9 +2325,7 @@ opacity: 0;
           </div>
       </div>
   </div>
-  
 
-    
   </section>
 
 </div>
@@ -2141,90 +2362,36 @@ opacity: 0;
     </div>
 
 
-    <div id="returnAnimation"></div>
+    <div id="returnAnimation">
+      <h1>La fin •</h1>
+    </div>
 
 
 
     <div id="returnAnimation2">
-      <h1>About •</h1>
-
-
-    
+      <h1>About •</h1>  
   </div>
   <div id="returnAnimation3">
     <h1>Work •</h1>
 </div>
+
+<div id="returnAnimation4">
+  <h1>Parks •</h1>
+</div>
+
+<div id="returnAnimation5">
+  <h1>Frica •</h1>
+</div>
+
+
+
 </body>
 
-<script>
- document.addEventListener("DOMContentLoaded", function() {
-    let activeItemIndicator = CSSRulePlugin.getRule(".menu-item p#active::after");
-    const toggleButton = document.querySelector(".burger");
-    let isOpen = false;
 
-    gsap.set(".menu-item p", { y: 225 });
-
-    const timeline = gsap.timeline({ paused: true });
-
-    timeline.to(".overlay", {
-        duration: 1.5,
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        ease: "power4.inOut",
-        onComplete: function() {
-            toggleButton.style.background = "#e8e8e8";
-            toggleButton.style.color = "#000000";
-            toggleButton.style.borderRadius = "20px"; // Adjust text color if needed
-        }
-    });
-
-    timeline.to(".menu-item p", {
-        duration: 1.5,
-        y: 0,
-        stagger: 0.2,
-        ease: "power4.out"
-    }, "-=1");
-
-    timeline.to(activeItemIndicator, {
-        width: "100%",
-        duration: 1,
-        ease: "power4.out",
-        delay: 0.5
-    }, "<");
-
-    timeline.to(".sub-nav", {
-        bottom: "10%",
-        opacity: 1,
-        duration: 0.5,
-        delay: 0.5
-    }, "<");
-
-    toggleButton.addEventListener("click", function() {
-        if (isOpen) {
-            timeline.reverse();
-            // Revert background to original
-            toggleButton.style.background = "rgba(255, 255, 255, 0)";
-            toggleButton.style.color = "#FFFFFF";
-            toggleButton.style.borderRadius = "50%";// Adjust text color if needed
-        } else {
-            timeline.play();
-        }
-        isOpen = !isOpen;
-    });
-
-});
-
-</script>
 
 
 <script>
 
-  TweenMax.from(".navigation", 1.6, {
-      opacity: 0,
-      blur: 5,
-      y: 10,
-      ease: Expo.easeInOut,
-      delay: 0.7,
-  });
 
 
 const backgroundImg = document.querySelector('.frimg img');
@@ -2271,6 +2438,7 @@ function raf(time) {
 requestAnimationFrame(raf);
 </script>
 
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
       const toggleButton = document.querySelector(".burger");
@@ -2303,13 +2471,7 @@ requestAnimationFrame(raf);
 </script>
 
 
-<script>
-function rotateBurger() {
-    const burgerButton = document.querySelector(".burger");
-    burgerButton.classList.toggle('rotate');
-}
 
-</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script>
@@ -2441,11 +2603,6 @@ buttons.forEach(button => observer.observe(button));
     });
   }
 
-  addParallaxEffect('.miss', 0.9); 
-  addParallaxEffect('.btn', 1.2); 
-  addParallaxEffect('.btn2', 1.2);
-  addParallaxEffect('.navigation-wrapper p', 0.9);
-  addParallaxEffect('.new h2', 0.9);
 
 </script>
 
@@ -2499,7 +2656,7 @@ buttons.forEach(button => observer.observe(button));
       },
     });
   }
-  addParallaxEffect('.idg', 5.9);
+
 </script>
 
 
@@ -2538,7 +2695,7 @@ buttons.forEach(button => observer.observe(button));
       $(document)
           .on("mouseenter", ".navigation-item", function (evt) {
               tl = new TimelineLite();
-              tl.to($(".project-preview"), 0.5, { width: "600px", ease: easeOut });
+              tl.to($(".project-preview"), 0.5, { width: "530px", ease: easeOut });
           })
           .on("mouseleave", ".navigation-item", function (evt) {
               tl = new TimelineLite();
@@ -2553,30 +2710,30 @@ buttons.forEach(button => observer.observe(button));
           });
       }
   
-      preloadImages(["img-1.jpg", "img-2.jpg", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg"]);
+      preloadImages(["https://images.unsplash.com/photo-1665512700003-00268126eef3?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", "img-3.jpg", "img-4.jpg", "img-5.jpg", "img-6.jpg", "img-7.jpg", "img-8.jpg"]);
   
       function addImageToPreview(imageUrl, text) {
           $(".project-preview").html(`<div class="preview-text">${text}</div><img src="${imageUrl}" alt="Project Image">`);
       }
   
       $(".navigation-link-1").hover(function () {
-          $(".project-preview").css({ "background-image": "url(img-1.jpg)", "opacity": 1 });
-          addImageToPreview("https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif", "Design");
+          $(".project-preview").css({ "background-image": "url(https://images.unsplash.com/photo-1665512700003-00268126eef3?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", "opacity": 1 });
+          addImageToPreview("https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif", "© Design & Development");
       });
   
       $(".navigation-link-2").hover(function () {
-          $(".project-preview").css({ "background-image": "url(img-2.jpg)", "opacity": 1 });
-          addImageToPreview("img-3.jpg", "Development");
+          $(".project-preview").css({ "background-image": "url(https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", "opacity": 1 });
+          addImageToPreview("https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif", "© Design & Development");
       });
   
       $(".navigation-link-3").hover(function () {
-          $(".project-preview").css({ "background-image": "url(img-3.jpg)", "opacity": 1 });
-          addImageToPreview("img-2.jpg", "Design");
+          $(".project-preview").css({ "background-image": "url(https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", "opacity": 1 });
+          addImageToPreview("https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif", "© Development");
       });
   
       $(".navigation-link-4").hover(function () {
-          $(".project-preview").css({ "background-image": "url(img-4.jpg)", "opacity": 1 });
-          addImageToPreview("img-1.jpg", "Development");
+          $(".project-preview").css({ "background-image": "url(https://images.unsplash.com/photo-1659193788664-f085e3076db8?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)", "opacity": 1 });
+          addImageToPreview("https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif", "© Design & Development");
       });
   
       $(window).scroll(function () {
@@ -2595,12 +2752,12 @@ buttons.forEach(button => observer.observe(button));
 
 <script>
   const projects = [
-    { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'img-1.jpg', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGVqcHhrZWFzNDBlNWE0NTRzNW52ZHphMzg4NWRtYTVoOWc5bXpjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rhywamGb85tzzgw02j/giphy.gif' },
-    { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'img-5.jpg', centeredImage: 'https://miro.medium.com/v2/resize:fit:1400/1*cM16uwRoaseF39auW9nP_g.gif' },
-    { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'https://i.pinimg.com/736x/69/52/1f/69521f973824ad5aa39e929d07a77ef0.jpg', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhpNHBneHU2a3JqeW5uemVrcjM2c294dWt1dGdrenZzNTFwa2ZnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DbgpbpOE7y6u2zGUIt/giphy.gif'},
-    { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'img-4.jpg', centeredImage: 'https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif' },
-    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'img-1.jpg', centeredImage: 'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif' },
-    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'img-2.jpg', centeredImage: 'centered-img-6.jpg' }
+    { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'https://images.unsplash.com/photo-1665512700003-00268126eef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTN8fHxlbnwwfHx8fHw%3D', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGVqcHhrZWFzNDBlNWE0NTRzNW52ZHphMzg4NWRtYTVoOWc5bXpjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rhywamGb85tzzgw02j/giphy.gif' },
+    { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://miro.medium.com/v2/resize:fit:1400/1*cM16uwRoaseF39auW9nP_g.gif' },
+    { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhpNHBneHU2a3JqeW5uemVrcjM2c294dWt1dGdrenZzNTFwa2ZnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DbgpbpOE7y6u2zGUIt/giphy.gif'},
+    { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'https://images.unsplash.com/photo-1659193788664-f085e3076db8?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif' },
+    { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'https://images.unsplash.com/photo-1655255201488-766303d720a2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif' },
+    { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'https://images.unsplash.com/photo-1643411392418-cf98257251cc?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'centered-img-6.jpg' }
   ];
   
   const projectsSlider = document.getElementById('projectsSlider');
@@ -2648,8 +2805,8 @@ buttons.forEach(button => observer.observe(button));
     let offsetTop = projectContainer.offsetTop;
     let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
     let projectTargetX = percentage;
-    let projectCurrentX = lerp(0, projectTargetX, 0.1);
-    let imageTargetX = percentage * 0.7; // Adjust the 0.7 value to control the parallax effect
+    let projectCurrentX = lerp(0, projectTargetX, 0.12);
+    let imageTargetX = percentage * 0.9; 
     let imageCurrentX = lerp(0, imageTargetX, 0.1);
     projectsSlider.style.transform = `translate3d(${-projectCurrentX}%, 0, 0)`;
   
@@ -2670,10 +2827,20 @@ buttons.forEach(button => observer.observe(button));
 <script>
   const faqs = document.querySelectorAll(".miss");
   faqs.forEach((miss) => {
-miss.addEventListener("click", () =>{miss.classList.toggle("active");
-});
+    miss.addEventListener("click", () => {
+      // Close all other faqs
+      faqs.forEach((faq) => {
+        if (faq !== miss && faq.classList.contains("active")) {
+          faq.classList.remove("active");
+        }
+      });
+
+      // Toggle the clicked faq
+      miss.classList.toggle("active");
+    });
   });
 </script>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -2754,7 +2921,7 @@ miss.addEventListener("click", () =>{miss.classList.toggle("active");
   
 
 
-<script>
+  <script>
     var cursor = $(".cursor");
     
     var posX = 0,
@@ -2777,12 +2944,17 @@ miss.addEventListener("click", () =>{miss.classList.toggle("active");
         }
     });
     
-
-    $(document).on("mousemove", function(e) {
+    function updateMousePosition(e) {
         mouseX = e.pageX;
         mouseY = e.pageY;
-        
+    }
+
+    $(document).on("mousemove", function(e) {
+        updateMousePosition(e);
     });
+    
+    // Call updateMousePosition initially to set cursor position
+    updateMousePosition({pageX: mouseX, pageY: mouseY});
 
     $(".navigation-item").on("mouseenter", function() {
         cursor.addClass("active");
@@ -2791,29 +2963,10 @@ miss.addEventListener("click", () =>{miss.classList.toggle("active");
     $(".navigation-item").on("mouseleave", function() {
         cursor.removeClass("active");
     });
-
-  
-    // Update mouse position during scrolling
-
 </script>
 
 
-<script>
-  // Function to trigger return animation
-  function returnAnimation() {
-      var returnAnimation = document.querySelector("#returnAnimation");
-      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
-      setTimeout(function () {
-          window.location.href = "thanks.html"; // Redirect to home.html after animation
-      }, 500); // Adjust timing as needed
-  }
 
-  // Event listener for button click
-  document.querySelector('.submit a[role="button"]').addEventListener('click', function(event) {
-      event.preventDefault(); // Prevent the default link behavior
-      returnAnimation(); // Trigger return animation
-  });
-</script>
 
 
 
@@ -2879,6 +3032,28 @@ document.querySelector('.thisis').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent the default link behavior
     returnAnimation2(); // Trigger return animation
 });
+</script>
+
+<script>
+  // Function to trigger return animation
+  function returnAnimation() {
+    var returnAnimation = document.querySelector("#returnAnimation");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "thanks.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+  // Event listener for button click
+  document.querySelector('.submit a[role="button"]').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimation(); // Trigger return animation
+  });
 </script>
 
 <script>
@@ -2996,6 +3171,161 @@ document.querySelector('.letswork').addEventListener('click', function(event) {
 </script>
 
 
+<script>
+  // Define an array of texts to be displayed
+  const textArray = ["esigne", "evelope"]; // Add more options here if needed
+
+  // Get the HTML element where the text will be displayed
+  const importElement = document.getElementById('import');
+
+  // Initialize index to cycle through textArray
+  let index = 0;
+
+  // Function to simulate typing effect
+  function typeWriter() {
+    // Get the current text to be displayed
+    const currentText = textArray[index];
+
+    // Initialize variables
+    let currentIndex = 0;
+    let randomText = '';
+
+    // Generate random text with the same length as the actual text
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?";
+    
+    // Randomly shuffle characters for mysterious effect
+    const shuffledCharacters = characters.split('').sort(() => Math.random() - 0.5).join('');
+    
+    for (let i = 0; i < currentText.length; i++) {
+      randomText += shuffledCharacters.charAt(Math.floor(Math.random() * shuffledCharacters.length));
+    }
+
+    // Display initial random text
+    importElement.textContent = randomText;
+
+    // Interval to simulate typing effect
+    const interval = setInterval(() => {
+      if (currentIndex < currentText.length) {
+        // Replace random characters with the actual text one by one
+        randomText = randomText.substr(0, currentIndex) + currentText[currentIndex] + randomText.substr(currentIndex + 1);
+        importElement.textContent = randomText;
+        currentIndex++;
+      } else {
+        // Clear interval and schedule next text after a delay
+        clearInterval(interval);
+        setTimeout(() => {
+          index = (index + 1) % textArray.length; // Move to the next text
+          typeWriter(); // Call typeWriter recursively for the next text
+        }, 2000); // Delay before displaying the next text
+      }
+    }, 70); // Interval for typing effect
+  }
+
+  // Start the typing effect
+  typeWriter();
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const kayItems = document.querySelectorAll(".okay");
+    kayItems.forEach((kayItem) => {
+      kayItem.addEventListener("mouseenter", (event) => {
+        const kionItem = event.currentTarget.querySelector('.kion');
+        startShuffleAnimation(kionItem);
+      });
+      kayItem.addEventListener("mouseleave", (event) => {
+        const kionItem = event.currentTarget.querySelector('.kion');
+        stopShuffleAnimation(kionItem);
+      });
+    });
+  });
+  
+  function getRandomCharacter() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    return chars[Math.floor(Math.random() * chars.length)];
+  }
+  
+  function startShuffleAnimation(item) {
+    if (item.dataset.animating) {
+      return;
+    }
+    item.dataset.animating = true;
+    item.dataset.originalText = item.textContent;
+    const length = item.textContent.length;
+    let shuffles = 0;
+    const maxShuffles = 10;
+    const intervalDuration = 200 / maxShuffles;
+    item.dataset.animationInterval = setInterval(() => {
+      if (shuffles >= maxShuffles) {
+        stopShuffleAnimation(item); // Reset text content when max shuffles reached
+        clearInterval(item.dataset.animationInterval);
+        delete item.dataset.animating;
+      } else {
+        let shuffledText = "";
+        for (let i = 0; i < length; i++) {
+          shuffledText += getRandomCharacter();
+        }
+        item.textContent = shuffledText;
+        shuffles++;
+      }
+    }, intervalDuration);
+  }
+  
+  function stopShuffleAnimation(item) {
+    if (!item.dataset.animating) {
+      return;
+    }
+    clearInterval(item.dataset.animationInterval);
+    delete item.dataset.animating;
+    item.textContent = item.dataset.originalText; // Restore original text
+  }
+</script>
+
+
+
+<script>
+  // Function to trigger return animation
+  function returnAnimationun() {
+      var returnAnimation = document.querySelector("#returnAnimation4");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "case1.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+// Event listener for About link click
+document.querySelector('.case1').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    returnAnimationun(); // Trigger return animation
+});
+</script>
+
+<script>
+  // Function to trigger return animation
+  function returnAnimationdeux() {
+      var returnAnimation = document.querySelector("#returnAnimation5");
+      var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+      
+      // Add a class to trigger the opacity animation
+      h1Element.classList.add('fade-out');
+
+      returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+      setTimeout(function () {
+          window.location.href = "case2.html"; // Redirect to about.html after animation
+      }, 1200); // Adjust timing as needed
+  }
+
+// Event listener for About link click
+document.querySelector('.case2').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    returnAnimationdeux(); // Trigger return animation
+});
+</script>
 
 
 </html>

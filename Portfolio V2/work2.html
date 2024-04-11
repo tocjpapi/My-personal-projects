@@ -111,7 +111,7 @@ html.lenis {
       content: '';
       position: absolute;
       width: 0;
-      height: 1.5px;
+      height: 0.5px;
       bottom: 0;
       left: 0;
       background-color: #333; 
@@ -124,42 +124,22 @@ html.lenis {
   text-decoration: none;
   color: #333;
   position: relative;
+  padding-top: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   padding-bottom: 6px;
   font-weight: 500;
   font-size: medium;
   background-color: transparent;
   justify-content: space-between;
   transition: 0.5s ease;
-
+  border: 1px solid #a1a1a1;
+  border-radius: 35px;
+  background:#dcdcdc ;
 }
 
-.okay a::before,
-.okay a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1.5px;
-  background-color: #333;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.9s ease;
-}
 
-.okay a::after {
-  transform-origin: right;
-}
 
-.okay a:hover {
-  color: #333;
-
-}
-
-.okay a:hover::before,
-.okay a:hover::after {
-  transform: scaleX(1);
-}
 
 body {
     font-family: 'Sf Pro Text', sans-serif;
@@ -461,7 +441,7 @@ html {
 
 .btn1 {
     position: relative;
-    border: 1px solid #333;
+    border:1px solid #888;
     padding: 29%;
     border-radius: 35px;
     padding-left: 38%;
@@ -469,12 +449,12 @@ html {
     display: inline-block;
     transition: all 1s ease;
     animation: expand 1.5s ease;
-    background: #333;
+    background: rgba(53, 53, 53, 0.2);
     pointer-events: none;
 }
 
 .btn1{
- color: #e8e8e8;
+ color: #333;
 }
 
 @keyframes expand{
@@ -491,7 +471,7 @@ html {
 
 .btn2 {
     position: relative;
-    border: 1px solid #333;
+    border:1px solid #888;
     padding: 18%;
     border-radius: 35px;
     padding-left: 25%;
@@ -929,7 +909,7 @@ width: 93vw;
           </div>
           <div class="title"></div>
           <div class="okay">
-            <a href="#" class="magnetic-link thatsme">CJ Crafted ®️</a>
+            <a href="#" class="magnetic-link thatsme">CJ Cr<span class="kion">aft</span>ed ®️</a>
           </div>
         </nav>
       </div>
@@ -957,13 +937,14 @@ width: 93vw;
     <div class="project1">
         <div class="text"><p>Case one</p></div>
         <div class="img">
-        <img src="img-8.jpg" alt="" srcset="">
+
+        <img src="https://images.unsplash.com/photo-1665512700003-00268126eef3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwcm9maWxlLXBhZ2V8MTN8fHxlbnwwfHx8fHw%3D" alt="" srcset="">
     </div>
     </div>
     <div class="project2">
         <div class="text"><p>Case two</p></div>
         <div class="img">
-            <img src="img-7.jpg" alt="" srcset="">
+            <img src="https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     </div>
 </div>
@@ -972,7 +953,7 @@ width: 93vw;
     <div class="project3">
         <div class="text"><p>Featured case <sup class="superscript">(3)</sup></p></div>
     <div class="img2">
-        <img src="img-6.jpg" alt="" srcset="">
+        <img src="https://images.unsplash.com/photo-1665512594386-051aad8b9f68?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
     </div>
  </div>
 </div>
@@ -981,13 +962,13 @@ width: 93vw;
     <div class="project4">
         <div class="text"><p>Case four</p></div>
         <div class="img3">
-            <img src="img-5.jpg" alt="" srcset="">
+            <img src="https://images.unsplash.com/photo-1659193788664-f085e3076db8?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     </div>
     <div class="project5">
         <div class="text"><p>Case five</p></div>
         <div class="img1">
-            <img src="img-4.jpg" alt="" srcset="">
+            <img src="https://images.unsplash.com/photo-1655255201488-766303d720a2?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     </div>
  </div>
@@ -997,13 +978,13 @@ width: 93vw;
     <div class="project6">
         <div class="text"><p>Case six</p></div>
         <div class="img1">
-            <img src="img-3.jpg" alt="" srcset="">
+            <img src="https://images.unsplash.com/photo-1643411392418-cf98257251cc?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     </div>
     <div class="project7">
         <div class="text"><p>Case seven</p></div>
         <div class="img3">
-            <img src="img-2.jpg" alt="" srcset="">
+            <img src="https://images.unsplash.com/photo-1657046309976-f1e80ce2fd5f?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         </div>
     </div>
  </div>
@@ -1225,6 +1206,62 @@ animate();
       event.preventDefault(); // Prevent the default link behavior
       returnAnimation2(); // Trigger return animation
   });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const kayItems = document.querySelectorAll(".okay");
+      kayItems.forEach((kayItem) => {
+        kayItem.addEventListener("mouseenter", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          startShuffleAnimation(kionItem);
+        });
+        kayItem.addEventListener("mouseleave", (event) => {
+          const kionItem = event.currentTarget.querySelector('.kion');
+          stopShuffleAnimation(kionItem);
+        });
+      });
+    });
+    
+    function getRandomCharacter() {
+      const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      return chars[Math.floor(Math.random() * chars.length)];
+    }
+    
+    function startShuffleAnimation(item) {
+      if (item.dataset.animating) {
+        return;
+      }
+      item.dataset.animating = true;
+      item.dataset.originalText = item.textContent;
+      const length = item.textContent.length;
+      let shuffles = 0;
+      const maxShuffles = 10;
+      const intervalDuration = 200 / maxShuffles;
+      item.dataset.animationInterval = setInterval(() => {
+        if (shuffles >= maxShuffles) {
+          stopShuffleAnimation(item); // Reset text content when max shuffles reached
+          clearInterval(item.dataset.animationInterval);
+          delete item.dataset.animating;
+        } else {
+          let shuffledText = "";
+          for (let i = 0; i < length; i++) {
+            shuffledText += getRandomCharacter();
+          }
+          item.textContent = shuffledText;
+          shuffles++;
+        }
+      }, intervalDuration);
+    }
+    
+    function stopShuffleAnimation(item) {
+      if (!item.dataset.animating) {
+        return;
+      }
+      clearInterval(item.dataset.animationInterval);
+      delete item.dataset.animating;
+      item.textContent = item.dataset.originalText; // Restore original text
+    }
 </script>
 
 </body>
