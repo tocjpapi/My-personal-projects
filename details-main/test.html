@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-family: 'Sf pro text', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+
+        .import {
+    height: 4.7vh;
+    width: 80px;
+    border-left: 1px solid #333;
+    border-right: 1px solid #333;
+    border-radius: 35px;
+    transition: 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.import::before,
+.import::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #e3e3e3;
+    transition: width 0.5s ease;
+}
+
+.import::before {
+    left: 0;
+}
+
+.import::after {
+    right: 0;
+}
+
+.import:hover::before,
+.import:hover::after {
+    width: 50%;
+}
+
+    
+    </style>
+</head>
+<body>
+    <div class="import"><a href="">All</a></div>
+</body>
+</html>
