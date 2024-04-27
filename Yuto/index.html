@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.cdnfonts.com/css/japanese" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Yuto</title>
+</head>
+<body>
+
+    <div class="loader">
+    <div class="txt">
+        <h2><span>Not</span>
+        <span>Your</span>
+        <span>Average</span>
+        <span>Company</span></h2>
+    </div>
+    </div>
+
+    <div class="nav">
+        <div class="items-left">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        </div>
+        <div class="items-right">
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        </div>
+    </div>
+
+
+
+<div class="first">
+   <div class="what"><p>we are</p></div>
+    <h1 class="text__reveal">YUTO <sup></sup></h1>
+
+  <div class="whatarewe">
+    <p><span>•</span> Online</p>
+   </div>
+
+    <div class="marquee-container">
+        <div class="marquee">
+            The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            <span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span>The Company That does Everything<span class="spacer">•</span> The Company That does Everything <span class="spacer">•</span> The Company That does Everything
+            
+          </div>
+      
+</div>
+
+
+<div class="mainpic"> 
+
+    <div class="position2 position1">
+        <div class="livesite2 livesite"><p>About <sup></sup></p></div> 
+        <div class="pointer pointer2">
+         <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+             <title>next</title>
+             <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                 <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#333" stroke-width="1.5">
+                     <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
+                         <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                         <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                     </g>
+                 </g>
+             </g>
+         </svg>
+        </div>
+        </div>
+
+    <img src="https://i.pinimg.com/originals/62/f6/0e/62f60eb00055ce5a3580bd91559f9f94.gif" alt="" srcset="">
+</div>
+
+</div>
+
+<div class="second">
+
+</div>
+
+<script>
+    const textReveals = document.querySelectorAll('.text__reveal');
+    
+    function animateTextReveal(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log(entry);
+                const spans = entry.target.querySelectorAll('span');
+                spans.forEach((span, idx) => {
+                    setTimeout(() => {
+                        span.style.transform = 'translateY(0)';
+                    }, (idx + 1) * 50);
+                });
+    
+                let startTime;
+                function animate(time) {
+                    if (!startTime) startTime = time;
+                    const progress = time - startTime;
+    
+                    spans.forEach((span, idx) => {
+                        const delay = (idx + 1) * 50;
+                        if (progress > delay) {
+                            span.style.transform = 'translateY(0)';
+                        }
+                    });
+    
+                    if (progress < spans.length * 50) {
+                        requestAnimationFrame(animate);
+                    }
+                }
+    
+                requestAnimationFrame(animate);
+            }
+        });
+    }
+    
+    const options = {
+        rootMargin: '0px',
+        threshold: 0
+    };
+    
+    const observe = new IntersectionObserver(animateTextReveal, options);
+    
+    textReveals.forEach(text => {
+        const string = text.innerText;
+        const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+        text.innerHTML = spans;
+        observe.observe(text);
+    });
+    
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" integrity="sha512-7Au1ULjlT8PP1Ygs6mDZh9NuQD0A5prSrAUiPHMXpU6g3UMd8qesVnhug5X4RoDr35x5upNpx0A6Sisz1LSTXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+function loader(){
+  var tl = gsap.timeline()
+tl.from(".loader span",{
+  duration:1.2,
+  stagger:.03,
+  delay:.1,
+  ease: "power3.inOut" 
+})
+tl.to(".loader span",{
+  duration:.6,
+  opacity:0,
+  stagger:.03,
+  ease: "power3.inOut" 
+})
+
+
+tl.to('.loader', {
+  duration: 0.5,
+  opacity: 0,
+  ease: "power3.inOut",
+  onComplete: function() {
+    TweenLite.set('.loader', { display: "none" });
+  }
+});
+
+
+}
+loader();
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script>
+  const lenis = new Lenis({
+  duration: 1,
+  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+    animation: gsap.from(".text__reveal", {
+    y: "50vh",
+    scale: 4,
+    yPercent: -50,
+    }),
+    scrub: true,
+    trigger: ".second",
+    start: "top bottom",
+    endTrigger: ".second",
+    end: "top center",
+})
+</script>
+
+
+</body>
+</html>

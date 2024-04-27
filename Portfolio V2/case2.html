@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <title>CJ • case two</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.css" />
     <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
     <style>
@@ -165,7 +166,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2%;
+    padding-top: 8%;
     }
     @keyframes fade-in-down{
     0%{
@@ -329,16 +330,15 @@ border:1px solid #333;
     }
 
     .text-reveal {
-    font-size: 16.5vh; /* Increase font size for emphasis */
-    font-weight:normal;
-    overflow: hidden; 
-}
+        font-size: 16.5vh; 
+        font-weight: normal;
+        overflow: hidden;
+    }
 
-.text-reveal span {
-    display: inline-block;
-    overflow: hidden;
-}
-
+    .text-reveal span {
+        display: inline-block;
+        overflow: hidden;
+    }
 
     
     .title h1{
@@ -939,7 +939,7 @@ font-size: larger;
 
 
 .cursor {
-    position: absolute;
+    position: fixed;
     background: rgba(248, 248, 248, 0.3);
   backdrop-filter: blur(2px);
     width: 12px;
@@ -1109,6 +1109,29 @@ font-size: larger;
     }
 
 
+
+    .copy{
+    position: absolute;
+    border: 0.2px solid  #a1a1a1;
+    width: 78px; 
+    height: 34px; 
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: width 1.5s ease;
+    overflow: hidden;
+    transition: all 0.5s;
+    transform-origin: center;
+    left:5% ;
+    background: #1a1a1a;
+}
+
+
+.copy p{
+color: #a1a1a1;
+font-size: 2vh;
+}
 </style>
 
 
@@ -1130,8 +1153,16 @@ font-size: larger;
     justify-content: space-between;
 }
 
+.title h1{
+    font-size: 7vh;
+    color: #333;
+    font-weight: 400;
+}
 
-
+        .copy p{
+            font-size: small;
+        }
+    
     .position1{
         right: 40%;
     }
@@ -1143,7 +1174,8 @@ font-size: larger;
     }
 
     .title{
-        margin-top: 16%;
+        margin-top: 50%;
+        margin-left: -18%;
     }
 
     .toflex{
@@ -1243,6 +1275,7 @@ border-radius: 40px;
 </style>
 
 </head>
+
 <body>
     
     <div class="cursor">
@@ -1272,6 +1305,7 @@ border-radius: 40px;
 
 
       <div class="goto">
+        <div class="copy"><p>© 2024</p></div>
         <div class="position1">
            <div class="livesite"><p>Live</p></div> 
            <div class="pointer">
@@ -1328,7 +1362,7 @@ border-radius: 40px;
 
         <div class="introtxt">
             <p class="why">( The Biggest Picture )</p>
-            <p class="big">I tried to recreate this characteristics in this magazine.</p>
+            <p class="big">I tried to recreate these characteristics in this magazine.</p>
             <p class="who">( Because why not )</p>
             </div>
 
@@ -1516,56 +1550,64 @@ border-radius: 40px;
 
 
 
+
 <div id="returnAnimation">
-    <h1>Index •</h1>
+    <h1>Index</h1>
 </div>
 
 
 <div id="returnAnimation2">
-    <h1>About •</h1>  
+    <h1>About</h1>  
 </div>
 
 <div id="returnAnimation3">
-    <h1>Work •</h1>
+    <h1>Work</h1>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
-<script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> 
-
-
 
 <script>
-    const elementsToAnimate = document.querySelectorAll('.text-reveal');
+    document.addEventListener("DOMContentLoaded", function() {
+        const elementsToAnimate = document.querySelectorAll('.text-reveal');
 
-    elementsToAnimate.forEach(text => {
-        const string = text.innerText;
-        const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
-        text.innerHTML = spans;
-    });
-
-    gsap.set(".text-reveal span", { y: "200%" });
-
-    const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
-    tl.fromTo(".text-reveal span", { y: "200%" }, { y: "0%", stagger: 0.02 });
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                tl.play();
-            } else {
-                tl.reverse();
-            }
+        elementsToAnimate.forEach(text => {
+            const string = text.innerText;
+            const spans = Array.from(string).map(char => `<span>${char}</span>`).join('');
+            text.innerHTML = spans;
         });
-    }, { threshold: 0.5 });
 
-    elementsToAnimate.forEach(text => {
-        observer.observe(text);
+        const tl = gsap.timeline({ defaults: { duration: 1, ease: "power3.out" } });
+        tl.fromTo(".text-reveal span", { y: "100%" }, { y: "0%", stagger: 0.02 });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    tl.play();
+                } else {
+                    tl.reverse();
+                }
+            });
+        }, { threshold: 0.5 });
+
+        elementsToAnimate.forEach(text => {
+            observer.observe(text);
+        });
     });
 </script>
+<!--  Gsap is needed for Basic Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
+<!-- Scroll Trigger is needed for Scroll Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- Three.js is needed for 3d Effects -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+<!-- ControlKit is needed for Debug Panel -->
+<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+<script  type="text/javascript"  src="https://cdn.jsdelivr.net/npm/sheryjs/dist/Shery.js"></script>
 
 
 <script>
@@ -1815,48 +1857,45 @@ window.addEventListener('scroll', addClassIfVisible);
     })
 </script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var cursor = document.querySelector(".cursor");
-        var cursorFollower = document.querySelector(".cursor-follower");
-        var imgElements = document.querySelectorAll(".img img");
+    $(document).ready(function() {
+        var cursor = $(".cursor");
+        var posX = 0;
+        var posY = 0;
+        var mouseX = 0;
+        var mouseY = 0;
+        var lag = 0.1; // Adjust the lag factor (0.1 is a starting point)
     
-        var posX = 0,
-            posY = 0,
-            mouseX = 0,
-            mouseY = 0;
+        $(document).on("mousemove", function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
     
         function updateCursorPosition() {
-            posX += (mouseX - posX) / 6;
-            posY += (mouseY - posY) / 6;
-    
-            cursor.style.left = posX + 'px';
-            cursor.style.top = posY + 'px';
-    
+            var dx = mouseX - posX;
+            var dy = mouseY - posY;
+            posX += dx * lag;
+            posY += dy * lag;
+            cursor.css({
+                left: posX + "px",
+                top: posY + "px"
+            });
             requestAnimationFrame(updateCursorPosition);
         }
     
-        requestAnimationFrame(updateCursorPosition);
+        updateCursorPosition();
     
-        document.addEventListener("mousemove", function(e) {
-            mouseX = e.pageX;
-            mouseY = e.pageY;
+        $(".img img").on("mouseenter", function() {
+            cursor.addClass("active");
         });
     
-        imgElements.forEach(function(imgElement) {
-            imgElement.addEventListener("mouseenter", function() {
-                cursor.classList.add("active");
-                cursorFollower.classList.add("active");
-            });
-    
-            imgElement.addEventListener("mouseleave", function() {
-                cursor.classList.remove("active");
-                cursorFollower.classList.remove("active");
-            });
+        $(".img img").on("mouseleave", function() {
+            cursor.removeClass("active");
         });
     });
-    </script>
+    
+</script>
 
 
 <script>

@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <title>CJ • Work</title>
     <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
     <style>
@@ -435,7 +437,7 @@ html {
 
 .btn1 {
     position: relative;
-    border:1px solid #888;
+    border: 1px solid #a1a1a1;
     padding: 29%;
     border-radius: 35px;
     padding-left: 38%;
@@ -458,14 +460,14 @@ html {
 
 .btn2 {
     position: relative;
-    border:1px solid #888;
+    border: 1px solid #a1a1a1;
     padding: 18%;
     border-radius: 35px;
     padding-left: 25%;
     padding-right: 25%;
     display: inline-block;
     margin-left: 65%;
-    background: rgba(53, 53, 53, 0.2);
+    background:#dcdcdc ;
     color: #333;
     animation: expand 1.5s ease;
 }
@@ -512,9 +514,19 @@ html {
 }
 
 @media (max-width: 900px) {
-    .navigation a{
-        display: none;
-    }
+    .navigation a {
+    margin: 0 7px;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding-bottom: 6px;
+    font-weight: 430;
+    font-size: small;
+    background-color: transparent;
+    height: 20px;
+    width: 10px;
+    justify-content: space-between;
+}
 
     .more{
         margin-right: 20%;
@@ -573,11 +585,11 @@ html {
 
  
     <div id="returnAnimation2">
-        <h1>About •</h1>
+        <h1>About</h1>
     </div>
     
     <div id="returnAnimation">
-        <h1>Index •</h1>
+        <h1>Index</h1>
       </div>
 
                 
@@ -656,25 +668,33 @@ html {
 
 
 
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-        <script>
-          const lenis = new Lenis({
-          duration: 1.5,
-          easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-          direction: "vertical",
-          gestureDirection: "vertical",
-          smooth: true,
-          smoothTouch: false,
-          touchMultiplier: 2,
-        });
-        
-        function raf(time) {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        }
-        
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script>
+    // Function to detect if the browser is Safari on macOS
+    function isSafariMac() {
+      return /^((?!chrome|android).)*safari/i.test(navigator.userAgent) && navigator.platform === "MacIntel";
+    }
+  
+    // Load Lenis only if the browser is not Safari on macOS
+    if (!isSafariMac()) {
+      const lenis = new Lenis({
+        duration: 1.5,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+      });
+  
+      function raf(time) {
+        lenis.raf(time);
         requestAnimationFrame(raf);
-        </script>
+      }
+  
+      requestAnimationFrame(raf);
+    }
+  </script>
 
 
     <script>

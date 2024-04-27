@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="shortcut icon" type="image/jpg" href="DP-modified (1).png"/>
-    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/jpg" href="G.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
     <title>Élanique </title>
     <link rel="stylesheet" href="./style.css" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
@@ -78,37 +79,48 @@
         <img src="public/images/photo7.jpg" alt="" data-hidden />
         <img src="public/images/photo8.jpg" alt="" data-hidden />
       </div>
+  <div class="again">
+    <div class="hunnid">
       <h2 class="hello-text" id="helloTextContent"> ________</h2>
+    </div>
+  </div>
     </div>
 
 
     <div id="new" class="new fade-in">
 <div class="vnx">
   
-      <div class="text" id="text"><p>We are a <span>web and presentation design</span> and development agency that takes pride in designing <span>elegantly and uniquely.</span> We are based in both <span>london and lagos</span>. With the most <span>innovative and bright minds</span> in the game</p></div>
+      <div class="text" id="text"><p>We are a <span>web and presentation design</span> and development agency that takes pride in designing <span>elegantly and uniquely.</span> We are based in both <span>london and lagos</span>. With the most <span>innovative and bright minds</span> in the game.</p></div>
     </div>
 
     </div>
 
-<div class="buttonspace fade-ing">
-  <div class="position1">   <button>About</button>            
-    <div class="pointer">
-    <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <title>next</title>
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#111" stroke-width="1.5">
+    <div class="buttonspace fade-ing" onclick="toggleSidebar()">
+      <div class="position1">
+        <button class="no">About</button>            
+        <div class="pointer">
+          <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>next</title>
+            <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g id="Artboard" transform="translate(-1019.000000, -279.000000)" stroke="#111" stroke-width="1.5">
                 <g id="arrow-up-right" transform="translate(1026.000000, 286.000000) rotate(0.000000) translate(-1026.000000, -286.000000) translate(1020.000000, 280.000000)">
-                    <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
-                    <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
+                  <polyline id="Path" points="2.76923077 0 12 0 12 9.23076923"></polyline>
+                  <line x1="12" y1="0" x2="0" y2="12" id="Path"></line>
                 </g>
+              </g>
             </g>
-        </g>
-    </svg>
-   </div></div>
-</div>
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sidebar" id="sidebar">
+      <h2>Summary.</h2>
+      <p id="image-description">We are a creative agency specializing in web and presentation design and development. Our team, comprised of brilliant and innovative minds, that take pride in creating elegant and unique solutions for our clients. Always willing and able to start something new. </br></br></br> <span class="link">Learn more</span> →</p>
+      <button onclick="toggleSidebar()"><span>●</span> Close</button>
+    </div>
 
-
-<div class="image">
+<div class="image" onclick="toggleSidebar()">
   <div class="img">
 
   <img src="https://images.unsplash.com/photo-1643411392418-cf98257251cc?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
@@ -148,11 +160,32 @@
       <div class="block block1">
         <img src="https://images.unsplash.com/photo-1659822949583-8b0fbc20b333?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         <div class="text3">Raycon → </div>
+
+        <div class="fixed-div">
+          <div class="text3">Live Site →</div>
+         <div class="space"></div>
+         <div class="explain">
+          <p>Here, we made a website for <span>raycon</span>. Expressing thier briliance how the way it <span>deserves</span> to be expressed and how it was <span>meant</span> to be expressed in the first place.</p>
+         </div>
+
+         
+        </div>
+        
       </div>
+
+
 
       <div class="block block2">
         <img src="https://images.unsplash.com/photo-1697928579384-2c83b8b54c30?q=80&w=1898&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
         <div class="text3">Hisense → </div>
+
+        <div class="fixed-div2">
+          <div class="text3">Live Site →</div>
+          <div class="space"></div>
+         <div class="explain">
+          <p>Here, we made a website for <span>hisense</span>. Expressing thier briliance the way it <span>deserves</span> to be expressed and how it was <span>meant</span> to be expressed in the first place.</p>
+         </div>
+        </div>
       </div>
     </div>
 
@@ -163,7 +196,7 @@
 
 
 <div class="buttonspace2 fade-ing">
-  <div class="position1"> <button>All <sup> (3)</sup></button>           
+  <div class="position1"> <button class="no">All <sup> (3)</sup></button>           
     <div class="pointer">
     <svg width="12px" height="12px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <title>next</title>
@@ -278,8 +311,8 @@
       <div class="video__text__overlay fade-ing">
     <div class="oversee">
         <div class="group1">
-          <h2 class="text__header__left">Cont</h2>
-          <h2 class="text__header__right">act</h2>
+          <h2 class="text__header__left">Con</h2>
+          <h2 class="text__header__right">tact</h2>
         </div>
 
         <div class="group2">
@@ -410,7 +443,6 @@
 </div>
 </div>
 </div>
-
 
 
 
@@ -742,7 +774,7 @@ document.addEventListener('scroll', scrollBlogPosts);
       
     </script>
 
-   <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
 <script>
   const lenis = new Lenis({
   duration: 1,
@@ -1262,6 +1294,22 @@ document.querySelectorAll('.smooth-scroll').forEach(anchor => {
   const title = document.getElementById('title');
   observer.observe(title);
   </script>
+
+
+
+
+<script>
+  function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    var computedStyle = window.getComputedStyle(sidebar);
+    var rightValue = computedStyle.getPropertyValue("right");
+    if (rightValue === "0px") {
+      sidebar.style.right = "-340px";
+    } else {
+      sidebar.style.right = "0";
+    }
+  }
+</script>
 
 
   </body>

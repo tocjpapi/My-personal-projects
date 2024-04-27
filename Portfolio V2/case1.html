@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
     <title>CJ • case one</title>
     <link rel="shortcut icon" type="image/jpg" href="fav.png"/>
     <style>
@@ -50,13 +53,14 @@ html {
 
     body {
         font-family: 'Sf Pro Text', sans-serif;
-        overflow-x: hidden;
         background: #e8e8e8;
         height: 100vh;
+        width: 100vw;
         justify-content: center;
         align-items: center;
         position: relative;
         color: #333;
+        overflow: hidden;
     }
 
 
@@ -197,7 +201,7 @@ animation: fadeup 1.5s ease ;
 @keyframes fadeup{
         from{
             opacity: 0;
-            transform: translateY(7vh);
+            transform: translateY(60px);
         }
         to{
             opacity: 1;
@@ -262,6 +266,50 @@ animation: fadeup 1.5s ease ;
        }
     }
 
+    #returnAnimation4 {
+    height: 100vh;
+    width: 100%;
+    background-color: #e8e8e8;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    transition: all ease 0.7s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 1); /* Modify the values as needed */
+}
+
+
+#returnAnimation4 h1 {
+    font-size: 4vw;
+    color: transparent;
+    background: #333;
+    -webkit-background-clip: text;
+    position: absolute;
+    font-family: 'Sf pro text';
+    font-weight: 420;
+}
+
+@keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 1; /* Maintain opacity for 70% of the animation duration */
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    /* Apply the animation to the h1 element when the fade-out class is added */
+    #returnAnimation4 h1.fade-out {
+        animation: fadeOut 1.1s ease forwards;
+    }
+
+
 .pointer::before {
     content: '';
     background: rgba(55, 55, 55, 0.1);
@@ -300,8 +348,10 @@ animation: fadeup 1.5s ease ;
     animation: width 1.5s ease;
     overflow: hidden;
     transition: all 0.5s;
-    transform-origin: center; /* Added to specify transform origin */
+    transform-origin: center;
 }
+
+
 
 @keyframes width {
     from {
@@ -338,10 +388,35 @@ animation: fadeup 1.5s ease ;
     font-size: medium;
 }
 
+
+
 .position1{
     position: absolute;
     right: 10%;
     cursor: pointer;
+}
+
+.copy{
+    position: absolute;
+    border: 0.2px solid  #a1a1a1;
+    width: 78px; 
+    height: 34px; 
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: width 1.5s ease;
+    overflow: hidden;
+    transition: all 0.5s;
+    transform-origin: center;
+    left:5% ;
+    background: #1a1a1a;
+}
+
+
+.copy p{
+color: #a1a1a1;
+font-size: 2vh;
 }
 
 .position2{
@@ -382,7 +457,7 @@ animation: fadeup 1.5s ease ;
 
 
 .manti p{
-    font-size: 7vh;
+    font-size: 50px;
      width: 84%;
      line-height: 150%;
      padding-left: 1%;
@@ -501,7 +576,7 @@ border-radius: 35px;
 .chill2 {
     display: inline-block;
     width: 0; /* Start with width 0 */
-    height: 7vh;
+    height: 50px;
     background: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkxazcybmVkc2JtbXRwOHA1MzU1M2x4aXdjajgya21mdDh6cWNvNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/00wSeGG1HsMJ51i9Mk/giphy.gif") no-repeat center center;
     background-size: cover;
     border-radius: 15px;
@@ -537,7 +612,7 @@ border-radius: 35px;
 
 .block1{
     background: #d1d1d1;
-    height: 47vh;
+    height: 460px;
     width: 60vw;
     margin-left: 15%;
     border-radius: 45px;
@@ -582,7 +657,7 @@ border-radius: 35px;
 
 .block2{
     background: #212121;
-    height: 47vh;
+    height: 460px;
     width: 45vw;
     margin-left: 1%;
     border-radius: 45px;
@@ -688,7 +763,7 @@ font-size: small;
     justify-content: space-between;
     width: 85vw;
     border: 1px solid #d0d0d0;
-    height: 7vh;
+    height: 60px;
     align-items: center;
     border-radius: 35px;
     background: #e4e4e4;
@@ -726,7 +801,7 @@ font-size: small;
 
 
 .cursor {
-    position: absolute;
+    position: fixed;
     background: rgba(248, 248, 248, 0.3);
   backdrop-filter: blur(2px);
     width: 12px;
@@ -933,6 +1008,244 @@ font-size: small;
 
 
     </style>
+
+<style>
+
+    @media (max-width:600px) {
+        .navigation a {
+        margin: 0 7px;
+        text-decoration: none;
+        color: #333;
+        position: relative;
+        padding-bottom: 6px;
+        font-weight: 430;
+        font-size: small;
+        background-color: transparent;
+        height: 20px;
+        width: 10px;
+        justify-content: space-between;
+    }
+    
+    .mainimg p{
+        font-size: 6vh;
+    }
+    
+.title h1{
+    font-size: 7vh;
+    color: #333;
+    font-weight: 400;
+}
+        .position1{
+            right: 40%;
+        }
+
+
+        .copy p{
+            font-size: small;
+        }
+    
+        .first{
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: -20%; 
+            height: 460px;
+        }
+    
+        .title{
+            margin-top: 16%;
+            margin-left: 3%;
+        }
+
+
+    
+        .toflex{
+            flex-direction: column;
+        }
+    
+    .mainimg{
+    height: 35vh;
+    width: 93vw;
+    margin-left: -1%;
+    border-radius: 40px;
+    }
+    
+    .nono p{
+     font-size: 50px;
+    }
+    
+    .mainimg img {
+        width: 140%;
+        height: 140%;
+        object-fit: cover;
+    }
+    
+    .txt{
+        width: 85%;
+        padding-top: 20%;
+        padding-right: 3%;
+        font-size: 2.5vh;
+        margin-left: 3%;
+    }
+    
+    .yo p{
+        font-size: 5vh;
+    }
+    
+    
+    .manti p {
+        font-size: 3vh;
+    }
+        
+    
+    .introtxt{
+       height: 40vh;
+        }
+
+
+        .thestuff2 img{
+    height: 170px;
+}
+
+.thestuff2{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vw;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+
+
+.thestuff img{
+    height: 170px;
+}
+
+.thestuff{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 98vw;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 1px solid #d0d0d0;
+}
+    
+
+.chill2 {
+    display: inline-block;
+    width: 0; /* Start with width 0 */
+    height: 3.6vh;
+    background: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDkxazcybmVkc2JtbXRwOHA1MzU1M2x4aXdjajgya21mdDh6cWNvNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/00wSeGG1HsMJ51i9Mk/giphy.gif") no-repeat center center;
+    background-size: cover;
+    border-radius: 7px;
+    margin: -.8% auto; 
+    transition: width 0.5s;
+    filter: grayscale(); /* Apply transition effect on width change */
+}
+
+@keyframes showself {
+    from {
+        width: 0; /* Start width */
+    }
+    to {
+        width: 5vh; /* End width */
+    }
+}
+
+
+.block1{
+    background: #d1d1d1;
+    height: 30vh;
+    width: 67vw;
+    margin-left: 5%;
+    border-radius: 35px;
+    animation: expand 3.5s ease infinite ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.block2{
+    background: #212121;
+    height: 30vh;
+    width: 49vw;
+    margin-left: 2%;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.what{
+    width: 90vw;
+    font-size: 3vh;
+}
+
+.whichone{
+    height: 25vh;
+    margin-top: 10%;
+    display: flex;
+    width: 96vw;
+}
+
+
+.skill-bar {
+    height: 8px;
+    background: #d1d1d1;
+    max-width: 70%;
+    border-radius: 2.5px;
+    overflow: hidden;
+    margin-top: 2%;
+}
+
+
+.chillthere{
+display: none;
+}
+
+
+.chillthere2{
+display: none;
+}
+
+.thestuff3{
+    margin-top: 5%;
+    margin-left: 5%;
+    height: 58vh;
+    width: 90vw;
+    background: #d1d1d1;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.continue3{
+    margin-top: 10%;
+    height: 70vh;
+
+}
+
+    }
+
+    
+
+    
+    </style>
 </head>
 <body>
     <div class="cursor">
@@ -960,6 +1273,7 @@ font-size: small;
     <div class="extratxt"><p>This is a concept project that showcases the importance of minimalism. </p></div>
 </div>
 <div class="goto">
+    <div class="copy"><p>© 2024</p></div>
 <div class="position1">
    <div class="livesite"><p>Live</p></div> 
    <div class="pointer">
@@ -1052,7 +1366,7 @@ font-size: small;
 <div class="research">
     <p class="why">( The Process )</p>
 
-    <p class="what">I was using a website and was captivated by the amazing animations because they made me actually want to perform and action on this website. Then and there, I decided to go on a survey to see if people felt the same .</p>
+    <p class="what">I was using a website and was captivated by the amazing animations because they made me actually want to perform an action on that website. Then and there, I decided to go on a survey to see if people felt the same .</p>
 </div>
 
 <div class="spacer"></div>
@@ -1110,14 +1424,17 @@ font-size: small;
 
 <div class="continue3">
     <div class="why"><p>( Up Next )</p></div>
+
     <div class="thestuff3">
         <div class="text"><p>Case two</p></div>  
+
         <div class="img" style="cursor: pointer;">
+            <a class="case1" href="case2.html">
             <img src="https://images.unsplash.com/photo-1603575593538-58848fbaa7bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 10px; color: #fff9f0; font-family: New york; font-size: 12vh; font-weight: 800;mix-blend-mode: difference;border-radius: 35px;">
                 <p style="text-align: center;">Frica.</p>
             </div>
-
+        </a>
             <div class="position2 position1">
                 <div class="livesite2 livesite"><p>All <sup>(7)</sup></p></div> 
                 <div class="pointer pointer2">
@@ -1134,7 +1451,8 @@ font-size: small;
                  </svg>
                 </div>
                 </div>    
-            </div>      
+            </div>     
+
 </div>
 </div>
 
@@ -1159,19 +1477,21 @@ font-size: small;
 
 
 <div id="returnAnimation">
-    <h1>Index •</h1>
+    <h1>Index</h1>
 </div>
 
 
 <div id="returnAnimation2">
-    <h1>About •</h1>  
+    <h1>About</h1>  
 </div>
 
 <div id="returnAnimation3">
-    <h1>Work •</h1>
+    <h1>Work</h1>
 </div>
 
-
+<div id="returnAnimation4">
+    <h1>Frica</h1>
+</div>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
@@ -1306,6 +1626,7 @@ requestAnimationFrame(raf);
   
   
     function addParallaxEffect(element, strength) {
+        if (window.innerWidth > 600) {
       gsap.to(element, {
         y: -strength * 50, 
         ease: 'power2.inOut',
@@ -1317,6 +1638,7 @@ requestAnimationFrame(raf);
         },
       });
     }
+}
     addParallaxEffect('.thestuff', 5.9);
     addParallaxEffect('.thestuff2', 5.9);
     addParallaxEffect('.thestuff3 img', 1.9);
@@ -1446,47 +1768,44 @@ window.addEventListener('scroll', function() {
     });
 </script>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var cursor = document.querySelector(".cursor");
-    var cursorFollower = document.querySelector(".cursor-follower");
-    var imgElements = document.querySelectorAll(".img img");
-
-    var posX = 0,
-        posY = 0,
-        mouseX = 0,
-        mouseY = 0;
-
-    function updateCursorPosition() {
-        posX += (mouseX - posX) / 6;
-        posY += (mouseY - posY) / 6;
-
-        cursor.style.left = posX + 'px';
-        cursor.style.top = posY + 'px';
-
-        requestAnimationFrame(updateCursorPosition);
-    }
-
-    requestAnimationFrame(updateCursorPosition);
-
-    document.addEventListener("mousemove", function(e) {
-        mouseX = e.pageX;
-        mouseY = e.pageY;
-    });
-
-    imgElements.forEach(function(imgElement) {
-        imgElement.addEventListener("mouseenter", function() {
-            cursor.classList.add("active");
-            cursorFollower.classList.add("active");
+    $(document).ready(function() {
+        var cursor = $(".cursor");
+        var posX = 0;
+        var posY = 0;
+        var mouseX = 0;
+        var mouseY = 0;
+        var lag = 0.1; // Adjust the lag factor (0.1 is a starting point)
+    
+        $(document).on("mousemove", function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
         });
-
-        imgElement.addEventListener("mouseleave", function() {
-            cursor.classList.remove("active");
-            cursorFollower.classList.remove("active");
+    
+        function updateCursorPosition() {
+            var dx = mouseX - posX;
+            var dy = mouseY - posY;
+            posX += dx * lag;
+            posY += dy * lag;
+            cursor.css({
+                left: posX + "px",
+                top: posY + "px"
+            });
+            requestAnimationFrame(updateCursorPosition);
+        }
+    
+        updateCursorPosition();
+    
+        $(".img img").on("mouseenter", function() {
+            cursor.addClass("active");
+        });
+    
+        $(".img img").on("mouseleave", function() {
+            cursor.removeClass("active");
         });
     });
-});
+    
 </script>
 
 <script>
@@ -1632,6 +1951,28 @@ document.addEventListener('DOMContentLoaded', function() {
       returnAnimation2(); // Trigger return animation
   });
   </script>
+
+<script>
+    // Function to trigger return animation
+    function returnAnimationun() {
+        var returnAnimation = document.querySelector("#returnAnimation4");
+        var h1Element = returnAnimation.querySelector("h1"); // Select the h1 element
+        
+        // Add a class to trigger the opacity animation
+        h1Element.classList.add('fade-out');
+  
+        returnAnimation.style.clipPath = "polygon(0 100%, 100% 100%, 100% 0, 0 0)";
+        setTimeout(function () {
+            window.location.href = "case2.html"; // Redirect to about.html after animation
+        }, 1200); // Adjust timing as needed
+    }
+  
+  // Event listener for About link click
+  document.querySelector('.case1').addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent the default link behavior
+      returnAnimationun(); // Trigger return animation
+  });
+</script>
 
 </body>
 </html>

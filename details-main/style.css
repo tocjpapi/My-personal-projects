@@ -1,8 +1,4 @@
-@font-face {
-  src: url('./fonts/ppneue.woff2') format('woff2');
-  font-family: 'PPNeue';
-  font-weight: normal;
-}
+
 
 *,
 *:before,
@@ -734,7 +730,7 @@ display: none;
 .new{
   height: 75vh;
   z-index: 8;
-  padding-left: 5%;
+
   background: #b0aaa0;
 padding-top: 2%;
 border-top-left-radius:35px ;
@@ -749,7 +745,7 @@ justify-content: center;
 .new2{
   height: 70vh;
   z-index: 4;
-  margin-left: 5%;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -760,7 +756,7 @@ justify-content: center;
 .new3{
   height: 57vh;
   z-index: 4;
-  padding-left: 5%;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -840,7 +836,7 @@ background: #050505;}
 .new4{
   height: 81vh;
   z-index: 4;
-  padding-left: 5%;
+
   position: relative;
   display: flex;
   align-items: center;
@@ -993,7 +989,7 @@ background: #050505;}
 
 .hero {
   height: 80vh;
-  width: 100vw;
+  width: 100%;
   z-index: 0;
 display: flex;
 justify-content: center;
@@ -1052,9 +1048,9 @@ text-align: center;}
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width:50%;
   height: inherit;
   text-align: center;
+  gap: 20%;
 }
 
 
@@ -1089,11 +1085,18 @@ text-align: center;}
   overflow: hidden;
 }
 
+.block{
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
 .block img{
   object-fit: cover;
   height: 190%;
   width: 100%;
+
 }
+
 
 
 .buttonspace{
@@ -1145,7 +1148,7 @@ position: relative;
   align-items: center;
   }
 
-button{
+.no{
   height: 45px;
   width: 78px;
   font-family: 'Sf pro',sans-serif;
@@ -1164,7 +1167,7 @@ position: relative;
   outline: none;
   border-radius: 55px;
 }
-button:before{
+.no:before{
   content: "";
   position: absolute;
   height: 10px;
@@ -1179,7 +1182,7 @@ button:before{
               margin-left: 1%;
           
 }
-button:after{
+.no:after{
   content: "";
   position: absolute;
   height: 10px;
@@ -1193,8 +1196,8 @@ button:after{
               height 0.5s ;
 }
 
-button:hover:before,
-button:hover:after{
+.no:hover:before,
+.no:hover:after{
   width: 0;
   height: 6px;
   transition: height 0.5s ,
@@ -1207,7 +1210,7 @@ button:hover:after{
   display: flex;
   width: 132px;
   height: 45px;
-  margin-left: 8%;
+
 }
 
 .position1:hover .pointer{
@@ -1327,6 +1330,7 @@ opacity: 1;
   flex-direction: column;
   height: 30vh;
   justify-content: space-between;
+
 }
 
 
@@ -1607,4 +1611,186 @@ justify-content: space-between;
 .title sup{
   font-style: italic;
   font-weight: 200;
+}
+
+.fixed-div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 26, 26, 0.5);
+  height: 80vh;
+  width: 40vw;
+  border-radius: 35px;
+  padding: 40px;
+  backdrop-filter: blur(90px);
+  color: #999;
+  border: 0.02px solid #333;
+  z-index: 9999;
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+
+.space{
+  height: 30vh;
+}
+
+.block1:hover{
+  scale: 0.98;
+}
+
+
+.block1:hover .fixed-div{
+   opacity: 1;
+   scale: 1;
+  transition: all 0.3s;
+}
+
+
+
+.block2:hover{
+  scale: 0.98;
+}
+
+
+.block2:hover .fixed-div2{
+   opacity: 1;
+   scale: 1;
+  transition: all 0.3s;
+}
+
+
+.fixed-div2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(26, 26, 26, 0.5);
+  height: 80vh;
+  width: 40vw;
+  border-radius: 35px;
+  padding: 20px;
+  backdrop-filter: blur(90px);
+
+  border: 0.02px solid #333;
+  z-index: 9999;
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+.explain p{
+  text-align: center;
+  font-size: larger;
+  font-weight: 350;
+  color: #999;
+}
+
+.explain span{
+color: #666;
+}
+
+
+.sidebar {
+  margin-top: 6.9vh;
+            position: fixed;
+            top: 0;
+            right: -340px;
+            width: 320px;
+            height: 55%;
+            background: #b0aaa087;
+            backdrop-filter: blur(80px);
+             font-size: 16px;
+             border: 1px solid #695e54;
+            overflow-y: scroll;
+            padding: 20px;
+            transition: right 0.7s ease;
+            z-index: 9;
+            border-radius: 35px;
+            margin-right:2vh ;
+  
+        }
+        .sidebar h2{
+  font-weight: 700;
+  font-size: 4.5vh;
+  padding-left: 1vh;
+  opacity: 0.7;
+  font-family: new york;
+}
+        .sidebar.show {
+            right: 0;
+        }
+
+        .sidebar button {
+          background: rgba(26, 26, 26, 0);
+          backdrop-filter: blur (10px);
+            color: #1a1a1a;
+            font-family: sf pro text;
+            font-size: 15px;
+            border-radius: 25px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border: 1px solid #444;
+            position: absolute;
+            bottom: 3%;
+            transition: all 0.4s;
+        }
+
+
+        .sidebar button:hover {
+          background: rgba(26, 26, 26, 0.15);
+          backdrop-filter: blur (10px);
+            font-family: sf pro text;
+            font-size: 15px;
+            border-radius: 25px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            border: 1px solid #444;
+            position: absolute;
+            bottom: 3%;
+            
+        }
+
+        .sidebar span{
+          transition: color 0.3s;
+        }
+        .sidebar button:hover span{
+          color: rgba(139, 0, 0, 0.8);
+          opacity: 0.7;
+        }
+
+#image-description{
+  padding-left: 1.2vh;
+  padding-right: 0.2vh;
+  padding-top: 8.4vh;
+  font-size: 15px;
+  opacity: 0.7;
+  padding-bottom: 2.4vh;
+}
+
+#image-description span{
+  color: #1a1a1a;
+  transition: all 0.5s;
+}
+
+
+.link{
+  cursor: pointer;
+  color: #555;
+
+}
+
+.link:hover{
+  padding-right: 2%;
+  text-decoration: underline;
 }

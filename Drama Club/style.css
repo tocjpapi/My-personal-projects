@@ -1,0 +1,474 @@
+:root {
+    --bg: #f7f4ed; 
+    --text: #000;
+    --border: #00000080;
+    --nav: #1e150000;
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+html {
+  font-size: calc(100vw / 1512 * 10);
+
+}
+
+body {
+  font-family: 'New york';
+  font-weight: 400;
+  font-size: medium;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+   
+}
+
+
+::-webkit-scrollbar{
+  width: 0;
+}
+
+
+::selection{
+  background-color: #d8cabd;
+  color: #111;
+}
+
+
+.first {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    height: 54vh;
+    width: 100vw;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.first h1 {
+    font-size: 24vh;
+    font-weight: 400;
+    width: 100%; /* Add this line */
+    text-align: center; /* Optional: Center the text horizontally */
+    font-family: new york;
+    position: absolute;
+    margin-top: 7%;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(-10%); }
+    100% { transform: translateX(-100%); }
+}
+  
+  .next{
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    height: 54vh;
+    width: 100vw;
+    position: relative;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .next h1 {
+    font-size: 14vh;
+    font-weight: 400;
+    width: 94%; /* Add this line */
+    text-align: left; /* Optional: Center the text horizontally */
+    font-family: new york;
+    position: absolute;
+    margin-top: 7%;
+    
+    white-space: nowrap;
+  }
+
+
+
+.parent{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1099;
+}
+
+.nav {
+    width: 100%;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;    
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid var(--border);
+
+    background: var(--nav);
+    animation: fade-in-down 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes fade-in-down{
+0%{
+    opacity:0;
+    transform: translateY(-10px);
+}
+
+100%{
+    opacity: 1;
+} 
+}
+
+
+.nav a {
+text-decoration: none;
+padding: 0 1em;
+color: var(--text);
+text-transform: uppercase;
+letter-spacing: 140%;
+font-weight: 450;
+}
+
+
+
+.second {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    justify-content: center;
+}
+
+.vidsection{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fade-ing {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+
+.vid{
+    height: 97%;
+    width: 70vw;
+    background: #111;
+    overflow: hidden;
+    border: 0.02px solid #5a5a5a;
+    filter: sepia(40%);
+}
+.vid video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    animation: revealImageAnimation 1.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+
+
+@keyframes revealImageAnimation {
+    0% {
+        filter: blur(5px);
+        scale: 1.2;
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+.note{
+    position: absolute;
+    right: 3%;
+    bottom: 0%;
+    font-family: new york;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.note2{
+    position: absolute;
+    left: 3%;
+    bottom: 0%;
+    font-family: new york;
+    font-weight: 100;
+
+}
+
+.spacer{
+    height: 10vh;
+}
+
+@media (max-width: 600px) {
+    .first h1 {
+        font-size: 10vh;
+    }
+}
+
+img {
+	width: 100%;
+}
+
+.container-img-wrap {
+	position: absolute;
+	top: -60rem;
+	left: -80px;
+	width: 400px;
+	height: 500px;
+	overflow: hidden;
+	pointer-events: none;
+	visibility: hidden;
+}
+
+.container-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+}
+
+
+.atbottom{
+	position: absolute;
+	bottom: 2%;
+	width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container-items {
+  justify-content: space-between;
+  width: 80vw;
+	height: 300px;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.item {
+	position: relative;
+	flex-grow: 1;
+	font-family: "New york";
+	font-size: 180px;
+
+	transition: all 0.3s ease;
+    color: #000;
+}
+
+.item a{
+    color: #1a1a1a;
+    text-decoration: none;
+
+}
+
+h3{
+    font-weight: 200;
+}
+
+
+.container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+@keyframes dots {
+    0% {
+      content: "";
+      opacity: 0;
+    }
+    10% {
+      content: ".";
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    30% {
+      content: ".";
+      opacity: 1;
+    }
+    40% {
+      content: "..";
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    60% {
+      content: "..";
+      opacity: 1;
+    }
+    70% {
+      content: "...";
+      opacity: 1;
+      animation-timing-function: ease-in-out;
+    }
+    90% {
+      content: "...";
+      opacity: 1;
+    }
+    100% {
+      content: "";
+      opacity: 0;
+    }
+  }
+  
+  .loading-dots::after {
+    content: "";
+    animation: dots 3.5s infinite;
+    display: inline-block;
+    width: 5em;
+    font-size: 9vh;
+    text-align: left;
+    color: var(--text);
+    opacity: 1;
+  }
+
+  .cursor {
+    position: fixed;
+    background: #b0aaa087;
+  backdrop-filter: blur(2px);
+    width: 82px;
+    height: 35px;
+    border-radius: 35px;
+    z-index: 7;
+    transition: 0.3s  transform,    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
+    pointer-events: none;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(9px);
+   overflow: hidden;
+  }
+  
+  .cursor p{
+    text-align: center;
+    font-size: medium;
+    color: #050505;
+        white-space: nowrap;
+        animation: marquee2 50s linear infinite;
+        color: var(--text);
+      
+      }
+      
+    
+      @keyframes marquee2 {
+        0% { transform: translateX(-1%); }
+        100% { transform: translateX(20%); }
+    }
+    
+  
+  
+  .cursor.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .cursor.active::before {
+    opacity: 1;
+  }
+
+
+  .cursor2 {
+    position: fixed;
+    background: #b0aaa087;
+  backdrop-filter: blur(2px);
+    width: 82px;
+    height: 35px;
+    border-radius: 35px;
+    z-index: 7;
+    transition: 0.3s  transform,    0.2s  opacity;
+    user-select: none;
+    pointer-events: none;
+    transform: scale(0);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8vh;
+    letter-spacing: -5%;
+    transition: transform translate 0.3s;
+    pointer-events: none;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(9px);
+   overflow: hidden;
+  }
+  
+  .cursor2 p{
+    text-align: center;
+    font-size: medium;
+    color: #050505;
+        white-space: nowrap;
+        animation: marquee2 70s linear infinite;
+        color: var(--text);  
+      }
+      
+    
+      @keyframes marquee2 {
+        0% { transform: translateX(-1%); }
+        100% { transform: translateX(-20%); }
+    }
+    
+  
+  
+  .cursor2.active2 {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .cursor2.active2::before {
+    opacity: 1;
+  }
+
+
+
+.item:hover{
+    opacity: 0.7;
+}
+
+
+
+  
+@media (max-width: 600px) {
+	.container-items {
+		height: 100px;
+	}
+	.item {
+		font-size: 20px;
+	}
+	.item:hover {
+		flex-grow: 1;
+		font-size: 20px;
+	}
+	.container-img-wrap {
+		display: none;
+	}
+
+}
