@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="style.css">
+    <title>The Art of Emergence </title>
+</head>
+<body>
+   <div class="intro">
+<div class="navigation-wrap">
+    <div class="navigation">
+        <div class="link1"><a href="">Home</a></div>
+
+        <div class="link2"><a href="">About</a></div>
+
+        <div class="link3"><a href="">Gallery</a></div>
+    </div>
+</div>
+<div class="bank">
+    <p>The Art of Emergence ®</p>
+</div>
+
+<div class="line"></div>
+
+    <img src="https://images.unsplash.com/photo-1662782387214-f16622e8fe47?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+
+</div> 
+
+<div class="next fade-in">
+    <div id="three-container"></div>
+    <div class="bespaced">
+
+        <div class="talk slide-up">
+            <p>The concept of "The Art of Emergence" is integral to modern web design, as it not only contributes to aesthetics but also fosters a sense of ease and engagement for users.</p>
+        </div>
+        
+        <div class="talk slide-up">
+            <p>Over time, designers have increasingly recognized the importance of employing emergent design principles. This approach emphasizes fluidity and adaptability, allowing websites to evolve dynamically with user interactions, thus enhancing the overall user experience.</p>
+        </div>     
+
+</div>
+<div class="more" ><a href="">Learn More </a><span class="right">→</span></div>   
+</div>
+
+
+<div class="coolio">
+    <div class="projects__sticky ">
+      <div class="slider__container fade-im">
+        <div class="projects__slider" id="projectsSlider"></div>
+      </div>
+    </div>
+</div>
+
+
+<div class="call">
+    <div class="more"  onclick="startMarqueeAnimation(event)"><a href="index.html">See Examples </a><span class="right">→</span></div>   
+</div>
+
+<div class="again">
+
+
+        <div class="talk slide-up">
+            <p>In design, emergent principles like modular layouts and user-driven content are key. They ensure adaptability and deeper user engagement, vital in today's digital landscape.</p>
+ 
+
+</div>
+</div>
+
+<div class="endy">
+
+
+    <div class="container">
+        <div class="inner">
+        <div class="one "><p class=" slide-ups">Instagram <span>↗</span></p></div>
+        <div class="one "><p class=" slide-ups">LinkedIn <span>↗</span></p></div>
+        <div class="one"><p class=" slide-ups">GitHub <span>↗</span></p></div>
+        <div class="one"><p class=" slide-ups">Awwwards <span>↗</span></p></div>
+    </div>
+    </div>
+<div class="centerthis">
+    <div class="maint slide-up"><h1>Talk with the Creator <span class="loading-dots"></span></h1></div>
+
+    <div class="more2"><a href="index.html">See Portfolio </a><span class="right">→</span></div> 
+</div> 
+   
+<div class="theguy"><p class="slide-up">CJ Crafted ®</p></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+<script>
+  const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+</script>
+
+
+<script>
+    document.addEventListener('scroll', function() {
+      const scrollTop = window.scrollY;
+  
+      // Parallax effect for .intro section
+      const newSection = document.querySelector('.intro');
+      newSection.style.transform = 'translateY(' + scrollTop * 0.2 + 'px)';
+  
+      // Calculate blur and grayscale values based on scroll position
+      const blurValue = Math.min(0, scrollTop * 0.05); // Maximum blur of 10px
+      const grayscaleValue = Math.min(40, scrollTop * 1); // Maximum grayscale of 100%
+  
+      // Apply blur and grayscale effects
+      newSection.style.filter = 'blur(' + blurValue + 'px) grayscale(' + grayscaleValue + '%)';
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+           // Function to check if an element is in viewport
+  function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  }
+  
+  // Function to handle intersection
+  function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('animated'); // Add your animation class here
+          observer.unobserve(entry.target);
+      }
+  });
+  }
+  
+  // Intersection Observer options
+  var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2 // Adjust threshold as needed
+  };
+  
+  // Create Intersection Observer
+  var observer = new IntersectionObserver(handleIntersection, options);
+  
+  // Select elements to be observed
+  var elementsToObserve = document.querySelectorAll('.slide-up, .fade-in'); // Select elements with animation classes
+  
+  // Observe each selected element
+  elementsToObserve.forEach(el => {
+  observer.observe(el);
+  });
+  
+  // Check if elements are already in viewport on page load
+  window.addEventListener('load', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  // Check if elements are in viewport on scroll
+  window.addEventListener('scroll', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  
+    })
+  
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+           // Function to check if an element is in viewport
+  function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+  return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+  }
+  
+  // Function to handle intersection
+  function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          entry.target.classList.add('animated'); // Add your animation class here
+          observer.unobserve(entry.target);
+      }
+  });
+  }
+  
+  // Intersection Observer options
+  var options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.2 // Adjust threshold as needed
+  };
+  
+  // Create Intersection Observer
+  var observer = new IntersectionObserver(handleIntersection, options);
+  
+  // Select elements to be observed
+  var elementsToObserve = document.querySelectorAll('.slide-ups, .fade-im'); // Select elements with animation classes
+  
+  // Observe each selected element
+  elementsToObserve.forEach(el => {
+  observer.observe(el);
+  });
+  
+  // Check if elements are already in viewport on page load
+  window.addEventListener('load', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  // Check if elements are in viewport on scroll
+  window.addEventListener('scroll', function() {
+  elementsToObserve.forEach(el => {
+      if (isElementInViewport(el)) {
+          el.classList.add('animated'); // Add your animation class here
+      }
+  });
+  });
+  
+  
+    })
+  
+</script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>  
+   <script>
+    document.querySelectorAll('.navigation a').forEach(btn => {
+      btn.addEventListener("mousemove", (e) => {
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let btnWidth = btn.clientWidth;
+        let btnHeight = btn.clientHeight;
+        let transX = (x - btnWidth / 2);
+        let transY = (y - btnHeight / 2);
+        
+        // GSAP animation for smoother movement
+        gsap.to(btn, {duration: 0.3, x: transX, y: transY, ease: "power2.out"});
+  
+        let mx = e.pageX - btn.offsetLeft;
+        let my = e.pageY - btn.offsetTop;
+        btn.style.setProperty('--x', mx + 'px');
+        btn.style.setProperty('--y', my + 'px');
+      });
+  
+      btn.addEventListener('mouseout', (e) => {
+        // Reset button position
+  gsap.to(btn, {duration: 0.8, x: 0, y: 0, ease: "elastic.out(1, 0.5)"});
+  
+      });
+    });
+  </script>
+
+
+<script>
+    const projects = [
+      { name: 'Amenhotep III', type: '(1386–1353 BCE)', pos: 'start', image: 'https://images.unsplash.com/photo-1610827776753-8c668b92d732?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGVqcHhrZWFzNDBlNWE0NTRzNW52ZHphMzg4NWRtYTVoOWc5bXpjMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rhywamGb85tzzgw02j/giphy.gif', text: 'Tim Schmidbauer' },
+      { name: 'Ibn Battuta', type: '(1304–1368) ', pos: 'mid', image: 'https://images.unsplash.com/photo-1652697229110-c30dd3db00f2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://miro.medium.com/v2/resize:fit:1400/1*cM16uwRoaseF39auW9nP_g.gif', text: '© Joe Pilié' },
+      { name: 'Ben Enwonwu', type: '(1917–1994) ', pos: 'end', image: 'https://images.unsplash.com/photo-1701456143315-764b238cca81?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnhpNHBneHU2a3JqeW5uemVrcjM2c294dWt1dGdrenZzNTFwa2ZnYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/DbgpbpOE7y6u2zGUIt/giphy.gif', text: '© Jocelyn Morales' },
+      { name: 'Miriam Makeba ', type: '(1932–2008)', pos: 'start', image: 'https://images.unsplash.com/photo-1610827776793-389a26d9949f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://i.pinimg.com/originals/ce/0d/59/ce0d5969eeefce9ee8fd59aed14191f1.gif', text: '© Jocelyn Morales' },
+      { name: 'Chinua Achebe', type: '(1930–2013)', pos: 'mid', image: 'https://images.unsplash.com/photo-1520473378652-85d9c4aee6cf?q=80&w=1829&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'https://assets-global.website-files.com/6009ec8cda7f305645c9d91b/601082295ce191f20701ec46_6002086f72b727034801d89e_proto%25202%2520v2.gif', text: '© Jocelyn Morales' },
+      { name: 'El Anatsui', type: '(1944-Till Date)', pos: 'end', image: 'https://images.unsplash.com/photo-1606139824527-1f1ac0e1743b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', centeredImage: 'centered-img-6.jpg', text: '© Jocelyn Morales' }
+    ];
+    
+    const projectsSlider = document.getElementById('projectsSlider');
+    const projectContainer = document.querySelector('.projects__slider');
+    
+    // Create projects
+    projects.forEach(project => {
+      let panel = document.createElement('div');
+      panel.classList.add('project', project.pos);
+    
+      let projectContainer = document.createElement('div');
+      projectContainer.classList.add('project-container');
+      panel.appendChild(projectContainer);
+    
+      let imageContainer = document.createElement('div');
+      imageContainer.className = 'image__container';
+      let image = document.createElement('img');
+      image.classList.add('project__image');
+      image.src = project.image;
+      imageContainer.appendChild(image);
+      
+      // Add text with .gist class
+      let text = document.createElement('div');
+      text.classList.add('gist');
+      text.innerText = project.text;
+      imageContainer.appendChild(text);
+    
+      projectContainer.appendChild(imageContainer);
+    
+      let centeredImageContainer = document.createElement('div');
+      centeredImageContainer.classList.add('centered-image-container');
+      let centeredImage = document.createElement('img');
+      centeredImage.src = project.centeredImage;
+      centeredImageContainer.appendChild(centeredImage);
+      projectContainer.appendChild(centeredImageContainer);
+    
+      let projectDetails = document.createElement('div');
+      projectDetails.classList.add('project__details');
+      let projectTitle = document.createElement('p');
+      projectTitle.innerText = project.name;
+      let projectType = document.createElement('p');
+      projectType.innerText = project.type;
+      projectDetails.append(projectTitle, projectType);
+      panel.appendChild(projectDetails);
+    
+      projectsSlider.appendChild(panel);
+    });
+    
+    projectsSlider.style.width = `${projects.length * 25}vw`;
+    
+    function autoSlide() {
+      let offsetTop = projectContainer.offsetTop;
+      let percentage = ((window.scrollY - offsetTop) / window.innerHeight) * 100;
+      let projectTargetX = percentage;
+      let projectCurrentX = lerp(0, projectTargetX, 0.12);
+      let imageTargetX = percentage * 0.9; 
+      let imageCurrentX = lerp(0, imageTargetX, 0.2);
+      projectsSlider.style.transform = `translate3d(${-projectCurrentX}%, 0, 0)`;
+    
+      // Apply parallax effect to images
+      const images = document.querySelectorAll('.project__image');
+      images.forEach(image => {
+        image.style.transform = `translate3d(${-imageCurrentX}%, 0, 0)`;
+      });
+    }
+    
+    document.addEventListener('scroll', autoSlide);
+    
+    function lerp(a, b, t) {
+      return (1 - t) * a + t * b;
+    }
+    
+    </script>
+
+<script>
+function startMarqueeAnimation(event) {
+    event.preventDefault(); // Prevents the default navigation behavior
+    
+    const slider = document.querySelector('.projects__slider');
+    slider.classList.add('marquee-animation');
+  
+    // Delay before navigating
+    setTimeout(function() {
+      window.location.href = event.target.href; // Navigate to the link
+    }, 1500); // 1500 milliseconds = 1.5 seconds
+  }
+  
+
+</script>
+
+</body>
+</html>
